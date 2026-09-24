@@ -19,5 +19,6 @@ jobs:
       - run: python scripts/build.py
       - run: python scripts/build_calculators.py
       - run: python scripts/build_construction.py
+      - run: python scripts/build_construction_index.py
       - run: python scripts/build_seo.py
       - run: find site -type f | sort
