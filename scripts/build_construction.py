@@ -36,26 +36,26 @@ FIELDS = {
 
 def formula_js(kind):
     return {
-        "concrete_volume": "return (v[0]*v[1]*v[2]).toFixed(3) + ' cubic units';",
-        "concrete_bags": "return Math.ceil(v[0]/v[1]) + ' bags';",
-        "gravel_volume": "return (v[0]*v[1]*v[2]).toFixed(3) + ' cubic units';",
-        "mulch_volume": "return (v[0]*v[1]*v[2]).toFixed(3) + ' cubic units';",
-        "paint_quantity": "return ((v[0]/v[1])*v[2]).toFixed(2) + ' units';",
-        "flooring_quantity": "return (v[0]*v[1]*(1+v[2]/100)).toFixed(2) + ' square units';",
-        "tile_quantity": "return Math.ceil((v[0]/(v[1]*v[2]))*(1+v[3]/100)) + ' tiles';",
-        "drywall_sheets": "return Math.ceil(((2*(v[0]+v[1])*v[2])/(v[3]*v[4])));",
-        "board_feet": "return ((v[0]*v[1]*v[2]/12)*v[3]).toFixed(2) + ' board feet';",
-        "material_cost": "return (v[0]*v[1]*(1+v[2]/100)).toFixed(2);",
-        "paver_quantity": "return Math.ceil(((v[0]*v[1])*144/(v[2]*v[3]))*(1+v[4]/100)) + ' pavers';",
-        "sand_volume": "return (v[0]*v[1]*v[2]).toFixed(3) + ' cubic units';",
-        "soil_volume": "return (v[0]*v[1]*v[2]).toFixed(3) + ' cubic units';",
-        "fence_pickets": "return Math.ceil((v[0]*12)/(v[1]+v[2])) + ' pickets';",
-        "fence_posts": "return Math.ceil(v[0]/v[1]) + 1 + ' posts';",
-        "decking_boards": "const rows=Math.ceil((v[1]*12)/(v[2]+v[3])); const perRow=Math.ceil(v[0]/v[4]); return Math.ceil(rows*perRow*(1+v[5]/100)) + ' boards';",
-        "roofing_squares": "return (v[0]/100).toFixed(2) + ' roofing squares';",
-        "roofing_material": "return (v[0]*(1+v[1]/100)).toFixed(2) + ' sq ft';",
-        "gravel_weight": "return (v[0]*v[1]).toFixed(2) + ' weight units';",
-        "concrete_weight": "return (v[0]*v[1]).toFixed(2) + ' weight units';",
+        "concrete_volume": "result.textContent = (v[0]*v[1]*v[2]).toFixed(3) + ' cubic units';",
+        "concrete_bags": "result.textContent = Math.ceil(v[0]/v[1]) + ' bags';",
+        "gravel_volume": "result.textContent = (v[0]*v[1]*v[2]).toFixed(3) + ' cubic units';",
+        "mulch_volume": "result.textContent = (v[0]*v[1]*v[2]).toFixed(3) + ' cubic units';",
+        "paint_quantity": "result.textContent = ((v[0]/v[1])*v[2]).toFixed(2) + ' units';",
+        "flooring_quantity": "result.textContent = (v[0]*v[1]*(1+v[2]/100)).toFixed(2) + ' square units';",
+        "tile_quantity": "result.textContent = Math.ceil((v[0]/(v[1]*v[2]))*(1+v[3]/100)) + ' tiles';",
+        "drywall_sheets": "result.textContent = Math.ceil((2*(v[0]+v[1])*v[2])/(v[3]*v[4])) + ' sheets';",
+        "board_feet": "result.textContent = ((v[0]*v[1]*v[2]/12)*v[3]).toFixed(2) + ' board feet';",
+        "material_cost": "result.textContent = (v[0]*v[1]*(1+v[2]/100)).toFixed(2);",
+        "paver_quantity": "result.textContent = Math.ceil(((v[0]*v[1])*144/(v[2]*v[3]))*(1+v[4]/100)) + ' pavers';",
+        "sand_volume": "result.textContent = (v[0]*v[1]*v[2]).toFixed(3) + ' cubic units';",
+        "soil_volume": "result.textContent = (v[0]*v[1]*v[2]).toFixed(3) + ' cubic units';",
+        "fence_pickets": "result.textContent = Math.ceil((v[0]*12)/(v[1]+v[2])) + ' pickets';",
+        "fence_posts": "result.textContent = Math.ceil(v[0]/v[1]) + 1 + ' posts';",
+        "decking_boards": "const rows=Math.ceil((v[1]*12)/(v[2]+v[3])); const perRow=Math.ceil(v[0]/v[4]); result.textContent = Math.ceil(rows*perRow*(1+v[5]/100)) + ' boards';",
+        "roofing_squares": "result.textContent = (v[0]/100).toFixed(2) + ' roofing squares';",
+        "roofing_material": "result.textContent = (v[0]*(1+v[1]/100)).toFixed(2) + ' sq ft';",
+        "gravel_weight": "result.textContent = (v[0]*v[1]).toFixed(2) + ' weight units';",
+        "concrete_weight": "result.textContent = (v[0]*v[1]).toFixed(2) + ' weight units';",
     }[kind]
 
 EXAMPLES = {"concrete_volume":([20,10,0.5],"100 cubic units"),"concrete_bags":([10,0.6],"17 bags"),"gravel_volume":([20,10,0.25],"50 cubic units"),"mulch_volume":([20,10,0.25],"50 cubic units"),"paint_quantity":([800,350,2],"4.57 units"),"flooring_quantity":([20,15,10],"330 square units"),"tile_quantity":([1000,12,12,10],"8 tiles"),"drywall_sheets":([20,15,8,4,8],"18 sheets"),"board_feet":([2,6,8,1],"8 board feet"),"material_cost":([100,4,10],"440"),"paver_quantity":([20,12,12,6,5],"504 pavers"),"sand_volume":([20,10,0.1],"20 cubic units"),"soil_volume":([10,10,0.5],"50 cubic units"),"fence_pickets":([100,5.5,1.5],"172 pickets"),"fence_posts":([100,8],"14 posts"),"decking_boards":([20,12,6,0.125,12,0],"48 boards"),"roofing_squares":([2400],"24 roofing squares"),"roofing_material":([2400,10],"2640 sq ft"),"gravel_weight":([10,1.6],"16 weight units"),"concrete_weight":([10,150],"1500 weight units")}
@@ -76,6 +76,7 @@ def page(item, content, related, titles, units, faq):
     faq_html = "".join(f"<details><summary>{escape(x['question'])}</summary><p>{escape(x['answer'])}</p></details>" for x in faq.get('faqs', []))
     faq_schema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":x["question"],"acceptedAnswer":{"@type":"Answer","text":x["answer"]}} for x in faq.get("faqs", [])]}
     positive = POSITIVE[kind]
+    positive_js = json.dumps(positive)
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -105,6 +106,7 @@ document.querySelector("#calculate").onclick=()=>{{
  const v=[...document.querySelectorAll("input")].map(x=>Number(x.value));
  const result=document.querySelector("#result");
  if(v.some(x=>!Number.isFinite(x)||x<0)){{result.textContent="Enter valid non-negative numbers.";return;}}
+ const positive={positive_js};
  if(positive.some(i=>v[i]<=0)){{result.textContent="Enter values greater than zero for dimensions, quantities, prices, coverage, density or spacing.";return;}}
  {js}
 }};
