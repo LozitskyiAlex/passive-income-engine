@@ -169,5 +169,95 @@
     "tips": [
       "Use a density compatible with the volume units you entered."
     ]
+  },
+  {
+    "slug": "concrete-footing",
+    "how": "Multiply length, width and depth using the same unit for all dimensions.",
+    "example": "A 20 by 1 by 0.5 unit footing has a volume of 10 cubic units.",
+    "tips": [
+      "Use the planned footing dimensions from the project design.",
+      "Add allowances only when appropriate to the project."
+    ]
+  },
+  {
+    "slug": "rebar-length",
+    "how": "Multiply the number of bars by the length of each bar.",
+    "example": "20 bars at 4 units each require 80 length units.",
+    "tips": [
+      "This is a length estimate and does not account for laps, hooks or cutting.",
+      "Use the bar schedule for final ordering."
+    ]
+  },
+  {
+    "slug": "gravel-bags",
+    "how": "Divide required gravel volume by the coverage of one bag and round up.",
+    "example": "10 cubic units divided by 0.5 cubic units per bag requires 20 bags.",
+    "tips": [
+      "Use the actual bag coverage printed by the supplier.",
+      "Account for compaction where relevant."
+    ]
+  },
+  {
+    "slug": "baseboard",
+    "how": "Divide total measured baseboard length by the length of one piece and round up.",
+    "example": "100 units divided by 8 units per piece requires 13 pieces.",
+    "tips": [
+      "Measure around the actual room perimeter.",
+      "Subtract openings only when they will not receive baseboard."
+    ]
+  },
+  {
+    "slug": "wallpaper",
+    "how": "Divide wall area by the coverage of one roll and round up.",
+    "example": "120 square units divided by 25 square units per roll requires 5 rolls.",
+    "tips": [
+      "Use the manufacturer's coverage and pattern information.",
+      "Pattern repeats and waste can increase the required rolls."
+    ]
+  },
+  {
+    "slug": "stair-risers",
+    "how": "Divide total vertical rise by the planned riser height and round up.",
+    "example": "A 96 unit total rise at 8 units per riser gives 12 risers.",
+    "tips": [
+      "Use the final stair design for code-compliant dimensions.",
+      "This is a quantity estimate, not a stair design tool."
+    ]
+  },
+  {
+    "slug": "asphalt-volume",
+    "how": "Multiply length by width by depth using consistent units.",
+    "example": "A 20 by 10 area at 0.2 depth requires 40 cubic units of asphalt.",
+    "tips": [
+      "Use the planned compacted depth where appropriate.",
+      "Supplier conversion and density may be needed for ordering by weight."
+    ]
+  },
+  {
+    "slug": "cubic-yards",
+    "how": "Multiply length, width and depth, then divide cubic feet by 27 when the inputs are in feet.",
+    "example": "A 27 by 1 by 1 foot volume equals 1 cubic yard.",
+    "tips": [
+      "Use feet for all three inputs when using this conversion.",
+      "For ordering, confirm supplier conventions and compaction."
+    ]
+  },
+  {
+    "slug": "area",
+    "how": "Multiply length by width using the same unit for both measurements.",
+    "example": "A 20 by 15 rectangle has an area of 300 square units.",
+    "tips": [
+      "Use the actual finished dimensions.",
+      "Irregular areas may need to be split into multiple rectangles."
+    ]
+  },
+  {
+    "slug": "volume",
+    "how": "Multiply length by width by height using consistent units.",
+    "example": "A 20 by 15 by 2 rectangular volume is 600 cubic units.",
+    "tips": [
+      "This tool assumes a rectangular shape.",
+      "Use consistent units for all dimensions."
+    ]
   }
 ]
