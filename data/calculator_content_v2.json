@@ -1,0 +1,83 @@
+[
+  {
+    "slug": "paver-quantity",
+    "how": "Multiply the paved area by 144 to convert square feet to square inches, divide by the paver area, add waste, then round up.",
+    "example": "A 20 ft by 12 ft patio using 12 by 6 inch pavers with 5% waste needs about 504 pavers.",
+    "tips": [
+      "Use the actual paver dimensions.",
+      "Patterns and cutting can change the waste requirement."
+    ]
+  },
+  {
+    "slug": "sand-volume",
+    "how": "Multiply length by width by depth using consistent units.",
+    "example": "A 20 ft by 10 ft area with a 0.1 ft layer needs 20 cubic feet.",
+    "tips": [
+      "Confirm the planned layer depth and whether the supplier sells loose or compacted material."
+    ]
+  },
+  {
+    "slug": "soil-volume",
+    "how": "Multiply length by width by depth using consistent units.",
+    "example": "A 10 ft by 10 ft bed with a 0.5 ft depth needs 50 cubic feet of soil.",
+    "tips": [
+      "Account for settling and the finished grade when choosing an order quantity."
+    ]
+  },
+  {
+    "slug": "fence-pickets",
+    "how": "Convert fence length to inches and divide by the picket width plus the gap, then round up.",
+    "example": "A 100 ft fence with 5.5 inch pickets and a 1.5 inch gap needs 182 pickets.",
+    "tips": [
+      "Check the actual picket width and desired spacing before ordering."
+    ]
+  },
+  {
+    "slug": "fence-posts",
+    "how": "Divide fence length by planned post spacing, round up, then add one post for the starting position.",
+    "example": "A 100 ft fence at 8 ft spacing requires 14 posts.",
+    "tips": [
+      "Corners, gates and ends can require additional posts."
+    ]
+  },
+  {
+    "slug": "decking-boards",
+    "how": "Estimate the number of board rows from deck width and board width plus gap, then divide the deck length by board length and add waste.",
+    "example": "A 12 ft by 20 ft deck using 6 inch boards, a 0.125 inch gap and 12 ft boards needs approximately 41 boards before waste.",
+    "tips": [
+      "Joins, overhangs, picture framing and board lengths can change the actual quantity."
+    ]
+  },
+  {
+    "slug": "roofing-squares",
+    "how": "Divide roof surface area in square feet by 100.",
+    "example": "A 2,400 square foot roof surface equals 24 roofing squares.",
+    "tips": [
+      "Use measured roof surface area when available. A roofing square is 100 square feet. "
+    ]
+  },
+  {
+    "slug": "roofing-material",
+    "how": "Multiply roof area by one plus the selected waste percentage.",
+    "example": "A 2,400 square foot roof with 10% waste gives 2,640 square feet of estimated material.",
+    "tips": [
+      "Product coverage and installation details vary by roofing system."
+    ]
+  },
+  {
+    "slug": "gravel-weight",
+    "how": "Multiply volume by the bulk density expressed in compatible units.",
+    "example": "If 10 cubic units of gravel have a bulk density of 1.6 weight units per cubic unit, the estimate is 16 weight units.",
+    "tips": [
+      "Use the supplier's stated density for the specific material."
+    ]
+  },
+  {
+    "slug": "concrete-weight",
+    "how": "Multiply concrete volume by the density expressed in compatible units.",
+    "example": "If 10 cubic units of concrete have a density of 150 weight units per cubic unit, the estimate is 1,500 weight units.",
+    "tips": [
+      "Use a density compatible with the volume units you entered."
+    ]
+  }
+]
