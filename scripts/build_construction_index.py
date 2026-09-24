@@ -20,11 +20,11 @@ def main():
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Construction Calculators | Free Home Project Tools</title>
 <meta name="description" content="Free construction calculators for concrete, gravel, mulch, paint, flooring, tile, drywall, lumber and material costs.">
-<link rel="canonical" href="https://passive-income-engine.oleksoleks07.workers.dev/construction/">
+<link rel="canonical" href="https://passive-income-engine.oleksoleks07.workers.dev/construction/"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>
 body{{font-family:system-ui,sans-serif;max-width:900px;margin:40px auto;padding:0 20px;line-height:1.6;color:#17202a}}
 .grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}}
-article{{border:1px solid #ddd;border-radius:12px;padding:18px}}
+article{{border:1px solid #ddd;border-radius:12px;padding:18px}}@media(max-width:560px){{body{{padding:20px 14px}}.grid{{grid-template-columns:1fr}}}}
 a{{color:inherit}}
 .small{{color:#5f6b75}}
 </style>
