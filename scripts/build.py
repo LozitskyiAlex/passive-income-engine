@@ -39,7 +39,14 @@ def main() -> None:
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Free Construction Calculators</title>
 <meta name="description" content="Free construction and home project calculators for concrete, gravel, mulch, paint, flooring, tile, drywall, lumber and material costs.">
-<link rel="canonical" href="https://passive-income-engine.oleksoleks07.workers.dev/"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://passive-income-engine.oleksoleks07.workers.dev/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Construction Calculators">
+<meta property="og:description" content="Free construction and home project calculators for material quantities and project planning.">
+<meta property="og:url" content="https://passive-income-engine.oleksoleks07.workers.dev/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Free Construction Calculators","url":"https://passive-income-engine.oleksoleks07.workers.dev/"}</script>
 <style>
 :root{{color-scheme:light}}
 body{{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:1000px;margin:0 auto;padding:48px 20px;line-height:1.6;color:#17202a;background:#fff}}
