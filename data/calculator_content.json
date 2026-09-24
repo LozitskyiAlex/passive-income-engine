@@ -117,7 +117,7 @@
   {
     "slug": "fence-pickets",
     "how": "Convert fence length to inches and divide by the picket width plus the gap, then round up.",
-    "example": "A 100 ft fence with 5.5 inch pickets and a 1.5 inch gap needs 182 pickets.",
+    "example": "A 100 ft fence with 5.5 inch pickets and a 1.5 inch gap needs 172 pickets in this simplified straight-run calculation.",
     "tips": [
       "Check the actual picket width and desired spacing before ordering."
     ]
