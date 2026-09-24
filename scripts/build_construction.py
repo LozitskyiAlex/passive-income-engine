@@ -5,6 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "construction_calculators.json"
 SITE = ROOT / "site" / "construction"
+BASE = "https://passive-income-engine.oleksoleks07.workers.dev"
 
 FIELDS = {
     "concrete_volume": ["Length", "Width", "Thickness"],
@@ -36,7 +37,7 @@ def formula_js(kind):
 def page(item):
     title, desc, kind = map(item.get, ["title","description","type"])
     inputs = "".join(
-        f'<label>{escape(name)}<input id="v{i}" type="number" min="0" step="any"></label>'
+        f'<label>{escape(name)}<input id="v{i}" type="number" min="0" step="any" inputmode="decimal" required></label>'
         for i, name in enumerate(FIELDS[kind])
     )
     js = formula_js(kind)
@@ -59,10 +60,10 @@ button{{margin-top:16px;padding:10px 16px}}#result{{margin-top:20px;font-size:1.
 </style>
 </head>
 <body><main>
-<a href="/construction/">Construction calculators</a>
+<a href="/construction/">All construction calculators</a>
 <h1>{escape(title)}</h1><p>{escape(desc)}</p>
 <div class="card">{inputs}<button id="calculate">Calculate</button><div id="result" aria-live="polite"></div></div>
-<p>Use consistent units for every input. Results are estimates and should be checked against project specifications and manufacturer instructions.</p>
+<p>Use the same unit system for all dimensions. For example, enter all dimensions in feet, or all dimensions in meters. Results are estimates and should be checked against project specifications, local requirements, and manufacturer instructions.</p>
 </main>
 <script>
 document.querySelector("#calculate").onclick=()=>{{
