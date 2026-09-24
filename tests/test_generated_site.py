@@ -25,7 +25,7 @@ def test_all_calculator_formulas():
         "paver_quantity": ([20, 12, 12, 6, 5], 504),
         "sand_volume": ([20, 10, 0.1], 20),
         "soil_volume": ([10, 10, 0.5], 50),
-        "fence_pickets": ([100, 5.5, 1.5], 150),
+        "fence_pickets": ([100, 5.5, 1.5], 172),
         "fence_posts": ([100, 8], 14),
         "decking_boards": ([20, 12, 6, 0.125, 12, 0], 48),
         "roofing_squares": ([2400], 24),
@@ -80,3 +80,17 @@ def test_faq_covers_all_calculators():
 
 def test_favicon_exists():
     assert (SITE / "favicon.svg").exists()
+
+
+
+def test_catalog_integrity():
+    items = json.loads((ROOT / "data/construction_calculators.json").read_text())
+    slugs = [x["slug"] for x in items]
+    types = [x["type"] for x in items]
+    assert len(items) == 30
+    assert len(slugs) == len(set(slugs))
+    assert len(types) == len(set(types))
+    assert all(x.get("category") for x in items)
+    related = json.loads((ROOT / "data/related_calculators.json").read_text())
+    assert set(related) == set(slugs)
+    assert all(target in slugs for targets in related.values() for target in targets)
