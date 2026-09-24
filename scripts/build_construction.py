@@ -50,7 +50,7 @@ def page(item, content):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{escape(title)}</title>
 <meta name="description" content="{escape(desc)}">
-<link rel="canonical" href="/construction/{escape(item["slug"])}/">
+<link rel="canonical" href="{BASE}/construction/{escape(item["slug"])}/">
 <script type="application/ld+json">
 {{"@context":"https://schema.org","@type":"WebApplication","name":"{escape(title)}","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"{escape(desc)}"}}
 </script>
@@ -65,7 +65,7 @@ button{{margin-top:16px;padding:10px 16px}}#result{{margin-top:20px;font-size:1.
 <a href="/construction/">All construction calculators</a>
 <h1>{escape(title)}</h1><p>{escape(desc)}</p>
 <div class="card">{inputs}<button id="calculate">Calculate</button><div id="result" aria-live="polite"></div></div>
-<section><h2>How to use this calculator</h2><p>{escape(content.get("how", ""))}</p><h2>Example</h2><p>{escape(content.get("example", ""))}</p><h2>Tips</h2><ul>{tips}</ul></section><p>Use the same unit system for all dimensions. Results are estimates and should be checked against project specifications, local requirements, and manufacturer instructions.</p>
+<section><h2>How to use this calculator</h2><p>{escape(content.get("how", ""))}</p><h2>Example</h2><p>{escape(content.get("example", ""))}</p><h2>Tips</h2><ul>{tips}</ul></section><section><h2>Related calculators</h2><p><a href="/construction/">Browse all construction calculators</a></p></section><p>Use the same unit system for all dimensions. Results are estimates and should be checked against project specifications, local requirements, and manufacturer instructions.</p>
 </main>
 <script>
 document.querySelector("#calculate").onclick=()=>{{
