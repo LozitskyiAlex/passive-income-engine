@@ -39,6 +39,7 @@ def main() -> None:
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Free Construction Calculators</title>
 <meta name="description" content="Free construction and home project calculators for concrete, gravel, mulch, paint, flooring, tile, drywall, lumber and material costs.">
+<meta name="google-site-verification" content="RWL8Q7FqS7ZvGU7HS2FrQvNV5XznwpVk7MqIEaDcZXQ">
 <link rel="canonical" href="https://passive-income-engine.oleksoleks07.workers.dev/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Free Construction Calculators">
