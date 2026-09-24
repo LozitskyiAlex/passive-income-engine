@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "percentage-change",
+    "title": "Percentage Change Calculator",
+    "description": "Calculate the percentage increase or decrease between two values.",
+    "formula": "((new - original) / original) * 100"
+  },
+  {
+    "slug": "markup",
+    "title": "Markup Calculator",
+    "description": "Calculate selling price, markup amount, and markup percentage from cost and target markup.",
+    "formula": "selling price = cost * (1 + markup / 100)"
+  },
+  {
+    "slug": "unit-price",
+    "title": "Unit Price Calculator",
+    "description": "Compare the cost of products with different package sizes by calculating price per unit.",
+    "formula": "unit price = total price / quantity"
+  }
+]
