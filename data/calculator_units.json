@@ -1,4 +1,148 @@
 {
-  "concrete_volume":["ft","ft","ft"],"concrete_bags":["cu ft","cu ft"],"gravel_volume":["ft","ft","ft"],"mulch_volume":["ft","ft","ft"],"paint_quantity":["sq ft","sq ft",""],"flooring_quantity":["ft","ft","%"],"tile_quantity":["sq ft","in","in","%"],"drywall_sheets":["ft","ft","ft","ft","ft"],"board_feet":["in","in","ft",""],"material_cost":["","$","%"],
-  "paver_quantity":["ft","ft","in","in","%"],"sand_volume":["ft","ft","ft"],"soil_volume":["ft","ft","ft"],"fence_pickets":["ft","in","in"],"fence_posts":["ft","ft"],"decking_boards":["ft","ft","in","in","ft","%"],"roofing_squares":["sq ft"],"roofing_material":["sq ft","%"],"gravel_weight":["cu ft","lb/cu ft"],"concrete_weight":["cu ft","lb/cu ft"]
+  "concrete_volume": [
+    "ft",
+    "ft",
+    "ft"
+  ],
+  "concrete_bags": [
+    "cu ft",
+    "cu ft"
+  ],
+  "gravel_volume": [
+    "ft",
+    "ft",
+    "ft"
+  ],
+  "mulch_volume": [
+    "ft",
+    "ft",
+    "ft"
+  ],
+  "paint_quantity": [
+    "sq ft",
+    "sq ft",
+    ""
+  ],
+  "flooring_quantity": [
+    "ft",
+    "ft",
+    "%"
+  ],
+  "tile_quantity": [
+    "sq ft",
+    "in",
+    "in",
+    "%"
+  ],
+  "drywall_sheets": [
+    "ft",
+    "ft",
+    "ft",
+    "ft",
+    "ft"
+  ],
+  "board_feet": [
+    "in",
+    "in",
+    "ft",
+    ""
+  ],
+  "material_cost": [
+    "",
+    "$",
+    "%"
+  ],
+  "paver_quantity": [
+    "ft",
+    "ft",
+    "in",
+    "in",
+    "%"
+  ],
+  "sand_volume": [
+    "ft",
+    "ft",
+    "ft"
+  ],
+  "soil_volume": [
+    "ft",
+    "ft",
+    "ft"
+  ],
+  "fence_pickets": [
+    "ft",
+    "in",
+    "in"
+  ],
+  "fence_posts": [
+    "ft",
+    "ft"
+  ],
+  "decking_boards": [
+    "ft",
+    "ft",
+    "in",
+    "in",
+    "ft",
+    "%"
+  ],
+  "roofing_squares": [
+    "sq ft"
+  ],
+  "roofing_material": [
+    "sq ft",
+    "%"
+  ],
+  "gravel_weight": [
+    "cu ft",
+    "lb/cu ft"
+  ],
+  "concrete_weight": [
+    "cu ft",
+    "lb/cu ft"
+  ],
+  "concrete_footing": [
+    "ft",
+    "ft",
+    "ft"
+  ],
+  "rebar_length": [
+    "",
+    "ft"
+  ],
+  "gravel_bags": [
+    "cu ft",
+    "cu ft"
+  ],
+  "baseboard": [
+    "ft",
+    "ft"
+  ],
+  "wallpaper": [
+    "sq ft",
+    "sq ft"
+  ],
+  "stair_risers": [
+    "in",
+    "in"
+  ],
+  "asphalt_volume": [
+    "ft",
+    "ft",
+    "ft"
+  ],
+  "cubic_yards": [
+    "ft",
+    "ft",
+    "ft"
+  ],
+  "area": [
+    "ft",
+    "ft"
+  ],
+  "volume": [
+    "ft",
+    "ft",
+    "ft"
+  ]
 }
