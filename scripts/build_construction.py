@@ -7,6 +7,7 @@ DATA = ROOT / "data" / "construction_calculators.json"
 CONTENT = ROOT / "data" / "calculator_content.json"
 RELATED = ROOT / "data" / "related_calculators.json"
 UNITS = ROOT / "data" / "calculator_units.json"
+FAQ = ROOT / "data" / "calculator_faq.json"
 SITE = ROOT / "site" / "construction"
 BASE = "https://passive-income-engine.oleksoleks07.workers.dev"
 
@@ -50,14 +51,17 @@ def formula_js(kind):
         "soil_volume": "return (v[0]*v[1]*v[2]).toFixed(3) + ' cubic units';",
         "fence_pickets": "return Math.ceil((v[0]*12)/(v[1]+v[2])) + ' pickets';",
         "fence_posts": "return Math.ceil(v[0]/v[1]) + 1 + ' posts';",
-        "decking_boards": "return Math.ceil(((v[0]*12)*v[1]*12/(v[2]+v[3]))/(v[4]*12)*(1+v[5]/100));",
+        "decking_boards": "const rows=Math.ceil((v[1]*12)/(v[2]+v[3])); const perRow=Math.ceil(v[0]/v[4]); return Math.ceil(rows*perRow*(1+v[5]/100)) + ' boards';",
         "roofing_squares": "return (v[0]/100).toFixed(2) + ' roofing squares';",
         "roofing_material": "return (v[0]*(1+v[1]/100)).toFixed(2) + ' sq ft';",
         "gravel_weight": "return (v[0]*v[1]).toFixed(2) + ' weight units';",
         "concrete_weight": "return (v[0]*v[1]).toFixed(2) + ' weight units';",
     }[kind]
 
-def page(item, content, related, titles, units):
+EXAMPLES = {"concrete_volume":([20,10,0.5],"100 cubic units"),"concrete_bags":([10,0.6],"17 bags"),"gravel_volume":([20,10,0.25],"50 cubic units"),"mulch_volume":([20,10,0.25],"50 cubic units"),"paint_quantity":([800,350,2],"4.57 units"),"flooring_quantity":([20,15,10],"330 square units"),"tile_quantity":([100,12,12,10],"1 tile"),"drywall_sheets":([20,15,8,4,8],"18 sheets"),"board_feet":([2,6,8,1],"8 board feet"),"material_cost":([100,4,10],"440"),"paver_quantity":([20,12,12,6,5],"504 pavers"),"sand_volume":([20,10,0.1],"20 cubic units"),"soil_volume":([10,10,0.5],"50 cubic units"),"fence_pickets":([100,5.5,1.5],"182 pickets"),"fence_posts":([100,8],"14 posts"),"decking_boards":([20,12,6,0.125,12,0],"40 boards"),"roofing_squares":([2400],"24 roofing squares"),"roofing_material":([2400,10],"2640 sq ft"),"gravel_weight":([10,1.6],"16 weight units"),"concrete_weight":([10,150],"1500 weight units")}
+POSITIVE = {"concrete_volume":[0,1,2],"concrete_bags":[0,1],"gravel_volume":[0,1,2],"mulch_volume":[0,1,2],"paint_quantity":[0,1,2],"flooring_quantity":[0,1],"tile_quantity":[0,1,2],"drywall_sheets":[0,1,2,3,4],"board_feet":[0,1,2,3],"material_cost":[0,1],"paver_quantity":[0,1,2,3],"sand_volume":[0,1,2],"soil_volume":[0,1,2],"fence_pickets":[0,1],"fence_posts":[0,1],"decking_boards":[0,1,2,4],"roofing_squares":[0],"roofing_material":[0],"gravel_weight":[0,1],"concrete_weight":[0,1]}
+
+def page(item, content, related, titles, units, faq):
     title, desc, kind = map(item.get, ["title","description","type"])
     tips = "".join(f"<li>{escape(t)}</li>" for t in content.get("tips", []))
     related_html = "".join(f"<li><a href=\"/construction/{escape(slug)}/\">{escape(titles.get(slug, slug))}</a></li>" for slug in related.get(item["slug"], []))
@@ -67,6 +71,11 @@ def page(item, content, related, titles, units):
         for i, name in enumerate(FIELDS[kind])
     )
     js = formula_js(kind)
+    example_values, example_result = EXAMPLES[kind]
+    example_inputs = ", ".join(f"{FIELDS[kind][i]}: {example_values[i]}{(' ' + unit_list[i]) if unit_list[i] else ''}" for i in range(len(example_values)))
+    faq_html = "".join(f"<details><summary>{escape(x['question'])}</summary><p>{escape(x['answer'])}</p></details>" for x in faq.get('faqs', []))
+    faq_schema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":x["question"],"acceptedAnswer":{"@type":"Answer","text":x["answer"]}} for x in faq.get("faqs", [])]}
+    positive = POSITIVE[kind]
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -74,28 +83,29 @@ def page(item, content, related, titles, units):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{escape(title)}</title>
 <meta name="description" content="{escape(desc)}">
-<link rel="canonical" href="{BASE}/construction/{escape(item["slug"])}/">
+<link rel="canonical" href="{BASE}/construction/{escape(item["slug"])}/"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><script type="application/ld+json">{json.dumps(faq_schema, separators=(',', ':'))}</script>
 <script type="application/ld+json">
 {{"@context":"https://schema.org","@type":"WebApplication","name":"{escape(title)}","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"{escape(desc)}"}}
 </script>
 <style>
-body{{font-family:system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.5}}
+*{{box-sizing:border-box}}body{{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:820px;margin:0 auto;padding:32px 20px;line-height:1.55;color:#17202a}}
 .card{{border:1px solid #ddd;border-radius:12px;padding:20px}}
 label{{display:block;margin:12px 0 4px}}.unit{{color:#667;font-size:.85rem}}input{{padding:10px;width:100%;box-sizing:border-box}}
-button{{margin-top:16px;padding:10px 16px;margin-right:8px}}#result{{margin-top:20px;font-size:1.3rem;font-weight:600}}
+button{{margin-top:16px;padding:11px 16px;margin-right:8px;border:1px solid #9aa5ae;border-radius:8px;background:#f5f7f9;font:inherit}}#result{{margin-top:18px;min-height:1.5em;font-size:1.25rem;font-weight:650}}details{{border-top:1px solid #e2e6ea;padding:12px 0}}summary{{cursor:pointer;font-weight:650}}.example{{background:#f7f9fb;border-left:4px solid #9aa5ae;padding:14px 16px;border-radius:6px}}@media(max-width:560px){{body{{padding:20px 14px}}.card{{padding:16px}}button{{width:100%;margin-right:0}}}}
 </style>
 </head>
 <body><main>
 <a href="/construction/">All construction calculators</a>
 <h1>{escape(title)}</h1><p>{escape(desc)}</p>
 <div class="card">{inputs}<button id="calculate">Calculate</button><button id="reset" type="button">Reset</button><div id="result" aria-live="polite"></div></div>
-<section><h2>How to use this calculator</h2><p>{escape(content.get("how", ""))}</p><h2>Example</h2><p>{escape(content.get("example", ""))}</p><h2>Tips</h2><ul>{tips}</ul></section><section><h2>Related calculators</h2><ul>{related_html}</ul><p><a href="/construction/">Browse all construction calculators</a></p></section><p>Use the same unit system for all dimensions. Results are estimates and should be checked against project specifications, local requirements, and manufacturer instructions.</p>
+<section><h2>Calculation example</h2><div class="example"><p><strong>Inputs:</strong> {escape(example_inputs)}</p><p><strong>Result:</strong> {escape(example_result)}</p><p>{escape(content.get("example", ""))}</p></div><h2>How to use this calculator</h2><p>{escape(content.get("how", ""))}</p><h2>Tips</h2><ul>{tips}</ul></section><section><h2>Frequently asked questions</h2>{faq_html}</section><section><h2>Related calculators</h2><ul>{related_html}</ul><p><a href="/construction/">Browse all construction calculators</a></p></section><p>Use the same unit system for all dimensions. Results are estimates and should be checked against project specifications, local requirements, and manufacturer instructions.</p>
 </main>
 <script>
 document.querySelector("#calculate").onclick=()=>{{
  const v=[...document.querySelectorAll("input")].map(x=>Number(x.value));
  const result=document.querySelector("#result");
- if(v.some(x=>!Number.isFinite(x)||x<0)){{result.textContent="Enter valid non-negative values.";return;}}
+ if(v.some(x=>!Number.isFinite(x)||x<0)){{result.textContent="Enter valid non-negative numbers.";return;}}
+ if(positive.some(i=>v[i]<=0)){{result.textContent="Enter values greater than zero for dimensions, quantities, prices, coverage, density or spacing.";return;}}
  {js}
 }};
 document.querySelector("#reset").onclick=()=>{{
@@ -110,10 +120,11 @@ def main():
     related=json.loads(RELATED.read_text(encoding="utf-8"))
     titles={x["slug"]: x["title"] for x in items}
     units=json.loads(UNITS.read_text(encoding="utf-8"))
+    faq={x["slug"]: x for x in json.loads(FAQ.read_text(encoding="utf-8"))}
     for item in items:
         out=SITE/item["slug"]/ "index.html"
         out.parent.mkdir(parents=True,exist_ok=True)
-        out.write_text(page(item, content.get(item["slug"], {}), related, titles, units),encoding="utf-8")
+        out.write_text(page(item, content.get(item["slug"], {}), related, titles, units, faq[item["slug"]]),encoding="utf-8")
 
 if __name__=="__main__":
     main()
