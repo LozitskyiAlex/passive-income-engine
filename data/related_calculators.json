@@ -1,3 +1,123 @@
 {
-  "concrete-volume":["concrete-bags","material-cost"],"concrete-bags":["concrete-volume","material-cost"],"gravel-volume":["gravel-weight","mulch-volume"],"mulch-volume":["gravel-volume","soil-volume"],"paint-quantity":["material-cost","flooring-quantity"],"flooring-quantity":["tile-quantity","material-cost"],"tile-quantity":["flooring-quantity","material-cost"],"drywall-sheets":["paint-quantity","material-cost"],"board-feet":["material-cost","decking-boards"],"material-cost":["concrete-volume","flooring-quantity","tile-quantity"],"paver-quantity":["sand-volume","gravel-volume"],"sand-volume":["paver-quantity","soil-volume"],"soil-volume":["sand-volume","mulch-volume"],"fence-pickets":["fence-posts","material-cost"],"fence-posts":["fence-pickets","decking-boards"],"decking-boards":["board-feet","material-cost"],"roofing-squares":["roofing-material","material-cost"],"roofing-material":["roofing-squares","material-cost"],"gravel-weight":["gravel-volume","material-cost"],"concrete-weight":["concrete-volume","material-cost"]
+  "concrete-volume": [
+    "concrete-bags",
+    "material-cost"
+  ],
+  "concrete-bags": [
+    "concrete-volume",
+    "material-cost"
+  ],
+  "gravel-volume": [
+    "gravel-weight",
+    "mulch-volume"
+  ],
+  "mulch-volume": [
+    "gravel-volume",
+    "soil-volume"
+  ],
+  "paint-quantity": [
+    "material-cost",
+    "flooring-quantity"
+  ],
+  "flooring-quantity": [
+    "tile-quantity",
+    "material-cost"
+  ],
+  "tile-quantity": [
+    "flooring-quantity",
+    "material-cost"
+  ],
+  "drywall-sheets": [
+    "paint-quantity",
+    "material-cost"
+  ],
+  "board-feet": [
+    "material-cost",
+    "decking-boards"
+  ],
+  "material-cost": [
+    "concrete-volume",
+    "flooring-quantity",
+    "tile-quantity"
+  ],
+  "paver-quantity": [
+    "sand-volume",
+    "gravel-volume"
+  ],
+  "sand-volume": [
+    "paver-quantity",
+    "soil-volume"
+  ],
+  "soil-volume": [
+    "sand-volume",
+    "mulch-volume"
+  ],
+  "fence-pickets": [
+    "fence-posts",
+    "material-cost"
+  ],
+  "fence-posts": [
+    "fence-pickets",
+    "decking-boards"
+  ],
+  "decking-boards": [
+    "board-feet",
+    "material-cost"
+  ],
+  "roofing-squares": [
+    "roofing-material",
+    "material-cost"
+  ],
+  "roofing-material": [
+    "roofing-squares",
+    "material-cost"
+  ],
+  "gravel-weight": [
+    "gravel-volume",
+    "material-cost"
+  ],
+  "concrete-weight": [
+    "concrete-volume",
+    "material-cost"
+  ],
+  "concrete-footing": [
+    "concrete-volume",
+    "concrete-weight"
+  ],
+  "rebar-length": [
+    "concrete-volume",
+    "material-cost"
+  ],
+  "gravel-bags": [
+    "gravel-volume",
+    "gravel-weight"
+  ],
+  "baseboard": [
+    "flooring-quantity",
+    "material-cost"
+  ],
+  "wallpaper": [
+    "paint-quantity",
+    "drywall-sheets"
+  ],
+  "stair-risers": [
+    "decking-boards",
+    "material-cost"
+  ],
+  "asphalt-volume": [
+    "material-cost",
+    "gravel-volume"
+  ],
+  "cubic-yards": [
+    "concrete-volume",
+    "gravel-volume"
+  ],
+  "area": [
+    "volume",
+    "flooring-quantity"
+  ],
+  "volume": [
+    "area",
+    "concrete-volume"
+  ]
 }
