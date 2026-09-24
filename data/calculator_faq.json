@@ -258,5 +258,135 @@
         "answer": "Use a density appropriate to the mix and entered units."
       }
     ]
+  },
+  {
+    "slug": "concrete-footing",
+    "faqs": [
+      {
+        "question": "How is footing volume calculated?",
+        "answer": "Length, width and depth are multiplied."
+      },
+      {
+        "question": "Does this design a footing?",
+        "answer": "No. It only estimates rectangular concrete volume."
+      }
+    ]
+  },
+  {
+    "slug": "rebar-length",
+    "faqs": [
+      {
+        "question": "How is total rebar length calculated?",
+        "answer": "Bar count is multiplied by length per bar."
+      },
+      {
+        "question": "Does it include laps and hooks?",
+        "answer": "No. Use the project bar schedule for final quantities."
+      }
+    ]
+  },
+  {
+    "slug": "gravel-bags",
+    "faqs": [
+      {
+        "question": "How are gravel bags estimated?",
+        "answer": "Required volume is divided by bag coverage and rounded up."
+      },
+      {
+        "question": "Where should bag coverage come from?",
+        "answer": "Use the coverage stated for the exact product."
+      }
+    ]
+  },
+  {
+    "slug": "baseboard",
+    "faqs": [
+      {
+        "question": "How are baseboard pieces estimated?",
+        "answer": "Total length is divided by piece length and rounded up."
+      },
+      {
+        "question": "Should door openings be subtracted?",
+        "answer": "Only if those openings will not receive baseboard."
+      }
+    ]
+  },
+  {
+    "slug": "wallpaper",
+    "faqs": [
+      {
+        "question": "How are wallpaper rolls estimated?",
+        "answer": "Wall area is divided by roll coverage and rounded up."
+      },
+      {
+        "question": "Can pattern repeats increase the quantity?",
+        "answer": "Yes. Pattern matching and cutting can increase waste."
+      }
+    ]
+  },
+  {
+    "slug": "stair-risers",
+    "faqs": [
+      {
+        "question": "How is riser count estimated?",
+        "answer": "Total rise is divided by planned riser height and rounded up."
+      },
+      {
+        "question": "Does this provide a code-compliant stair design?",
+        "answer": "No. Final stair dimensions should follow applicable requirements and the project design."
+      }
+    ]
+  },
+  {
+    "slug": "asphalt-volume",
+    "faqs": [
+      {
+        "question": "How is asphalt volume calculated?",
+        "answer": "Length, width and depth are multiplied."
+      },
+      {
+        "question": "Can asphalt ordering require weight instead?",
+        "answer": "Yes. Suppliers may quote asphalt by weight, so a density or supplier conversion may be needed."
+      }
+    ]
+  },
+  {
+    "slug": "cubic-yards",
+    "faqs": [
+      {
+        "question": "How many cubic feet are in a cubic yard?",
+        "answer": "One cubic yard contains 27 cubic feet."
+      },
+      {
+        "question": "What units should I enter?",
+        "answer": "Enter all dimensions in feet for this conversion."
+      }
+    ]
+  },
+  {
+    "slug": "area",
+    "faqs": [
+      {
+        "question": "How is rectangular area calculated?",
+        "answer": "Length is multiplied by width."
+      },
+      {
+        "question": "What if the shape is irregular?",
+        "answer": "Split it into simple shapes and add their areas."
+      }
+    ]
+  },
+  {
+    "slug": "volume",
+    "faqs": [
+      {
+        "question": "How is rectangular volume calculated?",
+        "answer": "Length, width and height are multiplied."
+      },
+      {
+        "question": "Can this calculate irregular shapes?",
+        "answer": "No. It assumes a rectangular shape."
+      }
+    ]
   }
 ]
