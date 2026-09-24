@@ -3,10 +3,10 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 
-def test_catalog_has_20_unique_slugs():
+def test_catalog_has_30_unique_slugs():
     items=json.loads((ROOT/"data"/"construction_calculators.json").read_text())
     slugs=[x["slug"] for x in items]
-    assert len(items)==20
+    assert len(items)==30
     assert len(slugs)==len(set(slugs))
 
 def test_required_fields_exist():
