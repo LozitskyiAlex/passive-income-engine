@@ -57,7 +57,7 @@ header{{margin-bottom:38px}}h1{{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1
 </style>
 </head>
 <body><main>
-<header><p class="small">Free tools for home improvement and construction projects</p><h1>Construction Calculators</h1><p>Estimate material quantities, project costs, areas and volumes directly in your browser. No account required.</p></header>
+<header><p class="small">Free tools for home improvement and construction projects</p><h1>Free Construction Calculators</h1><p>Estimate concrete, gravel, soil, flooring, roofing, fencing and other construction materials directly in your browser. No account required.</p></header><section><h2>Popular calculators</h2><p>Start with <a href="/construction/concrete-volume/">concrete volume</a>, <a href="/construction/gravel-volume/">gravel volume</a>, <a href="/construction/mulch-volume/">mulch</a>, <a href="/construction/paint-quantity/">paint</a> or <a href="/construction/roofing-squares/">roofing squares</a>.</p></section>
 {''.join(sections)}
 {"<section><h2>Other tools</h2><div class='grid'>" + legacy_html + "</div></section>" if legacy_html else ""}
 <footer><p class="small">Calculations are estimates. Check project specifications, local requirements and manufacturer instructions before purchasing materials.</p></footer>
