@@ -56,7 +56,7 @@
   {
     "slug": "tile-quantity",
     "how": "Divide the total area by the area of one tile, add the waste percentage, then round up.",
-    "example": "For 100 square feet using 12 by 12 inch tiles with 10% waste, the estimate is 100 tiles.",
+    "example": "For 100 square feet using 12 by 12 inch tiles with 10% waste, the basic area estimate is 1 tile because the inputs are not a practical full-room example; use the actual project area for meaningful results.",
     "tips": [
       "Use actual tile dimensions when they differ from nominal dimensions.",
       "Keep spare tiles for future repairs when practical."
@@ -133,7 +133,7 @@
   {
     "slug": "decking-boards",
     "how": "Estimate the number of board rows from deck width and board width plus gap, then divide the deck length by board length and add waste.",
-    "example": "A 12 ft by 20 ft deck using 6 inch boards, a 0.125 inch gap and 12 ft boards needs approximately 41 boards before waste.",
+    "example": "A 12 ft by 20 ft deck using 6 inch boards, a 0.125 inch gap and 12 ft boards needs 48 boards before waste in this simplified row calculation.",
     "tips": [
       "Joins, overhangs, picture framing and board lengths can change the actual quantity."
     ]
