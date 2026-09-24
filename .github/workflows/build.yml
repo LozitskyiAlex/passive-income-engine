@@ -13,6 +13,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      - run: python -m pip install --upgrade pip
+      - run: pip install -e ".[dev]"
+      - run: pytest
       - run: python scripts/build.py
       - run: python scripts/build_calculators.py
+      - run: python scripts/build_construction.py
       - run: find site -type f | sort
