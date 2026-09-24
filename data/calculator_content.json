@@ -1,12 +1,173 @@
 [
-  {"slug":"concrete-volume","how":"Multiply length by width by thickness. Keep all dimensions in the same unit.","example":"A 20 ft by 10 ft slab that is 0.5 ft thick needs 100 cubic feet of concrete.","tips":["Measure the actual thickness at several points.","Add a project-specific allowance for waste or uneven ground."]},
-  {"slug":"concrete-bags","how":"Divide the required concrete volume by the yield of one bag, then round up to a whole bag.","example":"If a project needs 10 cubic feet and each bag yields 0.6 cubic feet, you need 17 bags.","tips":["Use the yield printed on the exact bag product.","Buy enough bags to avoid a shortage during placement."]},
-  {"slug":"gravel-volume","how":"Multiply length by width by depth. Use consistent units for every measurement.","example":"A 20 ft by 10 ft area with 0.25 ft of gravel needs 50 cubic feet before any allowance.","tips":["Depth should represent the planned compacted or installed layer as appropriate.","Ask the supplier whether their quoted quantity is loose or compacted."]},
-  {"slug":"mulch-volume","how":"Multiply the garden area dimensions by the planned mulch depth.","example":"A 20 ft by 10 ft bed with a 0.25 ft depth needs 50 cubic feet of mulch.","tips":["Confirm the depth recommended for the type of mulch you use.","Account for settling if appropriate to the product."]},
-  {"slug":"paint-quantity","how":"Divide wall area by product coverage and multiply by the number of coats.","example":"For 800 square feet, 350 square feet of coverage per unit and two coats, the estimate is 4.57 units.","tips":["Use the manufacturer's stated coverage for your specific product.","Porous or rough surfaces can require more material."]},
-  {"slug":"flooring-quantity","how":"Multiply length by width to get area, then add the selected waste percentage.","example":"A 20 ft by 15 ft room is 300 square feet. With 10% waste, plan for 330 square feet.","tips":["Follow the flooring manufacturer's installation guidance for waste.","Irregular rooms and complex patterns may need a higher allowance."]},
-  {"slug":"tile-quantity","how":"Divide the total area by the area of one tile, add the waste percentage, then round up.","example":"For 100 square feet using 12 by 12 inch tiles with 10% waste, the estimate is 100 tiles.","tips":["Use actual tile dimensions when they differ from nominal dimensions.","Keep spare tiles for future repairs when practical."]},
-  {"slug":"drywall-sheets","how":"Estimate wall surface area from room dimensions and divide by the area of one sheet, then round up.","example":"A rectangular room with 20 ft length, 15 ft width and 8 ft walls has 560 square feet of wall area before deductions.","tips":["This basic calculator does not subtract doors or windows.","Ceilings, openings, layout, and local installation practices can change the final quantity."]},
-  {"slug":"board-feet","how":"Calculate board feet as thickness in inches multiplied by width in inches multiplied by length in feet, divided by 12, then multiply by quantity.","example":"A 2 by 6 board that is 8 ft long contains 8 board feet.","tips":["Use actual dimensions when pricing rough or surfaced lumber.","Supplier pricing may use different grading and measurement conventions."]},
-  {"slug":"material-cost","how":"Multiply quantity by unit price and then add the selected waste percentage.","example":"100 units at $4 each with 10% waste gives an estimated total of $440.","tips":["Use the current price for the exact product and unit.","Taxes, delivery, labor and other project costs are not included unless added separately."]}
+  {
+    "slug": "concrete-volume",
+    "how": "Multiply length by width by thickness. Keep all dimensions in the same unit.",
+    "example": "A 20 ft by 10 ft slab that is 0.5 ft thick needs 100 cubic feet of concrete.",
+    "tips": [
+      "Measure the actual thickness at several points.",
+      "Add a project-specific allowance for waste or uneven ground."
+    ]
+  },
+  {
+    "slug": "concrete-bags",
+    "how": "Divide the required concrete volume by the yield of one bag, then round up to a whole bag.",
+    "example": "If a project needs 10 cubic feet and each bag yields 0.6 cubic feet, you need 17 bags.",
+    "tips": [
+      "Use the yield printed on the exact bag product.",
+      "Buy enough bags to avoid a shortage during placement."
+    ]
+  },
+  {
+    "slug": "gravel-volume",
+    "how": "Multiply length by width by depth. Use consistent units for every measurement.",
+    "example": "A 20 ft by 10 ft area with 0.25 ft of gravel needs 50 cubic feet before any allowance.",
+    "tips": [
+      "Depth should represent the planned compacted or installed layer as appropriate.",
+      "Ask the supplier whether their quoted quantity is loose or compacted."
+    ]
+  },
+  {
+    "slug": "mulch-volume",
+    "how": "Multiply the garden area dimensions by the planned mulch depth.",
+    "example": "A 20 ft by 10 ft bed with a 0.25 ft depth needs 50 cubic feet of mulch.",
+    "tips": [
+      "Confirm the depth recommended for the type of mulch you use.",
+      "Account for settling if appropriate to the product."
+    ]
+  },
+  {
+    "slug": "paint-quantity",
+    "how": "Divide wall area by product coverage and multiply by the number of coats.",
+    "example": "For 800 square feet, 350 square feet of coverage per unit and two coats, the estimate is 4.57 units.",
+    "tips": [
+      "Use the manufacturer's stated coverage for your specific product.",
+      "Porous or rough surfaces can require more material."
+    ]
+  },
+  {
+    "slug": "flooring-quantity",
+    "how": "Multiply length by width to get area, then add the selected waste percentage.",
+    "example": "A 20 ft by 15 ft room is 300 square feet. With 10% waste, plan for 330 square feet.",
+    "tips": [
+      "Follow the flooring manufacturer's installation guidance for waste.",
+      "Irregular rooms and complex patterns may need a higher allowance."
+    ]
+  },
+  {
+    "slug": "tile-quantity",
+    "how": "Divide the total area by the area of one tile, add the waste percentage, then round up.",
+    "example": "For 100 square feet using 12 by 12 inch tiles with 10% waste, the estimate is 100 tiles.",
+    "tips": [
+      "Use actual tile dimensions when they differ from nominal dimensions.",
+      "Keep spare tiles for future repairs when practical."
+    ]
+  },
+  {
+    "slug": "drywall-sheets",
+    "how": "Estimate wall surface area from room dimensions and divide by the area of one sheet, then round up.",
+    "example": "A rectangular room with 20 ft length, 15 ft width and 8 ft walls has 560 square feet of wall area before deductions.",
+    "tips": [
+      "This basic calculator does not subtract doors or windows.",
+      "Ceilings, openings, layout, and local installation practices can change the final quantity."
+    ]
+  },
+  {
+    "slug": "board-feet",
+    "how": "Calculate board feet as thickness in inches multiplied by width in inches multiplied by length in feet, divided by 12, then multiply by quantity.",
+    "example": "A 2 by 6 board that is 8 ft long contains 8 board feet.",
+    "tips": [
+      "Use actual dimensions when pricing rough or surfaced lumber.",
+      "Supplier pricing may use different grading and measurement conventions."
+    ]
+  },
+  {
+    "slug": "material-cost",
+    "how": "Multiply quantity by unit price and then add the selected waste percentage.",
+    "example": "100 units at $4 each with 10% waste gives an estimated total of $440.",
+    "tips": [
+      "Use the current price for the exact product and unit.",
+      "Taxes, delivery, labor and other project costs are not included unless added separately."
+    ]
+  },
+  {
+    "slug": "paver-quantity",
+    "how": "Multiply the paved area by 144 to convert square feet to square inches, divide by the paver area, add waste, then round up.",
+    "example": "A 20 ft by 12 ft patio using 12 by 6 inch pavers with 5% waste needs about 504 pavers.",
+    "tips": [
+      "Use the actual paver dimensions.",
+      "Patterns and cutting can change the waste requirement."
+    ]
+  },
+  {
+    "slug": "sand-volume",
+    "how": "Multiply length by width by depth using consistent units.",
+    "example": "A 20 ft by 10 ft area with a 0.1 ft layer needs 20 cubic feet.",
+    "tips": [
+      "Confirm the planned layer depth and whether the supplier sells loose or compacted material."
+    ]
+  },
+  {
+    "slug": "soil-volume",
+    "how": "Multiply length by width by depth using consistent units.",
+    "example": "A 10 ft by 10 ft bed with a 0.5 ft depth needs 50 cubic feet of soil.",
+    "tips": [
+      "Account for settling and the finished grade when choosing an order quantity."
+    ]
+  },
+  {
+    "slug": "fence-pickets",
+    "how": "Convert fence length to inches and divide by the picket width plus the gap, then round up.",
+    "example": "A 100 ft fence with 5.5 inch pickets and a 1.5 inch gap needs 182 pickets.",
+    "tips": [
+      "Check the actual picket width and desired spacing before ordering."
+    ]
+  },
+  {
+    "slug": "fence-posts",
+    "how": "Divide fence length by planned post spacing, round up, then add one post for the starting position.",
+    "example": "A 100 ft fence at 8 ft spacing requires 14 posts.",
+    "tips": [
+      "Corners, gates and ends can require additional posts."
+    ]
+  },
+  {
+    "slug": "decking-boards",
+    "how": "Estimate the number of board rows from deck width and board width plus gap, then divide the deck length by board length and add waste.",
+    "example": "A 12 ft by 20 ft deck using 6 inch boards, a 0.125 inch gap and 12 ft boards needs approximately 41 boards before waste.",
+    "tips": [
+      "Joins, overhangs, picture framing and board lengths can change the actual quantity."
+    ]
+  },
+  {
+    "slug": "roofing-squares",
+    "how": "Divide roof surface area in square feet by 100.",
+    "example": "A 2,400 square foot roof surface equals 24 roofing squares.",
+    "tips": [
+      "Use measured roof surface area when available. A roofing square is 100 square feet. "
+    ]
+  },
+  {
+    "slug": "roofing-material",
+    "how": "Multiply roof area by one plus the selected waste percentage.",
+    "example": "A 2,400 square foot roof with 10% waste gives 2,640 square feet of estimated material.",
+    "tips": [
+      "Product coverage and installation details vary by roofing system."
+    ]
+  },
+  {
+    "slug": "gravel-weight",
+    "how": "Multiply volume by the bulk density expressed in compatible units.",
+    "example": "If 10 cubic units of gravel have a bulk density of 1.6 weight units per cubic unit, the estimate is 16 weight units.",
+    "tips": [
+      "Use the supplier's stated density for the specific material."
+    ]
+  },
+  {
+    "slug": "concrete-weight",
+    "how": "Multiply concrete volume by the density expressed in compatible units.",
+    "example": "If 10 cubic units of concrete have a density of 150 weight units per cubic unit, the estimate is 1,500 weight units.",
+    "tips": [
+      "Use a density compatible with the volume units you entered."
+    ]
+  }
 ]
