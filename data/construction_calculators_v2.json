@@ -1,0 +1,12 @@
+[
+{"slug":"paver-quantity","title":"Paver Calculator","description":"Estimate the number of pavers needed for an area.","type":"paver_quantity"},
+{"slug":"sand-volume","title":"Sand Calculator","description":"Calculate sand volume required for an area.","type":"sand_volume"},
+{"slug":"soil-volume","title":"Soil Calculator","description":"Calculate soil volume required for a garden or planting area.","type":"soil_volume"},
+{"slug":"fence-pickets","title":"Fence Picket Calculator","description":"Estimate the number of fence pickets needed for a straight fence run.","type":"fence_pickets"},
+{"slug":"fence-posts","title":"Fence Post Calculator","description":"Estimate the number of fence posts needed for a fence run.","type":"fence_posts"},
+{"slug":"decking-boards","title":"Decking Board Calculator","description":"Estimate decking board quantity for a rectangular deck.","type":"decking_boards"},
+{"slug":"roofing-squares","title":"Roofing Squares Calculator","description":"Calculate roofing squares from roof area.","type":"roofing_squares"},
+{"slug":"roofing-material","title":"Roofing Material Calculator","description":"Estimate roofing material area including a waste allowance.","type":"roofing_material"},
+{"slug":"gravel-weight","title":"Gravel Weight Calculator","description":"Estimate gravel weight from volume and bulk density.","type":"gravel_weight"},
+{"slug":"concrete-weight","title":"Concrete Weight Calculator","description":"Estimate concrete weight from volume and density.","type":"concrete_weight"}
+]
