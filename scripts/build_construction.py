@@ -20,6 +20,16 @@ FIELDS = {
     "drywall_sheets": ["Room Length", "Room Width", "Wall Height", "Sheet Length", "Sheet Width"],
     "board_feet": ["Thickness", "Width", "Length", "Quantity"],
     "material_cost": ["Quantity", "Unit Price", "Waste %"],
+    "paver_quantity": ["Area Length (ft)", "Area Width (ft)", "Paver Length (in)", "Paver Width (in)", "Waste %"],
+    "sand_volume": ["Length", "Width", "Depth"],
+    "soil_volume": ["Length", "Width", "Depth"],
+    "fence_pickets": ["Fence Length (ft)", "Picket Width (in)", "Gap (in)"],
+    "fence_posts": ["Fence Length (ft)", "Post Spacing (ft)"],
+    "decking_boards": ["Deck Length (ft)", "Deck Width (ft)", "Board Width (in)", "Gap (in)", "Board Length (ft)", "Waste %"],
+    "roofing_squares": ["Roof Area (sq ft)"],
+    "roofing_material": ["Roof Area (sq ft)", "Waste %"],
+    "gravel_weight": ["Volume", "Bulk Density"],
+    "concrete_weight": ["Volume", "Density"],
 }
 
 def formula_js(kind):
@@ -34,6 +44,16 @@ def formula_js(kind):
         "drywall_sheets": "return Math.ceil(((2*(v[0]+v[1])*v[2])/(v[3]*v[4])));",
         "board_feet": "return ((v[0]*v[1]*v[2]/12)*v[3]).toFixed(2) + ' board feet';",
         "material_cost": "return (v[0]*v[1]*(1+v[2]/100)).toFixed(2);",
+        "paver_quantity": "return Math.ceil(((v[0]*v[1])*144/(v[2]*v[3]))*(1+v[4]/100)) + ' pavers';",
+        "sand_volume": "return (v[0]*v[1]*v[2]).toFixed(3) + ' cubic units';",
+        "soil_volume": "return (v[0]*v[1]*v[2]).toFixed(3) + ' cubic units';",
+        "fence_pickets": "return Math.ceil((v[0]*12)/(v[1]+v[2])) + ' pickets';",
+        "fence_posts": "return Math.ceil(v[0]/v[1]) + 1 + ' posts';",
+        "decking_boards": "return Math.ceil(((v[0]*12)*v[1]*12/(v[2]+v[3]))/(v[4]*12)*(1+v[5]/100));",
+        "roofing_squares": "return (v[0]/100).toFixed(2) + ' roofing squares';",
+        "roofing_material": "return (v[0]*(1+v[1]/100)).toFixed(2) + ' sq ft';",
+        "gravel_weight": "return (v[0]*v[1]).toFixed(2) + ' weight units';",
+        "concrete_weight": "return (v[0]*v[1]).toFixed(2) + ' weight units';",
     }[kind]
 
 def page(item, content, related, titles):
