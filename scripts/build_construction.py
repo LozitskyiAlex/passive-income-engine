@@ -6,6 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "construction_calculators.json"
 CONTENT = ROOT / "data" / "calculator_content.json"
 RELATED = ROOT / "data" / "related_calculators.json"
+UNITS = ROOT / "data" / "calculator_units.json"
 SITE = ROOT / "site" / "construction"
 BASE = "https://passive-income-engine.oleksoleks07.workers.dev"
 
@@ -56,12 +57,13 @@ def formula_js(kind):
         "concrete_weight": "return (v[0]*v[1]).toFixed(2) + ' weight units';",
     }[kind]
 
-def page(item, content, related, titles):
+def page(item, content, related, titles, units):
     title, desc, kind = map(item.get, ["title","description","type"])
     tips = "".join(f"<li>{escape(t)}</li>" for t in content.get("tips", []))
     related_html = "".join(f"<li><a href=\"/construction/{escape(slug)}/\">{escape(titles.get(slug, slug))}</a></li>" for slug in related.get(item["slug"], []))
+    unit_list = units.get(kind, [""] * len(FIELDS[kind]))
     inputs = "".join(
-        f'<label>{escape(name)}<input id="v{i}" type="number" min="0" step="any" inputmode="decimal" required></label>'
+        f'<label>{escape(name)} <span class="unit">{escape(unit_list[i])}</span><input id="v{i}" type="number" min="0" step="any" inputmode="decimal" required></label>'
         for i, name in enumerate(FIELDS[kind])
     )
     js = formula_js(kind)
@@ -79,7 +81,7 @@ def page(item, content, related, titles):
 <style>
 body{{font-family:system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.5}}
 .card{{border:1px solid #ddd;border-radius:12px;padding:20px}}
-label{{display:block;margin:12px 0 4px}}input{{padding:10px;width:100%;box-sizing:border-box}}
+label{{display:block;margin:12px 0 4px}}.unit{{color:#667;font-size:.85rem}}input{{padding:10px;width:100%;box-sizing:border-box}}
 button{{margin-top:16px;padding:10px 16px}}#result{{margin-top:20px;font-size:1.3rem;font-weight:600}}
 </style>
 </head>
@@ -103,10 +105,11 @@ def main():
     content={x["slug"]: x for x in json.loads(CONTENT.read_text(encoding="utf-8"))}
     related=json.loads(RELATED.read_text(encoding="utf-8"))
     titles={x["slug"]: x["title"] for x in items}
+    units=json.loads(UNITS.read_text(encoding="utf-8"))
     for item in items:
         out=SITE/item["slug"]/ "index.html"
         out.parent.mkdir(parents=True,exist_ok=True)
-        out.write_text(page(item, content.get(item["slug"], {}), related, titles),encoding="utf-8")
+        out.write_text(page(item, content.get(item["slug"], {}), related, titles, units),encoding="utf-8")
 
 if __name__=="__main__":
     main()
