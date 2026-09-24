@@ -65,6 +65,8 @@ def test_generated_urls_match_catalog():
         assert page.exists()
         html = page.read_text()
         assert '<link rel="icon" href="/favicon.svg"' in html
+        assert "static.cloudflareinsights.com/beacon.min.js" in html
+        assert "aria-label=\"Breadcrumb\"" in html
         assert '"@type":"FAQPage"' in html
         assert 'Frequently asked questions' in html
         assert 'Enter values greater than zero' in html
