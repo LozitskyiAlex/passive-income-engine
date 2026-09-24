@@ -4,7 +4,7 @@ from math import ceil
 def calculate(kind: str, values: list[float]) -> float | int:
     if kind in {
         "concrete_volume", "gravel_volume", "mulch_volume", "sand_volume",
-        "soil_volume", "asphalt_volume", "cubic_yards", "area", "volume"
+        "soil_volume"
     }:
         return values[0] * values[1] * values[2] if kind not in {"area", "volume"} else values[0] * values[1] if kind == "area" else values[0] * values[1] * values[2]
     if kind == "concrete_bags":
