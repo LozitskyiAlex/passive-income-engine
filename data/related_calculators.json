@@ -1,0 +1,12 @@
+{
+  "concrete-volume":["concrete-bags","material-cost"],
+  "concrete-bags":["concrete-volume","material-cost"],
+  "gravel-volume":["mulch-volume","material-cost"],
+  "mulch-volume":["gravel-volume","material-cost"],
+  "paint-quantity":["material-cost","flooring-quantity"],
+  "flooring-quantity":["tile-quantity","material-cost"],
+  "tile-quantity":["flooring-quantity","material-cost"],
+  "drywall-sheets":["paint-quantity","material-cost"],
+  "board-feet":["material-cost","flooring-quantity"],
+  "material-cost":["concrete-volume","flooring-quantity","tile-quantity"]
+}
