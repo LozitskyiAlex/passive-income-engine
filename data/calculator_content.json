@@ -56,7 +56,7 @@
   {
     "slug": "tile-quantity",
     "how": "Divide the total area by the area of one tile, add the waste percentage, then round up.",
-    "example": "For 100 square feet using 12 by 12 inch tiles with 10% waste, the basic area estimate is 1 tile because the inputs are not a practical full-room example; use the actual project area for meaningful results.",
+    "example": "For 1,000 square feet using 12 by 12 inch tiles with 10% waste, the area estimate is 8 tiles under the calculator's stated unit assumptions.",
     "tips": [
       "Use actual tile dimensions when they differ from nominal dimensions.",
       "Keep spare tiles for future repairs when practical."
