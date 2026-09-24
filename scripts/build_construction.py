@@ -82,13 +82,13 @@ def page(item, content, related, titles, units):
 body{{font-family:system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.5}}
 .card{{border:1px solid #ddd;border-radius:12px;padding:20px}}
 label{{display:block;margin:12px 0 4px}}.unit{{color:#667;font-size:.85rem}}input{{padding:10px;width:100%;box-sizing:border-box}}
-button{{margin-top:16px;padding:10px 16px}}#result{{margin-top:20px;font-size:1.3rem;font-weight:600}}
+button{{margin-top:16px;padding:10px 16px;margin-right:8px}}#result{{margin-top:20px;font-size:1.3rem;font-weight:600}}
 </style>
 </head>
 <body><main>
 <a href="/construction/">All construction calculators</a>
 <h1>{escape(title)}</h1><p>{escape(desc)}</p>
-<div class="card">{inputs}<button id="calculate">Calculate</button><div id="result" aria-live="polite"></div></div>
+<div class="card">{inputs}<button id="calculate">Calculate</button><button id="reset" type="button">Reset</button><div id="result" aria-live="polite"></div></div>
 <section><h2>How to use this calculator</h2><p>{escape(content.get("how", ""))}</p><h2>Example</h2><p>{escape(content.get("example", ""))}</p><h2>Tips</h2><ul>{tips}</ul></section><section><h2>Related calculators</h2><ul>{related_html}</ul><p><a href="/construction/">Browse all construction calculators</a></p></section><p>Use the same unit system for all dimensions. Results are estimates and should be checked against project specifications, local requirements, and manufacturer instructions.</p>
 </main>
 <script>
@@ -97,6 +97,10 @@ document.querySelector("#calculate").onclick=()=>{{
  const result=document.querySelector("#result");
  if(v.some(x=>!Number.isFinite(x)||x<0)){{result.textContent="Enter valid non-negative values.";return;}}
  {js}
+}};
+document.querySelector("#reset").onclick=()=>{{
+ document.querySelectorAll("input").forEach(x=>x.value="");
+ document.querySelector("#result").textContent="";
 }};
 </script></body></html>"""
 
