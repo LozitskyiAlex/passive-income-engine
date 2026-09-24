@@ -118,5 +118,75 @@
     "title": "Concrete Weight Calculator",
     "description": "Estimate concrete weight from volume and density.",
     "type": "concrete_weight"
+  },
+  {
+    "slug": "concrete-footing",
+    "title": "Concrete Footing Calculator",
+    "description": "Estimate rectangular concrete footing volume.",
+    "type": "concrete_footing",
+    "category": "Concrete"
+  },
+  {
+    "slug": "rebar-length",
+    "title": "Rebar Length Calculator",
+    "description": "Estimate total rebar length from bar count and bar length.",
+    "type": "rebar_length",
+    "category": "Concrete"
+  },
+  {
+    "slug": "gravel-bags",
+    "title": "Gravel Bag Calculator",
+    "description": "Estimate the number of gravel bags needed from volume and bag coverage.",
+    "type": "gravel_bags",
+    "category": "Gravel & Soil"
+  },
+  {
+    "slug": "baseboard",
+    "title": "Baseboard Calculator",
+    "description": "Estimate the number of baseboard pieces needed for a room.",
+    "type": "baseboard",
+    "category": "Interior"
+  },
+  {
+    "slug": "wallpaper",
+    "title": "Wallpaper Roll Calculator",
+    "description": "Estimate wallpaper rolls from wall area and roll coverage.",
+    "type": "wallpaper",
+    "category": "Interior"
+  },
+  {
+    "slug": "stair-risers",
+    "title": "Stair Riser Calculator",
+    "description": "Estimate stair riser count from total rise and riser height.",
+    "type": "stair_risers",
+    "category": "Decking & Fencing"
+  },
+  {
+    "slug": "asphalt-volume",
+    "title": "Asphalt Calculator",
+    "description": "Estimate asphalt volume for a rectangular area.",
+    "type": "asphalt_volume",
+    "category": "Concrete"
+  },
+  {
+    "slug": "cubic-yards",
+    "title": "Cubic Yard Calculator",
+    "description": "Convert rectangular dimensions into cubic yards.",
+    "type": "cubic_yards",
+    "category": "General"
+  },
+  {
+    "slug": "area",
+    "title": "Area Calculator",
+    "description": "Calculate rectangular area from length and width.",
+    "type": "area",
+    "category": "General"
+  },
+  {
+    "slug": "volume",
+    "title": "Volume Calculator",
+    "description": "Calculate rectangular volume from length, width and height.",
+    "type": "volume",
+    "category": "General"
   }
 ]
