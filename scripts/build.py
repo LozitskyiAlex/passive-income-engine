@@ -39,7 +39,7 @@ def main() -> None:
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Free Construction Calculators</title>
 <meta name="description" content="Free construction and home project calculators for concrete, gravel, mulch, paint, flooring, tile, drywall, lumber and material costs.">
-<link rel="canonical" href="/">
+<link rel="canonical" href="https://passive-income-engine.oleksoleks07.workers.dev/"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>
 :root{{color-scheme:light}}
 body{{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:1000px;margin:0 auto;padding:48px 20px;line-height:1.6;color:#17202a;background:#fff}}
@@ -52,7 +52,7 @@ p{{color:#53606b}}
 .card a{{color:inherit;text-decoration:none}}
 .card a:hover{{text-decoration:underline}}
 .small{{font-size:.9rem;color:#687580}}
-footer{{margin-top:48px;border-top:1px solid #e5e7eb;padding-top:20px}}
+footer{{margin-top:48px;border-top:1px solid #e5e7eb;padding-top:20px}}@media(max-width:560px){{body{{padding:28px 14px}}.grid{{grid-template-columns:1fr}}}}
 </style>
 </head>
 <body>
