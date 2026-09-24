@@ -4,6 +4,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "construction_calculators.json"
+CONTENT = ROOT / "data" / "calculator_content.json"
 SITE = ROOT / "site" / "construction"
 BASE = "https://passive-income-engine.oleksoleks07.workers.dev"
 
@@ -34,8 +35,9 @@ def formula_js(kind):
         "material_cost": "return (v[0]*v[1]*(1+v[2]/100)).toFixed(2);",
     }[kind]
 
-def page(item):
+def page(item, content):
     title, desc, kind = map(item.get, ["title","description","type"])
+    tips = "".join(f"<li>{escape(t)}</li>" for t in content.get("tips", []))
     inputs = "".join(
         f'<label>{escape(name)}<input id="v{i}" type="number" min="0" step="any" inputmode="decimal" required></label>'
         for i, name in enumerate(FIELDS[kind])
@@ -63,7 +65,7 @@ button{{margin-top:16px;padding:10px 16px}}#result{{margin-top:20px;font-size:1.
 <a href="/construction/">All construction calculators</a>
 <h1>{escape(title)}</h1><p>{escape(desc)}</p>
 <div class="card">{inputs}<button id="calculate">Calculate</button><div id="result" aria-live="polite"></div></div>
-<p>Use the same unit system for all dimensions. For example, enter all dimensions in feet, or all dimensions in meters. Results are estimates and should be checked against project specifications, local requirements, and manufacturer instructions.</p>
+<section><h2>How to use this calculator</h2><p>{escape(content.get("how", ""))}</p><h2>Example</h2><p>{escape(content.get("example", ""))}</p><h2>Tips</h2><ul>{tips}</ul></section><p>Use the same unit system for all dimensions. Results are estimates and should be checked against project specifications, local requirements, and manufacturer instructions.</p>
 </main>
 <script>
 document.querySelector("#calculate").onclick=()=>{{
@@ -76,10 +78,11 @@ document.querySelector("#calculate").onclick=()=>{{
 
 def main():
     items=json.loads(DATA.read_text())
+    content={x["slug"]: x for x in json.loads(CONTENT.read_text(encoding="utf-8"))}
     for item in items:
         out=SITE/item["slug"]/ "index.html"
         out.parent.mkdir(parents=True,exist_ok=True)
-        out.write_text(page(item),encoding="utf-8")
+        out.write_text(page(item, content.get(item["slug"], {})),encoding="utf-8")
 
 if __name__=="__main__":
     main()
