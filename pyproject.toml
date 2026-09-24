@@ -1,0 +1,14 @@
+[project]
+name = "passive-income-engine"
+version = "0.1.0"
+description = "Zero-cost data driven static product engine"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<9",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
