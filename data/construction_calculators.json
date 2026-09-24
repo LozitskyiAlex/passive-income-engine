@@ -3,121 +3,141 @@
     "slug": "concrete-volume",
     "title": "Concrete Volume Calculator",
     "description": "Calculate concrete volume for a rectangular slab, footing, or pad.",
-    "type": "concrete_volume"
+    "type": "concrete_volume",
+    "category": "Concrete"
   },
   {
     "slug": "concrete-bags",
     "title": "Concrete Bag Calculator",
     "description": "Estimate the number of concrete bags needed for a project.",
-    "type": "concrete_bags"
+    "type": "concrete_bags",
+    "category": "Concrete"
   },
   {
     "slug": "gravel-volume",
     "title": "Gravel Calculator",
     "description": "Calculate the volume of gravel required for an area.",
-    "type": "gravel_volume"
+    "type": "gravel_volume",
+    "category": "Gravel & Soil"
   },
   {
     "slug": "mulch-volume",
     "title": "Mulch Calculator",
     "description": "Calculate the amount of mulch required for a garden area.",
-    "type": "mulch_volume"
+    "type": "mulch_volume",
+    "category": "Gravel & Soil"
   },
   {
     "slug": "paint-quantity",
     "title": "Paint Calculator",
     "description": "Estimate paint required from wall area, coverage and coats.",
-    "type": "paint_quantity"
+    "type": "paint_quantity",
+    "category": "Interior"
   },
   {
     "slug": "flooring-quantity",
     "title": "Flooring Calculator",
     "description": "Estimate flooring material including a waste allowance.",
-    "type": "flooring_quantity"
+    "type": "flooring_quantity",
+    "category": "Interior"
   },
   {
     "slug": "tile-quantity",
     "title": "Tile Calculator",
     "description": "Estimate the number of tiles required for a floor or wall.",
-    "type": "tile_quantity"
+    "type": "tile_quantity",
+    "category": "Interior"
   },
   {
     "slug": "drywall-sheets",
     "title": "Drywall Calculator",
     "description": "Estimate drywall sheets required from room dimensions.",
-    "type": "drywall_sheets"
+    "type": "drywall_sheets",
+    "category": "Interior"
   },
   {
     "slug": "board-feet",
     "title": "Board Feet Calculator",
     "description": "Calculate board feet from lumber dimensions and quantity.",
-    "type": "board_feet"
+    "type": "board_feet",
+    "category": "Lumber & Decking"
   },
   {
     "slug": "material-cost",
     "title": "Material Cost Calculator",
     "description": "Calculate total material cost from quantity, unit price and waste.",
-    "type": "material_cost"
+    "type": "material_cost",
+    "category": "General"
   },
   {
     "slug": "paver-quantity",
     "title": "Paver Calculator",
     "description": "Estimate the number of pavers needed for an area.",
-    "type": "paver_quantity"
+    "type": "paver_quantity",
+    "category": "Outdoor"
   },
   {
     "slug": "sand-volume",
     "title": "Sand Calculator",
     "description": "Calculate sand volume required for an area.",
-    "type": "sand_volume"
+    "type": "sand_volume",
+    "category": "Gravel & Soil"
   },
   {
     "slug": "soil-volume",
     "title": "Soil Calculator",
     "description": "Calculate soil volume required for a garden or planting area.",
-    "type": "soil_volume"
+    "type": "soil_volume",
+    "category": "Gravel & Soil"
   },
   {
     "slug": "fence-pickets",
     "title": "Fence Picket Calculator",
     "description": "Estimate the number of fence pickets needed for a straight fence run.",
-    "type": "fence_pickets"
+    "type": "fence_pickets",
+    "category": "Decking & Fencing"
   },
   {
     "slug": "fence-posts",
     "title": "Fence Post Calculator",
     "description": "Estimate the number of fence posts needed for a fence run.",
-    "type": "fence_posts"
+    "type": "fence_posts",
+    "category": "Decking & Fencing"
   },
   {
     "slug": "decking-boards",
     "title": "Decking Board Calculator",
     "description": "Estimate decking board quantity for a rectangular deck.",
-    "type": "decking_boards"
+    "type": "decking_boards",
+    "category": "Lumber & Decking"
   },
   {
     "slug": "roofing-squares",
     "title": "Roofing Squares Calculator",
     "description": "Calculate roofing squares from roof area.",
-    "type": "roofing_squares"
+    "type": "roofing_squares",
+    "category": "Roofing"
   },
   {
     "slug": "roofing-material",
     "title": "Roofing Material Calculator",
     "description": "Estimate roofing material area including a waste allowance.",
-    "type": "roofing_material"
+    "type": "roofing_material",
+    "category": "Roofing"
   },
   {
     "slug": "gravel-weight",
     "title": "Gravel Weight Calculator",
     "description": "Estimate gravel weight from volume and bulk density.",
-    "type": "gravel_weight"
+    "type": "gravel_weight",
+    "category": "Gravel & Soil"
   },
   {
     "slug": "concrete-weight",
     "title": "Concrete Weight Calculator",
     "description": "Estimate concrete weight from volume and density.",
-    "type": "concrete_weight"
+    "type": "concrete_weight",
+    "category": "Concrete"
   },
   {
     "slug": "concrete-footing",
