@@ -1,0 +1,262 @@
+[
+  {
+    "slug": "concrete-volume",
+    "faqs": [
+      {
+        "question": "What does this calculator estimate?",
+        "answer": "It estimates rectangular concrete volume from length, width and thickness."
+      },
+      {
+        "question": "What should I add beyond the calculated volume?",
+        "answer": "Allowances for waste, uneven subgrade and project conditions may be needed."
+      }
+    ]
+  },
+  {
+    "slug": "concrete-bags",
+    "faqs": [
+      {
+        "question": "How is the bag count calculated?",
+        "answer": "Required volume is divided by the yield of one bag and rounded up."
+      },
+      {
+        "question": "Should I use the yield printed on the bag?",
+        "answer": "Yes. Use the yield for the exact product."
+      }
+    ]
+  },
+  {
+    "slug": "gravel-volume",
+    "faqs": [
+      {
+        "question": "What does the result represent?",
+        "answer": "It estimates the volume of a rectangular gravel layer."
+      },
+      {
+        "question": "Does it include compaction?",
+        "answer": "No. Check supplier guidance for loose versus compacted quantities."
+      }
+    ]
+  },
+  {
+    "slug": "mulch-volume",
+    "faqs": [
+      {
+        "question": "How is mulch volume calculated?",
+        "answer": "Area is multiplied by planned mulch depth."
+      },
+      {
+        "question": "Can settling change the order quantity?",
+        "answer": "Yes. Product characteristics and settling can require an allowance."
+      }
+    ]
+  },
+  {
+    "slug": "paint-quantity",
+    "faqs": [
+      {
+        "question": "How is paint quantity estimated?",
+        "answer": "Wall area is divided by coverage per unit and multiplied by coats."
+      },
+      {
+        "question": "Why can actual use differ?",
+        "answer": "Coverage varies with product and surface conditions."
+      }
+    ]
+  },
+  {
+    "slug": "flooring-quantity",
+    "faqs": [
+      {
+        "question": "What does waste percentage do?",
+        "answer": "It increases base floor area by the selected allowance."
+      },
+      {
+        "question": "Is the waste percentage universal?",
+        "answer": "No. Follow manufacturer guidance and consider room shape and pattern."
+      }
+    ]
+  },
+  {
+    "slug": "tile-quantity",
+    "faqs": [
+      {
+        "question": "How are tiles counted?",
+        "answer": "Area is divided by tile area, waste is added, then the result is rounded up."
+      },
+      {
+        "question": "Should actual tile size be used?",
+        "answer": "Yes, when it differs from nominal dimensions."
+      }
+    ]
+  },
+  {
+    "slug": "drywall-sheets",
+    "faqs": [
+      {
+        "question": "What does this basic calculator include?",
+        "answer": "It estimates wall area for a rectangular room and divides by sheet area."
+      },
+      {
+        "question": "Are doors and windows subtracted?",
+        "answer": "No. Openings and installation practices can change the quantity."
+      }
+    ]
+  },
+  {
+    "slug": "board-feet",
+    "faqs": [
+      {
+        "question": "What is a board foot?",
+        "answer": "It is a lumber volume unit based on thickness, width and length."
+      },
+      {
+        "question": "Should actual dimensions be used?",
+        "answer": "Use actual dimensions when known."
+      }
+    ]
+  },
+  {
+    "slug": "material-cost",
+    "faqs": [
+      {
+        "question": "What does the total include?",
+        "answer": "It multiplies quantity by unit price and applies waste."
+      },
+      {
+        "question": "Are taxes and delivery included?",
+        "answer": "No. Add them separately when needed."
+      }
+    ]
+  },
+  {
+    "slug": "paver-quantity",
+    "faqs": [
+      {
+        "question": "How are pavers counted?",
+        "answer": "Area is converted to square inches, divided by paver area, increased by waste and rounded up."
+      },
+      {
+        "question": "Can patterns change the result?",
+        "answer": "Yes. Cuts and patterns can increase waste."
+      }
+    ]
+  },
+  {
+    "slug": "sand-volume",
+    "faqs": [
+      {
+        "question": "How is sand volume calculated?",
+        "answer": "Length, width and depth are multiplied."
+      },
+      {
+        "question": "Does it account for compaction?",
+        "answer": "No. Check supplier guidance."
+      }
+    ]
+  },
+  {
+    "slug": "soil-volume",
+    "faqs": [
+      {
+        "question": "How is soil volume calculated?",
+        "answer": "Length, width and depth are multiplied."
+      },
+      {
+        "question": "Should settling be considered?",
+        "answer": "Yes. Finished grade and settling can affect order quantity."
+      }
+    ]
+  },
+  {
+    "slug": "fence-pickets",
+    "faqs": [
+      {
+        "question": "How are pickets counted?",
+        "answer": "Fence length is divided by picket width plus gap and rounded up."
+      },
+      {
+        "question": "Do gates affect this result?",
+        "answer": "This basic calculator models a straight run only."
+      }
+    ]
+  },
+  {
+    "slug": "fence-posts",
+    "faqs": [
+      {
+        "question": "How are posts estimated?",
+        "answer": "Fence length is divided by spacing, rounded up, and one starting post is added."
+      },
+      {
+        "question": "Are extra posts needed?",
+        "answer": "Corners, ends and gates can require additional posts."
+      }
+    ]
+  },
+  {
+    "slug": "decking-boards",
+    "faqs": [
+      {
+        "question": "How are decking boards estimated?",
+        "answer": "Board rows are estimated from deck width and board plus gap, then boards per row from deck length and board length."
+      },
+      {
+        "question": "Does it include waste?",
+        "answer": "Yes. The selected waste percentage is applied."
+      }
+    ]
+  },
+  {
+    "slug": "roofing-squares",
+    "faqs": [
+      {
+        "question": "What is a roofing square?",
+        "answer": "One roofing square represents 100 square feet of roof surface."
+      },
+      {
+        "question": "Does it measure roof slope?",
+        "answer": "No. Enter actual roof surface area."
+      }
+    ]
+  },
+  {
+    "slug": "roofing-material",
+    "faqs": [
+      {
+        "question": "What does waste percentage represent?",
+        "answer": "It adds an allowance to roof surface area."
+      },
+      {
+        "question": "Is one waste percentage right for every roof?",
+        "answer": "No. Roof geometry and system can change the allowance."
+      }
+    ]
+  },
+  {
+    "slug": "gravel-weight",
+    "faqs": [
+      {
+        "question": "How is gravel weight estimated?",
+        "answer": "Volume is multiplied by bulk density in compatible units."
+      },
+      {
+        "question": "Why can supplier weight differ?",
+        "answer": "Bulk density varies with material and moisture."
+      }
+    ]
+  },
+  {
+    "slug": "concrete-weight",
+    "faqs": [
+      {
+        "question": "How is concrete weight estimated?",
+        "answer": "Volume is multiplied by density in compatible units."
+      },
+      {
+        "question": "Should density be product specific?",
+        "answer": "Use a density appropriate to the mix and entered units."
+      }
+    ]
+  }
+]
