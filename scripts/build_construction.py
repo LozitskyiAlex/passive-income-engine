@@ -102,7 +102,7 @@ def page(item, content, related, titles, units, faq):
 <title>{escape(title)}</title><meta name="description" content="{escape(desc)}"><link rel="canonical" href="{BASE}/construction/{escape(item["slug"])}/">
 <meta property="og:type" content="website"><meta property="og:title" content="{escape(title)}"><meta property="og:description" content="{escape(desc)}"><meta property="og:url" content="{BASE}/construction/{escape(item["slug"])}/">
 <meta name="twitter:card" content="summary"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"f5f27f5b7b9b45f3b74c48e6f44b56c0"}'></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{{"token":"f5f27f5b7b9b45f3b74c48e6f44b56c0"}}'></script>
 <script type="application/ld+json">{json.dumps(faq_schema,separators=(',',':'))}</script>
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{{"@type":"ListItem","position":1,"name":"Home","item":"{BASE}/"}},{{"@type":"ListItem","position":2,"name":"Construction Calculators","item":"{BASE}/construction/"}},{{"@type":"ListItem","position":3,"name":"{escape(title)}","item":"{BASE}/construction/{escape(item["slug"])}/"}}]}}</script>
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"WebApplication","name":"{escape(title)}","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"{escape(desc)}"}}</script>
