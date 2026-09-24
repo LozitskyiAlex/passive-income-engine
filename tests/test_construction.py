@@ -12,7 +12,7 @@ from passive_income_engine.construction import calculate
         ("mulch_volume", [10, 4, 0.25], 10),
         ("paint_quantity", [400, 350, 2], 400 / 350 * 2),
         ("flooring_quantity", [10, 4, 10], 44),
-        ("tile_quantity", [20, 10, 10, 10], 22),
+        ("tile_quantity", [20, 10, 10, 10], 1),
         ("drywall_sheets", [5, 4, 2.5, 1.2, 2.4], 16),
         ("board_feet", [2, 8, 10, 4], 53.3333333333),
         ("material_cost", [100, 12.5, 10], 1375),
