@@ -23,6 +23,14 @@ def main():
         )
         sections.append(f"<h2>{escape(category)}</h2><div class='grid'>{cards}</div>")
 
+    breadcrumb_schema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{BASE}/"},
+            {"@type": "ListItem", "position": 2, "name": "Construction Calculators", "item": f"{BASE}/construction/"},
+        ],
+    }
     schema_items = ",".join(
         f'{{"@type":"ListItem","position":{n},"name":{json.dumps(i["title"])},"url":"{BASE}/construction/{i["slug"]}/"}}'
         for n, i in enumerate(items, 1)
@@ -42,6 +50,7 @@ def main():
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{{"token":"f5f27f5b7b9b45f3b74c48e6f44b56c0"}}'></script>
 <style>*{{box-sizing:border-box}}body{{font-family:system-ui,sans-serif;max-width:1050px;margin:40px auto;padding:0 20px;line-height:1.6;color:#17202a}}.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:14px}}article{{border:1px solid #ddd;border-radius:12px;padding:18px}}a{{color:inherit}}.small{{color:#5f6b75}}@media(max-width:560px){{body{{padding:20px 14px}}.grid{{grid-template-columns:1fr}}}}</style></head>
 <body><nav aria-label="Breadcrumb"><a href="/">Home</a> / Construction Calculators</nav><h1>Construction Calculators</h1><p class="small">Free browser based tools for estimating materials, quantities and basic project costs. Choose a calculator by project type or material.</p><p><strong>Popular:</strong> <a href="/construction/concrete-volume/">Concrete</a> · <a href="/construction/gravel-volume/">Gravel</a> · <a href="/construction/roofing-squares/">Roofing</a> · <a href="/construction/fence-pickets/">Fencing</a></p>{''.join(sections)}<h2>Practical Guides</h2><div class='grid'>{guide_cards}</div>
+<script type="application/ld+json">{json.dumps(breadcrumb_schema,separators=(",",":"))}</script>
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"CollectionPage","name":"Construction Calculators","url":"{BASE}/construction/","mainEntity":{{"@type":"ItemList","numberOfItems":{len(items)},"itemListElement":[{schema_items}]}}}}</script>
 </body></html>"""
     OUT.write_text(html, encoding="utf-8")
