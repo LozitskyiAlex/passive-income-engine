@@ -21,4 +21,24 @@ jobs:
       - run: python scripts/build_construction.py
       - run: python scripts/build_construction_index.py
       - run: python scripts/build_seo.py
+      - run: echo "$GITHUB_SHA" > site/deployment-version.txt
       - run: find site -type f | sort
+
+      - name: Wait for Cloudflare deployment
+        env:
+          DEPLOYMENT_URL: https://passive-income-engine.oleksoleks07.workers.dev
+        run: |
+          set -e
+          for i in $(seq 1 36); do
+            if curl -fsS --max-time 10 "$DEPLOYMENT_URL/deployment-version.txt?sha=$GITHUB_SHA" | grep -Fxq "$GITHUB_SHA"; then
+              echo "Cloudflare deployment confirmed for $GITHUB_SHA"
+              exit 0
+            fi
+            echo "Waiting for Cloudflare deployment ($i/36)..."
+            sleep 10
+          done
+          echo "Cloudflare deployment was not confirmed within 6 minutes."
+          exit 1
+
+      - name: Submit sitemap to IndexNow
+        run: python scripts/submit_indexnow.py
