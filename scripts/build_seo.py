@@ -9,6 +9,7 @@ SITE = ROOT / "site"
 DATA = ROOT / "data" / "construction_calculators.json"
 GUIDES = ROOT / "data" / "guides.json"
 BASE = "https://passive-income-engine.oleksoleks07.workers.dev"
+INDEXNOW_KEY = "1bd47cdd1ffc5c4b2caa7e4d4cc3397c"
 
 
 def build_guide(guide):
@@ -89,6 +90,7 @@ def main():
         "User-agent: *\nAllow: /\nSitemap: " + BASE + "/sitemap.xml\n",
         encoding="utf-8",
     )
+    (SITE / "indexnow-key.txt").write_text(INDEXNOW_KEY + "\n", encoding="utf-8")
 
     for guide in guides:
         out = SITE / "guides" / guide["slug"] / "index.html"
