@@ -20,7 +20,6 @@ def main():
     payload = {
         "host": "passive-income-engine.oleksoleks07.workers.dev",
         "key": KEY,
-        "keyLocation": BASE + "/indexnow-key.txt",
         "urlList": urls,
     }
 
@@ -31,8 +30,12 @@ def main():
         method="POST",
     )
 
-    with urllib.request.urlopen(req, timeout=20) as response:
-        print(f"IndexNow: submitted {len(urls)} URLs, HTTP {response.status}")
+    try:
+        with urllib.request.urlopen(req, timeout=20) as response:
+            print(f"IndexNow: submitted {len(urls)} URLs, HTTP {response.status}")
+    except urllib.error.HTTPError as exc:
+        body = exc.read().decode("utf-8", errors="replace")
+        raise SystemExit(f"IndexNow: HTTP {exc.code}: {body}") from exc
 
 
 if __name__ == "__main__":
