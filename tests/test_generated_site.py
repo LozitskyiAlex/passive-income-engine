@@ -80,6 +80,10 @@ def test_generated_urls_match_catalog():
         assert guide["title"] in html
         assert guide["formula"] in html
         assert 'aria-label="Breadcrumb"' in html
+        assert '"@type":"BreadcrumbList"' in html
+        assert '"@type":"Article"' in html
+        assert '<link rel="canonical"' in html
+        assert '<meta name="description"' in html
         if guide.get("calculator_slug"):
             assert f'/construction/{guide["calculator_slug"]}/' in html
 
@@ -93,6 +97,10 @@ def test_faq_covers_all_calculators():
 
 def test_favicon_exists():
     assert (SITE / "favicon.svg").exists()
+    robots = (SITE / "robots.txt").read_text()
+    assert "User-agent: *" in robots
+    assert "Allow: /" in robots
+    assert "Sitemap: " + BASE + "/sitemap.xml" in robots
 
 
 
