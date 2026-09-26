@@ -42,3 +42,4 @@ jobs:
 
       - name: Submit sitemap to IndexNow
         run: python scripts/submit_indexnow.py
+      # IndexNow runs only after the deployed commit is verified.
