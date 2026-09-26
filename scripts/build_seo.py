@@ -1,4 +1,5 @@
 import json
+import os
 from html import escape
 from pathlib import Path
 from xml.sax.saxutils import escape as xml_escape
@@ -54,7 +55,8 @@ def build_guide(guide):
 <script type="application/ld+json">{json.dumps(schema,separators=(",",":"))}</script>
 <script type="application/ld+json">{json.dumps(breadcrumb_schema,separators=(",",":"))}</script>
 <style>
-*{{box-sizing:border-box}}body{{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:820px;margin:0 auto;padding:32px 20px;line-height:1.65;color:#17202a}}h1{{line-height:1.2}}h2{{margin-top:30px}}.formula,.example{{padding:16px;border:1px solid #d9dee3;border-radius:10px;background:#f7f9fb}}.formula{{font-weight:650}}li{{margin:8px 0}}.small{{color:#5d6872}}@media(max-width:560px){{body{{padding:20px 14px}}}}</style>
+*{{box-sizing:border-box}}body{{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:820px;margin:0 auto;padding:32px 20px;line-height:1.65;color:#17202a}}h1{{line-height:1.2}}h2{{margin-top:30px}}.formula,.example{{padding:16px;border:1px solid #d9dee3;border-radius:10px;background:#f7f9fb}}.formula{{font-weight:650}}li{{margin:8px 0}}.small{{color:#5d6872}}@media(max-width:560px){{body{{padding:20px 14px}}}}
+</style>
 </head>
 <body>
 <main>
@@ -105,6 +107,10 @@ def main():
         "</urlset>\n"
     )
     (SITE / "sitemap.xml").write_text(sitemap, encoding="utf-8")
+
+    commit_sha = os.environ.get("WORKERS_CI_COMMIT_SHA") or os.environ.get("GITHUB_SHA")
+    if commit_sha:
+        (SITE / "deployment-version.txt").write_text(commit_sha + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":
