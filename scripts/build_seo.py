@@ -9,8 +9,7 @@ SITE = ROOT / "site"
 DATA = ROOT / "data" / "construction_calculators.json"
 GUIDES = ROOT / "data" / "guides.json"
 BASE = "https://passive-income-engine.oleksoleks07.workers.dev"
-INDEXNOW_KEY = "1bd47cdd1ffc5c4b2caa7e4d4cc3397c"
-
+INDEXNOW_KEY = "00800de33f7d4649b742eaac38d8a68b"
 
 def build_guide(guide):
     steps = "".join(f"<li>{escape(x)}</li>" for x in guide["steps"])
@@ -80,27 +79,22 @@ def build_guide(guide):
 </body>
 </html>'''
 
-
 def main():
     SITE.mkdir(parents=True, exist_ok=True)
     items = json.loads(DATA.read_text(encoding="utf-8"))
     guides = json.loads(GUIDES.read_text(encoding="utf-8"))
-
     (SITE / "robots.txt").write_text(
         "User-agent: *\nAllow: /\nSitemap: " + BASE + "/sitemap.xml\n",
         encoding="utf-8",
     )
     (SITE / "indexnow-key.txt").write_text(INDEXNOW_KEY + "\n", encoding="utf-8")
-
     for guide in guides:
         out = SITE / "guides" / guide["slug"] / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(build_guide(guide), encoding="utf-8")
-
     urls = ["/", "/construction/"]
     urls += [f'/construction/{i["slug"]}/' for i in items]
     urls += [f'/guides/{g["slug"]}/' for g in guides]
-
     body = "\n".join(f"  <url><loc>{xml_escape(BASE + u)}</loc></url>" for u in urls)
     sitemap = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -109,11 +103,9 @@ def main():
         "</urlset>\n"
     )
     (SITE / "sitemap.xml").write_text(sitemap, encoding="utf-8")
-
     commit_sha = os.environ.get("WORKERS_CI_COMMIT_SHA") or os.environ.get("GITHUB_SHA")
     if commit_sha:
         (SITE / "deployment-version.txt").write_text(commit_sha + "\n", encoding="utf-8")
-
 
 if __name__ == "__main__":
     main()
