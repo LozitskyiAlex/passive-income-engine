@@ -1,0 +1,166 @@
+[
+  {
+    "slug": "how-to-calculate-concrete-volume",
+    "title": "How to Calculate Concrete Volume for a Slab",
+    "description": "Learn how to estimate concrete volume for a rectangular slab using length, width and thickness, with a practical example.",
+    "intro": "To estimate concrete for a rectangular slab, multiply the slab length by its width and thickness. Keep all three dimensions in compatible units.",
+    "steps": [
+      "Measure the slab length and width.",
+      "Measure the slab thickness.",
+      "Multiply length × width × thickness to get the required volume.",
+      "Add an allowance for waste or uneven conditions when you turn the estimate into a purchasing quantity."
+    ],
+    "formula": "Concrete volume = length × width × thickness.",
+    "example": "For a 20 ft × 10 ft slab that is 0.5 ft thick, the calculation is 20 × 10 × 0.5 = 100 cubic feet.",
+    "notes": [
+      "Do not mix feet and inches without converting them first.",
+      "The calculator gives a geometric estimate. Actual orders can depend on site conditions, forms, slopes and supplier requirements.",
+      "For bagged concrete, use the concrete bag calculator after determining the required volume."
+    ],
+    "calculator_slug": "concrete-volume"
+  },
+  {
+    "slug": "how-to-calculate-gravel-volume",
+    "title": "How to Calculate How Much Gravel You Need",
+    "description": "Calculate gravel volume for driveways, paths and other rectangular areas from length, width and depth.",
+    "intro": "For a simple rectangular area, gravel volume is calculated from length, width and depth. The result is a volume estimate that can then be converted to bags, cubic yards or weight using supplier-specific information.",
+    "steps": [
+      "Measure the length of the area.",
+      "Measure the width.",
+      "Choose the planned gravel depth.",
+      "Multiply length × width × depth.",
+      "Convert the result to the purchasing unit used by your supplier."
+    ],
+    "formula": "Gravel volume = length × width × depth.",
+    "example": "A 20 ft × 10 ft area at 0.25 ft depth requires 20 × 10 × 0.25 = 50 cubic feet of volume.",
+    "notes": [
+      "Keep every dimension in the same unit.",
+      "Compaction and settling can change the amount you need to order.",
+      "If buying by weight, use the supplier's bulk density rather than assuming a universal value."
+    ],
+    "calculator_slug": "gravel-volume"
+  },
+  {
+    "slug": "how-to-calculate-mulch",
+    "title": "How to Calculate How Much Mulch You Need",
+    "description": "Estimate mulch volume for garden beds using bed length, width and target depth.",
+    "intro": "Mulch is normally estimated from the area of the bed and the planned depth. The calculation is simple, but the depth must be expressed in the same unit as the length and width.",
+    "steps": [
+      "Measure the bed length and width.",
+      "Decide on the target mulch depth.",
+      "Convert the depth to the same unit used for the other dimensions.",
+      "Multiply length × width × depth.",
+      "Convert the volume into the bag or bulk unit sold by your supplier."
+    ],
+    "formula": "Mulch volume = length × width × depth.",
+    "example": "A 20 ft × 10 ft bed with 0.25 ft of mulch requires 50 cubic feet.",
+    "notes": [
+      "Irregular beds can be divided into smaller rectangles and calculated separately.",
+      "Freshly spread material can settle, so the purchased quantity may need a practical allowance.",
+      "Do not use a bag coverage number from one product for another product without checking its label."
+    ],
+    "calculator_slug": "mulch-volume"
+  },
+  {
+    "slug": "how-to-calculate-flooring-quantity",
+    "title": "How to Calculate Flooring Material Needed",
+    "description": "Estimate flooring material from room dimensions and include a waste allowance for cuts and installation.",
+    "intro": "Flooring estimates start with the floor area. A waste percentage can then be added to account for cuts, layout and damaged pieces.",
+    "steps": [
+      "Measure the room length and width.",
+      "Calculate floor area by multiplying length × width.",
+      "Choose a realistic waste allowance for the installation.",
+      "Multiply the area by 1 + waste percentage divided by 100.",
+      "Round up to the package quantity required by the product."
+    ],
+    "formula": "Required flooring = length × width × (1 + waste% ÷ 100).",
+    "example": "For a 20 ft × 15 ft room with 10% waste, the estimate is 20 × 15 × 1.10 = 330 square feet.",
+    "notes": [
+      "Complex room shapes should be split into simpler areas.",
+      "Follow the flooring manufacturer's installation guidance for expansion gaps and layout.",
+      "Package sizes differ, so the final purchase quantity may need to be rounded to full boxes."
+    ],
+    "calculator_slug": "flooring-quantity"
+  },
+  {
+    "slug": "how-to-calculate-pavers",
+    "title": "How to Calculate How Many Pavers You Need",
+    "description": "Estimate paver quantity from the project area, paver dimensions and a waste allowance.",
+    "intro": "Paver quantity depends on both the area being covered and the face dimensions of each paver. A waste allowance helps account for cuts and breakage.",
+    "steps": [
+      "Measure the project length and width.",
+      "Calculate the project area.",
+      "Measure the paver length and width.",
+      "Convert paver dimensions to compatible units.",
+      "Divide project area by the area of one paver and add the selected waste allowance."
+    ],
+    "formula": "Pavers = project area ÷ paver area × (1 + waste% ÷ 100).",
+    "example": "For a 20 ft × 12 ft area using 12 in × 6 in pavers with 5% waste, the estimate is 504 pavers.",
+    "notes": [
+      "Actual counts can change with the laying pattern and edge cuts.",
+      "Include the joint pattern and manufacturer's installation requirements when planning the layout.",
+      "For complex shapes, calculate separate sections rather than relying on one rectangle."
+    ],
+    "calculator_slug": "paver-quantity"
+  },
+  {
+    "slug": "how-to-calculate-roofing-squares",
+    "title": "How to Calculate Roofing Squares",
+    "description": "Learn how roofing squares are calculated from roof area and how to use the result for material planning.",
+    "intro": "A roofing square is a unit equal to 100 square feet of roof area. Start with the roof area in square feet, then divide by 100.",
+    "steps": [
+      "Estimate or measure the roof surface area.",
+      "Use the actual roof surface area rather than the footprint of the building.",
+      "Divide the square-foot area by 100.",
+      "Add the material allowance required for cuts, overlaps and the specific roofing product."
+    ],
+    "formula": "Roofing squares = roof area in square feet ÷ 100.",
+    "example": "A roof area of 2,400 square feet equals 24 roofing squares before any additional material allowance.",
+    "notes": [
+      "Roof geometry can make the surface area larger than the building footprint.",
+      "Different roofing products have different coverage and waste requirements.",
+      "Use manufacturer installation instructions and local requirements when converting squares into purchased materials."
+    ],
+    "calculator_slug": "roofing-squares"
+  },
+  {
+    "slug": "how-to-calculate-fence-posts",
+    "title": "How to Calculate Fence Posts",
+    "description": "Estimate the number of fence posts from total fence length and planned post spacing.",
+    "intro": "For a straight fence, a simple estimate divides total fence length by the planned post spacing and adds one post for the endpoint. Gates, corners and changes in direction require additional planning.",
+    "steps": [
+      "Measure the total fence run.",
+      "Choose the planned post spacing.",
+      "Divide fence length by post spacing.",
+      "Round the number of intervals up.",
+      "Add one endpoint post for a simple straight run."
+    ],
+    "formula": "Estimated posts = ceiling(fence length ÷ spacing) + 1.",
+    "example": "For 100 ft of straight fence with 8 ft spacing, the estimate is ceiling(100 ÷ 8) + 1 = 14 posts.",
+    "notes": [
+      "Corners, gates and ends can require additional posts.",
+      "Post spacing depends on fence design, materials, wind exposure and local requirements.",
+      "Treat the calculator as an estimating tool rather than a structural design."
+    ],
+    "calculator_slug": "fence-posts"
+  },
+  {
+    "slug": "cubic-yards-vs-cubic-feet",
+    "title": "Cubic Yards vs Cubic Feet: How to Convert",
+    "description": "Understand the relationship between cubic feet and cubic yards and convert construction material volumes correctly.",
+    "intro": "Construction materials are often sold by cubic yard while measurements may be taken in feet. Since one yard contains three feet in each dimension, one cubic yard contains 27 cubic feet.",
+    "steps": [
+      "Calculate the volume in cubic feet when your dimensions are in feet.",
+      "Divide cubic feet by 27 to convert to cubic yards.",
+      "Round the purchasing quantity according to the supplier's ordering rules."
+    ],
+    "formula": "Cubic yards = cubic feet ÷ 27.",
+    "example": "A volume of 27 cubic feet equals 1 cubic yard.",
+    "notes": [
+      "Do not divide a linear measurement by 27; the conversion applies to cubic volume.",
+      "Keep the unit system consistent before calculating volume.",
+      "Supplier coverage and delivery quantities can differ from the mathematical estimate."
+    ],
+    "calculator_slug": "cubic-yards"
+  }
+]
