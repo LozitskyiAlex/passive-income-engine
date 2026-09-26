@@ -27,6 +27,15 @@ def build_guide(guide):
         "author": {"@type": "Organization", "name": "Free Construction Calculators"},
         "publisher": {"@type": "Organization", "name": "Free Construction Calculators"},
     }
+    breadcrumb_schema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{BASE}/"},
+            {"@type": "ListItem", "position": 2, "name": "Construction Calculators", "item": f"{BASE}/construction/"},
+            {"@type": "ListItem", "position": 3, "name": guide["title"], "item": f"{BASE}/guides/{guide['slug']}/"},
+        ],
+    }
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -43,6 +52,7 @@ def build_guide(guide):
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{{"token":"f5f27f5b7b9b45f3b74c48e6f44b56c0"}}'></script>
 <script type="application/ld+json">{json.dumps(schema,separators=(",",":"))}</script>
+<script type="application/ld+json">{json.dumps(breadcrumb_schema,separators=(",",":"))}</script>
 <style>
 *{{box-sizing:border-box}}body{{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:820px;margin:0 auto;padding:32px 20px;line-height:1.65;color:#17202a}}h1{{line-height:1.2}}h2{{margin-top:30px}}.formula,.example{{padding:16px;border:1px solid #d9dee3;border-radius:10px;background:#f7f9fb}}.formula{{font-weight:650}}li{{margin:8px 0}}.small{{color:#5d6872}}@media(max-width:560px){{body{{padding:20px 14px}}}}</style>
 </head>
