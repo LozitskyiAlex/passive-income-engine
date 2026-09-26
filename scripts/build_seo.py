@@ -87,7 +87,8 @@ def main():
         "User-agent: *\nAllow: /\nSitemap: " + BASE + "/sitemap.xml\n",
         encoding="utf-8",
     )
-    (SITE / "indexnow-key.txt").write_text(INDEXNOW_KEY + "\n", encoding="utf-8")
+    (SITE / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
+    (SITE / "indexnow-key.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
     for guide in guides:
         out = SITE / "guides" / guide["slug"] / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
