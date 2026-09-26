@@ -46,6 +46,13 @@ jobs:
           KEY_URL: https://passive-income-engine.oleksoleks07.workers.dev/00800de33f7d4649b742eaac38d8a68b.txt
         run: |
           set -e
+          test -f "site/$KEY.txt"
+          local_body="$(cat "site/$KEY.txt")"
+          if [ "$local_body" != "$KEY" ]; then
+            echo "Generated IndexNow key file content mismatch."
+            printf 'Generated: <%s>\n' "$local_body"
+            exit 1
+          fi
           body="$(curl -fsS --max-time 10 "$KEY_URL?sha=$GITHUB_SHA")"
           if [ "$body" != "$KEY" ]; then
             echo "IndexNow key file content mismatch."
