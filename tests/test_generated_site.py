@@ -54,12 +54,13 @@ def test_generated_urls_match_catalog():
     subprocess.run(["python", "scripts/build_construction_index.py"], cwd=ROOT, check=True)
     subprocess.run(["python", "scripts/build_seo.py"], cwd=ROOT, check=True)
     items = json.loads((ROOT / "data/construction_calculators.json").read_text())
-    expected = {BASE + "/", BASE + "/construction/"} | {BASE + f"/construction/{x['slug']}/" for x in items}
+    guides = json.loads((ROOT / "data/guides.json").read_text())
+    expected = {BASE + "/", BASE + "/construction/"} | {BASE + f"/construction/{x['slug']}/" for x in items} | {BASE + f"/guides/{x['slug']}/" for x in guides}
     root = ET.fromstring((SITE / "sitemap.xml").read_text())
     ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
     actual = {node.text for node in root.findall("sm:url/sm:loc", ns)}
     assert actual == expected
-    assert len(actual) == len(items) + 2
+    assert len(actual) == len(items) + len(guides) + 2
     for item in items:
         page = SITE / "construction" / item["slug"] / "index.html"
         assert page.exists()
@@ -71,6 +72,16 @@ def test_generated_urls_match_catalog():
         assert 'Frequently asked questions' in html
         assert 'Enter values greater than zero' in html
         assert 'Related calculators' in html
+
+    for guide in guides:
+        page = SITE / "guides" / guide["slug"] / "index.html"
+        assert page.exists()
+        html = page.read_text()
+        assert guide["title"] in html
+        assert guide["formula"] in html
+        assert 'aria-label="Breadcrumb"' in html
+        if guide.get("calculator_slug"):
+            assert f'/construction/{guide["calculator_slug"]}/' in html
 
 
 def test_faq_covers_all_calculators():
