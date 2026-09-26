@@ -7,7 +7,6 @@ BASE = "https://passive-income-engine.oleksoleks07.workers.dev"
 KEY = "1bd47cdd1ffc5c4b2caa7e4d4cc3397c"
 SITE = Path(__file__).resolve().parents[1] / "site" / "sitemap.xml"
 
-
 def main():
     if not SITE.exists():
         raise SystemExit("IndexNow: sitemap not found")
@@ -20,6 +19,7 @@ def main():
     payload = {
         "host": "passive-income-engine.oleksoleks07.workers.dev",
         "key": KEY,
+        "keyLocation": BASE + "/" + KEY + ".txt",
         "urlList": urls,
     }
 
@@ -36,7 +36,6 @@ def main():
     except urllib.error.HTTPError as exc:
         body = exc.read().decode("utf-8", errors="replace")
         raise SystemExit(f"IndexNow: HTTP {exc.code}: {body}") from exc
-
 
 if __name__ == "__main__":
     main()
