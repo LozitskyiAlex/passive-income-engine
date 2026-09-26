@@ -40,6 +40,20 @@ jobs:
           echo "Cloudflare deployment was not confirmed within 6 minutes."
           exit 1
 
+      - name: Verify IndexNow key file
+        env:
+          KEY: 1bd47cdd1ffc5c4b2caa7e4d4cc3397c
+          KEY_URL: https://passive-income-engine.oleksoleks07.workers.dev/1bd47cdd1ffc5c4b2caa7e4d4cc3397c.txt
+        run: |
+          set -e
+          body="$(curl -fsS --max-time 10 "$KEY_URL?sha=$GITHUB_SHA")"
+          if [ "$body" != "$KEY" ]; then
+            echo "IndexNow key file content mismatch."
+            printf 'Received: <%s>\n' "$body"
+            exit 1
+          fi
+          echo "IndexNow key file is publicly reachable and correct."
+
       - name: Submit sitemap to IndexNow
         run: python scripts/submit_indexnow.py
-      # IndexNow runs only after the deployed commit is verified.
+        # IndexNow runs only after the deployed commit and key file are verified.
