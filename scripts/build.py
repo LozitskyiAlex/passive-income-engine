@@ -5,6 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "processed" / "items.json"
 CALCS = ROOT / "data" / "construction_calculators.json"
+GUIDES = ROOT / "data" / "guides.json"
 SITE = ROOT / "site"
 OUT = SITE / "index.html"
 
@@ -13,6 +14,7 @@ def main() -> None:
     SITE.mkdir(parents=True, exist_ok=True)
     items = json.loads(DATA.read_text(encoding="utf-8")) if DATA.exists() else []
     calculators = json.loads(CALCS.read_text(encoding="utf-8")) if CALCS.exists() else []
+    guides = json.loads(GUIDES.read_text(encoding="utf-8")) if GUIDES.exists() else []
 
     groups = {}
     for item in calculators:
@@ -25,6 +27,11 @@ def main() -> None:
             f'<p>{escape(i.get("description", ""))}</p></article>' for i in entries
         )
         sections.append(f'<section><h2>{escape(category)}</h2><div class="grid">{cards}</div></section>')
+
+    guide_cards = "\n".join(
+        f'<article class="card"><h3><a href="/guides/{escape(g["slug"])}/">{escape(g["title"])}</a></h3>'
+        f'<p>{escape(g["description"])}</p></article>' for g in guides
+    )
 
     legacy = []
     for item in items:
@@ -59,6 +66,7 @@ header{{margin-bottom:38px}}h1{{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1
 <body><main>
 <header><p class="small">Free tools for home improvement and construction projects</p><h1>Free Construction Calculators</h1><p>Estimate concrete, gravel, soil, flooring, roofing, fencing and other construction materials directly in your browser. No account required.</p></header><section><h2>Popular calculators</h2><p>Start with <a href="/construction/concrete-volume/">concrete volume</a>, <a href="/construction/gravel-volume/">gravel volume</a>, <a href="/construction/mulch-volume/">mulch</a>, <a href="/construction/paint-quantity/">paint</a> or <a href="/construction/roofing-squares/">roofing squares</a>.</p></section>
 {''.join(sections)}
+{"<section><h2>Practical guides</h2><div class='grid'>" + guide_cards + "</div></section>" if guide_cards else ""}
 {"<section><h2>Other tools</h2><div class='grid'>" + legacy_html + "</div></section>" if legacy_html else ""}
 <footer><p class="small">Calculations are estimates. Check project specifications, local requirements and manufacturer instructions before purchasing materials.</p></footer>
 </main></body></html>"""
