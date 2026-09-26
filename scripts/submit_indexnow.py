@@ -4,7 +4,7 @@ from pathlib import Path
 import xml.etree.ElementTree as ET
 
 BASE = "https://passive-income-engine.oleksoleks07.workers.dev"
-KEY = "1bd47cdd1ffc5c4b2caa7e4d4cc3397c"
+KEY = "00800de33f7d4649b742eaac38d8a68b"
 SITE = Path(__file__).resolve().parents[1] / "site" / "sitemap.xml"
 
 def main():
