@@ -42,8 +42,8 @@ jobs:
 
       - name: Verify IndexNow key file
         env:
-          KEY: 1bd47cdd1ffc5c4b2caa7e4d4cc3397c
-          KEY_URL: https://passive-income-engine.oleksoleks07.workers.dev/1bd47cdd1ffc5c4b2caa7e4d4cc3397c.txt
+          KEY: 00800de33f7d4649b742eaac38d8a68b
+          KEY_URL: https://passive-income-engine.oleksoleks07.workers.dev/00800de33f7d4649b742eaac38d8a68b.txt
         run: |
           set -e
           body="$(curl -fsS --max-time 10 "$KEY_URL?sha=$GITHUB_SHA")"
@@ -56,4 +56,3 @@ jobs:
 
       - name: Submit sitemap to IndexNow
         run: python scripts/submit_indexnow.py
-        # IndexNow runs only after the deployed commit and key file are verified.
