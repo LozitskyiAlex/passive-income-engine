@@ -48,7 +48,7 @@ def main() -> None:
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Free Construction Calculators</title>
 <meta name="description" content="Free construction calculators for estimating material quantities, project costs, areas and volumes.">
-<meta name="google-site-verification" content="RWL8Q7FqS7ZvGU7HS2FrQvNV5XznwpVk7MqIEaDcZXQ">
+<meta name="google-site-verification" content="RWL8Q7FqS7ZvGU7HS2FrQvNV5XznwpVk7MqIEaDcZXQ">\n<meta name="msvalidate.01" content="525510C1BE000729AE171411BBC091D8">
 <link rel="canonical" href="https://passive-income-engine.oleksoleks07.workers.dev/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Free Construction Calculators">
