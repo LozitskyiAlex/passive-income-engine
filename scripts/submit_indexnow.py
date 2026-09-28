@@ -1,4 +1,5 @@
 import json
+import os
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -7,7 +8,9 @@ import xml.etree.ElementTree as ET
 
 BASE = "https://passive-income-engine.oleksoleks07.workers.dev"
 HOST = "passive-income-engine.oleksoleks07.workers.dev"
-KEY = "00800de33f7d4649b742eaac38d8a68b"
+KEY = os.environ.get("INDEX_NOW_KEY")
+if not KEY:
+    raise SystemExit("IndexNow: INDEX_NOW_KEY environment variable is required")
 KEY_LOCATION = f"{BASE}/{KEY}.txt"
 SITE = Path(__file__).resolve().parents[1] / "site" / "sitemap.xml"
 
