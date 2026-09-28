@@ -9,7 +9,9 @@ SITE = ROOT / "site"
 DATA = ROOT / "data" / "construction_calculators.json"
 GUIDES = ROOT / "data" / "guides.json"
 BASE = "https://passive-income-engine.oleksoleks07.workers.dev"
-INDEXNOW_KEY = "00800de33f7d4649b742eaac38d8a68b"
+INDEXNOW_KEY = os.environ.get("INDEX_NOW_KEY")
+if not INDEXNOW_KEY:
+    raise RuntimeError("INDEX_NOW_KEY environment variable is required")
 
 def build_guide(guide):
     steps = "".join(f"<li>{escape(x)}</li>" for x in guide["steps"])
