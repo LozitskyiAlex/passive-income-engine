@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: Configure calculator
+    env:
+      INDEX_NOW_KEY: ${{ secrets.INDEX_NOW_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -42,8 +45,8 @@ jobs:
 
       - name: Verify IndexNow key file
         env:
-          KEY: 00800de33f7d4649b742eaac38d8a68b
-          KEY_URL: https://passive-income-engine.oleksoleks07.workers.dev/00800de33f7d4649b742eaac38d8a68b.txt
+          KEY: ${{ secrets.INDEX_NOW_KEY }}
+          KEY_URL: https://passive-income-engine.oleksoleks07.workers.dev/${{ secrets.INDEX_NOW_KEY }}.txt
         run: |
           set -e
           test -f "site/$KEY.txt"
