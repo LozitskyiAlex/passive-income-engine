@@ -58,3 +58,5 @@ Potential monetization paths include contextual advertising, relevant affiliate 
 Target recurring infrastructure cost: $0.
 
 The project intentionally avoids per-visitor AI inference. Visitor calculations execute in the browser, so normal calculator usage does not require a paid API call.
+
+<!-- Cloudflare rebuild trigger -->
