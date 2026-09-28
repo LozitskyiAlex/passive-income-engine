@@ -10,8 +10,6 @@ DATA = ROOT / "data" / "construction_calculators.json"
 GUIDES = ROOT / "data" / "guides.json"
 BASE = "https://passive-income-engine.oleksoleks07.workers.dev"
 INDEXNOW_KEY = os.environ.get("INDEX_NOW_KEY")
-if not INDEXNOW_KEY:
-    raise RuntimeError("INDEX_NOW_KEY environment variable is required")
 
 def build_guide(guide):
     steps = "".join(f"<li>{escape(x)}</li>" for x in guide["steps"])
@@ -35,7 +33,7 @@ def build_guide(guide):
         "@type": "BreadcrumbList",
         "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{BASE}/"},
-            {"@type": "ListItem", "position": 2, "name": "Construction Calculators", "item": f"{BASE}/construction/"},
+            {"@type": "ListItem", "position": 2, "name": "Construction Calculators", "item": f"{BASE}/construction/",},
             {"@type": "ListItem", "position": 3, "name": guide["title"], "item": f"{BASE}/guides/{guide['slug']}/"},
         ],
     }
@@ -89,8 +87,9 @@ def main():
         "User-agent: *\nAllow: /\nSitemap: " + BASE + "/sitemap.xml\n",
         encoding="utf-8",
     )
-    (SITE / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
-    (SITE / "indexnow-key.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
+    if INDEXNOW_KEY:
+        (SITE / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
+        (SITE / "indexnow-key.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
     for guide in guides:
         out = SITE / "guides" / guide["slug"] / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
