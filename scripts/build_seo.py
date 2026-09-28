@@ -11,6 +11,14 @@ GUIDES = ROOT / "data" / "guides.json"
 BASE = "https://passive-income-engine.oleksoleks07.workers.dev"
 INDEXNOW_KEY = os.environ.get("INDEX_NOW_KEY")
 
+# Keep sitemap freshness dates tied to the actual source content, not the
+# sitemap generation time. Update these when the corresponding source content
+# changes.
+HOME_LASTMOD = "2026-09-26"
+CONSTRUCTION_LASTMOD = "2026-09-26"
+CALCULATORS_LASTMOD = "2026-09-24"
+GUIDES_LASTMOD = "2026-09-26"
+
 def build_guide(guide):
     steps = "".join(f"<li>{escape(x)}</li>" for x in guide["steps"])
     notes = "".join(f"<li>{escape(x)}</li>" for x in guide["notes"])
@@ -94,10 +102,13 @@ def main():
         out = SITE / "guides" / guide["slug"] / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(build_guide(guide), encoding="utf-8")
-    urls = ["/", "/construction/"]
-    urls += [f'/construction/{i["slug"]}/' for i in items]
-    urls += [f'/guides/{g["slug"]}/' for g in guides]
-    body = "\n".join(f"  <url><loc>{xml_escape(BASE + u)}</loc></url>" for u in urls)
+    urls = [("/", HOME_LASTMOD), ("/construction/", CONSTRUCTION_LASTMOD)]
+    urls += [(f'/construction/{i["slug"]}/', CALCULATORS_LASTMOD) for i in items]
+    urls += [(f'/guides/{g["slug"]}/', GUIDES_LASTMOD) for g in guides]
+    body = "\n".join(
+        f'  <url><loc>{xml_escape(BASE + u)}</loc><lastmod>{lastmod}</lastmod></url>'
+        for u, lastmod in urls
+    )
     sitemap = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
