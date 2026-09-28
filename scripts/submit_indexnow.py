@@ -1,11 +1,47 @@
 import json
+import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
 BASE = "https://passive-income-engine.oleksoleks07.workers.dev"
+HOST = "passive-income-engine.oleksoleks07.workers.dev"
 KEY = "00800de33f7d4649b742eaac38d8a68b"
+KEY_LOCATION = f"{BASE}/{KEY}.txt"
 SITE = Path(__file__).resolve().parents[1] / "site" / "sitemap.xml"
+
+
+def submit_post(urls):
+    payload = {
+        "host": HOST,
+        "key": KEY,
+        "keyLocation": KEY_LOCATION,
+        "urlList": urls,
+    }
+    req = urllib.request.Request(
+        "https://api.indexnow.org/indexnow",
+        data=json.dumps(payload).encode("utf-8"),
+        headers={"Content-Type": "application/json; charset=utf-8"},
+        method="POST",
+    )
+    with urllib.request.urlopen(req, timeout=20) as response:
+        return response.status
+
+
+def submit_get(url):
+    params = urllib.parse.urlencode(
+        {
+            "url": url,
+            "key": KEY,
+            "keyLocation": KEY_LOCATION,
+        }
+    )
+    endpoint = f"https://www.bing.com/indexnow?{params}"
+    req = urllib.request.Request(endpoint, headers={"User-Agent": "PassiveIncomeEngine/1.0"})
+    with urllib.request.urlopen(req, timeout=20) as response:
+        return response.status
+
 
 def main():
     if not SITE.exists():
@@ -16,26 +52,40 @@ def main():
     if not urls:
         raise SystemExit("IndexNow: no URLs found")
 
-    payload = {
-        "host": "passive-income-engine.oleksoleks07.workers.dev",
-        "key": KEY,
-        "keyLocation": BASE + "/" + KEY + ".txt",
-        "urlList": urls,
-    }
-
-    req = urllib.request.Request(
-        "https://api.indexnow.org/indexnow",
-        data=json.dumps(payload).encode("utf-8"),
-        headers={"Content-Type": "application/json; charset=utf-8"},
-        method="POST",
-    )
-
     try:
-        with urllib.request.urlopen(req, timeout=20) as response:
-            print(f"IndexNow: submitted {len(urls)} URLs, HTTP {response.status}")
+        status = submit_post(urls)
+        print(f"IndexNow: submitted {len(urls)} URLs via global endpoint, HTTP {status}")
+        return
     except urllib.error.HTTPError as exc:
         body = exc.read().decode("utf-8", errors="replace")
-        raise SystemExit(f"IndexNow: HTTP {exc.code}: {body}") from exc
+        print(f"IndexNow global endpoint failed: HTTP {exc.code}: {body}")
+        if exc.code != 403:
+            raise SystemExit(f"IndexNow: HTTP {exc.code}: {body}") from exc
+    except urllib.error.URLError as exc:
+        print(f"IndexNow global endpoint connection failed: {exc}")
+
+    # Bing documents the direct /indexnow GET endpoint as an alternative.
+    # Use it as a fallback because the global endpoint is returning 403 for
+    # this workers.dev host even though the key file is publicly reachable.
+    fallback_urls = [urls[0]]
+    if len(urls) > 1:
+        fallback_urls.append(urls[1])
+
+    successful = 0
+    for url in fallback_urls:
+        try:
+            status = submit_get(url)
+            print(f"IndexNow: fallback submitted {url}, HTTP {status}")
+            successful += 1
+        except urllib.error.HTTPError as exc:
+            body = exc.read().decode("utf-8", errors="replace")
+            print(f"IndexNow fallback failed for {url}: HTTP {exc.code}: {body}")
+        except urllib.error.URLError as exc:
+            print(f"IndexNow fallback connection failed for {url}: {exc}")
+
+    if successful == 0:
+        raise SystemExit("IndexNow: both global POST and Bing GET fallback failed")
+
 
 if __name__ == "__main__":
     main()
