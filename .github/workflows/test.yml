@@ -9,6 +9,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      INDEX_NOW_KEY: test-indexnow-key-for-ci
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
