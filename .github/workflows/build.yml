@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: Configure calculator
     env:
-      INDEX_NOW_KEY: ${{ secrets.INDEX_NOW_KEY }}
+      INDEX_NOW_KEY: ci-test-indexnow-key
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -23,7 +23,18 @@ jobs:
       - run: python scripts/build_calculators.py
       - run: python scripts/build_construction.py
       - run: python scripts/build_construction_index.py
-      - run: python scripts/build_seo.py
+
+      - name: Build SEO with production IndexNow key
+        env:
+          INDEX_NOW_KEY: ${{ secrets.INDEX_NOW_KEY }}
+        run: |
+          set -e
+          if [ -z "$INDEX_NOW_KEY" ]; then
+            echo "ERROR: Configure calculator environment secret INDEX_NOW_KEY is empty or unavailable."
+            exit 1
+          fi
+          python scripts/build_seo.py
+
       - run: echo "$GITHUB_SHA" > site/deployment-version.txt
       - run: find site -type f | sort
 
@@ -45,19 +56,22 @@ jobs:
 
       - name: Verify IndexNow key file
         env:
-          KEY: ${{ secrets.INDEX_NOW_KEY }}
-          KEY_URL: https://passive-income-engine.oleksoleks07.workers.dev/${{ secrets.INDEX_NOW_KEY }}.txt
+          INDEX_NOW_KEY: ${{ secrets.INDEX_NOW_KEY }}
         run: |
           set -e
-          test -f "site/$KEY.txt"
-          local_body="$(cat "site/$KEY.txt")"
-          if [ "$local_body" != "$KEY" ]; then
+          if [ -z "$INDEX_NOW_KEY" ]; then
+            echo "ERROR: Configure calculator environment secret INDEX_NOW_KEY is empty or unavailable."
+            exit 1
+          fi
+          KEY_URL="https://passive-income-engine.oleksoleks07.workers.dev/${INDEX_NOW_KEY}.txt"
+          test -f "site/$INDEX_NOW_KEY.txt"
+          local_body="$(cat "site/$INDEX_NOW_KEY.txt")"
+          if [ "$local_body" != "$INDEX_NOW_KEY" ]; then
             echo "Generated IndexNow key file content mismatch."
-            printf 'Generated: <%s>\n' "$local_body"
             exit 1
           fi
           body="$(curl -fsS --max-time 10 "$KEY_URL?sha=$GITHUB_SHA")"
-          if [ "$body" != "$KEY" ]; then
+          if [ "$body" != "$INDEX_NOW_KEY" ]; then
             echo "IndexNow key file content mismatch."
             printf 'Received: <%s>\n' "$body"
             exit 1
@@ -65,4 +79,6 @@ jobs:
           echo "IndexNow key file is publicly reachable and correct."
 
       - name: Submit sitemap to IndexNow
+        env:
+          INDEX_NOW_KEY: ${{ secrets.INDEX_NOW_KEY }}
         run: python scripts/submit_indexnow.py
