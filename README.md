@@ -17,6 +17,8 @@ A zero-cost, data-driven engine for building useful static web products.
 
 The first product is a construction calculator site deployed as static assets through a Cloudflare Worker.
 
+**Live site:** https://passive-income-engine.oleksoleks07.workers.dev/
+
 Current catalog: 30 calculators covering concrete, gravel and soil, interior projects, lumber, fencing and decking, roofing, general quantities and project costs.
 
 Every calculator page includes:
