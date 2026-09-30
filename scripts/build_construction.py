@@ -113,7 +113,11 @@ def page(item, content, related, titles, units, faq):
 <h2>How to use this calculator</h2><p>{escape(content.get("how",""))}</p><h2>Tips</h2><ul>{tips}</ul></section>
 <section><h2>Frequently asked questions</h2>{faq_html}</section><section><h2>Related calculators</h2><ul>{related_html}</ul><p><a href="/construction/">Browse all construction calculators</a></p></section>
 <p>Use compatible units and verify estimates against project specifications, local requirements and manufacturer instructions.</p></main>
-<script>document.querySelector("#calculate").onclick=()=>{{const v=[...document.querySelectorAll("input")].map(x=>Number(x.value));const result=document.querySelector("#result");if(v.some(x=>!Number.isFinite(x)||x<0)){{result.textContent="Enter valid non-negative numbers.";return;}}const positive={positive_js};if(positive.some(i=>v[i]<=0)){{result.textContent="Enter values greater than zero for dimensions, quantities, prices, coverage, density or spacing.";return;}}{FORMULAS[kind]}}};document.querySelector("#reset").onclick=()=>{{document.querySelectorAll("input").forEach(x=>x.value="");document.querySelector("#result").textContent="";}};</script></body></html>"""
+<script type="module">
+import { calculate } from "/calculator-runtime.js";
+document.querySelector("#calculate").onclick=()=>{{const v=[...document.querySelectorAll("input")].map(x=>Number(x.value));const result=document.querySelector("#result");if(v.some(x=>!Number.isFinite(x)||x<0)){{result.textContent="Enter valid non-negative numbers.";return;}}const positive={positive_js};if(positive.some(i=>v[i]<=0)){{result.textContent="Enter values greater than zero for dimensions, quantities, prices, coverage, density or spacing.";return;}}result.textContent=calculate("{kind}",v);}};
+document.querySelector("#reset").onclick=()=>{{document.querySelectorAll("input").forEach(x=>x.value="");document.querySelector("#result").textContent="";}};
+</script></body></html>"""
 
 def main():
     items=json.loads(DATA.read_text(encoding="utf-8"))
@@ -125,6 +129,22 @@ def main():
     for item in items:
         out=SITE/item["slug"]/"index.html"; out.parent.mkdir(parents=True,exist_ok=True)
         out.write_text(page(item,content[item["slug"]],related,titles,units,faq[item["slug"]]),encoding="utf-8")
+
+    runtime = """// Generated from the same formula snippets used by calculator pages.
+const formulas = {
+""" + "\n".join(
+        f'  "{kind}": (v) => {{ const result = {{ textContent: "" }}; {formula} return result.textContent; }},'
+        for kind, formula in FORMULAS.items()
+    ) + """
+};
+
+export function calculate(kind, values) {
+  const formula = formulas[kind];
+  if (!formula) throw new Error("Unknown calculator type: " + kind);
+  return formula(values);
+}
+"""
+    (SITE.parent / "calculator-runtime.js").write_text(runtime, encoding="utf-8")
 
 if __name__=="__main__":
     main()
