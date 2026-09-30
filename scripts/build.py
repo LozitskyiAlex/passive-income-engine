@@ -8,6 +8,7 @@ CALCS = ROOT / "data" / "construction_calculators.json"
 GUIDES = ROOT / "data" / "guides.json"
 SITE = ROOT / "site"
 OUT = SITE / "index.html"
+BASE = "https://passive-income-engine.oleksoleks07.workers.dev"
 
 
 def main() -> None:
@@ -71,6 +72,13 @@ header{{margin-bottom:38px}}h1{{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1
 <footer><p class="small">Calculations are estimates. Check project specifications, local requirements and manufacturer instructions before purchasing materials.</p></footer>
 </main></body></html>"""
     OUT.write_text(html, encoding="utf-8")
+    not_found = """<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page not found | Free Construction Calculators</title><meta name="robots" content="noindex">
+<link rel="canonical" href="https://passive-income-engine.oleksoleks07.workers.dev/404.html"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>body{font-family:system-ui,sans-serif;max-width:720px;margin:0 auto;padding:48px 20px;line-height:1.6;color:#17202a}a{color:inherit}</style></head>
+<body><main><h1>Page not found</h1><p>The requested page does not exist.</p><p><a href="/">Return to Free Construction Calculators</a></p></main></body></html>"""
+    (SITE / "404.html").write_text(not_found, encoding="utf-8")
 
 
 if __name__ == "__main__":
