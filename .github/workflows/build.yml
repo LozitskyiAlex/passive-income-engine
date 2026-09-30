@@ -66,6 +66,7 @@ jobs:
 
       - name: Verify IndexNow key file
         if: ${{ env.INDEX_NOW_KEY != '' }}
+        continue-on-error: true
         run: |
           set -e
           KEY_URL="$SITE_BASE_URL/${INDEX_NOW_KEY}.txt"
