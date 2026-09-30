@@ -61,6 +61,9 @@ def test_generated_urls_match_catalog():
     actual = {node.text for node in root.findall("sm:url/sm:loc", ns)}
     assert actual == expected
     assert len(actual) == len(items) + len(guides) + 2
+    assert (SITE / "404.html").exists()
+    assert (SITE / "calculator-runtime.js").exists()
+
     for item in items:
         page = SITE / "construction" / item["slug"] / "index.html"
         assert page.exists()
@@ -72,6 +75,7 @@ def test_generated_urls_match_catalog():
         assert 'Frequently asked questions' in html
         assert 'Enter values greater than zero' in html
         assert 'Related calculators' in html
+        assert '/calculator-runtime.js' in html
 
     for guide in guides:
         page = SITE / "guides" / guide["slug"] / "index.html"
