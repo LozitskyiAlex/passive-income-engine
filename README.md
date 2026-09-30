@@ -45,6 +45,8 @@ The generated site also includes:
 
 GitHub Actions is the production deployment source of truth. Pull requests run the test and generated-site validation pipeline. Pushes to `main` run the same checks, deploy the Worker with Wrangler, run production smoke tests and then notify IndexNow when the optional IndexNow key is configured.
 
+
+Production deployment requires two GitHub Actions secrets in the `Configure calculator` environment: `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. `INDEX_NOW_KEY` is optional for deployment and is used only for post-deployment indexing notification.
 The build is deterministic and does not require an AI API or database. Local Ollama can be used later for optional batch content assistance before content is committed.
 
 ## Next growth stages
