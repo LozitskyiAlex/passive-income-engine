@@ -1,10 +1,12 @@
-name: Test and build
+name: Test
 
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   test:
@@ -16,7 +18,21 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
       - run: python -m pip install --upgrade pip
       - run: pip install -e ".[dev]"
-      - run: pytest
-      - run: python scripts/build.py
+      - name: Run test suite
+        run: pytest
+      - name: Build generated site
+        env:
+          WORKERS_CI_COMMIT_SHA: test
+        run: |
+          python scripts/build.py
+          python scripts/build_calculators.py
+          python scripts/build_construction.py
+          python scripts/build_construction_index.py
+          python scripts/build_seo.py
+      - name: Validate generated site
+        run: pytest tests/test_generated_site.py -q
