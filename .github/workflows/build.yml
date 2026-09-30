@@ -1,4 +1,4 @@
-name: Build, test and deploy
+name: Build and validate
 
 on:
   push:
@@ -9,16 +9,15 @@ permissions:
   contents: read
 
 concurrency:
-  group: production-deploy
+  group: build-validation
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  validate:
     runs-on: ubuntu-latest
-    environment: Configure calculator
     env:
       SITE_BASE_URL: https://passive-income-engine.oleksoleks07.workers.dev
-      INDEX_NOW_KEY: ${{ secrets.INDEX_NOW_KEY }}
+      INDEX_NOW_KEY: ci-test-indexnow-key
     steps:
       - uses: actions/checkout@v4
 
@@ -33,14 +32,11 @@ jobs:
       - run: python -m pip install --upgrade pip
       - run: pip install -e ".[dev]"
 
-      - name: Run tests before build
-        env:
-          INDEX_NOW_KEY: ci-test-indexnow-key
+      - name: Run test suite
         run: pytest
 
       - name: Build production site
         env:
-          INDEX_NOW_KEY: ${{ secrets.INDEX_NOW_KEY }}
           WORKERS_CI_COMMIT_SHA: ${{ github.sha }}
         run: |
           set -e
@@ -53,30 +49,14 @@ jobs:
       - name: Validate generated site
         run: pytest tests/test_generated_site.py -q
 
-      - name: Deploy to Cloudflare Workers
-        uses: cloudflare/wrangler-action@v4
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          wranglerVersion: "4"
-          command: deploy
-
-      - name: Smoke test production deployment
-        run: python scripts/smoke_test.py
-
-      - name: Verify IndexNow key file
-        if: ${{ env.INDEX_NOW_KEY != '' }}
-        continue-on-error: true
+      - name: Validate production packaging
         run: |
-          set -e
-          KEY_URL="$SITE_BASE_URL/${INDEX_NOW_KEY}.txt"
-          test -f "site/${INDEX_NOW_KEY}.txt"
-          test "$(cat "site/${INDEX_NOW_KEY}.txt")" = "${INDEX_NOW_KEY}"
-          body="$(curl -fsS --max-time 15 "$KEY_URL")"
-          test "$body" = "${INDEX_NOW_KEY}"
-          echo "IndexNow key file is publicly reachable and correct."
+          test -f wrangler.jsonc
+          test -f site/index.html
+          test -f site/404.html
+          test -f site/robots.txt
+          test -f site/sitemap.xml
+          test -f site/deployment-version.txt
 
-      - name: Submit sitemap to IndexNow
-        if: ${{ env.INDEX_NOW_KEY != '' }}
-        continue-on-error: true
-        run: python scripts/submit_indexnow.py
+      # Production deployment is intentionally not performed here.
+      # Cloudflare Git integration deploys the main branch automatically.
