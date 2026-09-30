@@ -114,7 +114,7 @@ def page(item, content, related, titles, units, faq):
 <section><h2>Frequently asked questions</h2>{faq_html}</section><section><h2>Related calculators</h2><ul>{related_html}</ul><p><a href="/construction/">Browse all construction calculators</a></p></section>
 <p>Use compatible units and verify estimates against project specifications, local requirements and manufacturer instructions.</p></main>
 <script type="module">
-import { calculate } from "/calculator-runtime.js";
+import {{ calculate }} from "/calculator-runtime.js";
 document.querySelector("#calculate").onclick=()=>{{const v=[...document.querySelectorAll("input")].map(x=>Number(x.value));const result=document.querySelector("#result");if(v.some(x=>!Number.isFinite(x)||x<0)){{result.textContent="Enter valid non-negative numbers.";return;}}const positive={positive_js};if(positive.some(i=>v[i]<=0)){{result.textContent="Enter values greater than zero for dimensions, quantities, prices, coverage, density or spacing.";return;}}result.textContent=calculate("{kind}",v);}};
 document.querySelector("#reset").onclick=()=>{{document.querySelectorAll("input").forEach(x=>x.value="");document.querySelector("#result").textContent="";}};
 </script></body></html>"""
