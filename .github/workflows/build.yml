@@ -1,84 +1,81 @@
-name: Build static product
+name: Build, test and deploy
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: true
+
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     environment: Configure calculator
     env:
-      INDEX_NOW_KEY: ci-test-indexnow-key
+      SITE_BASE_URL: https://passive-income-engine.oleksoleks07.workers.dev
+      INDEX_NOW_KEY: ${{ secrets.INDEX_NOW_KEY }}
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
       - run: python -m pip install --upgrade pip
       - run: pip install -e ".[dev]"
-      - run: pytest
-      - run: python scripts/build.py
-      - run: python scripts/build_calculators.py
-      - run: python scripts/build_construction.py
-      - run: python scripts/build_construction_index.py
 
-      - name: Build SEO with production IndexNow key
+      - name: Run tests before build
+        env:
+          INDEX_NOW_KEY: ci-test-indexnow-key
+        run: pytest
+
+      - name: Build production site
         env:
           INDEX_NOW_KEY: ${{ secrets.INDEX_NOW_KEY }}
+          WORKERS_CI_COMMIT_SHA: ${{ github.sha }}
         run: |
           set -e
-          if [ -z "$INDEX_NOW_KEY" ]; then
-            echo "ERROR: Configure calculator environment secret INDEX_NOW_KEY is empty or unavailable."
-            exit 1
-          fi
+          python scripts/build.py
+          python scripts/build_calculators.py
+          python scripts/build_construction.py
+          python scripts/build_construction_index.py
           python scripts/build_seo.py
 
-      - run: echo "$GITHUB_SHA" > site/deployment-version.txt
-      - run: find site -type f | sort
+      - name: Validate generated site
+        run: pytest tests/test_generated_site.py -q
 
-      - name: Wait for Cloudflare deployment
-        env:
-          DEPLOYMENT_URL: https://passive-income-engine.oleksoleks07.workers.dev
-        run: |
-          set -e
-          for i in $(seq 1 36); do
-            if curl -fsS --max-time 10 "$DEPLOYMENT_URL/deployment-version.txt?sha=$GITHUB_SHA" | grep -Fxq "$GITHUB_SHA"; then
-              echo "Cloudflare deployment confirmed for $GITHUB_SHA"
-              exit 0
-            fi
-            echo "Waiting for Cloudflare deployment ($i/36)..."
-            sleep 10
-          done
-          echo "Cloudflare deployment was not confirmed within 6 minutes."
-          exit 1
+      - name: Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: "4"
+          command: deploy
+
+      - name: Smoke test production deployment
+        run: python scripts/smoke_test.py
 
       - name: Verify IndexNow key file
-        env:
-          INDEX_NOW_KEY: ${{ secrets.INDEX_NOW_KEY }}
+        if: ${{ env.INDEX_NOW_KEY != '' }}
         run: |
           set -e
-          if [ -z "$INDEX_NOW_KEY" ]; then
-            echo "ERROR: Configure calculator environment secret INDEX_NOW_KEY is empty or unavailable."
-            exit 1
-          fi
-          KEY_URL="https://passive-income-engine.oleksoleks07.workers.dev/${INDEX_NOW_KEY}.txt"
-          test -f "site/$INDEX_NOW_KEY.txt"
-          local_body="$(cat "site/$INDEX_NOW_KEY.txt")"
-          if [ "$local_body" != "$INDEX_NOW_KEY" ]; then
-            echo "Generated IndexNow key file content mismatch."
-            exit 1
-          fi
-          body="$(curl -fsS --max-time 10 "$KEY_URL?sha=$GITHUB_SHA")"
-          if [ "$body" != "$INDEX_NOW_KEY" ]; then
-            echo "IndexNow key file content mismatch."
-            printf 'Received: <%s>\n' "$body"
-            exit 1
-          fi
+          KEY_URL="$SITE_BASE_URL/${INDEX_NOW_KEY}.txt"
+          test -f "site/${INDEX_NOW_KEY}.txt"
+          test "$(cat "site/${INDEX_NOW_KEY}.txt")" = "${INDEX_NOW_KEY}"
+          body="$(curl -fsS --max-time 15 "$KEY_URL")"
+          test "$body" = "${INDEX_NOW_KEY}"
           echo "IndexNow key file is publicly reachable and correct."
 
       - name: Submit sitemap to IndexNow
-        env:
-          INDEX_NOW_KEY: ${{ secrets.INDEX_NOW_KEY }}
+        if: ${{ env.INDEX_NOW_KEY != '' }}
+        continue-on-error: true
         run: python scripts/submit_indexnow.py
