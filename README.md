@@ -36,11 +36,14 @@ The generated site also includes:
 * Construction calculator index.
 * robots.txt.
 * XML sitemap.
-* Automated catalog and formula tests.
+* Automated catalog, formula and generated browser-runtime tests.
+* A real 404 page with HTTP 404 handling.
 
 ## Build pipeline
 
-`data -> Python generators -> generated HTML/SEO files -> tests -> GitHub -> Cloudflare Worker`
+`data -> Python generators -> generated HTML/SEO files -> pytest -> GitHub Actions -> Wrangler -> Cloudflare Worker -> smoke tests -> IndexNow`
+
+GitHub Actions is the production deployment source of truth. Pull requests run the test and generated-site validation pipeline. Pushes to `main` run the same checks, deploy the Worker with Wrangler, run production smoke tests and then notify IndexNow when the optional IndexNow key is configured.
 
 The build is deterministic and does not require an AI API or database. Local Ollama can be used later for optional batch content assistance before content is committed.
 
