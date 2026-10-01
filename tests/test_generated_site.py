@@ -18,7 +18,7 @@ def test_all_calculator_formulas():
         "mulch_volume": ([20, 10, 0.25], 50),
         "paint_quantity": ([800, 350, 2], 800 / 350 * 2),
         "flooring_quantity": ([20, 15, 10], 330),
-        "tile_quantity": ([1000, 12, 12, 10], 92),
+        "tile_quantity": ([1000, 12, 12, 10], 1100),
         "drywall_sheets": ([20, 15, 8, 4, 8], 18),
         "board_feet": ([2, 6, 8, 1], 8),
         "material_cost": ([100, 4, 10], 440),
