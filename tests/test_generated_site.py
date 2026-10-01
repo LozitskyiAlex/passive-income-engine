@@ -7,7 +7,7 @@ from passive_income_engine.construction import calculate
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "site"
-BASE = "https://passive-income-engine.oleksoleks07.workers.dev"
+BASE = "https://free-construction-calculators.pages.dev"
 
 
 def test_all_calculator_formulas():
@@ -105,7 +105,6 @@ def test_favicon_exists():
     assert "User-agent: *" in robots
     assert "Allow: /" in robots
     assert "Sitemap: " + BASE + "/sitemap.xml" in robots
-
 
 
 def test_catalog_integrity():
