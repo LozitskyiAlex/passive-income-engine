@@ -89,6 +89,41 @@ for k in ["tile_quantity","paver_quantity","decking_boards"]:
 
 def page(item, content, related, titles, units, faq):
     title, desc, kind = item["title"], item["description"], item["type"]
+
+    seo_title = f"{title} | Free Estimate Tool"
+    seo_desc = f"{desc} Enter your measurements, calculate the estimate, and review practical guidance before ordering materials."
+    formula_text = {
+        "concrete_volume":"Concrete volume = length × width × thickness.",
+        "concrete_bags":"Bags needed = required volume ÷ yield per bag, rounded up.",
+        "gravel_volume":"Gravel volume = length × width × depth.",
+        "mulch_volume":"Mulch volume = length × width × depth.",
+        "paint_quantity":"Paint quantity = wall area ÷ coverage per unit × number of coats.",
+        "flooring_quantity":"Flooring required = length × width × (1 + waste percentage ÷ 100).",
+        "tile_quantity":"Tiles needed = area × 144 ÷ (tile length × tile width) × (1 + waste percentage ÷ 100), rounded up.",
+        "drywall_sheets":"Sheets needed = wall surface area ÷ sheet area, rounded up.",
+        "board_feet":"Board feet = thickness × width × length ÷ 12 × quantity.",
+        "material_cost":"Material cost = quantity × unit price × (1 + waste percentage ÷ 100).",
+        "paver_quantity":"Pavers needed = project area ÷ paver area × (1 + waste percentage ÷ 100), rounded up.",
+        "sand_volume":"Sand volume = length × width × depth.",
+        "soil_volume":"Soil volume = length × width × depth.",
+        "fence_pickets":"Pickets needed = fence length in inches ÷ (picket width + gap), rounded up.",
+        "fence_posts":"Posts needed = ceiling(fence length ÷ post spacing) + 1.",
+        "decking_boards":"Boards needed = board rows × boards per row, adjusted by the selected waste percentage.",
+        "roofing_squares":"Roofing squares = roof area in square feet ÷ 100.",
+        "roofing_material":"Roofing material area = roof area × (1 + waste percentage ÷ 100).",
+        "gravel_weight":"Estimated weight = volume × bulk density.",
+        "concrete_weight":"Estimated weight = volume × concrete density.",
+        "concrete_footing":"Footing volume = length × width × depth.",
+        "rebar_length":"Total rebar length = number of bars × length per bar.",
+        "gravel_bags":"Bags needed = required volume ÷ coverage per bag, rounded up.",
+        "baseboard":"Boards needed = total length ÷ board length, rounded up.",
+        "wallpaper":"Rolls needed = wall area ÷ coverage per roll, rounded up.",
+        "stair_risers":"Risers = total rise ÷ planned riser height, rounded up.",
+        "asphalt_volume":"Asphalt volume = length × width × depth.",
+        "cubic_yards":"Cubic yards = length × width × depth ÷ 27 when dimensions are in feet.",
+        "area":"Area = length × width.",
+        "volume":"Volume = length × width × height."
+    }[kind]
     unit_list=units.get(kind,[""]*len(FIELDS[kind]))
     inputs="".join(f'<label>{escape(name)} <span class="unit">{escape(unit_list[i])}</span><input id="v{i}" type="number" min="0" step="any" inputmode="decimal" required></label>' for i,name in enumerate(FIELDS[kind]))
     faq_html="".join(f"<details><summary>{escape(x['question'])}</summary><p>{escape(x['answer'])}</p></details>" for x in faq.get("faqs",[]))
@@ -99,8 +134,8 @@ def page(item, content, related, titles, units, faq):
     tips="".join(f"<li>{escape(t)}</li>" for t in content.get("tips",[]))
     positive_js=json.dumps(POSITIVE[kind])
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{escape(title)}</title><meta name="description" content="{escape(desc)}"><link rel="canonical" href="{BASE}/construction/{escape(item["slug"])}/">
-<meta property="og:type" content="website"><meta property="og:title" content="{escape(title)}"><meta property="og:description" content="{escape(desc)}"><meta property="og:url" content="{BASE}/construction/{escape(item["slug"])}/">
+<title>{escape(seo_title)}</title><meta name="description" content="{escape(seo_desc)}"><link rel="canonical" href="{BASE}/construction/{escape(item["slug"])}/">
+<meta property="og:type" content="website"><meta property="og:title" content="{escape(seo_title)}"><meta property="og:description" content="{escape(seo_desc)}"><meta property="og:url" content="{BASE}/construction/{escape(item["slug"])}/">
 <meta name="twitter:card" content="summary"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{{"token":"f5f27f5b7b9b45f3b74c48e6f44b56c0"}}'></script>
 <script type="application/ld+json">{json.dumps(faq_schema,separators=(',',':'))}</script>
@@ -110,7 +145,11 @@ def page(item, content, related, titles, units, faq):
 <body><main><nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/construction/">Construction Calculators</a> / {escape(title)}</nav><h1>{escape(title)}</h1><p>{escape(desc)}</p>
 <div class="card">{inputs}<button id="calculate">Calculate</button><button id="reset" type="button">Reset</button><div id="result" aria-live="polite"></div></div>
 <section><h2>Calculation example</h2><div class="example"><p><strong>Inputs:</strong> {escape(example_inputs)}</p><p><strong>Result:</strong> {escape(result)}</p><p>{escape(content.get("example",""))}</p></div>
-<h2>How to use this calculator</h2><p>{escape(content.get("how",""))}</p><h2>Tips</h2><ul>{tips}</ul></section>
+<h2>Formula</h2><p>{escape(formula_text)}</p>
+<h2>How to use this calculator</h2><p>{escape(content.get("how",""))}</p>
+<h2>Before you calculate</h2><p>Measure the project dimensions as accurately as practical and keep all measurements in compatible units. For material products, use the coverage, yield, density, or package size stated by the manufacturer or supplier rather than a generic assumption.</p><p>Choose the waste allowance based on the project shape, installation method, cutting requirements, and material characteristics. A simple rectangular estimate may need adjustment for openings, corners, slopes, joints, patterns, compaction, or other site conditions.</p>
+<h2>Understanding the result</h2><p>The calculator provides a planning estimate based on the inputs shown above. It is not a substitute for project drawings, structural design, manufacturer instructions, or local requirements. Before ordering, compare the calculated quantity with the supplier's package sizes and ordering units.</p>
+<h2>Tips</h2><ul>{tips}</ul></section>
 <section><h2>Frequently asked questions</h2>{faq_html}</section><section><h2>Related calculators</h2><ul>{related_html}</ul><p><a href="/construction/">Browse all construction calculators</a></p></section>
 <p>Use compatible units and verify estimates against project specifications, local requirements and manufacturer instructions.</p></main>
 <script type="module">
