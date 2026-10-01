@@ -21,7 +21,7 @@ def load_lastmod():
         raise ValueError(f"Missing SEO lastmod values: {sorted(missing)}")
     return dates
 
-def build_guide(guide):
+def build_guide(guide, modified):
     steps = "".join(f"<li>{escape(x)}</li>" for x in guide["steps"])
     notes = "".join(f"<li>{escape(x)}</li>" for x in guide["notes"])
     calc = guide.get("calculator_slug")
@@ -36,7 +36,12 @@ def build_guide(guide):
         "description": guide["description"],
         "mainEntityOfPage": f"{BASE}/guides/{guide['slug']}/",
         "author": {"@type": "Organization", "name": "Free Construction Calculators"},
-        "publisher": {"@type": "Organization", "name": "Free Construction Calculators"},
+        "publisher": {
+            "@type": "Organization",
+            "name": "Free Construction Calculators",
+            "logo": {"@type": "ImageObject", "url": f"{BASE}/favicon.svg"},
+        },
+        "dateModified": modified,
     }
     breadcrumb_schema = {
         "@context": "https://schema.org",
@@ -52,8 +57,8 @@ def build_guide(guide):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{escape(guide["title"])}</title>
-<meta name="description" content="{escape(guide["description"])}">
+<title>{escape(guide["title"])} | Construction Guide</title>
+<meta name="description" content="{escape(guide["description"])} Learn the formula, work through an example, and check practical notes before estimating materials.">
 <link rel="canonical" href="{BASE}/guides/{escape(guide["slug"])}/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="{escape(guide["title"])}">
@@ -82,6 +87,9 @@ def build_guide(guide):
 <p class="example">{escape(guide["example"])}</p>
 <h2>Important notes</h2>
 <ul>{notes}</ul>
+<h2>Before ordering materials</h2>
+<p>Use measurements from the actual project whenever possible and keep all dimensions in compatible units. Material coverage, yield, density, package size, waste, compaction, cuts, overlaps, and site conditions can affect the quantity that must be purchased.</p>
+<p>The calculation on this page is intended as a transparent estimating method. Compare the result with manufacturer instructions, supplier ordering units, project drawings, and applicable local requirements before placing an order.</p>
 {calc_link}
 <p class="small">This page provides a practical estimating method. Verify project specifications, local requirements and manufacturer instructions before purchasing materials.</p>
 </article>
@@ -100,11 +108,11 @@ def main():
     if INDEXNOW_KEY:
         (SITE / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
         (SITE / "indexnow-key.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
+    dates = load_lastmod()
     for guide in guides:
         out = SITE / "guides" / guide["slug"] / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(build_guide(guide), encoding="utf-8")
-    dates = load_lastmod()
+        out.write_text(build_guide(guide, dates["guides"]), encoding="utf-8")
     urls = [("/", dates["home"]), ("/construction/", dates["construction"])]
     urls += [(f'/construction/{i["slug"]}/', dates["calculators"]) for i in items]
     urls += [(f'/guides/{g["slug"]}/', dates["guides"]) for g in guides]
