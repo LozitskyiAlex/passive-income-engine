@@ -1,13 +1,12 @@
 import json
 import os
-import sys
 import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = os.environ.get("SITE_BASE_URL", "https://passive-income-engine.oleksoleks07.workers.dev").rstrip("/")
+BASE = os.environ.get("SITE_BASE_URL", "https://free-construction-calculators.pages.dev").rstrip("/")
 
 
 def fetch(path):
