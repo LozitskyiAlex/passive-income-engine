@@ -15,9 +15,9 @@ A zero-cost, data-driven engine for building useful static web products.
 
 ## Current product
 
-The first product is a construction calculator site deployed as static assets through a Cloudflare Worker.
+The first product is a construction calculator site deployed as static assets through Cloudflare Pages.
 
-**Live site:** https://passive-income-engine.oleksoleks07.workers.dev/
+**Live site:** https://free-construction-calculators.pages.dev/
 
 Current catalog: 30 calculators covering concrete, gravel and soil, interior projects, lumber, fencing and decking, roofing, general quantities and project costs.
 
@@ -41,11 +41,11 @@ The generated site also includes:
 
 ## Build and deployment pipeline
 
-`data -> Python generators -> generated HTML/SEO files -> pytest -> GitHub Actions validation -> GitHub main -> Cloudflare Git integration -> Cloudflare build -> Cloudflare Worker`
+`data -> Python generators -> generated HTML/SEO files -> pytest -> GitHub Actions validation -> GitHub main -> Cloudflare Pages Git integration -> Cloudflare Pages deployment`
 
 GitHub Actions is responsible for validation only. It runs the full test suite, generates the production site and validates the generated output.
 
-Cloudflare Git integration is the single production deployment mechanism. A push to `main` is picked up by the connected Cloudflare project, which runs the configured build command and deploys the resulting Worker assets.
+Cloudflare Pages Git integration is the single production deployment mechanism. A push to `main` is picked up by the connected Pages project, which runs the configured build command and deploys the generated `site/` directory.
 
 GitHub Actions does **not** run Wrangler deployment and does **not** require `CLOUDFLARE_API_TOKEN` or `CLOUDFLARE_ACCOUNT_ID`.
 
@@ -71,15 +71,21 @@ When `INDEX_NOW_KEY` is configured in the GitHub Actions environment, the monito
 
 IndexNow notification is intentionally separate from the production deployment pipeline because Cloudflare deployment is asynchronous relative to the GitHub validation workflow.
 
-## Cloudflare build command
+## Cloudflare Pages build command
 
-The Cloudflare Git integration should use:
+The Cloudflare Pages Git integration uses:
 
 ```text
 pip install -e ".[dev]" && python -m pytest && python scripts/build.py && python scripts/build_calculators.py && python scripts/build_construction.py && python scripts/build_construction_index.py && python scripts/build_seo.py
 ```
 
-The Cloudflare project deploys the generated `site/` directory using the repository's `wrangler.jsonc`.
+Build output directory:
+
+```text
+site
+```
+
+The Pages project is connected directly to the `LozitskyiAlex/passive-income-engine` GitHub repository and uses `main` as the production branch.
 
 ## Cost model
 
@@ -97,5 +103,3 @@ The project intentionally avoids per-visitor AI inference. Visitor calculations 
 6. Introduce monetization only after useful traffic exists.
 
 Potential monetization paths include contextual advertising, relevant affiliate offers and paid digital resources. No monetization is embedded until the underlying product has demonstrated demand.
-
-<!-- Cloudflare Git integration is the production deployment source of truth. -->
