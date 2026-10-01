@@ -16,8 +16,9 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     env:
-      SITE_BASE_URL: https://passive-income-engine.oleksoleks07.workers.dev
+      SITE_BASE_URL: https://free-construction-calculators.pages.dev
       INDEX_NOW_KEY: ci-test-indexnow-key
+
     steps:
       - uses: actions/checkout@v4
 
@@ -59,4 +60,4 @@ jobs:
           test -f site/deployment-version.txt
 
       # Production deployment is intentionally not performed here.
-      # Cloudflare Git integration deploys the main branch automatically.
+      # Cloudflare Pages Git integration deploys the main branch automatically.
