@@ -8,7 +8,7 @@ CALCS = ROOT / "data" / "construction_calculators.json"
 GUIDES = ROOT / "data" / "guides.json"
 SITE = ROOT / "site"
 OUT = SITE / "index.html"
-BASE = "https://passive-income-engine.oleksoleks07.workers.dev"
+BASE = "https://free-construction-calculators.pages.dev"
 
 
 def main() -> None:
@@ -49,16 +49,16 @@ def main() -> None:
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Free Construction Calculators</title>
 <meta name="description" content="Free construction calculators for estimating material quantities, project costs, areas and volumes.">
-<meta name="google-site-verification" content="RWL8Q7FqS7ZvGU7HS2FrQvNV5XznwpVk7MqIEaDcZXQ">\n<meta name="msvalidate.01" content="525510C1BE000729AE171411BBC091D8">
-<link rel="canonical" href="https://passive-income-engine.oleksoleks07.workers.dev/">
+<meta name="google-site-verification" content="i1hT9Vac2DfM1lZl4p70A1feeiP6Vmq-tGaFSfHTfqQ">\n<meta name="msvalidate.01" content="525510C1BE000729AE171411BBC091D8">
+<link rel="canonical" href="https://free-construction-calculators.pages.dev/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Free Construction Calculators">
 <meta property="og:description" content="Free construction calculators for material quantities and project planning.">
-<meta property="og:url" content="https://passive-income-engine.oleksoleks07.workers.dev/">
+<meta property="og:url" content="https://free-construction-calculators.pages.dev/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{{"token":"f5f27f5b7b9b45f3b74c48e6f44b56c0"}}'></script>
-<script type="application/ld+json">{{"@context":"https://schema.org","@type":"WebSite","name":"Free Construction Calculators","url":"https://passive-income-engine.oleksoleks07.workers.dev/"}}</script>
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"WebSite","name":"Free Construction Calculators","url":"https://free-construction-calculators.pages.dev/"}}</script>
 <style>
 :root{{color-scheme:light}}*{{box-sizing:border-box}}body{{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:1100px;margin:0 auto;padding:44px 20px;line-height:1.6;color:#17202a;background:#fff}}
 header{{margin-bottom:38px}}h1{{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;margin:0 0 14px}}h2{{margin:34px 0 12px}}h3{{margin:0 0 8px;font-size:1.1rem}}p{{color:#53606b}}.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:14px}}.card{{border:1px solid #d9dee3;border-radius:14px;padding:18px;background:#fff}}.card a{{color:inherit;text-decoration:none}}.card a:hover{{text-decoration:underline}}.small{{font-size:.9rem;color:#687580}}footer{{margin-top:46px;border-top:1px solid #e5e7eb;padding-top:18px}}@media(max-width:560px){{body{{padding:28px 14px}}.grid{{grid-template-columns:1fr}}}}
@@ -75,7 +75,7 @@ header{{margin-bottom:38px}}h1{{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1
     not_found = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Page not found | Free Construction Calculators</title><meta name="robots" content="noindex">
-<link rel="canonical" href="https://passive-income-engine.oleksoleks07.workers.dev/404.html"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://free-construction-calculators.pages.dev/404.html"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>body{font-family:system-ui,sans-serif;max-width:720px;margin:0 auto;padding:48px 20px;line-height:1.6;color:#17202a}a{color:inherit}</style></head>
 <body><main><h1>Page not found</h1><p>The requested page does not exist.</p><p><a href="/">Return to Free Construction Calculators</a></p></main></body></html>"""
     (SITE / "404.html").write_text(not_found, encoding="utf-8")
