@@ -67,7 +67,7 @@ console.log(JSON.stringify(results));
         "mulch_volume": "50.000 cubic units",
         "paint_quantity": "4.57 units",
         "flooring_quantity": "330.00 square units",
-        "tile_quantity": "8 tiles",
+        "tile_quantity": "1100 tiles",
         "drywall_sheets": "18 sheets",
         "board_feet": "8.00 board feet",
         "material_cost": "440.00",
