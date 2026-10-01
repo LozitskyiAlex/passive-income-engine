@@ -9,7 +9,7 @@ SITE = ROOT / "site"
 DATA = ROOT / "data" / "construction_calculators.json"
 GUIDES = ROOT / "data" / "guides.json"
 SEO_DATES = ROOT / "data" / "seo_dates.json"
-BASE = os.environ.get("SITE_BASE_URL", "https://passive-income-engine.oleksoleks07.workers.dev").rstrip("/")
+BASE = os.environ.get("SITE_BASE_URL", "https://free-construction-calculators.pages.dev").rstrip("/")
 INDEXNOW_KEY = os.environ.get("INDEX_NOW_KEY", "").strip()
 
 
@@ -48,7 +48,7 @@ def build_guide(guide, modified):
         "@type": "BreadcrumbList",
         "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{BASE}/"},
-            {"@type": "ListItem", "position": 2, "name": "Construction Calculators", "item": f"{BASE}/construction/",},
+            {"@type": "ListItem", "position": 2, "name": "Construction Calculators", "item": f"{BASE}/construction/"},
             {"@type": "ListItem", "position": 3, "name": guide["title"], "item": f"{BASE}/guides/{guide['slug']}/"},
         ],
     }
