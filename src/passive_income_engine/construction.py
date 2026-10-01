@@ -14,7 +14,7 @@ def calculate(kind: str, values: list[float]) -> float | int:
     if kind == "flooring_quantity":
         return values[0] * values[1] * (1 + values[2] / 100)
     if kind == "tile_quantity":
-        return ceil(((values[0] * 144) / (values[1] * values[2])) * (1 + values[3] / 100))
+        return ceil(((values[0] * 144) / (values[1] * values[2])) * (1 + values[3] / 100) - 1e-9)
     if kind == "drywall_sheets":
         return ceil((2 * (values[0] + values[1]) * values[2]) / (values[3] * values[4]))
     if kind == "board_feet":
