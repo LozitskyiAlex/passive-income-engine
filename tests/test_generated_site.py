@@ -50,6 +50,7 @@ def test_all_calculator_formulas():
 
 def test_generated_urls_match_catalog():
     subprocess.run(["python", "scripts/build.py"], cwd=ROOT, check=True)
+    subprocess.run(["python", "scripts/build_calculators.py"], cwd=ROOT, check=True)
     subprocess.run(["python", "scripts/build_construction.py"], cwd=ROOT, check=True)
     subprocess.run(["python", "scripts/build_construction_index.py"], cwd=ROOT, check=True)
     subprocess.run(["python", "scripts/build_seo.py"], cwd=ROOT, check=True)
@@ -68,6 +69,7 @@ def test_generated_urls_match_catalog():
         page = SITE / "construction" / item["slug"] / "index.html"
         assert page.exists()
         html = page.read_text()
+        assert f'<link rel="canonical" href="{BASE}/construction/{item["slug"]}/">' in html
         assert '<link rel="icon" href="/favicon.svg"' in html
         assert "static.cloudflareinsights.com/beacon.min.js" in html
         assert "aria-label=\"Breadcrumb\"" in html
@@ -87,9 +89,19 @@ def test_generated_urls_match_catalog():
         assert '"@type":"BreadcrumbList"' in html
         assert '"@type":"Article"' in html
         assert '<link rel="canonical"' in html
+        assert f'<link rel="canonical" href="{BASE}/guides/{guide["slug"]}/">' in html
         assert '<meta name="description"' in html
         if guide.get("calculator_slug"):
             assert f'/construction/{guide["calculator_slug"]}/' in html
+
+    construction_index = (SITE / "construction" / "index.html").read_text()
+    assert f'<link rel="canonical" href="{BASE}/construction/">' in construction_index
+
+    legacy_items = json.loads((ROOT / "data" / "calculators.json").read_text())
+    for item in legacy_items:
+        page = SITE / "calculators" / item["slug"] / "index.html"
+        assert page.exists()
+        assert f'<link rel="canonical" href="{BASE}/calculators/{item["slug"]}/">' in page.read_text()
 
 
 def test_faq_covers_all_calculators():

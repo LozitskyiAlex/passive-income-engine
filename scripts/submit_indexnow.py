@@ -6,8 +6,8 @@ import urllib.request
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
-BASE = "https://passive-income-engine.oleksoleks07.workers.dev"
-HOST = "passive-income-engine.oleksoleks07.workers.dev"
+BASE = os.environ.get("SITE_BASE_URL", "https://free-construction-calculators.pages.dev").rstrip("/")
+HOST = BASE.removeprefix("https://").removeprefix("http://")
 KEY = os.environ.get("INDEX_NOW_KEY")
 if not KEY:
     raise SystemExit("IndexNow: INDEX_NOW_KEY environment variable is required")
@@ -68,8 +68,7 @@ def main():
         print(f"IndexNow global endpoint connection failed: {exc}")
 
     # Bing documents the direct /indexnow GET endpoint as an alternative.
-    # Use it as a fallback because the global endpoint is returning 403 for
-    # this workers.dev host even though the key file is publicly reachable.
+    # Use it as a fallback if the global endpoint rejects a batch submission.
     fallback_urls = [urls[0]]
     if len(urls) > 1:
         fallback_urls.append(urls[1])

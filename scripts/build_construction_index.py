@@ -1,11 +1,12 @@
 import json
+import os
 from html import escape
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "construction_calculators.json"
 OUT = ROOT / "site" / "construction" / "index.html"
-BASE = "https://passive-income-engine.oleksoleks07.workers.dev"
+BASE = os.environ.get("SITE_BASE_URL", "https://free-construction-calculators.pages.dev").rstrip("/")
 
 
 def main():

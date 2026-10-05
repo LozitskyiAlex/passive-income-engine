@@ -1,4 +1,5 @@
 import json
+import os
 from html import escape
 from pathlib import Path
 
@@ -9,7 +10,7 @@ RELATED = ROOT / "data" / "related_calculators.json"
 UNITS = ROOT / "data" / "calculator_units.json"
 FAQ = ROOT / "data" / "calculator_faq.json"
 SITE = ROOT / "site" / "construction"
-BASE = "https://passive-income-engine.oleksoleks07.workers.dev"
+BASE = os.environ.get("SITE_BASE_URL", "https://free-construction-calculators.pages.dev").rstrip("/")
 
 FIELDS = {
     "concrete_volume":["Length","Width","Thickness"],"concrete_bags":["Volume","Bag Yield"],

@@ -1,10 +1,12 @@
 import json
+import os
 from html import escape
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "calculators.json"
 SITE = ROOT / "site" / "calculators"
+BASE = os.environ.get("SITE_BASE_URL", "https://free-construction-calculators.pages.dev").rstrip("/")
 
 
 def page(item: dict) -> str:
@@ -20,7 +22,7 @@ def page(item: dict) -> str:
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{description}">
-<link rel="canonical" href="/calculators/{slug}/">
+<link rel="canonical" href="{BASE}/calculators/{slug}/">
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",
