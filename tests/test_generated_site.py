@@ -64,6 +64,7 @@ def test_generated_urls_match_catalog():
     assert len(actual) == len(items) + len(guides) + 2
     assert (SITE / "404.html").exists()
     assert (SITE / "calculator-runtime.js").exists()
+    assert (SITE / "BingSiteAuth.xml").read_bytes() == (ROOT / "BingSiteAuth.xml").read_bytes()
 
     for item in items:
         page = SITE / "construction" / item["slug"] / "index.html"

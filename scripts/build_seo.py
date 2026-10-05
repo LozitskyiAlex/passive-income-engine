@@ -1,5 +1,6 @@
 import json
 import os
+import shutil
 from html import escape
 from pathlib import Path
 from xml.sax.saxutils import escape as xml_escape
@@ -105,6 +106,10 @@ def main():
         "User-agent: *\nAllow: /\nSitemap: " + BASE + "/sitemap.xml\n",
         encoding="utf-8",
     )
+    bing_verification = ROOT / "BingSiteAuth.xml"
+    if not bing_verification.is_file():
+        raise FileNotFoundError(f"Bing verification file not found: {bing_verification}")
+    shutil.copyfile(bing_verification, SITE / "BingSiteAuth.xml")
     if INDEXNOW_KEY:
         (SITE / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
         (SITE / "indexnow-key.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
