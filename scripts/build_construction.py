@@ -66,7 +66,7 @@ FORMULAS = {
 }
 
 EXAMPLES = {
-"concrete_volume":([20,10,0.5],"100 cubic units"),"concrete_bags":([10,0.6],"17 bags"),
+"concrete_volume":([20,10,0.5],"100 cubic units"),"concrete_bags":([33.33,0.6],"56 bags"),
 "gravel_volume":([20,10,0.25],"50 cubic units"),"mulch_volume":([20,10,0.25],"50 cubic units"),
 "paint_quantity":([800,350,2],"4.57 units"),"flooring_quantity":([20,15,10],"330 square units"),
 "tile_quantity":([1000,12,12,10],"1100 tiles"),"drywall_sheets":([20,15,8,4,8],"18 sheets"),
