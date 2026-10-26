@@ -16,12 +16,20 @@
     "slug": "concrete-bags",
     "faqs": [
       {
-        "question": "How is the bag count calculated?",
-        "answer": "Required volume is divided by the yield of one bag and rounded up."
+        "question": "How do I calculate how many bags of concrete I need?",
+        "answer": "Calculate the project volume, divide it by the yield per bag shown on the exact product, and round up to a whole bag. The yield differs by product and bag size."
       },
       {
-        "question": "Should I use the yield printed on the bag?",
-        "answer": "Yes. Use the yield for the exact product."
+        "question": "How many 80 lb bags of concrete are in one cubic yard?",
+        "answer": "One cubic yard is 27 cubic feet. At an approximate yield of 0.60 cubic feet per 80 lb bag of QUIKRETE Concrete Mix #1101, 27 ÷ 0.60 = 45 bags. Check the yield on your product because mixes can differ."
+      },
+      {
+        "question": "How many 80 lb bags do I need for a 10 ft by 10 ft slab that is 4 in thick?",
+        "answer": "The slab volume is about 33.33 cubic feet. At an approximate yield of 0.60 cubic feet per 80 lb bag, the estimate is 56 bags before any allowance for waste or uneven subgrade."
+      },
+      {
+        "question": "Why can the bag count differ between calculators?",
+        "answer": "Bag sizes and concrete mix yields vary. Use the yield printed on the exact product, keep units consistent, and round the required number of bags up."
       }
     ]
   },

@@ -10,11 +10,12 @@
   },
   {
     "slug": "concrete-bags",
-    "how": "Divide the required concrete volume by the yield of one bag, then round up to a whole bag.",
-    "example": "If a project needs 10 cubic feet and each bag yields 0.6 cubic feet, you need 17 bags.",
+    "how": "First calculate the concrete volume in cubic feet. For a rectangular slab measured in feet and inches, use length × width × thickness in feet (inches ÷ 12). Then divide the volume by the yield printed for your exact concrete mix bag and round up to a whole bag.",
+    "example": "A 10 ft × 10 ft slab at 4 in thick has an estimated volume of 10 × 10 × (4 ÷ 12) = 33.33 cu ft. Using QUIKRETE Concrete Mix #1101 as an example, an 80 lb bag yields approximately 0.60 cu ft, so 33.33 ÷ 0.60 rounds up to 56 bags.",
     "tips": [
-      "Use the yield printed on the exact bag product.",
-      "Buy enough bags to avoid a shortage during placement."
+      "Approximate QUIKRETE Concrete Mix #1101 yields: 40 lb = 0.30 cu ft; 50 lb = 0.375 cu ft; 60 lb = 0.45 cu ft; 80 lb = 0.60 cu ft; 90 lb = 0.675 cu ft (regional availability).",
+      "Yields vary by product and may be rounded. Use the yield printed on the exact bag or its current manufacturer data sheet.",
+      "Slab thickness, uneven subgrade, spillage and waste can increase the quantity to order. Add any allowance deliberately after calculating the base volume."
     ]
   },
   {
