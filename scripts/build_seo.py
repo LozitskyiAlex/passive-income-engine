@@ -26,8 +26,9 @@ def build_guide(guide, modified):
     steps = "".join(f"<li>{escape(x)}</li>" for x in guide["steps"])
     notes = "".join(f"<li>{escape(x)}</li>" for x in guide["notes"])
     calc = guide.get("calculator_slug")
+    link_text = escape(guide.get("calculator_link_text", "Open the related calculator"))
     calc_link = (
-        f'<p><a href="/construction/{escape(calc)}/">Use the {escape(guide["title"])} calculator</a></p>'
+        f'<p><a href="/construction/{escape(calc)}/">{link_text}</a></p>'
         if calc else ""
     )
     schema = {
