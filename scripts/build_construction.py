@@ -35,7 +35,7 @@ FIELDS = {
 FORMULAS = {
     "concrete_volume":"result.textContent=(v[0]*v[1]*v[2]).toFixed(3)+' cubic units';",
     "concrete_bags":"result.textContent=Math.ceil(v[0]/v[1])+' bags';",
-    "gravel_volume":"result.textContent=(v[0]*v[1]*v[2]).toFixed(3)+' cubic units';",
+    "gravel_volume":"const cubicFeet=v[0]*v[1]*v[2];result.textContent=cubicFeet.toFixed(2)+' cu ft ('+(cubicFeet/27).toFixed(2)+' cu yd)';",
     "mulch_volume":"result.textContent=(v[0]*v[1]*v[2]).toFixed(3)+' cubic units';",
     "paint_quantity":"result.textContent=((v[0]/v[1])*v[2]).toFixed(2)+' units';",
     "flooring_quantity":"result.textContent=(v[0]*v[1]*(1+v[2]/100)).toFixed(2)+' square units';",
@@ -67,7 +67,7 @@ FORMULAS = {
 
 EXAMPLES = {
 "concrete_volume":([20,10,0.5],"100 cubic units"),"concrete_bags":([33.33,0.6],"56 bags"),
-"gravel_volume":([20,10,0.25],"50 cubic units"),"mulch_volume":([20,10,0.25],"50 cubic units"),
+"gravel_volume":([20,10,0.25],"50.00 cu ft (1.85 cu yd)"),"mulch_volume":([20,10,0.25],"50 cubic units"),
 "paint_quantity":([800,350,2],"4.57 units"),"flooring_quantity":([20,15,10],"330 square units"),
 "tile_quantity":([1000,12,12,10],"1100 tiles"),"drywall_sheets":([20,15,8,4,8],"18 sheets"),
 "board_feet":([2,6,8,1],"8 board feet"),"material_cost":([100,4,10],"440"),
@@ -96,7 +96,7 @@ def page(item, content, related, titles, units, faq):
     formula_text = {
         "concrete_volume":"Concrete volume = length × width × thickness.",
         "concrete_bags":"Bags needed = required volume ÷ yield per bag, rounded up.",
-        "gravel_volume":"Gravel volume = length × width × depth.",
+        "gravel_volume":"Cubic feet = length × width × depth when all dimensions are in feet. Cubic yards = cubic feet ÷ 27.",
         "mulch_volume":"Mulch volume = length × width × depth.",
         "paint_quantity":"Paint quantity = wall area ÷ coverage per unit × number of coats.",
         "flooring_quantity":"Flooring required = length × width × (1 + waste percentage ÷ 100).",
