@@ -67,7 +67,7 @@ def build_guide(guide, modified):
 <meta property="og:url" content="{BASE}/guides/{escape(guide["slug"])}/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{{"token":"f5f27f5b7b9b45f3b74c48e6f44b56c0"}}'></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{{"token":"2b43ef087bbd47b6847bb0613f03ace2"}}'></script>
 <script type="application/ld+json">{json.dumps(schema,separators=(",",":"))}</script>
 <script type="application/ld+json">{json.dumps(breadcrumb_schema,separators=(",",":"))}</script>
 <style>
