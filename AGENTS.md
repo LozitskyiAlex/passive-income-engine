@@ -107,6 +107,15 @@ For each bounded task:
    was attempted, and the next actionable step. Do not describe waiting as
    progress.
 
+For recurring free traffic work, follow
+`docs/free-traffic-growth-cycle.md`: record dated Search Console, Bing, and
+Cloudflare baselines; distinguish measured visits/search clicks from keyword
+demand; select and complete one evidence-backed growth action per cycle; verify
+changes and adapt from observed results. Prefer useful page improvements,
+internal links, and targeted human participation over repeated submissions.
+Prepare external outreach drafts only; publish them only after separate explicit
+authorization.
+
 Do not commit directly to `main` or deploy manually unless the user explicitly
 requests that action. Changes should be reviewable in a pull request; merge only
 when the user has authorized publishing and required checks pass.
