@@ -162,5 +162,28 @@
       "Supplier coverage and delivery quantities can differ from the mathematical estimate."
     ],
     "calculator_slug": "cubic-yards"
+  },
+  {
+    "slug": "how-many-bags-of-gravel-do-i-need",
+    "title": "How Many Bags of Gravel Do I Need?",
+    "description": "Estimate gravel bags from project dimensions and the coverage printed on the product label.",
+    "intro": "First calculate the gravel volume in cubic feet, then divide by the volume one bag covers. Bag sizes vary, so use the yield printed on the exact product label.",
+    "steps": [
+      "Measure the project length and width in feet.",
+      "Convert the planned depth to feet by dividing inches by 12.",
+      "Multiply length × width × depth to find cubic feet.",
+      "Check the bag label for its coverage in cubic feet per bag.",
+      "Divide project volume by bag coverage and round up to a whole bag."
+    ],
+    "formula": "Bags needed = ceiling(length (ft) × width (ft) × depth (ft) ÷ labeled bag yield (cu ft per bag)).",
+    "example": "A 20 ft × 10 ft area at 3 in depth is 20 × 10 × (3 ÷ 12) = 50 cu ft. If the bag label states 0.5 cu ft per bag, 50 ÷ 0.5 = 100 bags. The 0.5 cu ft yield is an example assumption, not a universal bag size.",
+    "notes": [
+      "For an irregular project, split the area into simple sections, calculate each section, then add the volumes.",
+      "Use the bag's stated yield; package sizes and coverage differ by product.",
+      "The estimate does not add extra for compaction, settling, uneven ground or waste.",
+      "For a bulk order measured by weight, use the supplier's stated density for the specific gravel."
+    ],
+    "calculator_slug": "gravel-bags",
+    "calculator_link_text": "Estimate bag count with the Gravel Bag Calculator"
   }
 ]
