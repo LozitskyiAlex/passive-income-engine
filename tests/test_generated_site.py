@@ -94,6 +94,8 @@ def test_generated_urls_match_catalog():
         assert '<meta name="description"' in html
         if guide.get("calculator_slug"):
             assert f'/construction/{guide["calculator_slug"]}/' in html
+        if guide.get("calculator_link_text"):
+            assert f'>{guide["calculator_link_text"]}</a>' in html
 
     construction_index = (SITE / "construction" / "index.html").read_text()
     assert f'<link rel="canonical" href="{BASE}/construction/">' in construction_index
