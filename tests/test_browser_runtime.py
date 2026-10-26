@@ -63,7 +63,7 @@ console.log(JSON.stringify(results));
     expected = {
         "concrete_volume": "100.000 cubic units",
         "concrete_bags": "17 bags",
-        "gravel_volume": "50.000 cubic units",
+        "gravel_volume": "50.00 cu ft (1.85 cu yd)",
         "mulch_volume": "50.000 cubic units",
         "paint_quantity": "4.57 units",
         "flooring_quantity": "330.00 square units",
