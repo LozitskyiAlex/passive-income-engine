@@ -115,13 +115,18 @@ def main():
         (SITE / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
         (SITE / "indexnow-key.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
     dates = load_lastmod()
+    guide_dates = dates.get("guide_lastmod", {})
     for guide in guides:
         out = SITE / "guides" / guide["slug"] / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(build_guide(guide, dates["guides"]), encoding="utf-8")
+        modified = guide_dates.get(guide["slug"], dates["guides"])
+        out.write_text(build_guide(guide, modified), encoding="utf-8")
     urls = [("/", dates["home"]), ("/construction/", dates["construction"])]
     urls += [(f'/construction/{i["slug"]}/', dates["calculators"]) for i in items]
-    urls += [(f'/guides/{g["slug"]}/', dates["guides"]) for g in guides]
+    urls += [
+        (f'/guides/{g["slug"]}/', guide_dates.get(g["slug"], dates["guides"]))
+        for g in guides
+    ]
     body = "\n".join(
         f'  <url><loc>{xml_escape(BASE + u)}</loc><lastmod>{lastmod}</lastmod></url>'
         for u, lastmod in urls
