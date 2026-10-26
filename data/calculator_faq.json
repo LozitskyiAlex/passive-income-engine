@@ -37,12 +37,16 @@
     "slug": "gravel-volume",
     "faqs": [
       {
-        "question": "What does the result represent?",
-        "answer": "It estimates the volume of a rectangular gravel layer."
+        "question": "How much gravel do I need for a 20 ft by 10 ft area at 3 inches deep?",
+        "answer": "The geometric volume is 20 × 10 × 0.25 = 50 cubic feet. Divide by 27 cubic feet per cubic yard for about 1.85 cubic yards, before any supplier-specific allowance for compaction, settling or uneven ground."
       },
       {
-        "question": "Does it include compaction?",
-        "answer": "No. Check supplier guidance for loose versus compacted quantities."
+        "question": "How do I convert cubic feet of gravel to cubic yards?",
+        "answer": "Divide cubic feet by 27. For example, 50 cubic feet ÷ 27 is about 1.85 cubic yards."
+      },
+      {
+        "question": "Does this estimate include compaction or convert to tons?",
+        "answer": "No. It reports geometric volume only. Ask the supplier whether to order loose or compacted material. To estimate tons, use the bulk density for the exact gravel and conditions from the supplier; it varies by material and moisture."
       }
     ]
   },
