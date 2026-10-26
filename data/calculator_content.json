@@ -20,11 +20,12 @@
   },
   {
     "slug": "gravel-volume",
-    "how": "Multiply length by width by depth. Use consistent units for every measurement.",
-    "example": "A 20 ft by 10 ft area with 0.25 ft of gravel needs 50 cubic feet before any allowance.",
+    "how": "Enter length, width and installed depth in feet. The calculator multiplies them to estimate cubic feet, then divides by 27 to show the equivalent cubic yards.",
+    "example": "For a 20 ft × 10 ft area with a 3 in (0.25 ft) layer: 20 × 10 × 0.25 = 50 cu ft; 50 ÷ 27 = 1.85 cu yd before any supplier-specific allowance.",
     "tips": [
-      "Depth should represent the planned compacted or installed layer as appropriate.",
-      "Ask the supplier whether their quoted quantity is loose or compacted."
+      "The estimate is geometric volume and does not add extra material for settling, compaction, uneven ground or waste.",
+      "Confirm with the supplier whether the quoted volume is loose or compacted and how the material is measured.",
+      "If ordering by weight, use the supplier's bulk density for the exact gravel; density varies by material and moisture."
     ]
   },
   {
