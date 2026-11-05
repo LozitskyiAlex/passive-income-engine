@@ -1,0 +1,212 @@
+[
+  {
+    "slug": "concrete-volume",
+    "title": "Calculatrice de Volume de Béton",
+    "description": "Calculer le volume de béton pour une dalle rectangulaire, un pied ou un pad.",
+    "type": "concrete_volume",
+    "category": "Béton"
+  },
+  {
+    "slug": "concrete-bags",
+    "title": "Calculatrice de Sacs de Béton",
+    "description": "Estimer le nombre de sacs de béton nécessaires pour un projet.",
+    "type": "concrete_bags",
+    "category": "Béton"
+  },
+  {
+    "slug": "gravel-volume",
+    "title": "Calculatrice de Gravier",
+    "description": "Calculer le volume de gravier requis pour une zone.",
+    "type": "gravel_volume",
+    "category": "Gravier & Sol"
+  },
+  {
+    "slug": "mulch-volume",
+    "title": "Calculatrice de Paillis",
+    "description": "Calculer la quantité de paillis requise pour une zone de jardin.",
+    "type": "mulch_volume",
+    "category": "Gravier & Sol"
+  },
+  {
+    "slug": "paint-quantity",
+    "title": "Calculatrice de peinture",
+    "description": "Estimer la peinture requise à partir de la surface murale, de la couverture et des couches.",
+    "type": "paint_quantity",
+    "category": "Intérieur"
+  },
+  {
+    "slug": "flooring-quantity",
+    "title": "Calculatrice de revêtement de sol",
+    "description": "Estimer la quantité de matériaux de revêtement de sol, y compris une marge de déchets.",
+    "type": "flooring_quantity",
+    "category": "Intérieur"
+  },
+  {
+    "slug": "tile-quantity",
+    "title": "Calculatrice de carrelage",
+    "description": "Estimer le nombre de carreaux requis pour un sol ou un mur.",
+    "type": "tile_quantity",
+    "category": "Intérieur"
+  },
+  {
+    "slug": "drywall-sheets",
+    "title": "Calculatrice de plaques de gypse",
+    "description": "Estimer les plaques de gypse requises à partir des dimensions de la pièce.",
+    "type": "drywall_sheets",
+    "category": "Intérieur"
+  },
+  {
+    "slug": "board-feet",
+    "title": "Calculatrice de Pieds de Planche",
+    "description": "Calculer les pieds de planche à partir des dimensions et de la quantité de bois de construction.",
+    "type": "board_feet",
+    "category": "Bois de Construction & Terrasses"
+  },
+  {
+    "slug": "material-cost",
+    "title": "Calculatrice de Coût de Matériaux",
+    "description": "Calculer le coût total des matériaux à partir de la quantité, du prix unitaire et des déchets.",
+    "type": "material_cost",
+    "category": "Général"
+  },
+  {
+    "slug": "paver-quantity",
+    "title": "Calculatrice de Pavés",
+    "description": "Estimer le nombre de pavés nécessaires pour une surface.",
+    "type": "paver_quantity",
+    "category": "Extérieur"
+  },
+  {
+    "slug": "sand-volume",
+    "title": "Calculatrice de Sable",
+    "description": "Calculer le volume de sable requis pour une surface.",
+    "type": "sand_volume",
+    "category": "Gravier & Sol"
+  },
+  {
+    "slug": "soil-volume",
+    "title": "Calculatrice de sol",
+    "description": "Calculer le volume de sol requis pour un jardin ou une zone de plantation.",
+    "type": "soil_volume",
+    "category": "Gravier & Sol"
+  },
+  {
+    "slug": "fence-pickets",
+    "title": "Calculatrice de piquets de clôture",
+    "description": "Estimer le nombre de piquets de clôture nécessaires pour un alignement de clôture droit.",
+    "type": "fence_pickets",
+    "category": "Terrasses & Clôtures"
+  },
+  {
+    "slug": "fence-posts",
+    "title": "Calculatrice de poteaux de clôture",
+    "description": "Estimer le nombre de poteaux de clôture nécessaires pour un alignement de clôture.",
+    "type": "fence_posts",
+    "category": "Terrasses & Clôtures"
+  },
+  {
+    "slug": "decking-boards",
+    "title": "Calculatrice de planches de terrasse",
+    "description": "Estimer la quantité de planches de terrasse pour une terrasse rectangulaire.",
+    "type": "decking_boards",
+    "category": "Bois & Terrasses"
+  },
+  {
+    "slug": "roofing-squares",
+    "title": "Calculatrice de Toits Carrés",
+    "description": "Calculer les toits carrés à partir de la surface du toit.",
+    "type": "roofing_squares",
+    "category": "Couvreur"
+  },
+  {
+    "slug": "roofing-material",
+    "title": "Calculatrice de Matériaux de Couverture",
+    "description": "Estimer la surface des matériaux de couverture, y compris une marge de déchets.",
+    "type": "roofing_material",
+    "category": "Couvreur"
+  },
+  {
+    "slug": "gravel-weight",
+    "title": "Calculatrice de Poids de Gravier",
+    "description": "Estimer le poids du gravier à partir du volume et de la densité apparente.",
+    "type": "gravel_weight",
+    "category": "Gravier et Sol"
+  },
+  {
+    "slug": "concrete-weight",
+    "title": "Calculatrice de Poids de Béton",
+    "description": "Estimer le poids du béton à partir du volume et de la densité.",
+    "type": "concrete_weight",
+    "category": "Béton"
+  },
+  {
+    "slug": "concrete-footing",
+    "title": "Calculatrice de semelle de béton",
+    "description": "Estimer le volume de semelle de béton rectangulaire.",
+    "type": "concrete_footing",
+    "category": "Béton"
+  },
+  {
+    "slug": "rebar-length",
+    "title": "Calculatrice de longueur de barres d'armature",
+    "description": "Estimer la longueur totale de barres d'armature à partir du nombre de barres et de la longueur de barre.",
+    "type": "rebar_length",
+    "category": "Béton"
+  },
+  {
+    "slug": "gravel-bags",
+    "title": "Calculatrice de sacs de gravier",
+    "description": "Estimer le nombre de sacs de gravier nécessaires à partir du volume et de la couverture du sac.",
+    "type": "gravel_bags",
+    "category": "Gravier & Sol"
+  },
+  {
+    "slug": "baseboard",
+    "title": "Calculatrice de plinthe",
+    "description": "Estimer le nombre de pièces de plinthe nécessaires pour une pièce.",
+    "type": "baseboard",
+    "category": "Intérieur"
+  },
+  {
+    "slug": "wallpaper",
+    "title": "Calculatrice de Rouleaux de Papier Peint",
+    "description": "Estimer les rouleaux de papier peint à partir de la surface murale et de la couverture du rouleau.",
+    "type": "wallpaper",
+    "category": "Intérieur"
+  },
+  {
+    "slug": "stair-risers",
+    "title": "Calculatrice d'Escaliers",
+    "description": "Estimer le nombre d'escaliers à partir de la hauteur totale et de la hauteur de l'escalier.",
+    "type": "stair_risers",
+    "category": "Terrasses & Clôtures"
+  },
+  {
+    "slug": "asphalt-volume",
+    "title": "Calculatrice de Bitume",
+    "description": "Estimer le volume de bitume pour une surface rectangulaire.",
+    "type": "asphalt_volume",
+    "category": "Béton"
+  },
+  {
+    "slug": "cubic-yards",
+    "title": "Calculatrice de Mètres Cubes",
+    "description": "Convertir les dimensions rectangulaires en mètres cubes.",
+    "type": "cubic_yards",
+    "category": "Général"
+  },
+  {
+    "slug": "area",
+    "title": "Calculatrice de superficie",
+    "description": "Calculer la superficie rectangulaire à partir de la longueur et de la largeur.",
+    "type": "area",
+    "category": "Général"
+  },
+  {
+    "slug": "volume",
+    "title": "Calculatrice de volume",
+    "description": "Calculer le volume rectangulaire à partir de la longueur, de la largeur et de la hauteur.",
+    "type": "volume",
+    "category": "Général"
+  }
+]
