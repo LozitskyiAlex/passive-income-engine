@@ -1,0 +1,212 @@
+[
+  {
+    "slug": "concrete-volume",
+    "title": "Calculadora de Volume de Concreto",
+    "description": "Calcule o volume de concreto para uma laje retangular, fundação ou plataforma.",
+    "type": "concrete_volume",
+    "category": "Concreto"
+  },
+  {
+    "slug": "concrete-bags",
+    "title": "Calculadora de Sacos de Concreto",
+    "description": "Estime a quantidade de sacos de concreto necessários para um projeto.",
+    "type": "concrete_bags",
+    "category": "Concreto"
+  },
+  {
+    "slug": "gravel-volume",
+    "title": "Calculadora de Volume de Brita",
+    "description": "Calcule o volume de brita necessário para uma área.",
+    "type": "gravel_volume",
+    "category": "Brita e Solo"
+  },
+  {
+    "slug": "mulch-volume",
+    "title": "Calculadora de Volume de Musgo",
+    "description": "Calcule a quantidade de musgo necessário para uma área de jardim.",
+    "type": "mulch_volume",
+    "category": "Brita e Solo"
+  },
+  {
+    "slug": "paint-quantity",
+    "title": "Calculadora de Quantidade de Tinta",
+    "description": "Estime a quantidade de tinta necessária a partir da área de parede, cobertura e camadas.",
+    "type": "paint_quantity",
+    "category": "Interior"
+  },
+  {
+    "slug": "flooring-quantity",
+    "title": "Calculadora de Piso",
+    "description": "Estime o material de piso incluindo uma reserva de desperdício.",
+    "type": "flooring_quantity",
+    "category": "Interior"
+  },
+  {
+    "slug": "tile-quantity",
+    "title": "Calculadora de Azulejo",
+    "description": "Estime o número de azulejos necessários para um piso ou parede.",
+    "type": "tile_quantity",
+    "category": "Interior"
+  },
+  {
+    "slug": "drywall-sheets",
+    "title": "Calculadora de Folhas de Gesso",
+    "description": "Estime as folhas de gesso necessárias a partir das dimensões das salas.",
+    "type": "drywall_sheets",
+    "category": "Interior"
+  },
+  {
+    "slug": "board-feet",
+    "title": "Calculadora de Pés Quadrados de Madeira",
+    "description": "Calcule os pés quadrados de madeira a partir das dimensões e quantidade do material.",
+    "type": "board_feet",
+    "category": "Madeira e Varanda"
+  },
+  {
+    "slug": "material-cost",
+    "title": "Calculadora de Custo de Materiais",
+    "description": "Calcule o custo total dos materiais a partir da quantidade, preço unitário e desperdício.",
+    "type": "material_cost",
+    "category": "Geral"
+  },
+  {
+    "slug": "paver-quantity",
+    "title": "Calculadora de Paver",
+    "description": "Estime o número de paver necessário para uma área.",
+    "type": "paver_quantity",
+    "category": "Outdoor"
+  },
+  {
+    "slug": "sand-volume",
+    "title": "Calculadora de Areia",
+    "description": "Calcule o volume de areia necessário para uma área.",
+    "type": "sand_volume",
+    "category": "Gravel & Solo"
+  },
+  {
+    "slug": "soil-volume",
+    "title": "Calculadora de Solo",
+    "description": "Calcule o volume de solo necessário para um jardim ou área de plantio.",
+    "type": "soil_volume",
+    "category": "Gravel & Solo"
+  },
+  {
+    "slug": "fence-pickets",
+    "title": "Calculadora de Pique de Muro",
+    "description": "Estime o número de pique de muro necessário para uma corrida de muro reta.",
+    "type": "fence_pickets",
+    "category": "Decking & Muro"
+  },
+  {
+    "slug": "fence-posts",
+    "title": "Calculadora de Pilar de Muro",
+    "description": "Estime o número de pilar de muro necessário para uma corrida de muro.",
+    "type": "fence_posts",
+    "category": "Decking & Muro"
+  },
+  {
+    "slug": "decking-boards",
+    "title": "Calculadora de Pranchas de Madeira para Cobertura",
+    "description": "Estime a quantidade de pranchas de madeira para uma cobertura retangular.",
+    "type": "decking_boards",
+    "category": "Madeira e Cobertura"
+  },
+  {
+    "slug": "roofing-squares",
+    "title": "Calculadora de Quadrados de Cobertura",
+    "description": "Calcule os quadrados de cobertura a partir da área da cobertura.",
+    "type": "roofing_squares",
+    "category": "Cobertura"
+  },
+  {
+    "slug": "roofing-material",
+    "title": "Calculadora de Materiais de Cobertura",
+    "description": "Estime a área de materiais de cobertura incluindo uma reserva de desperdício.",
+    "type": "roofing_material",
+    "category": "Cobertura"
+  },
+  {
+    "slug": "gravel-weight",
+    "title": "Calculadora de Peso de Brita",
+    "description": "Estime o peso de brita a partir do volume e da densidade de massa.",
+    "type": "gravel_weight",
+    "category": "Brita e Solo"
+  },
+  {
+    "slug": "concrete-weight",
+    "title": "Calculadora de Peso de Concreto",
+    "description": "Estime o peso de concreto a partir do volume e da densidade.",
+    "type": "concrete_weight",
+    "category": "Concreto"
+  },
+  {
+    "slug": "concrete-footing",
+    "title": "Calculadora de Fundação de Concreto",
+    "description": "Estime o volume de concreto retangular de fundação.",
+    "type": "concrete_footing",
+    "category": "Concreto"
+  },
+  {
+    "slug": "rebar-length",
+    "title": "Calculadora de Comprimento de Barras de Rebar",
+    "description": "Estime o comprimento total de barras de rebar a partir do número de barras e do comprimento da barra.",
+    "type": "rebar_length",
+    "category": "Concreto"
+  },
+  {
+    "slug": "gravel-bags",
+    "title": "Calculadora de Sacos de Brita",
+    "description": "Estime o número de sacos de brita necessários a partir do volume e da cobertura do saco.",
+    "type": "gravel_bags",
+    "category": "Brita e Solo"
+  },
+  {
+    "slug": "baseboard",
+    "title": "Calculadora de Peça de Base de Parede",
+    "description": "Estime o número de peças de base de parede necessárias para uma sala.",
+    "type": "baseboard",
+    "category": "Interior"
+  },
+  {
+    "slug": "wallpaper",
+    "title": "Calculadora de Rolos de Papel de Parede",
+    "description": "Estime os rolos de papel de parede a partir da área da parede e da cobertura do rolo.",
+    "type": "wallpaper",
+    "category": "Interior"
+  },
+  {
+    "slug": "stair-risers",
+    "title": "Calculadora de Degraus de Escada",
+    "description": "Estime o número de degraus de escada a partir da altura total e da altura do degrau.",
+    "type": "stair_risers",
+    "category": "Decking & Fencing"
+  },
+  {
+    "slug": "asphalt-volume",
+    "title": "Calculadora de Asfalto",
+    "description": "Estime o volume de asfalto para uma área retangular.",
+    "type": "asphalt_volume",
+    "category": "Concrete"
+  },
+  {
+    "slug": "cubic-yards",
+    "title": "Calculadora de Iarda Cúbica",
+    "description": "Converta dimensões retangulares em iardas cúbicas.",
+    "type": "cubic_yards",
+    "category": "General"
+  },
+  {
+    "slug": "area",
+    "title": "Calculadora de Área",
+    "description": "Calcule a área retangular a partir da largura e da altura.",
+    "type": "area",
+    "category": "General"
+  },
+  {
+    "slug": "volume",
+    "title": "Calculadora de Volume",
+    "description": "Calcule o volume retangular a partir da largura, altura e profundidade.",
+    "type": "volume",
+    "category": "General"
+  }
+]
