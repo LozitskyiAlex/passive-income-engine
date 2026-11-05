@@ -1,0 +1,404 @@
+[
+  {
+    "slug": "concrete-volume",
+    "faqs": [
+      {
+        "question": "Was schätzt dieser Rechner?",
+        "answer": "Er schätzt das rechteckige Betonvolumen aus Länge, Breite und Dicke."
+      },
+      {
+        "question": "Was sollte ich außer dem berechneten Volumen hinzufügen?",
+        "answer": "Zuschläge für Abfälle, unebene Untergrundverhältnisse und Projektbedingungen können erforderlich sein."
+      }
+    ]
+  },
+  {
+    "slug": "concrete-bags",
+    "faqs": [
+      {
+        "question": "Wie berechne ich, wie viele Beutel Beton ich benötige?",
+        "answer": "Berechnen Sie das Projektvolumen, teilen Sie es durch den auf dem genauen Produkt angegebenen Ertrag pro Beutel und runden Sie auf einen ganzen Beutel auf. Der Ertrag unterscheidet sich je nach Produkt und Beutelgröße."
+      },
+      {
+        "question": "Wie viele 80 lb-Beutel Beton sind in einem Kubikyard?",
+        "answer": "Ein Kubikyard entspricht 27 Kubikfuß. Bei einem ungefähren Ertrag von 0,60 Kubikfuß pro 80 lb-Beutel QUIKRETE Concrete Mix #1101 beträgt 27 ÷ 0,60 = 45 Beutel. Übberprüfen Sie den Ertrag auf Ihrem Produkt, da sich die Mischungen unterscheiden können."
+      },
+      {
+        "question": "Wie viele 80 lb-Beutel benötige ich für eine 10 ft × 10 ft-Platte, die 4 Zoll dick ist?",
+        "answer": "Das Volumen der Platte beträgt etwa 33,33 Kubikfuß. Bei einem ungefähren Ertrag von 0,60 Kubikfuß pro 80 lb-Beutel beträgt die Schätzung 56 Beutel, bevor ein Zuschlag für Abfälle oder unebene Untergrundverhältnisse hinzugefügt wird."
+      },
+      {
+        "question": "Warum kann die Beutelanzahl zwischen Rechnern unterschiedlich sein?",
+        "answer": "Beutelgrößen und Betonmischerträge variieren. Verwenden Sie den auf dem genauen Produkt gedruckten Ertrag, halten Sie die Einheiten konsistent und runden Sie die erforderliche Anzahl Beutel auf."
+      }
+    ]
+  },
+  {
+    "slug": "gravel-volume",
+    "faqs": [
+      {
+        "question": "Wie viel Schotter benötige ich für eine 20 ft × 10 ft-Fläche bei 3 Zoll Tiefe?",
+        "answer": "Das geometrische Volumen beträgt 20 × 10 × 0,25 = 50 Kubikfuß. Teilen Sie durch 27 Kubikfuß pro Kubikyard, um etwa 1,85 Kubikyard zu erhalten, bevor ein lieferantspezifischer Zuschlag für Verdichtung, Setzen oder unebene Bodenverhältnisse hinzugefügt wird."
+      },
+      {
+        "question": "Wie konvertiere ich Kubikfuß Schotter in Kubikyard?",
+        "answer": "Teilen Sie Kubikfuß durch 27. Zum Beispiel 50 Kubikfuß ÷ 27 sind etwa 1,85 Kubikyard."
+      },
+      {
+        "question": "Enthält diese Schätzung Verdichtung oder Umrechnung in Tonnen?",
+        "answer": "Nein. Sie berichtet nur das geometrische Volumen. Fragen Sie den Lieferanten, ob Sie lose oder verdichtete Materialien bestellen sollten. Um Tonnen zu schätzen, verwenden Sie die Bulk-Dichte für den genauen Schotter und die Bedingungen vom Lieferanten; sie variiert je nach Material und Feuchtigkeit."
+      }
+    ]
+  },
+  {
+    "slug": "mulch-volume",
+    "faqs": [
+      {
+        "question": "Wie wird das Mulchvolumen berechnet?",
+        "answer": "Die Fläche wird mit der geplanten Mulch-Tiefe multipliziert."
+      },
+      {
+        "question": "Kann Setzen die Bestellmenge ändern?",
+        "answer": "Ja. Produktmerkmale und Setzen können einen Zuschlag erfordern."
+      }
+    ]
+  },
+  {
+    "slug": "paint-quantity",
+    "faqs": [
+      {
+        "question": "Wie wird die Farbmenge geschätzt?",
+        "answer": "Die Wandfläche wird durch die Abdeckung pro Einheit geteilt und mit den Anstrichen multipliziert."
+      },
+      {
+        "question": "Warum kann die tatsächliche Verwendung abweichen?",
+        "answer": "Die Abdeckung variiert je nach Produkt und Oberflächenbedingungen."
+      }
+    ]
+  },
+  {
+    "slug": "flooring-quantity",
+    "faqs": [
+      {
+        "question": "Was macht der Abfallprozentsatz?",
+        "answer": "Er erhöht die Grundfläche des Bodens um den ausgewählten Zuschlag."
+      },
+      {
+        "question": "Ist der Abfallprozentsatz universell?",
+        "answer": "Nein. Befolgen Sie die Herstelleranweisungen und berücksichtigen Sie die Raumphorm und das Muster."
+      }
+    ]
+  },
+  {
+    "slug": "tile-quantity",
+    "faqs": [
+      {
+        "question": "Wie werden Fliesen gezählt?",
+        "answer": "Die Fläche wird durch die Fliesenfläche geteilt, der Abfall wird hinzugefügt und das Ergebnis wird aufgerundet."
+      },
+      {
+        "question": "Sollte die tatsächliche Fliesengröße verwendet werden?",
+        "answer": "Ja, wenn sie von den Nenndimensionen abweicht."
+      }
+    ]
+  },
+  {
+    "slug": "drywall-sheets",
+    "faqs": [
+      {
+        "question": "Was umfasst dieser grundlegende Rechner?",
+        "answer": "Er schätzt die Wandfläche für ein rechteckiges Zimmer und teilt sie durch die Sheet-Fläche."
+      },
+      {
+        "question": "Werden Türen und Fenster abgezogen?",
+        "answer": "Nein. Öffnungen und Installationspraktiken können die Menge ändern."
+      }
+    ]
+  },
+  {
+    "slug": "board-feet",
+    "faqs": [
+      {
+        "question": "Was ist ein Board Foot?",
+        "answer": "Es ist eine Holzvoleneinheit, die auf Dicke, Breite und Länge basiert."
+      },
+      {
+        "question": "Sollten tatsächliche Abmessungen verwendet werden?",
+        "answer": "Verwenden Sie tatsächliche Abmessungen, wenn diese bekannt sind."
+      }
+    ]
+  },
+  {
+    "slug": "material-cost",
+    "faqs": [
+      {
+        "question": "Was umfasst der Gesamtbetrag?",
+        "answer": "Er multipliziert die Menge mit dem Einzelpreis und berücksichtigt Abfall."
+      },
+      {
+        "question": "Sind Steuern und Lieferung eingeschlossen?",
+        "answer": "Nein. Fügen Sie diese separat hinzu, wenn erforderlich."
+      }
+    ]
+  },
+  {
+    "slug": "paver-quantity",
+    "faqs": [
+      {
+        "question": "Wie werden Pflastersteine gezählt?",
+        "answer": "Die Fläche wird in Quadratzoll umgerechnet, durch die Pflastersteinfläche geteilt, um Abfall erhöht und aufgerundet."
+      },
+      {
+        "question": "Können Muster das Ergebnis ändern?",
+        "answer": "Ja. Schnitte und Muster können den Abfall erhöhen."
+      }
+    ]
+  },
+  {
+    "slug": "sand-volume",
+    "faqs": [
+      {
+        "question": "Wie wird das Sandvolumen berechnet?",
+        "answer": "Länge, Breite und Tiefe werden multipliziert."
+      },
+      {
+        "question": "Berücksichtigt es die Verdichtung?",
+        "answer": "Nein. Überprüfen Sie die Anweisungen des Lieferanten."
+      }
+    ]
+  },
+  {
+    "slug": "soil-volume",
+    "faqs": [
+      {
+        "question": "Wie wird das Erdvolumen berechnet?",
+        "answer": "Länge, Breite und Tiefe werden multipliziert."
+      },
+      {
+        "question": "Sollte die Setzung berücksichtigt werden?",
+        "answer": "Ja. Die Fertigstellung und die Setzung können die Bestellmenge beeinflussen."
+      }
+    ]
+  },
+  {
+    "slug": "fence-pickets",
+    "faqs": [
+      {
+        "question": "Wie werden die Pfosten gezählt?",
+        "answer": "Die Länge des Zauns wird durch die Breite der Pfosten plus der Lücke geteilt und aufgerundet."
+      },
+      {
+        "question": "Beeinflussen Tore das Ergebnis?",
+        "answer": "Dieser grundlegende Rechner modelliert nur einen geraden Verlauf."
+      }
+    ]
+  },
+  {
+    "slug": "fence-posts",
+    "faqs": [
+      {
+        "question": "Wie werden die Pfosten geschätzt?",
+        "answer": "Die Länge des Zauns wird durch den Abstand geteilt, aufgerundet und ein Startpfosten wird hinzugefügt."
+      },
+      {
+        "question": "Werden zusätzliche Pfosten benötigt?",
+        "answer": "Ecken, Enden und Tore können zusätzliche Pfosten erfordern."
+      }
+    ]
+  },
+  {
+    "slug": "decking-boards",
+    "faqs": [
+      {
+        "question": "Wie werden die Dielengrundflächen geschätzt?",
+        "answer": "Die Reihen der Dielen werden aus der Breite der Veranda und der Dielengrundfläche plus der Lücke geschätzt, dann die Dielen pro Reihe aus der Länge der Veranda und der Länge der Dielen."
+      },
+      {
+        "question": "Einschließllich Abfall?",
+        "answer": "Ja. Der ausgewählte Abfallprozentsatz wird angewendet."
+      }
+    ]
+  },
+  {
+    "slug": "roofing-squares",
+    "faqs": [
+      {
+        "question": "Was ist ein Dachquadrate?",
+        "answer": "Ein Dachquadrate stellt 100 Quadratfuß Dachfläche dar."
+      },
+      {
+        "question": "Misst es die Dachneigung?",
+        "answer": "Nein. Geben Sie die tatsächliche Dachfläche ein."
+      }
+    ]
+  },
+  {
+    "slug": "roofing-material",
+    "faqs": [
+      {
+        "question": "Was stellt der Abfallprozentsatz dar?",
+        "answer": "Es fügt einen Zuschlag zur Dachfläche hinzu."
+      },
+      {
+        "question": "Ist ein Abfallprozentsatz für jedes Dach richtig?",
+        "answer": "Nein. Die Dachgeometrie und das System können den Zuschlag ändern."
+      }
+    ]
+  },
+  {
+    "slug": "gravel-weight",
+    "faqs": [
+      {
+        "question": "Wie wird das Gewicht des Schotters geschätzt?",
+        "answer": "Das Volumen wird mit der Schüttdichte in kompatiblen Einheiten multipliziert."
+      },
+      {
+        "question": "Warum kann das Lieferantengewicht unterschiedlich sein?",
+        "answer": "Die Schüttdichte variiert mit dem Material und der Feuchtigkeit."
+      }
+    ]
+  },
+  {
+    "slug": "concrete-weight",
+    "faqs": [
+      {
+        "question": "Wie wird das Gewicht des Betons geschätzt?",
+        "answer": "Das Volumen wird mit der Dichte in kompatiblen Einheiten multipliziert."
+      },
+      {
+        "question": "Sollte die Dichte produktspezifisch sein?",
+        "answer": "Verwenden Sie eine Dichte, die für die Mischung und die eingegebenen Einheiten geeignet ist."
+      }
+    ]
+  },
+  {
+    "slug": "concrete-footing",
+    "faqs": [
+      {
+        "question": "Wie wird das Fußbodenvolumen berechnet?",
+        "answer": "Länge, Breite und Tiefe werden multipliziert."
+      },
+      {
+        "question": "Wird damit ein Fußboden entworfen?",
+        "answer": "Nein. Es wird nur das rechteckige Betonvolumen geschätzt."
+      }
+    ]
+  },
+  {
+    "slug": "rebar-length",
+    "faqs": [
+      {
+        "question": "Wie wird die Gesamtlänge der Bewehrungsstäbe berechnet?",
+        "answer": "Die Anzahl der Stäbe wird mit der Länge pro Stab multipliziert."
+      },
+      {
+        "question": "Sind Überlappungen und Haken enthalten?",
+        "answer": "Nein. Verwenden Sie den Projektplan für die endgültigen Mengen."
+      }
+    ]
+  },
+  {
+    "slug": "gravel-bags",
+    "faqs": [
+      {
+        "question": "Wie werden die Schotterbeutel geschätzt?",
+        "answer": "Das erforderliche Volumen wird durch die Beutelabdeckung geteilt und aufgerundet."
+      },
+      {
+        "question": "Woher sollte die Beutelabdeckung stammen?",
+        "answer": "Verwenden Sie die Abdeckung, die für das exakte Produkt angegeben ist."
+      }
+    ]
+  },
+  {
+    "slug": "baseboard",
+    "faqs": [
+      {
+        "question": "Wie werden die Baseboard-Stücke geschätzt?",
+        "answer": "Die Gesamtlänge wird durch die Länge des Stücks geteilt und aufgerundet."
+      },
+      {
+        "question": "Sollten Türöffnungen abgezogen werden?",
+        "answer": "Nur wenn diese Öffnungen kein Baseboard erhalten."
+      }
+    ]
+  },
+  {
+    "slug": "wallpaper",
+    "faqs": [
+      {
+        "question": "Wie werden Tapetenrollen geschätzt?",
+        "answer": "Die Wandfläche wird durch die Rollenabdeckung geteilt und aufgerundet."
+      },
+      {
+        "question": "Können Musterwiederholungen die Menge erhöhen?",
+        "answer": "Ja. Musteranpassung und -schnitt können Abfälle erhöhen."
+      }
+    ]
+  },
+  {
+    "slug": "stair-risers",
+    "faqs": [
+      {
+        "question": "Wie wird die Anzahl der Stufen geschätzt?",
+        "answer": "Die Gesamthöhe wird durch die geplante Stufenhöhe geteilt und aufgerundet."
+      },
+      {
+        "question": "Bietet dies einen kodetauglichen Treppenentwurf?",
+        "answer": "Nein. Die endgültigen Treppenmaße sollten den geltenden Anforderungen und dem Projektentwurf entsprechen."
+      }
+    ]
+  },
+  {
+    "slug": "asphalt-volume",
+    "faqs": [
+      {
+        "question": "Wie wird das Asphaltvolumen berechnet?",
+        "answer": "Länge, Breite und Tiefe werden multipliziert."
+      },
+      {
+        "question": "Kann die Bestellung von Asphalt ein Gewicht erfordern?",
+        "answer": "Ja. Lieferanten können Asphalt nach Gewicht anbieten, so dass eine Dichte- oder Lieferantenumrechnung erforderlich sein kann."
+      }
+    ]
+  },
+  {
+    "slug": "cubic-yards",
+    "faqs": [
+      {
+        "question": "Wie viele Kubikfuß sind in einem Kubikyard?",
+        "answer": "Ein Kubikyard enthält 27 Kubikfuß."
+      },
+      {
+        "question": "Welche Einheiten sollte ich eingeben?",
+        "answer": "Geben Sie alle Abmessungen in Fuß für diese Umrechnung ein."
+      }
+    ]
+  },
+  {
+    "slug": "area",
+    "faqs": [
+      {
+        "question": "Wie wird die rechteckige Fläche berechnet?",
+        "answer": "Die Länge wird mit der Breite multipliziert."
+      },
+      {
+        "question": "Was ist, wenn die Form unregelmäßig ist?",
+        "answer": "Teilen Sie sie in einfache Formen auf und addieren Sie ihre Flächen."
+      }
+    ]
+  },
+  {
+    "slug": "volume",
+    "faqs": [
+      {
+        "question": "Wie wird das rechteckige Volumen berechnet?",
+        "answer": "Länge, Breite und Höhe werden multipliziert."
+      },
+      {
+        "question": "Kann dies unregelmäßige Formen berechnen?",
+        "answer": "Nein. Es wird angenommen, dass es sich um eine rechteckige Form handelt."
+      }
+    ]
+  }
+]
