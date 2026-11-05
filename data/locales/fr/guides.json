@@ -1,0 +1,189 @@
+[
+  {
+    "slug": "how-to-calculate-concrete-volume",
+    "title": "Comment calculer le volume de béton pour une dalle",
+    "description": "Apprenez à estimer le volume de béton pour une dalle rectangulaire en utilisant la longueur, la largeur et l'épaisseur, avec un exemple pratique.",
+    "intro": "Pour estimer le béton pour une dalle rectangulaire, multipliez la longueur de la dalle par sa largeur et son épaisseur. Gardez les trois dimensions dans des unités compatibles.",
+    "steps": [
+      "Mesurez la longueur et la largeur de la dalle.",
+      "Mesurez l'épaisseur de la dalle.",
+      "Multipliez la longueur × la largeur × l'épaisseur pour obtenir le volume requis.",
+      "Ajoutez une tolérance pour les déchets ou les conditions inégales lorsque vous transformez l'estimation en quantité d'achat."
+    ],
+    "formula": "Volume de béton = longueur × largeur × épaisseur.",
+    "example": "Pour une dalle de 20 ft × 10 ft d'épaisseur 0,5 ft, le calcul est 20 × 10 × 0,5 = 100 pieds cubes.",
+    "notes": [
+      "N'ayez pas de mélange de pieds et de pouces sans les convertir au préalable.",
+      "Le calculateur donne une estimation géométrique. Les commandes réelles peuvent dépendre des conditions du site, des formes, des pentes et des exigences des fournisseurs.",
+      "Pour le béton en sacs, utilisez le calculateur de béton en sacs après avoir déterminé le volume requis."
+    ],
+    "calculator_slug": "concrete-volume"
+  },
+  {
+    "slug": "how-to-calculate-gravel-volume",
+    "title": "Comment calculer la quantité de gravier dont vous avez besoin",
+    "description": "Calculez le volume de gravier pour les allées, les chemins et d'autres zones rectangulaires à partir de la longueur, de la largeur et de la profondeur.",
+    "intro": "Pour une zone rectangulaire simple, le volume de gravier est calculé à partir de la longueur, de la largeur et de la profondeur. Le résultat est une estimation de volume qui peut ensuite être converti en sacs, en mètres cubes ou en poids en utilisant des informations spécifiques au fournisseur.",
+    "steps": [
+      "Mesurez la longueur de la zone.",
+      "Mesurez la largeur.",
+      "Choisissez la profondeur de gravier prévue.",
+      "Multipliez la longueur × la largeur × la profondeur.",
+      "Convertissez le résultat en l'unité d'achat utilisée par votre fournisseur."
+    ],
+    "formula": "Volume de gravier = longueur × largeur × profondeur.",
+    "example": "Une zone de 20 ft × 10 ft à une profondeur de 0,25 ft nécessite 20 × 10 × 0,25 = 50 pieds cubes de volume.",
+    "notes": [
+      "Gardez chaque dimension dans la même unité.",
+      "Le compactage et le tassement peuvent modifier la quantité à commander.",
+      "Si vous achetez au poids, utilisez la densité en vrac du fournisseur plutôt que de supposer une valeur universelle."
+    ],
+    "calculator_slug": "gravel-volume"
+  },
+  {
+    "slug": "how-to-calculate-mulch",
+    "title": "Comment calculer la quantité de paillis dont vous avez besoin",
+    "description": "Estimez le volume de paillis pour les lits de jardin en utilisant la longueur du lit, la largeur et la profondeur ciblée.",
+    "intro": "Le paillis est généralement estimé à partir de la surface du lit et de la profondeur prévue. Le calcul est simple, mais la profondeur doit être exprimée dans la même unité que la longueur et la largeur.",
+    "steps": [
+      "Mesurez la longueur et la largeur du lit.",
+      "Déterminez la profondeur de paillis ciblée.",
+      "Convertissez la profondeur dans la même unité utilisée pour les autres dimensions.",
+      "Multipliez la longueur × la largeur × la profondeur.",
+      "Convertissez le volume en unité de sac ou de vrac vendue par votre fournisseur."
+    ],
+    "formula": "Volume de paillis = longueur × largeur × profondeur.",
+    "example": "Un lit de 20 ft × 10 ft avec 0,25 ft de paillis nécessite 50 pieds cubes.",
+    "notes": [
+      "Les lits irréguliers peuvent être divisés en rectangles plus petits et calculés séparément.",
+      "Le matériau fraîchement répandu peut se tasser, donc la quantité achetée peut nécessiter une tolérance pratique.",
+      "N'utilisez pas un nombre de couverture de sac d'un produit pour un autre produit sans vérifier son étiquette."
+    ],
+    "calculator_slug": "mulch-volume"
+  },
+  {
+    "slug": "how-to-calculate-flooring-quantity",
+    "title": "Comment calculer la quantité de matériaux de revêtement de sol nécessaires",
+    "description": "Estimez les matériaux de revêtement de sol à partir des dimensions de la pièce et incluez une marge d'usure pour les coupes et l'installation.",
+    "intro": "Les estimations de revêtement de sol commencent par la surface du sol. Un pourcentage d'usure peut ensuite être ajouté pour tenir compte des coupes, de la disposition et des pièces endommagées.",
+    "steps": [
+      "Mesurez la longueur et la largeur de la pièce.",
+      "Calculez la surface du sol en multipliant la longueur × la largeur.",
+      "Choisissez une marge d'usure réaliste pour l'installation.",
+      "Multipliez la surface par 1 + le pourcentage d'usure divisé par 100.",
+      "Arrondissez à la quantité de paquet requis par le produit."
+    ],
+    "formula": "Revêtement de sol requis = longueur × largeur × (1 + % d'usure ÷ 100).",
+    "example": "Pour une pièce de 20 pi × 15 pi avec 10 % d'usure, l'estimation est 20 × 15 × 1,10 = 330 pieds carrés.",
+    "notes": [
+      "Les formes de pièces complexes doivent être divisées en zones plus simples.",
+      "Suivez les conseils d'installation du fabricant de revêtement de sol pour les joints de dilatation et la disposition.",
+      "Les tailles de paquet diffèrent, donc la quantité d'achat finale peut nécessiter d'être arrondie à des boîtes complètes."
+    ],
+    "calculator_slug": "flooring-quantity"
+  },
+  {
+    "slug": "how-to-calculate-pavers",
+    "title": "Comment calculer le nombre de pavés nécessaires",
+    "description": "Estimez la quantité de pavés à partir de la surface du projet, des dimensions des pavés et d'une marge d'usure.",
+    "intro": "La quantité de pavés dépend à la fois de la surface à couvrir et des dimensions de face de chaque pavé. Une marge d'usure aide à tenir compte des coupes et des cassures.",
+    "steps": [
+      "Mesurez la longueur et la largeur du projet.",
+      "Calculez la surface du projet.",
+      "Mesurez la longueur et la largeur du pavé.",
+      "Convertissez les dimensions des pavés en unités compatibles.",
+      "Divisez la surface du projet par la surface d'un pavé et ajoutez la marge d'usure sélectionnée."
+    ],
+    "formula": "Pavés = surface du projet ÷ surface du pavé × (1 + % d'usure ÷ 100).",
+    "example": "Pour une surface de 20 pi × 12 pi utilisant des pavés de 12 po × 6 po avec 5 % d'usure, l'estimation est de 504 pavés.",
+    "notes": [
+      "Les comptes réels peuvent changer avec le motif de pose et les coupes de bordure.",
+      "Incluez le motif de jointure et les exigences d'installation du fabricant lors de la planification de la disposition.",
+      "Pour les formes complexes, calculez des sections séparées plutôt que de vous fier à un seul rectangle."
+    ],
+    "calculator_slug": "paver-quantity"
+  },
+  {
+    "slug": "how-to-calculate-roofing-squares",
+    "title": "Comment calculer les toitures en carrés",
+    "description": "Apprenez comment les toitures en carrés sont calculées à partir de la surface de la toiture et comment utiliser le résultat pour la planification des matériaux.",
+    "intro": "Un carré de toiture est une unité égale à 100 pieds carrés de surface de toiture. Commencez par la surface de la toiture en pieds carrés, puis divisez par 100.",
+    "steps": [
+      "Estimez ou mesurez la surface de la toiture.",
+      "Utilisez la surface réelle de la toiture plutôt que l'empreinte du bâtiment.",
+      "Divisez la surface en pieds carrés par 100.",
+      "Ajoutez la marge de matériaux requise pour les coupes, les chevauchements et le produit de toiture spécifique."
+    ],
+    "formula": "Toitures en carrés = surface de la toiture en pieds carrés ÷ 100.",
+    "example": "Une surface de toiture de 2 400 pieds carrés équivaut à 24 toitures en carrés avant toute marge de matériaux supplémentaire.",
+    "notes": [
+      "La géométrie de la toiture peut rendre la surface plus grande que l'empreinte du bâtiment.",
+      "Les différents produits de toiture ont des exigences de couverture et d'usure différentes.",
+      "Utilisez les instructions d'installation du fabricant et les exigences locales lors de la conversion des carrés en matériaux achetés."
+    ],
+    "calculator_slug": "roofing-squares"
+  },
+  {
+    "slug": "how-to-calculate-fence-posts",
+    "title": "Comment calculer les poteaux de clôture",
+    "description": "Estimez le nombre de poteaux de clôture à partir de la longueur totale de la clôture et de l'espacement des poteaux prévu.",
+    "intro": "Pour une clôture droite, une estimation simple divise la longueur totale de la clôture par l'espacement des poteaux prévu et ajoute un poteau pour le point de terminaison. Les portes, les coins et les changements de direction nécessitent une planification supplémentaire.",
+    "steps": [
+      "Mesurer la longueur totale de la clôture.",
+      "Choisir l'espacement des poteaux prévu.",
+      "Diviser la longueur de la clôture par l'espacement des poteaux.",
+      "Arrondir le nombre d'intervalles à l'unité supérieure.",
+      "Ajouter un poteau de point de terminaison pour une course droite simple."
+    ],
+    "formula": "Poteaux estimés = plafond(longueur de la clôture ÷ espacement) + 1.",
+    "example": "Pour 100 pi de clôture droite avec un espacement de 8 pi, l'estimation est plafond(100 ÷ 8) + 1 = 14 poteaux.",
+    "notes": [
+      "Les coins, les portes et les extrémités peuvent nécessiter des poteaux supplémentaires.",
+      "L'espacement des poteaux dépend de la conception de la clôture, des matériaux, de l'exposition au vent et des exigences locales.",
+      "Considérez le calculateur comme un outil d'estimation plutôt que comme une conception structurelle."
+    ],
+    "calculator_slug": "fence-posts"
+  },
+  {
+    "slug": "cubic-yards-vs-cubic-feet",
+    "title": "Mètres cubes par rapport à pieds cubes : comment convertir",
+    "description": "Comprenez la relation entre les pieds cubes et les mètres cubes et convertissez correctement les volumes de matériaux de construction.",
+    "intro": "Les matériaux de construction sont souvent vendus par mètre cube tandis que les mesures peuvent être prises en pieds. Puisqu'un mètre contient trois pieds dans chaque dimension, un mètre cube contient 27 pieds cubes.",
+    "steps": [
+      "Calculer le volume en pieds cubes lorsque vos dimensions sont en pieds.",
+      "Diviser les pieds cubes par 27 pour convertir en mètres cubes.",
+      "Arrondir la quantité d'achat selon les règles de commande du fournisseur."
+    ],
+    "formula": "Mètres cubes = pieds cubes ÷ 27.",
+    "example": "Un volume de 27 pieds cubes équivaut à 1 mètre cube.",
+    "notes": [
+      "Ne divisez pas une mesure linéaire par 27 ; la conversion s'applique au volume cubique.",
+      "Gardez le système d'unités cohérent avant de calculer le volume.",
+      "Les quantités de couverture et de livraison du fournisseur peuvent différer de l'estimation mathématique."
+    ],
+    "calculator_slug": "cubic-yards"
+  },
+  {
+    "slug": "how-many-bags-of-gravel-do-i-need",
+    "title": "Combien de sacs de gravier ai-je besoin ?",
+    "description": "Estimez les sacs de gravier à partir des dimensions du projet et de la surface couverte imprimée sur l'étiquette du produit.",
+    "intro": "Calculez d'abord le volume de gravier en pieds cubes, puis divisez par le volume que couvre un sac. Les tailles de sacs varient, utilisez donc le rendement imprimé sur l'étiquette exacte du produit.",
+    "steps": [
+      "Mesurer la longueur et la largeur du projet en pieds.",
+      "Convertir la profondeur prévue en pieds en divisant les pouces par 12.",
+      "Multiplier la longueur × la largeur × la profondeur pour trouver les pieds cubes.",
+      "Vérifier l'étiquette du sac pour sa surface couverte en pieds cubes par sac.",
+      "Diviser le volume du projet par la surface couverte du sac et arrondir à l'unité supérieure."
+    ],
+    "formula": "Sacs nécessaires = plafond(longueur (pi) × largeur (pi) × profondeur (pi) ÷ rendement du sac étiqueté (pi³ par sac)).",
+    "example": "Une zone de 20 pi × 10 pi à une profondeur de 3 pouces est de 20 × 10 × (3 ÷ 12) = 50 pi³. Si l'étiquette du sac indique 0,5 pi³ par sac, 50 ÷ 0,5 = 100 sacs. Le rendement de 0,5 pi³ est une hypothèse d'exemple, et non une taille de sac universelle.",
+    "notes": [
+      "Pour un projet irrégulier, divisez la zone en sections simples, calculez chaque section, puis additionnez les volumes.",
+      "Utilisez le rendement indiqué sur le sac ; les tailles et les surfaces couvertes des emballages diffèrent selon le produit.",
+      "L'estimation ne prend pas en compte la compaction, le tassement, le sol inégal ou les déchets.",
+      "Pour une commande en vrac mesurée par poids, utilisez la densité indiquée par le fournisseur pour le gravier spécifique."
+    ],
+    "calculator_slug": "gravel-bags",
+    "calculator_link_text": "Estimez le nombre de sacs avec le calculateur de sacs de gravier"
+  }
+]
