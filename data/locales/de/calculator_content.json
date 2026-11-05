@@ -1,0 +1,265 @@
+[
+  {
+    "slug": "concrete-volume",
+    "how": "Länge mit Breite und Dicke multiplizieren. Alle Dimensionen in der gleichen Einheit halten.",
+    "example": "Eine 20 ft mal 10 ft Platte, die 0.5 ft dick ist, benötigt 100 Kubikfuß Beton.",
+    "tips": [
+      "Die tatsächliche Dicke an mehreren Punkten messen.",
+      "Eine projektspezifische Toleranz für Abfall oder unebenes Gelände hinzufügen."
+    ]
+  },
+  {
+    "slug": "concrete-bags",
+    "how": "Zuerst den Betonvolumen in Kubikfuß berechnen. Für eine rechteckige Platte, die in Fuß und Zoll gemessen wird, verwenden Sie Länge × Breite × Dicke in Fuß (Zoll ÷ 12). Dann das Volumen durch den auf Ihrem exakten Betonmischbeutel aufgedruckten Ertrag teilen und auf eine ganze Tüte aufrunden.",
+    "example": "Eine 10 ft mal 10 ft Platte mit einer Dicke von 4 Zoll hat ein geschätztes Volumen von 10 × 10 × (4 ÷ 12) = 33,33 Kubikfuß. Mit QUIKRETE Concrete Mix #1101 als Beispiel ergibt ein 80 lb-Beutel etwa 0,60 Kubikfuß, sodass 33,33 ÷ 0,60 auf 56 Beutel aufgerundet wird.",
+    "tips": [
+      "Approximierter Ertrag von QUIKRETE Concrete Mix #1101: 40 lb = 0,30 Kubikfuß; 50 lb = 0,375 Kubikfuß; 60 lb = 0,45 Kubikfuß; 80 lb = 0,60 Kubikfuß; 90 lb = 0,675 Kubikfuß (regionale Verfügbarkeit).",
+      "Die Erträge variieren je nach Produkt und können gerundet werden. Verwenden Sie den auf dem exakten Beutel oder dem aktuellen Hersteller-Datenblatt aufgedruckten Ertrag.",
+      "Die Dicke der Platte, das unebene Untergrund, das Verschütten und der Abfall können die zu bestellende Menge erhöhen. Fügen Sie jede Toleranz absichtlich nach der Berechnung des Basisvolumens hinzu."
+    ]
+  },
+  {
+    "slug": "gravel-volume",
+    "how": "Länge, Breite und eingebaute Tiefe in Fuß eingeben. Der Rechner multipliziert sie, um Kubikfuß zu schätzen, und teilt dann durch 27, um das äquivalente Kubikyard zu zeigen.",
+    "example": "Für eine 20 ft mal 10 ft Fläche mit einer 3 Zoll (0,25 ft) Schicht: 20 × 10 × 0,25 = 50 Kubikfuß; 50 ÷ 27 = 1,85 Kubikyard vor jeder lieferanten-spezifischen Toleranz.",
+    "tips": [
+      "Die Schätzung ist geometrisches Volumen und fügt kein zusätzliches Material für die Setzung, Verdichtung, unebenes Gelände oder Abfall hinzu.",
+      "Bestätigen Sie mit dem Lieferanten, ob das angegebene Volumen locker oder verdichtet ist und wie das Material gemessen wird.",
+      "Wenn Sie nach Gewicht bestellen, verwenden Sie die Bulk-Dichte des Lieferanten für den exakten Schotter; die Dichte variiert je nach Material und Feuchtigkeit."
+    ]
+  },
+  {
+    "slug": "mulch-volume",
+    "how": "Die Gartenflächendimensionen mit der geplanten Mulch-Tiefe multiplizieren.",
+    "example": "Ein 20 ft mal 10 ft Beet mit einer Tiefe von 0,25 ft benötigt 50 Kubikfuß Mulch.",
+    "tips": [
+      "Die empfohlene Tiefe für die Art von Mulch, die Sie verwenden, bestätigen.",
+      "Für das Produkt geeignete Setzungen berücksichtigen."
+    ]
+  },
+  {
+    "slug": "paint-quantity",
+    "how": "Teilen Sie die Wandfläche durch die Produktabdeckung und multiplizieren Sie mit der Anzahl der Schichten.",
+    "example": "Für 800 Quadratfuß, 350 Quadratfuß Abdeckung pro Einheit und zwei Schichten beträgt die Schätzung 4,57 Einheiten.",
+    "tips": [
+      "Verwenden Sie die vom Hersteller angegebene Abdeckung für Ihr spezifisches Produkt.",
+      "Poroese oder raue Oberflächen können mehr Material erfordern."
+    ]
+  },
+  {
+    "slug": "flooring-quantity",
+    "how": "Multiplizieren Sie die Länge mit der Breite, um die Fläche zu erhalten, und addieren Sie dann den ausgewählten Abfallprozentsatz.",
+    "example": "Ein Raum mit 20 Fuß Länge und 15 Fuß Breite ist 300 Quadratfuß groß. Mit 10 % Abfall sollten Sie 330 Quadratfuß planen.",
+    "tips": [
+      "Folgen Sie den Installationsanweisungen des Bodenbelagsherstellers für Abfall.",
+      "Unregelmäßige Räume und komplexe Muster können eine höhere Toleranz erfordern."
+    ]
+  },
+  {
+    "slug": "tile-quantity",
+    "how": "Teilen Sie die Gesamtfläche durch die Fläche einer Kachel, addieren Sie den Abfallprozentsatz und runden Sie dann auf.",
+    "example": "Für 1.000 Quadratfuß mit 12-Zoll-12-Zoll-Kacheln und 10 % Abfall beträgt die Schätzung 1.100 Kacheln.",
+    "tips": [
+      "Verwenden Sie die tatsächlichen Kacheldimensionen, wenn sie von den Nennmaßen abweichen.",
+      "Behalten Sie Ersatzkacheln für zukünftige Reparaturen, wenn praktisch."
+    ]
+  },
+  {
+    "slug": "drywall-sheets",
+    "how": "Schätzen Sie die Wandoberfläche aus den Raumdimmensionen und teilen Sie sie durch die Fläche einer Tafel, dann runden Sie auf.",
+    "example": "Ein rechteckiger Raum mit 20 Fuß Länge, 15 Fuß Breite und 8 Fuß Wänden hat 560 Quadratfuß Wandfläche vor Abzügen.",
+    "tips": [
+      "Dieser grundlegende Rechner subtrahiert keine Türen oder Fenster.",
+      "Decken, Öffnungen, Layout und lokale Installationspraktiken können die endgültige Menge ändern."
+    ]
+  },
+  {
+    "slug": "board-feet",
+    "how": "Berechnen Sie die Board-Fuß als Dicke in Zoll multipliziert mit Breite in Zoll multipliziert mit Länge in Fuß, geteilt durch 12, dann mit der Menge multiplizieren.",
+    "example": "Ein 2 x 6 Brett, das 8 Fuß lang ist, enthält 8 Board-Fuß.",
+    "tips": [
+      "Verwenden Sie tatsächliche Abmessungen, wenn Sie Roh- oder bearbeitetes Holz preislich berechnen.",
+      "Die Preisgestaltung des Lieferanten kann unterschiedliche Bewertungs- und Messkonventionen verwenden."
+    ]
+  },
+  {
+    "slug": "material-cost",
+    "how": "Multiplizieren Sie die Menge mit dem Einzelpreis und addieren Sie dann den ausgewählten Abfallprozentsatz.",
+    "example": "100 Einheiten zu je 4 $ mit 10 % Abfall ergeben eine geschätzte Gesamtsumme von 440 $.",
+    "tips": [
+      "Verwenden Sie den aktuellen Preis für das exakte Produkt und die Einheit.",
+      "Steuern, Lieferung, Arbeitskosten und andere Projektkosten sind nicht enthalten, es sei denn, sie werden separat hinzugefügt."
+    ]
+  },
+  {
+    "slug": "paver-quantity",
+    "how": "Multiplizieren Sie die befestigte Fläche mit 144, um Quadratfuß in Quadratzoll umzurechnen, dividieren Sie durch die Pflasterfläche, addieren Sie Abfall, dann runden Sie auf.",
+    "example": "Eine 20 Fuß x 12 Fuß-Terrasse mit 12 x 6 Zoll-Pflastersteinen und 5 % Abfall benötigt etwa 504 Pflastersteine.",
+    "tips": [
+      "Verwenden Sie die tatsächlichen Abmessungen der Pflastersteine.",
+      "Muster und Schnitte können die Abfallanforderung ändern."
+    ]
+  },
+  {
+    "slug": "sand-volume",
+    "how": "Multiplizieren Sie Länge mit Breite mit Tiefe unter Verwendung konsistenter Einheiten.",
+    "example": "Ein Bereich von 20 Fuß x 10 Fuß mit einer Schicht von 0,1 Fuß benötigt 20 Kubikfuß.",
+    "tips": [
+      "Bestätigen Sie die geplante Schichtdicke und ob der Lieferant lose oder verdichtete Materialien verkauft."
+    ]
+  },
+  {
+    "slug": "soil-volume",
+    "how": "Länge mit Breite und Tiefe mit konsistenten Einheiten multiplizieren.",
+    "example": "Ein 10 ft breites und 10 ft langes Beet mit einer Tiefe von 0.5 ft benötigt 50 Kubikfuß Erde.",
+    "tips": [
+      "Berücksichtigen Sie die Setzung und den fertigen Grad beim Wählen einer Bestellmenge."
+    ]
+  },
+  {
+    "slug": "fence-pickets",
+    "how": "Zaunlänge in Zoll umrechnen und durch die Pfeilerbreite plus den Spalt teilen, dann aufrunden.",
+    "example": "Ein 100 ft Zaun mit 5,5 Zoll breiten Pfeilern und einem 1,5 Zoll Spalt benötigt 172 Pfeiler in dieser vereinfachten Geradenberechnung.",
+    "tips": [
+      "Überprüfen Sie die tatsächliche Pfeilerbreite und die gewünschte Abstände vor der Bestellung."
+    ]
+  },
+  {
+    "slug": "fence-posts",
+    "how": "Zaunlänge durch die geplante Pfostenabstände teilen, aufrunden, dann einen Pfosten für die Startposition hinzufügen.",
+    "example": "Ein 100 ft Zaun mit 8 ft Abständen benötigt 14 Pfosten.",
+    "tips": [
+      "Ecken, Tore und Enden können zusätzliche Pfosten erfordern."
+    ]
+  },
+  {
+    "slug": "decking-boards",
+    "how": "Schätzen Sie die Anzahl der Brettreihen aus der Deckenbreite und der Brettbreite plus Spalt, dann teilen Sie die Deckenlänge durch die Brettbreite und addieren Sie Abfall.",
+    "example": "Ein 12 ft breites und 20 ft langes Deck mit 6 Zoll breiten Brettern, einem 0,125 Zoll Spalt und 12 ft Brettern benötigt 48 Bretter vor Abfall in dieser vereinfachten Reihenberechnung.",
+    "tips": [
+      "Verbindungen, Überhänge, Bilderrahmen und Brettbreiten können die tatsächliche Menge ändern."
+    ]
+  },
+  {
+    "slug": "roofing-squares",
+    "how": "Teilen Sie die Dachoberfläche in Quadratfuß durch 100.",
+    "example": "Eine Dachoberfläche von 2.400 Quadratfuß entspricht 24 Dachquadrateinheiten.",
+    "tips": [
+      "Verwenden Sie die gemessene Dachoberfläche, wenn diese verfügbar ist. Eine Dachquadrateinheit entspricht 100 Quadratfuß."
+    ]
+  },
+  {
+    "slug": "roofing-material",
+    "how": "Multiplizieren Sie die Dachfläche mit eins plus dem ausgewählten Abfallprozentsatz.",
+    "example": "Ein Dach mit 2.400 Quadratfuß und 10% Abfall ergibt 2.640 Quadratfuß an geschätztem Material.",
+    "tips": [
+      "Die Produktabdeckung und die Einbaudetails variieren je nach Dachsystem."
+    ]
+  },
+  {
+    "slug": "gravel-weight",
+    "how": "Multiplizieren Sie das Volumen mit der Schüttdichte in kompatiblen Einheiten.",
+    "example": "Wenn 10 Kubikeinheiten Schotter eine Schüttdichte von 1,6 Gewichtseinheiten pro Kubikeinheit haben, beträgt die Schätzung 16 Gewichtseinheiten.",
+    "tips": [
+      "Verwenden Sie die vom Lieferanten angegebene Dichte für das spezifische Material."
+    ]
+  },
+  {
+    "slug": "concrete-weight",
+    "how": "Multiplizieren Sie das Volumen des Betons mit der Dichte in kompatiblen Einheiten.",
+    "example": "Wenn 10 Kubikeinheiten Beton eine Dichte von 150 Gewichtseinheiten pro Kubikeinheit haben, beträgt die Schätzung 1.500 Gewichtseinheiten.",
+    "tips": [
+      "Verwenden Sie eine Dichte, die mit den von Ihnen eingegebenen Volumeneinheiten kompatibel ist."
+    ]
+  },
+  {
+    "slug": "concrete-footing",
+    "how": "Länge, Breite und Tiefe mit der gleichen Einheit für alle Dimensionen multiplizieren.",
+    "example": "Ein Fußboden mit den Maßen 20 mal 1 mal 0.5 Einheiten hat ein Volumen von 10 Kubikeinheiten.",
+    "tips": [
+      "Verwenden Sie die geplanten Fußbodendimensionen aus dem Projektentwurf.",
+      "Fügen Sie nur dann Zuschläge hinzu, wenn sie für das Projekt geeignet sind."
+    ]
+  },
+  {
+    "slug": "rebar-length",
+    "how": "Multiplizieren Sie die Anzahl der Stäbe mit der Länge jedes Stabes.",
+    "example": "20 Stäbe mit jeweils 4 Einheiten erfordern 80 Längeneinheiten.",
+    "tips": [
+      "Dies ist eine Längenschätzung und berücksichtigt keine Überlappungen, Haken oder Schnitte.",
+      "Verwenden Sie den Stabplan für die endgültige Bestellung."
+    ]
+  },
+  {
+    "slug": "gravel-bags",
+    "how": "Teilen Sie das erforderliche Kiesvolumen durch die Abdeckung einer Tüte und runden Sie auf.",
+    "example": "10 Kubikeinheiten geteilt durch 0,5 Kubikeinheiten pro Tüte erfordern 20 Tüten.",
+    "tips": [
+      "Verwenden Sie die tatsächliche Tütenabdeckung, die vom Lieferanten gedruckt wird.",
+      "Berücksichtigen Sie die Verdichtung, wo relevant."
+    ]
+  },
+  {
+    "slug": "baseboard",
+    "how": "Teilen Sie die gesamte gemessene Länge des Bodenblechs durch die Länge eines Teils und runden Sie auf.",
+    "example": "100 Einheiten geteilt durch 8 Einheiten pro Teil erfordern 13 Teile.",
+    "tips": [
+      "Messen Sie den tatsächlichen Raumumfang aus.",
+      "Subtrahieren Sie Öffnungen nur, wenn sie kein Bodenblech erhalten."
+    ]
+  },
+  {
+    "slug": "wallpaper",
+    "how": "Teilen Sie die Wandfläche durch die Abdeckung einer Rolle und runden Sie auf.",
+    "example": "120 QuadratEinheiten, geteilt durch 25 QuadratEinheiten pro Rolle, erfordern 5 Rollen.",
+    "tips": [
+      "Verwenden Sie die Abdeckung und Musterinformationen des Herstellers.",
+      "Musterwiederholungen und Abfall können die erforderlichen Rollen erhöhen."
+    ]
+  },
+  {
+    "slug": "stair-risers",
+    "how": "Teilen Sie den gesamten vertikalen Anstieg durch die geplante Stufenhöhe und runden Sie auf.",
+    "example": "Ein Gesamtanstieg von 96 Einheiten bei 8 Einheiten pro Stufe ergibt 12 Stufen.",
+    "tips": [
+      "Verwenden Sie das endgültige Treppendesign für dimensionsgerechte, normenkonforme Abmessungen.",
+      "Dies ist eine Mengenschätzung, kein Treppendesign-Werkzeug."
+    ]
+  },
+  {
+    "slug": "asphalt-volume",
+    "how": "Multiplizieren Sie Länge, Breite und Tiefe unter Verwendung konsistenter Einheiten.",
+    "example": "Ein Bereich von 20 mal 10 bei einer Tiefe von 0,2 erfordert 40 Kubikeinheiten Asphalt.",
+    "tips": [
+      "Verwenden Sie die geplante verdichtete Tiefe, wo angebracht.",
+      "Lieferantenkonvertierung und Dichte können für Bestellungen nach Gewicht erforderlich sein."
+    ]
+  },
+  {
+    "slug": "cubic-yards",
+    "how": "Multiplizieren Sie Länge, Breite und Tiefe, dann dividieren Sie Kubikfuß durch 27, wenn die Eingaben in Fuß sind.",
+    "example": "Ein Volumen von 27 mal 1 mal 1 Fuß entspricht 1 Kubikyard.",
+    "tips": [
+      "Verwenden Sie Fuß für alle drei Eingaben, wenn Sie diese Konvertierung verwenden.",
+      "Bestätigen Sie für Bestellungen die Lieferantenkonventionen und Verdichtung."
+    ]
+  },
+  {
+    "slug": "area",
+    "how": "Länge und Breite mit der gleichen Einheit für beide Messungen multiplizieren.",
+    "example": "Ein 20 mal 15 Rechteck hat eine Fläche von 300 Quadrat-einheiten.",
+    "tips": [
+      "Verwenden Sie die tatsächlichen fertigen Abmessungen.",
+      "Unregelmäßige Flächen müssen möglicherweise in mehrere Rechtecke unterteilt werden."
+    ]
+  },
+  {
+    "slug": "volume",
+    "how": "Länge, Breite und Höhe mit konsistenten Einheiten multiplizieren.",
+    "example": "Ein 20 mal 15 mal 2 rechteckiges Volumen beträgt 600 Kubikeinheiten.",
+    "tips": [
+      "Dieses Tool geht von einer rechteckigen Form aus.",
+      "Verwenden Sie konsistente Einheiten für alle Abmessungen."
+    ]
+  }
+]
