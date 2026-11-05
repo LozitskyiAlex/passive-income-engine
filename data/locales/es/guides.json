@@ -1,0 +1,189 @@
+[
+  {
+    "slug": "how-to-calculate-concrete-volume",
+    "title": "Cómo calcular el volumen de concreto para una losa",
+    "description": "Aprenda a estimar el volumen de concreto para una losa rectangular utilizando la longitud, ancho y grosor, con un ejemplo práctico.",
+    "intro": "Para estimar el concreto para una losa rectangular, multiplique la longitud de la losa por su ancho y grosor. Mantenga todas las tres dimensiones en unidades compatibles.",
+    "steps": [
+      "Mida la longitud de la losa y su ancho.",
+      "Mida el grosor de la losa.",
+      "Multiplique la longitud × ancho × grosor para obtener el volumen requerido.",
+      "Añada un porcentaje de desperdicio o condiciones irregulares cuando convierta la estimación en una cantidad de compra."
+    ],
+    "formula": "Volumen de concreto = longitud × ancho × grosor.",
+    "example": "Para una losa de 20 pies × 10 pies de grosor 0,5 pies, la fórmula es 20 × 10 × 0,5 = 100 pies cúbicos.",
+    "notes": [
+      "No mezcle pies y pulgadas sin convertirlos primero.",
+      "El calculador da una estimación geométrica. Las órdenes reales pueden depender de las condiciones del sitio, formas, pendientes y requisitos del proveedor.",
+      "Para concreto en bolsas, utilice el calculador de bolsas de concreto después de determinar el volumen requerido."
+    ],
+    "calculator_slug": "concrete-volume"
+  },
+  {
+    "slug": "how-to-calculate-gravel-volume",
+    "title": "Cómo calcular cuánto gravilla necesitas",
+    "description": "Calcula el volumen de gravilla para aceras, caminos y otras áreas rectangulares desde la longitud, ancho y profundidad.",
+    "intro": "Para una área rectangular simple, el volumen de gravilla se calcula desde la longitud, ancho y profundidad. El resultado es una estimación de volumen que luego se puede convertir a bolsas, yardas cúbicas o peso utilizando información específica del proveedor.",
+    "steps": [
+      "Mida la longitud del área.",
+      "Mida el ancho.",
+      "Elige la profundidad de gravilla planificada.",
+      "Multiplica la longitud × ancho × profundidad.",
+      "Convierte el resultado a la unidad de compra utilizada por tu proveedor."
+    ],
+    "formula": "Volumen de grava = longitud × ancho × profundidad.",
+    "example": "Un área de 20 ft × 10 ft a una profundidad de 0,25 ft requiere 20 × 10 × 0,25 = 50 pies cúbicos de volumen.",
+    "notes": [
+      "Mantén cada dimensión en el mismo unidad.",
+      "La compactación y el asentamiento pueden cambiar la cantidad que debes ordenar.",
+      "Si se compra por peso, utilice la densidad de masa del proveedor en lugar de asumir un valor universal."
+    ],
+    "calculator_slug": "gravel-volume"
+  },
+  {
+    "slug": "how-to-calculate-mulch",
+    "title": "Cómo calcular la cantidad de mulch que necesitas",
+    "description": "Estima el volumen de mulch para camas de jardín utilizando la longitud, ancho y profundidad objetivo de la cama.",
+    "intro": "El mulch se estima normalmente desde el área de la cama y la profundidad planificada. La cálculo es simple, pero la profundidad debe expresarse en la misma unidad que la longitud y el ancho.",
+    "steps": [
+      "Mide la longitud y el ancho de la cama.",
+      "Decide la profundidad objetivo de mulch.",
+      "Convierte la profundidad a la misma unidad utilizada para las otras dimensiones.",
+      "Multiplica longitud × ancho × profundidad.",
+      "Convierte el volumen en la unidad de bolsa o en masa vendida por tu proveedor."
+    ],
+    "formula": "Volumen de mulch = longitud × ancho × profundidad.",
+    "example": "Una cama de 20 ft × 10 ft con 0,25 ft de mulch requiere 50 pies cúbicos.",
+    "notes": [
+      "Las camas irregulares pueden dividirse en rectángulos más pequeños y calcularse por separado.",
+      "El material fresco puede asentarse, por lo que la cantidad comprada puede requerir una práctica de reserva.",
+      "No utilice un número de cubierta de bolsa de un producto para otro producto sin verificar su etiqueta."
+    ],
+    "calculator_slug": "mulch-volume"
+  },
+  {
+    "slug": "how-to-calculate-flooring-quantity",
+    "title": "Cómo calcular la cantidad de material de suelo necesario",
+    "description": "Estime la cantidad de material de suelo a partir de las dimensiones de la habitación e incluya una reserva de desecho para cortes e instalación.",
+    "intro": "Las estimaciones de suelo comienzan con el área del suelo. Una porcentaje de desecho puede agregarse luego para tener en cuenta los cortes, el diseño y las piezas dañadas.",
+    "steps": [
+      "Mida la longitud y el ancho de la habitación.",
+      "Calcule el área del suelo multiplicando la longitud × ancho.",
+      "Elige una reserva de desecho realista para la instalación.",
+      "Multiplica el área por 1 + porcentaje de desecho dividido por 100.",
+      "Redondee hacia arriba a la cantidad de paquete requerida por el producto."
+    ],
+    "formula": "Suelo requerido = longitud × ancho × (1 + % de desecho ÷ 100).",
+    "example": "Para una habitación de 20 ft × 15 ft con un 10% de desecho, la estimación es 20 × 15 × 1,10 = 330 pies cuadrados.",
+    "notes": [
+      "Las formas de habitaciones complejas deben ser divididas en áreas más simples.",
+      "Siga las instrucciones de instalación del fabricante de suelo para las grietas de expansión y el diseño.",
+      "Los tamaños de los paquetes difieren, por lo que la cantidad final de compra puede necesitar redondear a cajas completas."
+    ],
+    "calculator_slug": "flooring-quantity"
+  },
+  {
+    "slug": "how-to-calculate-pavers",
+    "title": "Cómo calcular cuántos baldosas necesitas",
+    "description": "Estime la cantidad de baldosas a partir del área del proyecto, las dimensiones de las baldosas y una reserva de desecho.",
+    "intro": "La cantidad de baldosas depende tanto del área que se cubre como de las dimensiones de la cara de cada baldosa. Una reserva de desecho ayuda a tener en cuenta los cortes y el desgaste.",
+    "steps": [
+      "Mida la longitud y ancho del proyecto.",
+      "Calcula el área del proyecto.",
+      "Mida la longitud y ancho del piso de pizarra.",
+      "Convierte las dimensiones del piso de pizarra a unidades compatibles.",
+      "Divide el área del proyecto por el área de una pizarra y suma el porcentaje de desperdicio seleccionado."
+    ],
+    "formula": "Pizarras = área del proyecto ÷ área de una pizarra × (1 + % de desperdicio ÷ 100).",
+    "example": "Para un área de 20 ft × 12 ft utilizando pizarras de 12 in × 6 in con un 5% de desperdicio, la estimación es 504 pizarras.",
+    "notes": [
+      "Los conteos reales pueden cambiar con el patrón de colocación y los recortes de orillas.",
+      "Incluye el patrón de juntas y los requisitos de instalación del fabricante al planificar la disposición.",
+      "Para formas complejas, calcula secciones separadas en lugar de confiar en un rectángulo."
+    ],
+    "calculator_slug": "paver-quantity"
+  },
+  {
+    "slug": "how-to-calculate-roofing-squares",
+    "title": "Cómo calcular las cuadrillas de cubierta",
+    "description": "Aprende cómo se calculan las cuadrillas de cubierta a partir del área de la cubierta y cómo utilizar el resultado para planificar los materiales.",
+    "intro": "Una cuadrilla de cubierta es una unidad igual a 100 pies cuadrados de área de cubierta. Comienza con el área de la superficie de la cubierta en pies cuadrados, luego divide entre 100.",
+    "steps": [
+      "Estima o mida el área de la superficie de la cubierta.",
+      "Utiliza el área real de la superficie de la cubierta en lugar del pie de la construcción.",
+      "Divide el área en pies cuadrados por 100.",
+      "Añade el porcentaje de material requerido para recortes, superposiciones y el producto de cubierta específico."
+    ],
+    "formula": "Cuadrillas de cubierta = área de la cubierta en pies cuadrados ÷ 100.",
+    "example": "Una superficie de techo de 2,400 pies cuadrados equivale a 24 cuadrados de cubierta antes de cualquier allowance adicional de material.",
+    "notes": [
+      "La geometría del techo puede hacer que el área de la superficie sea mayor que el pie de imposta del edificio.",
+      "Los diferentes productos de cubierta tienen diferentes requisitos de cobertura y desperdicio.",
+      "Utilice las instrucciones de instalación del fabricante y los requisitos locales al convertir los cuadrados en materiales comprados."
+    ],
+    "calculator_slug": "roofing-squares"
+  },
+  {
+    "slug": "how-to-calculate-fence-posts",
+    "title": "Cómo calcular postes de valla",
+    "description": "Estime el número de postes de valla a partir de la longitud total de la valla y la separación planificada de los postes.",
+    "intro": "Para una valla recta, una estimación simple divide la longitud total de la valla por la separación planificada de los postes y agrega un poste para el punto final. Las puertas, los ángulos y los cambios de dirección requieren un plan adicional.",
+    "steps": [
+      "Mida la longitud total de la valla.",
+      "Elige la separación planificada de los postes.",
+      "Divida la longitud de la valla por la separación de los postes.",
+      "Redondee el número de intervalos hacia arriba.",
+      "Agregue un poste final para una valla recta simple."
+    ],
+    "formula": "Postes estimados = techo( longitud de la valla ÷ separación) + 1.",
+    "example": "Para 100 pies de valla recta con 8 pies de separación, la estimación es techo(100 ÷ 8) + 1 = 14 postes.",
+    "notes": [
+      "Los ángulos, las puertas y los extremos pueden requerir postes adicionales.",
+      "La separación de los postes depende del diseño de la valla, los materiales, la exposición al viento y los requisitos locales.",
+      "Trate el calculadora como una herramienta de estimación en lugar de un diseño estructural."
+    ],
+    "calculator_slug": "fence-posts"
+  },
+  {
+    "slug": "cubic-yards-vs-cubic-feet",
+    "title": "Yardas cúbicas vs pies cúbicos: Cómo convertir",
+    "description": "Entiende la relación entre pies cúbicos y yardas cúbicas y convierte correctamente los volúmenes de materiales de construcción.",
+    "intro": "Los materiales de construcción a menudo se venden por yardas cúbicas mientras que las mediciones pueden ser tomadas en pies. Dado que una yarda contiene tres pies en cada dimensión, una yarda cúbica contiene 27 pies cúbicos.",
+    "steps": [
+      "Calcula el volumen en pies cúbicos cuando tus dimensiones estén en pies.",
+      "Divide pies cúbicos por 27 para convertir a yardas cúbicas.",
+      "Redondea la cantidad de compra según las reglas de ordenación del proveedor."
+    ],
+    "formula": "Yardas cúbicas = pies cúbicos ÷ 27.",
+    "example": "Un volumen de 27 pies cúbicos equivale a 1 yarda cúbica.",
+    "notes": [
+      "No divida una medida lineal por 27; la conversión se aplica a volumen cúbico.",
+      "Mantén el sistema de unidades consistente antes de calcular el volumen.",
+      "La cobertura y las cantidades de entrega del proveedor pueden diferir del estimado matemático."
+    ],
+    "calculator_slug": "cubic-yards"
+  },
+  {
+    "slug": "how-many-bags-of-gravel-do-i-need",
+    "title": "¿Cuántos sacos de grava necesito?",
+    "description": "Estima sacos de grava desde dimensiones del proyecto y la cobertura impresa en la etiqueta del producto.",
+    "intro": "Primero calcula el volumen de grava en pies cúbicos, luego divide por el volumen que cubre un saco. Los tamaños de los sacos varían, así que utilice la rendimiento impreso en la etiqueta exacta del producto.",
+    "steps": [
+      "Mide la longitud y ancho del proyecto en pies.",
+      "Convierte la profundidad planificada a pies dividiendo pulgadas por 12.",
+      "Multiplica longitud × ancho × profundidad para encontrar pies cúbicos.",
+      "Revisa la etiqueta del saco para su cobertura en pies cúbicos por saco.",
+      "Divide el volumen del proyecto por la cobertura del saco y redondea hacia arriba a un saco entero."
+    ],
+    "formula": "Se necesitan bolsas = techo(longitud (pies) × ancho (pies) × profundidad (pies) ÷ rendimiento de bolsa etiquetada (cu ft por bolsa)).",
+    "example": "Un área de 20 pies × 10 pies a una profundidad de 3 pulgadas es 20 × 10 × (3 ÷ 12) = 50 cu ft. Si la etiqueta de la bolsa indica 0,5 cu ft por bolsa, 50 ÷ 0,5 = 100 bolsas. El rendimiento de 0,5 cu ft es un supuesto de ejemplo, no un tamaño de bolsa universal.",
+    "notes": [
+      "Para un proyecto irregular, divida el área en secciones simples, calcule cada sección, luego suma los volúmenes.",
+      "Utilice el rendimiento indicado por la bolsa; los tamaños de paquete y la cobertura difieren por producto.",
+      "La estimación no agrega extras por compactación, asentamiento, terreno irregular o residuos.",
+      "Para un pedido en masa medido por peso, utilice la densidad indicada por el proveedor para el gravilla específico."
+    ],
+    "calculator_slug": "gravel-bags",
+    "calculator_link_text": "Estime el recuento de bolsas con el Calculador de Bolsas de Grava"
+  }
+]
