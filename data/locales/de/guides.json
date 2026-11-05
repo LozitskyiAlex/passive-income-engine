@@ -1,0 +1,189 @@
+[
+  {
+    "slug": "how-to-calculate-concrete-volume",
+    "title": "So berechnen Sie das Betonvolumen für eine Platte",
+    "description": "Erfahren Sie, wie Sie das Betonvolumen für eine rechteckige Platte mit Hilfe der Länge, Breite und Dicke schätzen können, mit einem praktischen Beispiel.",
+    "intro": "Um das Betonvolumen für eine rechteckige Platte zu schätzen, multiplizieren Sie die Plattenlänge mit ihrer Breite und Dicke. Halten Sie alle drei Dimensionen in kompatiblen Einheiten.",
+    "steps": [
+      "Messen Sie die Plattenlänge und -breite.",
+      "Messern Sie die Plattendicke.",
+      "Multiplizieren Sie Länge × Breite × Dicke, um das erforderliche Volumen zu erhalten.",
+      "Fügen Sie einen Zuschlag für Abfälle oder unebene Bedingungen hinzu, wenn Sie die Schätzung in eine Kaufmenge umwandeln."
+    ],
+    "formula": "Betonvolumen = Länge × Breite × Dicke.",
+    "example": "Für eine 20 ft × 10 ft Platte, die 0,5 ft dick ist, lautet die Berechnung 20 × 10 × 0,5 = 100 Kubikfuß.",
+    "notes": [
+      "Mischen Sie Fuß und Zoll nicht ohne vorherige Umrechnung.",
+      "Der Rechner gibt eine geometrische Schätzung aus. Tatsächliche Bestellungen können von den Bedingungen vor Ort, Formen, Neigungen und Anbieteranforderungen abhängen.",
+      "Für Beutelbeton verwenden Sie den Betonbeutelrechner nach Feststellung des erforderlichen Volumens."
+    ],
+    "calculator_slug": "concrete-volume"
+  },
+  {
+    "slug": "how-to-calculate-gravel-volume",
+    "title": "So berechnen Sie das Kiesvolumen",
+    "description": "Berechnen Sie das Kiesvolumen für Auffahrten, Wege und andere rechteckige Flächen aus Länge, Breite und Tiefe.",
+    "intro": "Für eine einfache rechteckige Fläche wird das Kiesvolumen aus Länge, Breite und Tiefe berechnet. Das Ergebnis ist eine Volumenschätzung, die dann mithilfe von anbieterspezifischen Informationen in Beutel, Kubikyard oder Gewicht umgerechnet werden kann.",
+    "steps": [
+      "Messern Sie die Länge der Fläche.",
+      "Messern Sie die Breite.",
+      "Wählen Sie die geplante Kiestiefe.",
+      "Multiplizieren Sie Länge × Breite × Tiefe.",
+      "Rechnen Sie das Ergebnis in die Kaufeinheit um, die von Ihrem Anbieter verwendet wird."
+    ],
+    "formula": "Kiesvolumen = Länge × Breite × Tiefe.",
+    "example": "Eine 20 ft × 10 ft Fläche mit einer Tiefe von 0,25 ft erfordert 20 × 10 × 0,25 = 50 Kubikfuß Volumen.",
+    "notes": [
+      "Halten Sie jede Dimension in der gleichen Einheit.",
+      "Kompaktion und Setzen können die Menge ändern, die bestellt werden muss.",
+      "Wenn Sie nach Gewicht kaufen, verwenden Sie die Bulk-Dichte des Anbieters anstelle eines universellen Wertes."
+    ],
+    "calculator_slug": "gravel-volume"
+  },
+  {
+    "slug": "how-to-calculate-mulch",
+    "title": "So berechnen Sie die Mulchmenge",
+    "description": "Schätzen Sie das Mulchvolumen für Gartenbeete mit Hilfe der Beetlänge, -breite und der geplanten Tiefe.",
+    "intro": "Mulch wird normalerweise aus der Fläche des Beets und der geplanten Tiefe geschätzt. Die Berechnung ist einfach, aber die Tiefe muss in der gleichen Einheit wie Länge und Breite ausgedrückt werden.",
+    "steps": [
+      "Messern Sie die Beetlänge und -breite.",
+      "Entscheiden Sie sich für die geplante Mulchtiefe.",
+      "Rechnen Sie die Tiefe in die gleiche Einheit um, die für die anderen Dimensionen verwendet wird.",
+      "Multiplizieren Sie Länge × Breite × Tiefe.",
+      "Rechnen Sie das Volumen in die Beutel- oder Großeinheit um, die von Ihrem Anbieter verkauft wird."
+    ],
+    "formula": "Mulchvolumen = Länge × Breite × Tiefe.",
+    "example": "Ein 20 ft × 10 ft Beet mit 0,25 ft Mulch erfordert 50 Kubikfuß.",
+    "notes": [
+      "Unregelmäßige Beete können in kleinere Rechtecke unterteilt und separat berechnet werden.",
+      "Frisch aufgetragenes Material kann sich setzen, so dass die gekaufte Menge einen praktischen Zuschlag erfordern kann.",
+      "Verwenden Sie nicht die Abdeckungszahl eines Produkts für ein anderes Produkt, ohne das Etikett zu überprüfen."
+    ],
+    "calculator_slug": "mulch-volume"
+  },
+  {
+    "slug": "how-to-calculate-flooring-quantity",
+    "title": "So berechnen Sie den benötigten Bodenbelag",
+    "description": "Schätzen Sie den Bodenbelag auf der Grundlage der Raumabmessungen und berücksichtigen Sie einen Abfallzuschlag für Schnitte und Installation.",
+    "intro": "Bodenbelagsschätzungen beginnen mit der Bodenfläche. Ein Abfallprozentsatz kann dann hinzugefügt werden, um Schnitte, Layout und beschädigte Teile zu berücksichtigen.",
+    "steps": [
+      "Messen Sie die Raumlänge und -breite.",
+      "Berechnen Sie die Bodenfläche, indem Sie Länge × Breite multiplizieren.",
+      "Wählen Sie einen realistischen Abfallzuschlag für die Installation.",
+      "Multiplizieren Sie die Fläche mit 1 + Abfallprozentsatz geteilt durch 100.",
+      "Runden Sie auf die Paketmenge auf, die vom Produkt benötigt wird."
+    ],
+    "formula": "Benötigter Bodenbelag = Länge × Breite × (1 + Abfall% ÷ 100).",
+    "example": "Für einen Raum von 20 ft × 15 ft mit 10% Abfall beträgt die Schätzung 20 × 15 × 1,10 = 330 Quadratfuß.",
+    "notes": [
+      "Komplexe Raumformen sollten in einfachere Bereiche unterteilt werden.",
+      "Befolgen Sie die Installationsanleitung des Bodenbelagherstellers für Expansionsfugen und Layout.",
+      "Paketgrößen unterscheiden sich, sodass die endgültige Kaufmenge möglicherweise auf volle Kartons aufgerundet werden muss."
+    ],
+    "calculator_slug": "flooring-quantity"
+  },
+  {
+    "slug": "how-to-calculate-pavers",
+    "title": "So berechnen Sie die benötigte Anzahl an Pflastersteinen",
+    "description": "Schätzen Sie die Pflastersteinmenge auf der Grundlage der Projektfläche, der Pflastersteindimensionen und eines Abfallzuschlags.",
+    "intro": "Die Pflastersteinmenge hängt sowohl von der zu überdeckenden Fläche als auch von den Außenmaßen jedes Pflastersteins ab. Ein Abfallzuschlag hilft, Schnitte und Bruch zu berücksichtigen.",
+    "steps": [
+      "Messen Sie die Projektlänge und -breite.",
+      "Berechnen Sie die Projektfläche.",
+      "Messen Sie die Pflastersteinlänge und -breite.",
+      "Konvertieren Sie die Pflastersteindimensionen in kompatible Einheiten.",
+      "Teilen Sie die Projektfläche durch die Fläche eines Pflastersteins und addieren Sie den ausgewählten Abfallzuschlag."
+    ],
+    "formula": "Pflastersteine = Projektfläche ÷ Pflastersteinfläche × (1 + Abfall% ÷ 100).",
+    "example": "Für eine Fläche von 20 ft × 12 ft mit 12 Zoll × 6 Zoll großen Pflastersteinen und 5% Abfall beträgt die Schätzung 504 Pflastersteine.",
+    "notes": [
+      "Tatsächliche Zählungen können sich mit dem Verlegemuster und den Randabschnitten ändern.",
+      "Berücksichtigen Sie das Verlegemuster und die Installationsanforderungen des Herstellers bei der Planung des Layouts.",
+      "Für komplexe Formen sollten separate Abschnitte berechnet werden, anstatt sich auf ein Rechteck zu verlassen."
+    ],
+    "calculator_slug": "paver-quantity"
+  },
+  {
+    "slug": "how-to-calculate-roofing-squares",
+    "title": "So berechnen Sie Dachquadrate",
+    "description": "Erfahren Sie, wie Dachquadrate aus der Dachfläche berechnet werden und wie das Ergebnis für die Materialplanung verwendet wird.",
+    "intro": "Ein Dachquadrat ist eine Einheit, die 100 Quadratfuß Dachfläche entspricht. Beginnen Sie mit der Dachfläche in Quadratfuß, dann teilen Sie durch 100.",
+    "steps": [
+      "Schätzen oder messen Sie die Dachoberfläche.",
+      "Verwenden Sie die tatsächliche Dachoberfläche anstelle des Fußabdrucks des Gebäudes.",
+      "Teilen Sie die Quadratfußfläche durch 100.",
+      "Addieren Sie den Materialzuschlag, der für Schnitte, Überlappungen und das spezifische Dachprodukt erforderlich ist."
+    ],
+    "formula": "Dachquadrate = Dachfläche in Quadratfuß ÷ 100.",
+    "example": "Eine Dachfläche von 2.400 Quadratfuß entspricht 24 Dachquadraten, bevor ein zusätzlicher Materialzuschlag hinzugefügt wird.",
+    "notes": [
+      "Die Dachgeometrie kann die Oberfläche größer machen als den Fußabdruck des Gebäudes.",
+      "Verschiedene Dachprodukte haben unterschiedliche Abdeckungen und Abfallanforderungen.",
+      "Verwenden Sie die Installationsanleitung des Herstellers und die lokalen Anforderungen, wenn Sie Quadrate in gekaufte Materialien umrechnen."
+    ],
+    "calculator_slug": "roofing-squares"
+  },
+  {
+    "slug": "how-to-calculate-fence-posts",
+    "title": "So berechnen Sie Zaunpfosten",
+    "description": "Schätzen Sie die Anzahl der Zaunpfosten aus der Gesamtlänge des Zauns und dem geplanten Pfostenabstand.",
+    "intro": "Für einen geraden Zaun ist eine einfache Schätzung, die Gesamtlänge des Zauns durch den geplanten Pfostenabstand teilt und einen Pfosten für den Endpunkt hinzufügt. Tore, Ecken und Richtungsänderungen erfordern zusätzliche Planung.",
+    "steps": [
+      "Messung der Gesamtlänge des Zauns.",
+      "Wahl des geplanten Pfostenabstands.",
+      "Teilen der Zaunlänge durch den Pfostenabstand.",
+      "Runden der Anzahl der Intervalle auf.",
+      "Hinzufügen eines Endpunktpfostens für einen einfachen geraden Verlauf."
+    ],
+    "formula": "Geschätzte Pfosten = Obergrenze(Zaunlänge ÷ Abstand) + 1.",
+    "example": "Für 100 ft geraden Zauns mit 8 ft Abstand beträgt die Schätzung Obergrenze(100 ÷ 8) + 1 = 14 Pfosten.",
+    "notes": [
+      "Ecken, Tore und Enden können zusätzliche Pfosten erfordern.",
+      "Der Pfostenabstand hängt von der Zaunkonstruktion, den Materialien, der Windbelastung und den lokalen Anforderungen ab.",
+      "Behandeln Sie den Rechner als Schätzwerkzeug und nicht als statisches Design."
+    ],
+    "calculator_slug": "fence-posts"
+  },
+  {
+    "slug": "cubic-yards-vs-cubic-feet",
+    "title": "Kubikyard vs Kubikfuß: So konvertieren Sie",
+    "description": "Verstehen Sie die Beziehung zwischen Kubikfuß und Kubikyard und konvertieren Sie die Volumina von Baustoffen richtig.",
+    "intro": "Baustoffe werden oft nach Kubikyard verkauft, während Messungen in Fuß durchgeführt werden. Da ein Yard drei Fuß in jeder Dimension enthält, enthält ein Kubikyard 27 Kubikfuß.",
+    "steps": [
+      "Berechnen Sie das Volumen in Kubikfuß, wenn Ihre Dimensionen in Fuß sind.",
+      "Teilen Sie Kubikfuß durch 27, um in Kubikyard umzurechnen.",
+      "Runden Sie die Bestellmenge gemäß den Bestellregeln des Lieferanten."
+    ],
+    "formula": "Kubikyard = Kubikfuß ÷ 27.",
+    "example": "Ein Volumen von 27 Kubikfuß entspricht 1 Kubikyard.",
+    "notes": [
+      "Teilen Sie keine lineare Messung durch 27; die Umrechnung gilt nur für das Volumen.",
+      "Halten Sie das Einheitensystem vor der Volumenberechnung konsistent.",
+      "Die Abdeckung und Liefermengen des Lieferanten können von der mathematischen Schätzung abweichen."
+    ],
+    "calculator_slug": "cubic-yards"
+  },
+  {
+    "slug": "how-many-bags-of-gravel-do-i-need",
+    "title": "Wie viele Säcke Kies benötige ich?",
+    "description": "Schätzen Sie die Anzahl der Kies-Säcke aus den Projektdimensionen und der auf dem Produktetikett aufgedruckten Abdeckung.",
+    "intro": "Berechnen Sie zunächst das Kiesvolumen in Kubikfuß, dann teilen Sie es durch das Volumen, das eine Säcke abdeckt. Die Größe der Säcke variieren, daher verwenden Sie den auf dem genauen Produktetikett aufgedruckten Ertrag.",
+    "steps": [
+      "Messung der Projektlänge und -breite in Fuß.",
+      "Umrechnung der geplanten Tiefe in Fuß durch Division der Zoll durch 12.",
+      "Multiplikation von Länge × Breite × Tiefe, um Kubikfuß zu ermitteln.",
+      "Prüfen Sie das Etikett der Säcke auf die Abdeckung in Kubikfuß pro Säcke.",
+      "Teilen Sie das Projektvolumen durch die Säckenabdeckung und runden Sie auf eine ganze Säcke auf."
+    ],
+    "formula": "Benötigte Säcke = Obergrenze(Länge (Fuß) × Breite (Fuß) × Tiefe (Fuß) ÷ Etikettertrag pro Säcke (Kubikfuß pro Säcke)).",
+    "example": "Ein Bereich von 20 ft × 10 ft bei 3 Zoll Tiefe beträgt 20 × 10 × (3 ÷ 12) = 50 Kubikfuß. Wenn das Etikett der Säcke 0,5 Kubikfuß pro Säcke angibt, beträgt 50 ÷ 0,5 = 100 Säcke. Der Ertrag von 0,5 Kubikfuß ist eine Annahme und keine universelle Säckengröße.",
+    "notes": [
+      "Teilen Sie für ein unregelmäßiges Projekt den Bereich in einfache Abschnitte, berechnen Sie jeden Abschnitt und addieren Sie dann die Volumina.",
+      "Verwenden Sie den auf der Säcke angegebenen Ertrag; die Größe der Verpackungen und die Abdeckung unterscheiden sich je nach Produkt.",
+      "Die Schätzung berücksichtigt keine zusätzlichen Mengen für Verdichtung, Setzung, unebenes Gelände oder Abfall.",
+      "Für eine Großbestellung, die nach Gewicht gemessen wird, verwenden Sie die vom Lieferanten angegebene Dichte für den spezifischen Kies."
+    ],
+    "calculator_slug": "gravel-bags",
+    "calculator_link_text": "Schätzen Sie die Anzahl der Säcke mit dem Kies-Säcke-Rechner"
+  }
+]
