@@ -1,69 +1,69 @@
 [
   {
-    "slug": "beton-volumen",
+    "slug": "concrete-volume",
     "title": "Betonvolumenrechner",
     "description": "Berechnen Sie das Betonvolumen für ein rechteckiges Platten, Fundament oder Pflaster.",
     "type": "concrete_volume",
     "category": "Beton"
   },
   {
-    "slug": "beton-säcke",
+    "slug": "concrete-bags",
     "title": "Beton-Sackrechner",
     "description": "Schätzen Sie die Anzahl der Betonsäcke, die für ein Projekt benötigt werden.",
     "type": "concrete_bags",
     "category": "Beton"
   },
   {
-    "slug": "geröll-volumen",
+    "slug": "gravel-volume",
     "title": "Geröllrechner",
     "description": "Berechnen Sie das erforderliche Volumen von Geröll für eine Fläche.",
     "type": "gravel_volume",
     "category": "Geröll & Boden"
   },
   {
-    "slug": "mulch-volumen",
+    "slug": "mulch-volume",
     "title": "Mulchrechner",
     "description": "Berechnen Sie die erforderliche Menge an Mulch für einen Gartenbereich.",
     "type": "mulch_volume",
     "category": "Geröll & Boden"
   },
   {
-    "slug": "farbe-menge",
+    "slug": "paint-quantity",
     "title": "Farbemengenrechner",
     "description": "Schätzen Sie die benötigte Farbe von der Wandfläche, der Abdeckung und den Anstrichen.",
     "type": "paint_quantity",
     "category": "Innenausbau"
   },
   {
-    "slug": "bodenbelag-menge",
+    "slug": "flooring-quantity",
     "title": "Bodenbelagrechner",
     "description": "Schätzen Sie die erforderliche Menge an Bodenbelag, einschließlich eines Abfallzuschlags.",
     "type": "flooring_quantity",
     "category": "Innenausbau"
   },
   {
-    "slug": "kachel-menge",
+    "slug": "tile-quantity",
     "title": "Kachelrechner",
     "description": "Schätzen Sie die erforderliche Anzahl an Kacheln für einen Boden oder eine Wand.",
     "type": "tile_quantity",
     "category": "Innenausbau"
   },
   {
-    "slug": "trockenbau-scheiben",
+    "slug": "drywall-sheets",
     "title": "Trockenbaurechner",
     "description": "Schätzen Sie die erforderliche Anzahl an Trockenbauscheiben von den Raumdimensionen.",
     "type": "drywall_sheets",
     "category": "Innenausbau"
   },
   {
-    "slug": "holzfußboden",
+    "slug": "board-feet",
     "title": "Holzfußbodenrechner",
     "description": "Berechnen Sie den Holzfußboden von den Holzdimensionen und der Menge.",
     "type": "board_feet",
     "category": "Holz & Dachboden"
   },
   {
-    "slug": "material-kosten",
+    "slug": "material-cost",
     "title": "Materialkostenrechner",
     "description": "Berechnen Sie die Gesamtkosten der Materialien von der Menge, dem Einheitspreis und dem Abfall.",
     "type": "material_cost",
@@ -140,70 +140,70 @@
     "category": "Beton"
   },
   {
-    "slug": "beton-grundierung",
+    "slug": "concrete-footing",
     "title": "Beton-Grundierungsberechnung",
     "description": "Schätzen Sie den rechteckigen Beton-Grundierungsvolumen.",
     "type": "concrete_footing",
     "category": "Beton"
   },
   {
-    "slug": "stahldraht-länge",
+    "slug": "rebar-length",
     "title": "Stahldraht-Länge-Berechnung",
     "description": "Schätzen Sie die Gesamtlänge des Stahldrahtes aus der Anzahl der Drahte und der Drahtlänge.",
     "type": "rebar_length",
     "category": "Beton"
   },
   {
-    "slug": "kies-säcke",
+    "slug": "gravel-bags",
     "title": "Kies-Sack-Berechnung",
     "description": "Schätzen Sie die Anzahl der Kies-Säcke, die benötigt werden, aus dem Volumen und der Abdeckung pro Sack.",
     "type": "gravel_bags",
     "category": "Kies & Boden"
   },
   {
-    "slug": "sockelprofil",
+    "slug": "baseboard",
     "title": "Sockelprofil-Berechnung",
     "description": "Schätzen Sie die Anzahl der Sockelprofilstücke, die für ein Zimmer benötigt werden.",
     "type": "baseboard",
     "category": "Innenausbau"
   },
   {
-    "slug": "tapetenrolle",
+    "slug": "wallpaper",
     "title": "Tapetenrolle-Berechnung",
     "description": "Schätzen Sie die Tapetenrolle aus der Wandfläche und der Abdeckung pro Rolle.",
     "type": "wallpaper",
     "category": "Innenausbau"
   },
   {
-    "slug": "treppenstufen",
+    "slug": "stair-risers",
     "title": "Treppenstufen-Berechnung",
     "description": "Schätzen Sie die Anzahl der Treppenstufen aus der Gesamthöhe und der Stufenhöhe.",
     "type": "stair_risers",
     "category": "Decken & Zaun"
   },
   {
-    "slug": "asphalt-volumen",
+    "slug": "asphalt-volume",
     "title": "Asphalt-Berechnung",
     "description": "Schätzen Sie das Asphaltvolumen für ein rechteckiges Gebiet.",
     "type": "asphalt_volume",
     "category": "Beton"
   },
   {
-    "slug": "kubische-yards",
+    "slug": "cubic-yards",
     "title": "Kubische Yard-Berechnung",
     "description": "Konvertieren Sie die rechteckigen Dimensionen in Kubische Yards.",
     "type": "cubic_yards",
     "category": "Allgemein"
   },
   {
-    "slug": "fläche",
+    "slug": "area",
     "title": "Flächenberechnung",
     "description": "Berechnen Sie die rechteckige Fläche aus Länge und Breite.",
     "type": "area",
     "category": "Allgemein"
   },
   {
-    "slug": "volumen",
+    "slug": "volume",
     "title": "Volumenberechnung",
     "description": "Berechnen Sie das rechteckige Volumen aus Länge, Breite und Höhe.",
     "type": "volume",
