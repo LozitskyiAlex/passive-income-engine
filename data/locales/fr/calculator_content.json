@@ -1,0 +1,265 @@
+[
+  {
+    "slug": "concrete-volume",
+    "how": "Multipliez la longueur par la largeur par l'épaisseur. Gardez toutes les dimensions dans la même unité.",
+    "example": "Un plateau de 20 pieds sur 10 pieds d'épaisseur 0,5 pied a besoin de 100 pieds cubes de béton.",
+    "tips": [
+      "Mesurez l'épaisseur réelle à plusieurs points.",
+      "Ajoutez une tolérance spécifique au projet pour les déchets ou le sol inégal."
+    ]
+  },
+  {
+    "slug": "concrete-bags",
+    "how": "Calculez d'abord le volume de béton en pieds cubes. Pour un plateau rectangulaire mesuré en pieds et en pouces, utilisez la longueur × la largeur × l'épaisseur en pieds (pouces ÷ 12). Divisez ensuite le volume par le rendement imprimé pour votre mélange de béton exact et arrondissez à un sac entier.",
+    "example": "Un plateau de 10 pieds × 10 pieds d'épaisseur 4 pouces a un volume estimé de 10 × 10 × (4 ÷ 12) = 33,33 pieds cubes. En utilisant le mélange de béton QUIKRETE #1101 comme exemple, un sac de 80 livres donne environ 0,60 pied cube, donc 33,33 ÷ 0,60 arrondit à 56 sacs.",
+    "tips": [
+      "Rendements approximatifs du mélange de béton QUIKRETE #1101 : 40 livres = 0,30 pied cube ; 50 livres = 0,375 pied cube ; 60 livres = 0,45 pied cube ; 80 livres = 0,60 pied cube ; 90 livres = 0,675 pied cube (disponibilité régionale).",
+      "Les rendements varient selon le produit et peuvent être arrondis. Utilisez le rendement imprimé sur le sac exact ou sa fiche technique de fabricant actuelle.",
+      "L'épaisseur du plateau, le sous-sol inégal, les déversements et les déchets peuvent augmenter la quantité à commander. Ajoutez toute tolérance délibérément après avoir calculé le volume de base."
+    ]
+  },
+  {
+    "slug": "gravel-volume",
+    "how": "Entrez la longueur, la largeur et la profondeur installée en pieds. Le calculateur les multiplie pour estimer les pieds cubes, puis divise par 27 pour afficher les yards cubes équivalents.",
+    "example": "Pour une zone de 20 pieds × 10 pieds avec une couche de 3 pouces (0,25 pied) : 20 × 10 × 0,25 = 50 pieds cubes ; 50 ÷ 27 = 1,85 yard cube avant toute tolérance spécifique au fournisseur.",
+    "tips": [
+      "L'estimation est un volume géométrique et ne prend pas en compte le matériel supplémentaire pour le tassement, la compaction, le sol inégal ou les déchets.",
+      "Confirmez avec le fournisseur si le volume indiqué est lâche ou compacté et comment le matériel est mesuré.",
+      "Si vous commandez par poids, utilisez la densité en vrac du fournisseur pour le gravier exact ; la densité varie selon le matériau et l'humidité."
+    ]
+  },
+  {
+    "slug": "mulch-volume",
+    "how": "Multipliez les dimensions de la zone de jardin par la profondeur de paillis prévue.",
+    "example": "Un lit de 20 pieds sur 10 pieds avec une profondeur de 0,25 pied a besoin de 50 pieds cubes de paillis.",
+    "tips": [
+      "Confirmez la profondeur recommandée pour le type de paillis que vous utilisez.",
+      "Tenez compte du tassement si cela est approprié pour le produit."
+    ]
+  },
+  {
+    "slug": "paint-quantity",
+    "how": "Divisez la surface du mur par la couverture du produit et multipliez par le nombre de couches.",
+    "example": "Pour 800 pieds carrés, 350 pieds carrés de couverture par unité et deux couches, l'estimation est de 4,57 unités.",
+    "tips": [
+      "Utilisez la couverture indiquée par le fabricant pour votre produit spécifique.",
+      "Les surfaces poreuses ou rugueuses peuvent nécessiter plus de matériau."
+    ]
+  },
+  {
+    "slug": "flooring-quantity",
+    "how": "Multipliez la longueur par la largeur pour obtenir la surface, puis ajoutez le pourcentage de déchets sélectionné.",
+    "example": "Une pièce de 20 pieds sur 15 pieds fait 300 pieds carrés. Avec 10 % de déchets, prévoyez 330 pieds carrés.",
+    "tips": [
+      "Suivez les directives d'installation du fabricant de revêtement de sol pour les déchets.",
+      "Les pièces irrégulières et les motifs complexes peuvent nécessiter une plus grande marge."
+    ]
+  },
+  {
+    "slug": "tile-quantity",
+    "how": "Divisez la surface totale par la surface d'une tuile, ajoutez le pourcentage de déchets, puis arrondissez à l'unité supérieure.",
+    "example": "Pour 1 000 pieds carrés en utilisant des tuiles de 12 pouces sur 12 pouces avec 10 % de déchets, l'estimation est de 1 100 tuiles.",
+    "tips": [
+      "Utilisez les dimensions réelles des tuiles lorsqu'elles diffèrent des dimensions nominales.",
+      "Conservez des tuiles de rechange pour les réparations futures lorsque cela est pratique."
+    ]
+  },
+  {
+    "slug": "drywall-sheets",
+    "how": "Estimez la surface de la paroi à partir des dimensions de la pièce et divisez-la par la surface d'une feuille, puis arrondissez à l'unité supérieure.",
+    "example": "Une pièce rectangulaire avec une longueur de 20 pieds, une largeur de 15 pieds et des murs de 8 pieds a 560 pieds carrés de surface de paroi avant déductions.",
+    "tips": [
+      "Ce calculateur de base ne soustrait pas les portes ou les fenêtres.",
+      "Les plafonds, les ouvertures, la disposition et les pratiques d'installation locales peuvent modifier la quantité finale."
+    ]
+  },
+  {
+    "slug": "board-feet",
+    "how": "Calculez les pieds plans comme l'épaisseur en pouces multipliée par la largeur en pouces multipliée par la longueur en pieds, divisée par 12, puis multipliez par la quantité.",
+    "example": "Un planche de 2 par 6 pouces qui fait 8 pieds de long contient 8 pieds plans.",
+    "tips": [
+      "Utilisez les dimensions réelles lors du prix du bois brut ou raboté.",
+      "Le prix du fournisseur peut utiliser des conventions de mesure et de classement différentes."
+    ]
+  },
+  {
+    "slug": "material-cost",
+    "how": "Multipliez la quantité par le prix unitaire, puis ajoutez le pourcentage de déchets sélectionné.",
+    "example": "100 unités à 4 $ chacune avec 10 % de déchets donnent un total estimé de 440 $.",
+    "tips": [
+      "Utilisez le prix actuel pour le produit exact et l'unité.",
+      "Les taxes, la livraison, la main-d'œuvre et les autres coûts de projet ne sont pas inclus sauf si ajoutés séparément."
+    ]
+  },
+  {
+    "slug": "paver-quantity",
+    "how": "Multipliez la surface pavée par 144 pour convertir les pieds carrés en pouces carrés, divisez par la surface de la plaque de pavage, ajoutez les déchets, puis arrondissez à l'unité supérieure.",
+    "example": "Un patio de 20 pieds sur 12 pieds utilisant des plaques de pavage de 12 par 6 pouces avec 5 % de déchets nécessite environ 504 plaques de pavage.",
+    "tips": [
+      "Utilisez les dimensions réelles de la plaque de pavage.",
+      "Les motifs et les coupes peuvent modifier les exigences de déchets."
+    ]
+  },
+  {
+    "slug": "sand-volume",
+    "how": "Multipliez la longueur par la largeur par la profondeur en utilisant des unités cohérentes.",
+    "example": "Une surface de 20 pieds sur 10 pieds avec une couche de 0,1 pied nécessite 20 pieds cubes.",
+    "tips": [
+      "Confirmez la profondeur de la couche prévue et si le fournisseur vend du matériel lâche ou compacté."
+    ]
+  },
+  {
+    "slug": "soil-volume",
+    "how": "Multipliez la longueur par la largeur par la profondeur en utilisant des unités cohérentes.",
+    "example": "Un lit de 10 pieds par 10 pieds avec une profondeur de 0,5 pied a besoin de 50 pieds cubes de sol.",
+    "tips": [
+      "Tenez compte du tassement et du niveau fini lors du choix d'une quantité de commande."
+    ]
+  },
+  {
+    "slug": "fence-pickets",
+    "how": "Convertissez la longueur de la clôture en pouces et divisez-la par la largeur des planches et l'espace entre elles, puis arrondissez au nombre supérieur.",
+    "example": "Une clôture de 100 pieds avec des planches de 5,5 pouces et un espace de 1,5 pouce nécessite 172 planches dans ce calcul simplifié de parcours droit.",
+    "tips": [
+      "Vérifiez la largeur réelle des planches et l'espacement souhaité avant de passer commande."
+    ]
+  },
+  {
+    "slug": "fence-posts",
+    "how": "Divisez la longueur de la clôture par l'espacement des poteaux prévu, arrondissez au nombre supérieur, puis ajoutez un poteau pour la position de départ.",
+    "example": "Une clôture de 100 pieds avec un espacement de 8 pieds nécessite 14 poteaux.",
+    "tips": [
+      "Les coins, les portes et les extrémités peuvent nécessiter des poteaux supplémentaires."
+    ]
+  },
+  {
+    "slug": "decking-boards",
+    "how": "Estimez le nombre de rangées de planches à partir de la largeur du pont et de la largeur des planches plus l'espace entre elles, puis divisez la longueur du pont par la longueur des planches et ajoutez les déchets.",
+    "example": "Un pont de 12 pieds par 20 pieds utilisant des planches de 6 pouces, un espace de 0,125 pouce et des planches de 12 pieds nécessite 48 planches avant les déchets dans ce calcul de rangée simplifié.",
+    "tips": [
+      "Les joints, les surplombs, les cadres photo et les longueurs des planches peuvent modifier la quantité réelle."
+    ]
+  },
+  {
+    "slug": "roofing-squares",
+    "how": "Divisez la surface du toit en pieds carrés par 100.",
+    "example": "Une surface de toit de 2 400 pieds carrés équivaut à 24 squares de toiture.",
+    "tips": [
+      "Utilisez la surface du toit mesurée lorsque cela est possible. Un square de toiture est de 100 pieds carrés."
+    ]
+  },
+  {
+    "slug": "roofing-material",
+    "how": "Multipliez la surface du toit par un plus le pourcentage de déchets sélectionné.",
+    "example": "Un toit de 2 400 pieds carrés avec 10 % de déchets donne 2 640 pieds carrés de matériau estimé.",
+    "tips": [
+      "La couverture du produit et les détails d'installation varient selon le système de toiture."
+    ]
+  },
+  {
+    "slug": "gravel-weight",
+    "how": "Multipliez le volume par la densité apparente exprimée en unités compatibles.",
+    "example": "Si 10 unités cubiques de gravier ont une densité apparente de 1,6 unités de poids par unité cubique, l'estimation est de 16 unités de poids.",
+    "tips": [
+      "Utilisez la densité indiquée par le fournisseur pour le matériau spécifique."
+    ]
+  },
+  {
+    "slug": "concrete-weight",
+    "how": "Multipliez le volume de béton par la densité exprimée en unités compatibles.",
+    "example": "Si 10 unités cubiques de béton ont une densité de 150 unités de poids par unité cubique, l'estimation est de 1 500 unités de poids.",
+    "tips": [
+      "Utilisez une densité compatible avec les unités de volume que vous avez saisies."
+    ]
+  },
+  {
+    "slug": "concrete-footing",
+    "how": "Multipliez la longueur, la largeur et la profondeur en utilisant la même unité pour toutes les dimensions.",
+    "example": "Un pied de 20 par 1 par 0,5 unités a un volume de 10 unités cubiques.",
+    "tips": [
+      "Utilisez les dimensions de pied prévues du projet de conception.",
+      "Ajoutez des tolérances uniquement lorsque cela est approprié pour le projet."
+    ]
+  },
+  {
+    "slug": "rebar-length",
+    "how": "Multipliez le nombre de barres par la longueur de chaque barre.",
+    "example": "20 barres de 4 unités chacune nécessitent 80 unités de longueur.",
+    "tips": [
+      "Il s'agit d'une estimation de longueur et ne tient pas compte des chevauchements, des crochets ou des coupes.",
+      "Utilisez le calendrier de barres pour la commande finale."
+    ]
+  },
+  {
+    "slug": "gravel-bags",
+    "how": "Divisez le volume de gravier requis par la couverture d'un sac et arrondissez à l'unité supérieure.",
+    "example": "10 unités cubiques divisées par 0,5 unités cubiques par sac nécessitent 20 sacs.",
+    "tips": [
+      "Utilisez la couverture réelle du sac imprimée par le fournisseur.",
+      "Tenez compte du compactage lorsque cela est pertinent."
+    ]
+  },
+  {
+    "slug": "baseboard",
+    "how": "Divisez la longueur totale mesurée de la base du mur par la longueur d'une pièce et arrondissez à l'unité supérieure.",
+    "example": "100 unités divisées par 8 unités par pièce nécessitent 13 pièces.",
+    "tips": [
+      "Mesurez le périmètre réel de la pièce.",
+      "Soustrayez les ouvertures uniquement lorsqu'elles ne recevront pas de base du mur."
+    ]
+  },
+  {
+    "slug": "wallpaper",
+    "how": "Divisez la surface du mur par la couverture d'une bobine et arrondissez à l'unité supérieure.",
+    "example": "120 unités carrées divisées par 25 unités carrées par bobine nécessitent 5 bobines.",
+    "tips": [
+      "Utilisez les informations de couverture et de motif du fabricant.",
+      "Les répétitions de motif et les déchets peuvent augmenter les bobines requises."
+    ]
+  },
+  {
+    "slug": "stair-risers",
+    "how": "Divisez la hauteur verticale totale par la hauteur de marche prévue et arrondissez à l'unité supérieure.",
+    "example": "Une hauteur totale de 96 unités à 8 unités par marche donne 12 marches.",
+    "tips": [
+      "Utilisez la conception finale de l'escalier pour des dimensions conformes au code.",
+      "Il s'agit d'une estimation de quantité, et non d'un outil de conception d'escalier."
+    ]
+  },
+  {
+    "slug": "asphalt-volume",
+    "how": "Multipliez la longueur par la largeur par la profondeur en utilisant des unités cohérentes.",
+    "example": "Une surface de 20 par 10 à une profondeur de 0,2 nécessite 40 unités cubiques d'asphalte.",
+    "tips": [
+      "Utilisez la profondeur compactée prévue lorsque cela est approprié.",
+      "La conversion et la densité du fournisseur peuvent être nécessaires pour la commande par poids."
+    ]
+  },
+  {
+    "slug": "cubic-yards",
+    "how": "Multipliez la longueur, la largeur et la profondeur, puis divisez les pieds cubes par 27 lorsque les entrées sont en pieds.",
+    "example": "Un volume de 27 par 1 par 1 pied équivaut à 1 mètre cube.",
+    "tips": [
+      "Utilisez les pieds pour les trois entrées lorsque vous utilisez cette conversion.",
+      "Pour la commande, confirmez les conventions et le compactage du fournisseur."
+    ]
+  },
+  {
+    "slug": "area",
+    "how": "Multipliez la longueur par la largeur en utilisant la même unité pour les deux mesures.",
+    "example": "Un rectangle de 20 par 15 a une superficie de 300 unités carrées.",
+    "tips": [
+      "Utilisez les dimensions réelles finies.",
+      "Les surfaces irrégulières peuvent nécessiter d'être divisées en plusieurs rectangles."
+    ]
+  },
+  {
+    "slug": "volume",
+    "how": "Multipliez la longueur par la largeur par la hauteur en utilisant des unités cohérentes.",
+    "example": "Un volume rectangulaire de 20 par 15 par 2 a un volume de 600 unités cubiques.",
+    "tips": [
+      "Cet outil suppose une forme rectangulaire.",
+      "Utilisez des unités cohérentes pour toutes les dimensions."
+    ]
+  }
+]
