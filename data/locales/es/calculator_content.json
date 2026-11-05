@@ -1,0 +1,265 @@
+[
+  {
+    "slug": "concrete-volume",
+    "how": "Multiplica la longitud por el ancho por la espesor. Mantén todas las dimensiones en el mismo unidad.",
+    "example": "Un pavimento de 20 pies por 10 pies que tiene 0,5 pies de espesor necesita 100 pies cúbicos de hormigón.",
+    "tips": [
+      "Mide el espesor real en varios puntos.",
+      "Añade una reserva específica del proyecto para el desperdicio o el terreno irregular."
+    ]
+  },
+  {
+    "slug": "concrete-bags",
+    "how": "Primero, calcula el volumen de hormigón en pies cúbicos. Para un pavimento rectangular medido en pies y pulgadas, utiliza la longitud × ancho × espesor en pies (pulgadas ÷ 12). Luego divide el volumen por la rendimiento impreso para tu mezcla de hormigón exacta y redondea hacia arriba a una caja completa.",
+    "example": "Un pavimento de 10 pies × 10 pies a 4 pulgadas de espesor tiene un volumen estimado de 10 × 10 × (4 ÷ 12) = 33,33 pies cúbicos. Utilizando QUIKRETE Concrete Mix #1101 como ejemplo, una caja de 80 libras produce aproximadamente 0,60 pies cúbicos, por lo que 33,33 ÷ 0,60 redondea a 56 cajas.",
+    "tips": [
+      "Yield aproximado de QUIKRETE Concrete Mix #1101: 40 libras = 0,30 pies cúbicos; 50 libras = 0,375 pies cúbicos; 60 libras = 0,45 pies cúbicos; 80 libras = 0,60 pies cúbicos; 90 libras = 0,675 pies cúbicos (disponibilidad regional).",
+      "Las rendimientos varían por producto y pueden ser redondeados. Utiliza el rendimiento impreso en la caja exacta o su hoja de datos de fabricante actualizada.",
+      "El espesor del pavimento, el terreno irregular, la pérdida y el desperdicio pueden aumentar la cantidad a pedir. Añade cualquier reserva deliberadamente después de calcular el volumen base."
+    ]
+  },
+  {
+    "slug": "gravel-volume",
+    "how": "Ingrese la longitud, el ancho y la profundidad instalada en pies. El calculadora multiplica a ellos para estimar pies cúbicos, luego divide por 27 para mostrar el equivalente en yardas cúbicas.",
+    "example": "Para un área de 20 pies × 10 pies con una capa de 3 pulgadas (0,25 pies): 20 × 10 × 0,25 = 50 pies cúbicos; 50 ÷ 27 = 1,85 yardas cúbicas antes de cualquier reserva específica del proveedor.",
+    "tips": [
+      "La estimación es volumen geométrico y no agrega material adicional para el asentamiento, la compactación, el terreno irregular o el desperdicio.",
+      "Confirme con el proveedor si el volumen citado es suelto o compactado y cómo se mide el material.",
+      "Si se ordena por peso, utilice la densidad del proveedor para el grava exacto; la densidad varía por material y humedad."
+    ]
+  },
+  {
+    "slug": "mulch-volume",
+    "how": "Multiplica las dimensiones del jardín por la profundidad planificada del mulch.",
+    "example": "Un jardín de 20 pies por 10 pies con una profundidad de 0,25 pies necesita 50 pies cúbicos de mulch.",
+    "tips": [
+      "Confirme la profundidad recomendada para el tipo de mulch que utilice.",
+      "Tenga en cuenta el asentamiento si es apropiado para el producto."
+    ]
+  },
+  {
+    "slug": "paint-quantity",
+    "how": "Divida el área de la pared por la cobertura del producto y multiplique por el número de capas.",
+    "example": "Para 800 pies cuadrados, 350 pies cuadrados de cobertura por unidad y dos capas, la estimación es 4,57 unidades.",
+    "tips": [
+      "Utilice la cobertura declarada por el fabricante para su producto específico.",
+      "Superficies porosas o rugosas pueden requerir más material."
+    ]
+  },
+  {
+    "slug": "flooring-quantity",
+    "how": "Multiplique la longitud por el ancho para obtener el área, luego agregue el porcentaje de desperdicio seleccionado.",
+    "example": "Un cuarto de 20 pies por 15 pies es 300 pies cuadrados. Con un 10% de desperdicio, planifique 330 pies cuadrados.",
+    "tips": [
+      "Siga las instrucciones de instalación del fabricante de suelo para el desperdicio.",
+      "Habitaciones irregulares y patrones complejos pueden necesitar un mayor allowance."
+    ]
+  },
+  {
+    "slug": "tile-quantity",
+    "how": "Divida el área total por el área de una baldosa, agregue el porcentaje de desperdicio, luego redondee hacia arriba.",
+    "example": "Para 1,000 pies cuadrados utilizando baldosas de 12 por 12 pulgadas con un 10% de desperdicio, la estimación es 1,100 baldosas.",
+    "tips": [
+      "Utilice las dimensiones reales de la baldosa cuando difieran de las dimensiones nominales.",
+      "Mantenga baldosas de repuesto para reparaciones futuras cuando sea práctico."
+    ]
+  },
+  {
+    "slug": "drywall-sheets",
+    "how": "Estime el área de la superficie de la pared a partir de las dimensiones de la habitación y divida por el área de una hoja, luego redondee hacia arriba.",
+    "example": "Un cuarto rectangular con 20 pies de largo, 15 pies de ancho y 8 pies de pared tiene 560 pies cuadrados de área de pared antes de deducciones.",
+    "tips": [
+      "Este calculadora básica no resta puertas ni ventanas.",
+      "Los techos, aperturas, el diseño y las prácticas de instalación locales pueden cambiar la cantidad final."
+    ]
+  },
+  {
+    "slug": "board-feet",
+    "how": "Calcula pies cúbicos multiplicando la espesor en pulgadas por el ancho en pulgadas por la longitud en pies, dividido por 12, luego multiplica por la cantidad.",
+    "example": "Una tabla de 2 por 6 de 8 pies de largo contiene 8 pies cúbicos.",
+    "tips": [
+      "Utiliza dimensiones reales al precio de madera rugosa o pulida.",
+      "El precio del proveedor puede utilizar diferentes convenciones de clasificación y medición."
+    ]
+  },
+  {
+    "slug": "material-cost",
+    "how": "Multiplica la cantidad por el precio unitario y luego suma el porcentaje de desperdicio seleccionado.",
+    "example": "100 unidades a $4 cada una con un 10% de desperdicio da un total estimado de $440.",
+    "tips": [
+      "Utiliza el precio actual para el producto exacto y la unidad.",
+      "Los impuestos, la entrega, el trabajo y otros costos del proyecto no están incluidos a menos que se agreguen por separado."
+    ]
+  },
+  {
+    "slug": "paver-quantity",
+    "how": "Multiplica el área pavimentada por 144 para convertir pies cuadrados a pulgadas cuadradas, divide por el área del piso, suma el desperdicio, luego redondea hacia arriba.",
+    "example": "Un patio de 20 pies por 12 pies utilizando baldosas de 12 por 6 pulgadas con un 5% de desperdicio necesita alrededor de 504 baldosas.",
+    "tips": [
+      "Utiliza las dimensiones reales de las baldosas.",
+      "Los patrones y el corte pueden cambiar la necesidad de desperdicio."
+    ]
+  },
+  {
+    "slug": "sand-volume",
+    "how": "Multiplica la longitud por el ancho por la profundidad utilizando unidades consistentes.",
+    "example": "Un área de 20 pies por 10 pies con una capa de 0,1 pies necesita 20 pies cúbicos.",
+    "tips": [
+      "Confirme la profundidad del capa planificada y si el proveedor vende material suelto o compactado."
+    ]
+  },
+  {
+    "slug": "soil-volume",
+    "how": "Multiplica la longitud por el ancho por la profundidad utilizando unidades consistentes.",
+    "example": "Un lecho de 10 pies por 10 pies con una profundidad de 0,5 pies necesita 50 pies cúbicos de suelo.",
+    "tips": [
+      "Tenga en cuenta el asentamiento y el nivel terminado al elegir la cantidad de pedido."
+    ]
+  },
+  {
+    "slug": "fence-pickets",
+    "how": "Convierta la longitud de la valla a pulgadas y divida por el ancho de la valla más el espacio, luego redondee hacia arriba.",
+    "example": "Una valla de 100 pies con 5,5 pulgadas de vallas y un espacio de 1,5 pulgadas necesita 172 vallas en este cálculo simplificado de carrera recta.",
+    "tips": [
+      "Verifique el ancho real de la valla y el espacio deseado antes de ordenar."
+    ]
+  },
+  {
+    "slug": "fence-posts",
+    "how": "Divida la longitud de la valla por la separación de postes planificada, redondee hacia arriba, luego agregue un poste para la posición de inicio.",
+    "example": "Una valla de 100 pies a una separación de 8 pies requiere 14 postes.",
+    "tips": [
+      "Las esquinas, las puertas y los extremos pueden requerir postes adicionales."
+    ]
+  },
+  {
+    "slug": "decking-boards",
+    "how": "Estime el número de filas de tablas desde el ancho de la cubierta y el ancho de la tabla más el espacio, luego divida la longitud de la cubierta por el largo de la tabla y agregue el desperdicio.",
+    "example": "Una cubierta de 12 pies por 20 pies que utiliza tablas de 6 pulgadas, un espacio de 0,125 pulgadas y tablas de 12 pies necesita 48 tablas antes del desperdicio en este cálculo simplificado de fila.",
+    "tips": [
+      "Los enlaces, los sobresalientes, el marco de imágenes y las longitudes de las tablas pueden cambiar la cantidad real."
+    ]
+  },
+  {
+    "slug": "roofing-squares",
+    "how": "Divida el área de la superficie del techo en pies cuadrados por 100.",
+    "example": "Una superficie de techo de 2,400 pies cuadrados equivale a 24 cuadrados de cubierta.",
+    "tips": [
+      "Utilice el área de la superficie del techo medida cuando esté disponible. Un cuadrado de cubierta es 100 pies cuadrados."
+    ]
+  },
+  {
+    "slug": "roofing-material",
+    "how": "Multiplica la superficie del techo por uno más el porcentaje de desperdicio seleccionado.",
+    "example": "Un techo de 2,400 pies cuadrados con un 10% de desperdicio da 2,640 pies cuadrados de material estimado.",
+    "tips": [
+      "Los detalles de cubierta y de instalación varían según el sistema de cubierta."
+    ]
+  },
+  {
+    "slug": "gravel-weight",
+    "how": "Multiplica el volumen por la densidad en masa expresada en unidades compatibles.",
+    "example": "Si 10 unidades cúbicas de grava tienen una densidad en masa de 1,6 unidades de peso por unidad cúbica, la estimación es 16 unidades de peso.",
+    "tips": [
+      "Utiliza la densidad declarada por el proveedor para el material específico."
+    ]
+  },
+  {
+    "slug": "concrete-weight",
+    "how": "Multiplica el volumen de concreto por la densidad expresada en unidades compatibles.",
+    "example": "Si 10 unidades cúbicas de concreto tienen una densidad de 150 unidades de peso por unidad cúbica, la estimación es 1,500 unidades de peso.",
+    "tips": [
+      "Utiliza una densidad compatible con las unidades de volumen que ingresaste."
+    ]
+  },
+  {
+    "slug": "concrete-footing",
+    "how": "Multiplica la longitud, ancho y profundidad utilizando el mismo unidad para todas las dimensiones.",
+    "example": "Un pie de 20 por 1 por 0,5 unidad tiene un volumen de 10 unidades cúbicas.",
+    "tips": [
+      "Utiliza las dimensiones planificadas del pie de la estructura del proyecto.",
+      "Sólo agrega los permisos cuando sea apropiado para el proyecto."
+    ]
+  },
+  {
+    "slug": "rebar-length",
+    "how": "Multiplica el número de barras por la longitud de cada barra.",
+    "example": "20 barras a 4 unidades cada una requieren 80 unidades de longitud.",
+    "tips": [
+      "Esto es una estimación de longitud y no tiene en cuenta los giros, los ganchos o la corte.",
+      "Utilice el horario de barras para el orden final."
+    ]
+  },
+  {
+    "slug": "gravel-bags",
+    "how": "Divida el volumen de grava requerido por la cobertura de una bolsa y redondee hacia arriba.",
+    "example": "10 unidades cúbicas divididas por 0,5 unidades cúbicas por bolsa requieren 20 bolsas.",
+    "tips": [
+      "Utilice la cobertura real de la bolsa impresa por el proveedor.",
+      "Tenga en cuenta la compactación donde sea relevante."
+    ]
+  },
+  {
+    "slug": "baseboard",
+    "how": "Divida la longitud total medida de la moldura por la longitud de una pieza y redondee hacia arriba.",
+    "example": "100 unidades divididas por 8 unidades por pieza requieren 13 piezas.",
+    "tips": [
+      "Mida alrededor del perímetro real de la habitación.",
+      "Sustraiga las aperturas solo cuando no recibirán moldura."
+    ]
+  },
+  {
+    "slug": "wallpaper",
+    "how": "Divida el área de la pared por la cobertura de una rollo y redondee hacia arriba.",
+    "example": "120 unidades cuadradas divididas por 25 unidades cuadradas por rollo requieren 5 rollos.",
+    "tips": [
+      "Utilice la información de cobertura y patrón del fabricante.",
+      "Los patrones de repetición y el desperdicio pueden aumentar los rollos requeridos."
+    ]
+  },
+  {
+    "slug": "stair-risers",
+    "how": "Divida la caída total vertical por la altura de la escalera planificada y redondee hacia arriba.",
+    "example": "Un total de 96 unidades de caída a 8 unidades por escalera da 12 escaleras.",
+    "tips": [
+      "Utilice el diseño de escalera final para dimensiones que cumplan con el código.",
+      "Esta es una estimación de cantidad, no un herramienta de diseño de escaleras."
+    ]
+  },
+  {
+    "slug": "asphalt-volume",
+    "how": "Multiplica la longitud por el ancho por la profundidad utilizando unidades consistentes.",
+    "example": "Un área de 20 por 10 a una profundidad de 0,2 requiere 40 unidades cúbicas de asfalto.",
+    "tips": [
+      "Utiliza la profundidad compactada planificada donde sea apropiado.",
+      "Puede ser necesario el conversión y la densidad del proveedor para ordenar por peso."
+    ]
+  },
+  {
+    "slug": "cubic-yards",
+    "how": "Multiplica la longitud, el ancho y la profundidad, luego divide los pies cúbicos por 27 cuando los inputs estén en pies.",
+    "example": "Un volumen de 27 por 1 por 1 pie equivale a 1 yarda cúbica.",
+    "tips": [
+      "Utiliza pies para todos los tres inputs cuando se utiliza esta conversión.",
+      "Para ordenar, confirma las convenciones del proveedor y la compactación."
+    ]
+  },
+  {
+    "slug": "area",
+    "how": "Multiplica la longitud por el ancho utilizando el mismo unidad para ambas mediciones.",
+    "example": "Un rectángulo de 20 por 15 tiene una área de 300 unidades cuadradas.",
+    "tips": [
+      "Utiliza las dimensiones finales reales.",
+      "Las áreas irregulares pueden necesitar ser divididas en múltiples rectángulos."
+    ]
+  },
+  {
+    "slug": "volume",
+    "how": "Multiplica la longitud por el ancho por la altura utilizando unidades consistentes.",
+    "example": "Un volumen rectangular de 20 por 15 por 2 es 600 unidades cúbicas.",
+    "tips": [
+      "Esta herramienta asume una forma rectangular.",
+      "Utilice unidades consistentes para todas las dimensiones."
+    ]
+  }
+]
