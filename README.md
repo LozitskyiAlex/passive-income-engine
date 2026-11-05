@@ -39,6 +39,19 @@ The generated site also includes:
 * Automated catalog, formula and generated browser-runtime tests.
 * A real 404 page with HTTP 404 handling.
 
+## Multilingual site
+
+The site is generated in twelve languages from one shared calculator and content source:
+
+* English (`/`) is the default version and keeps the existing URL structure.
+* Spanish (`/es/`), German (`/de/`), French (`/fr/`), Brazilian Portuguese (`/pt-br/`), Japanese (`/ja/`), Italian (`/it/`), Dutch (`/nl/`), Polish (`/pl/`), Simplified Chinese (`/zh-hans/`), Korean (`/ko/`) and Arabic (`/ar/`) use language subdirectories.
+* All 44 current source pages are generated in each language. Calculator formulas and browser-side logic are shared; visible page copy, titles, descriptions, FAQ content, guide content, navigation, validation messages and result labels are localized.
+* Arabic pages use right-to-left document direction. Calculator result numbers use the browser's locale-aware `Intl.NumberFormat`.
+* Every page has a self-referencing canonical URL, reciprocal `hreflang` alternates for all twelve languages, and an English `x-default` alternate. The XML sitemap contains 528 localized page URLs and alternate-language references.
+* The language selector is available on every page. Language choice is explicit; the site does not force IP-based redirects.
+
+Translations are stored in `data/locales/`. The final `build_seo.py` step invokes `build_locales.py`, so the existing Cloudflare Pages build command automatically creates all language versions. The locale generator validates translation coverage and fails the build if newly added visible text or metadata has no translation. Add the corresponding source-string translations to all locale dictionaries whenever page content changes.
+
 ## Build and deployment pipeline
 
 `data -> Python generators -> generated HTML/SEO files -> pytest -> GitHub Actions validation -> GitHub main -> Cloudflare Pages Git integration -> Cloudflare Pages deployment`

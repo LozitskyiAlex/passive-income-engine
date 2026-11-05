@@ -144,3 +144,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+    from build_locales import main as build_locales
+    build_locales()

@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+site/*
+!site/00800de33f7d4649b742eaac38d8a68b.txt
+!site/404.html
+!site/favicon.svg

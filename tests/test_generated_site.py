@@ -10,6 +10,13 @@ SITE = ROOT / "site"
 BASE = "https://free-construction-calculators.pages.dev"
 
 
+def assert_canonical(html, expected):
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(html, "html.parser")
+    tag = soup.find("link", rel="canonical")
+    assert tag is not None and tag.get("href") == expected
+
+
 def test_all_calculator_formulas():
     cases = {
         "concrete_volume": ([20, 10, 0.5], 100),
@@ -56,12 +63,60 @@ def test_generated_urls_match_catalog():
     subprocess.run(["python", "scripts/build_seo.py"], cwd=ROOT, check=True)
     items = json.loads((ROOT / "data/construction_calculators.json").read_text())
     guides = json.loads((ROOT / "data/guides.json").read_text())
-    expected = {BASE + "/", BASE + "/construction/"} | {BASE + f"/construction/{x['slug']}/" for x in items} | {BASE + f"/guides/{x['slug']}/" for x in guides}
+    locales = {"en": "en", "es": "es", "de": "de", "fr": "fr", "pt-br": "pt-BR", "ja": "ja", "it": "it", "nl": "nl", "pl": "pl", "zh-hans": "zh-Hans", "ko": "ko", "ar": "ar"}
+    source_paths = {"/", "/construction/"}
+    source_paths |= {f"/construction/{x['slug']}/" for x in items}
+    source_paths |= {f"/guides/{x['slug']}/" for x in guides}
+    source_paths |= {f"/calculators/{x['slug']}/" for x in json.loads((ROOT / "data/calculators.json").read_text())}
+    expected = set()
+    for path in source_paths:
+        for locale in locales:
+            localized = path if locale == "en" else f"/{locale}{'/' if path == '/' else path}"
+            expected.add(BASE + localized)
     root = ET.fromstring((SITE / "sitemap.xml").read_text())
     ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
     actual = {node.text for node in root.findall("sm:url/sm:loc", ns)}
     assert actual == expected
-    assert len(actual) == len(items) + len(guides) + 2
+    assert len(actual) == len(source_paths) * len(locales)
+    for locale, lang in locales.items():
+        for path in source_paths:
+            localized = path if locale == "en" else f"/{locale}{'/' if path == '/' else path}"
+            rel = localized.lstrip("/") or "index.html"
+            if rel.endswith("/"):
+                rel += "index.html"
+            page = SITE / rel
+            assert page.exists(), (locale, path, page)
+            html = page.read_text(encoding="utf-8")
+            from bs4 import BeautifulSoup
+            parsed = BeautifulSoup(html, "html.parser")
+            assert parsed.html.get("lang") == lang
+            if locale == "ar":
+                assert parsed.html.get("dir") == "rtl"
+            assert_canonical(html, BASE + localized)
+            alternates = {node.get("hreflang"): node.get("href") for node in parsed.find_all("link", rel="alternate", hreflang=True)}
+            assert set(alternates) == {"en", "es", "de", "fr", "pt-BR", "ja", "it", "nl", "pl", "zh-Hans", "ko", "ar", "x-default"}
+            for alt_locale, alt_lang in locales.items():
+                alt_path = path if alt_locale == "en" else f"/{alt_locale}{'/' if path == '/' else path}"
+                assert alternates[alt_lang] == BASE + alt_path
+            assert alternates["x-default"] == BASE + path
+            selector = parsed.find("nav", attrs={"aria-label": "Language selector"})
+            assert selector is not None and len(selector.find_all("a")) == 12
+            for anchor in parsed.find_all("a", href=True):
+                if anchor.find_parent("nav", attrs={"aria-label": "Language selector"}):
+                    continue
+                href = anchor["href"]
+                if locale != "en" and (href == "/" or href.startswith(("/construction/", "/guides/", "/calculators/"))):
+                    raise AssertionError(f"Unlocalized internal link on {locale}{path}: {href}")
+    arabic = (SITE / "ar" / "construction" / "concrete-volume" / "index.html").read_text(encoding="utf-8")
+    from bs4 import BeautifulSoup
+    arabic_soup = BeautifulSoup(arabic, "html.parser")
+    assert arabic_soup.html.get("dir") == "rtl" and arabic_soup.html.get("lang") == "ar"
+    assert arabic_soup.find("link", attrs={"hreflang": "zh-Hans"}) is not None
+    for locale in locales:
+        if locale == "en":
+            continue
+        runtime = (SITE / locale / "calculator-runtime.js").read_text(encoding="utf-8")
+        assert "Intl.NumberFormat" in runtime
     assert (SITE / "404.html").exists()
     assert (SITE / "calculator-runtime.js").exists()
     assert (SITE / "BingSiteAuth.xml").read_bytes() == (ROOT / "BingSiteAuth.xml").read_bytes()
@@ -70,8 +125,8 @@ def test_generated_urls_match_catalog():
         page = SITE / "construction" / item["slug"] / "index.html"
         assert page.exists()
         html = page.read_text()
-        assert f'<link rel="canonical" href="{BASE}/construction/{item["slug"]}/">' in html
-        assert '<link rel="icon" href="/favicon.svg"' in html
+        assert_canonical(html, f"{BASE}/construction/{item['slug']}/")
+        assert BeautifulSoup(html, "html.parser").find("link", rel="icon").get("href") == "/favicon.svg"
         assert "static.cloudflareinsights.com/beacon.min.js" in html
         assert "aria-label=\"Breadcrumb\"" in html
         assert '"@type":"FAQPage"' in html
@@ -89,22 +144,22 @@ def test_generated_urls_match_catalog():
         assert 'aria-label="Breadcrumb"' in html
         assert '"@type":"BreadcrumbList"' in html
         assert '"@type":"Article"' in html
-        assert '<link rel="canonical"' in html
-        assert f'<link rel="canonical" href="{BASE}/guides/{guide["slug"]}/">' in html
-        assert '<meta name="description"' in html
+        assert_canonical(html, f"{BASE}/guides/{guide['slug']}/")
+        assert_canonical(html, f"{BASE}/guides/{guide['slug']}/")
+        assert BeautifulSoup(html, "html.parser").find("meta", attrs={"name": "description"}) is not None
         if guide.get("calculator_slug"):
             assert f'/construction/{guide["calculator_slug"]}/' in html
         if guide.get("calculator_link_text"):
-            assert f'>{guide["calculator_link_text"]}</a>' in html
+            assert guide["calculator_link_text"] in BeautifulSoup(html, "html.parser").get_text(" ")
 
     construction_index = (SITE / "construction" / "index.html").read_text()
-    assert f'<link rel="canonical" href="{BASE}/construction/">' in construction_index
+    assert_canonical(construction_index, f"{BASE}/construction/")
 
     legacy_items = json.loads((ROOT / "data" / "calculators.json").read_text())
     for item in legacy_items:
         page = SITE / "calculators" / item["slug"] / "index.html"
         assert page.exists()
-        assert f'<link rel="canonical" href="{BASE}/calculators/{item["slug"]}/">' in page.read_text()
+        assert_canonical(page.read_text(), f"{BASE}/calculators/{item['slug']}/")
 
 
 def test_faq_covers_all_calculators():
