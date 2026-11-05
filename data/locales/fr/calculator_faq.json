@@ -1,0 +1,404 @@
+[
+  {
+    "slug": "concrete-volume",
+    "faqs": [
+      {
+        "question": "Qu'est-ce que cet estimateur calcule ?",
+        "answer": "Il estime le volume de béton rectangulaire à partir de la longueur, de la largeur et de l'épaisseur."
+      },
+      {
+        "question": "Que devrais-je ajouter au-delà du volume calculé ?",
+        "answer": "Des tolérances pour les déchets, les fondations inégales et les conditions de projet peuvent être nécessaires."
+      }
+    ]
+  },
+  {
+    "slug": "concrete-bags",
+    "faqs": [
+      {
+        "question": "Comment calculer le nombre de sacs de béton dont j'ai besoin ?",
+        "answer": "Calculez le volume du projet, divisez-le par le rendement par sac indiqué sur le produit exact, et arrondissez à un sac entier. Le rendement diffère selon le produit et la taille du sac."
+      },
+      {
+        "question": "Combien de sacs de 80 lb de béton sont dans un mètre cube ?",
+        "answer": "Un mètre cube équivaut à 27 pieds cubes. À un rendement approximatif de 0,60 pied cube par sac de 80 lb de mélange de béton QUIKRETE #1101, 27 ÷ 0,60 = 45 sacs. Vérifiez le rendement sur votre produit car les mélanges peuvent différer."
+      },
+      {
+        "question": "Combien de sacs de 80 lb ai-je besoin pour une dalle de 10 pi par 10 pi qui est de 4 po d'épaisseur ?",
+        "answer": "Le volume de la dalle est d'environ 33,33 pieds cubes. À un rendement approximatif de 0,60 pied cube par sac de 80 lb, l'estimation est de 56 sacs avant toute tolérance pour les déchets ou les fondations inégales."
+      },
+      {
+        "question": "Pourquoi le nombre de sacs peut-il différer entre les calculateurs ?",
+        "answer": "Les tailles de sacs et les rendements des mélanges de béton varient. Utilisez le rendement imprimé sur le produit exact, conservez les unités cohérentes et arrondissez le nombre de sacs requis à l'unité supérieure."
+      }
+    ]
+  },
+  {
+    "slug": "gravel-volume",
+    "faqs": [
+      {
+        "question": "Combien de gravier ai-je besoin pour une surface de 20 pi par 10 pi à 3 pouces de profondeur ?",
+        "answer": "Le volume géométrique est de 20 × 10 × 0,25 = 50 pieds cubes. Divisez par 27 pieds cubes par mètre cube pour environ 1,85 mètres cubes, avant toute tolérance spécifique au fournisseur pour la compaction, le tassement ou les fondations inégales."
+      },
+      {
+        "question": "Comment convertir des pieds cubes de gravier en mètres cubes ?",
+        "answer": "Divisez les pieds cubes par 27. Par exemple, 50 pieds cubes ÷ 27 équivaut à environ 1,85 mètres cubes."
+      },
+      {
+        "question": "Cette estimation inclut-elle la compaction ou la conversion en tonnes ?",
+        "answer": "Non. Elle rapporte uniquement le volume géométrique. Demandez au fournisseur s'il faut commander du matériel lâche ou compacté. Pour estimer les tonnes, utilisez la densité apparente pour le gravier exact et les conditions du fournisseur ; elle varie selon le matériau et l'humidité."
+      }
+    ]
+  },
+  {
+    "slug": "mulch-volume",
+    "faqs": [
+      {
+        "question": "Comment le volume de paillis est-il calculé ?",
+        "answer": "La surface est multipliée par la profondeur de paillis prévue."
+      },
+      {
+        "question": "Le tassement peut-il modifier la quantité commandée ?",
+        "answer": "Oui. Les caractéristiques du produit et le tassement peuvent nécessiter une tolérance."
+      }
+    ]
+  },
+  {
+    "slug": "paint-quantity",
+    "faqs": [
+      {
+        "question": "Comment est estimée la quantité de peinture ?",
+        "answer": "La surface du mur est divisée par la couverture par unité et multipliée par les couches."
+      },
+      {
+        "question": "Pourquoi l'utilisation réelle peut-elle différer ?",
+        "answer": "La couverture varie en fonction du produit et des conditions de surface."
+      }
+    ]
+  },
+  {
+    "slug": "flooring-quantity",
+    "faqs": [
+      {
+        "question": "Quelle est la fonction du pourcentage de déchets ?",
+        "answer": "Il augmente la surface de base du plancher par la tolérance sélectionnée."
+      },
+      {
+        "question": "Le pourcentage de déchets est-il universel ?",
+        "answer": "Non. Suivez les conseils du fabricant et prenez en compte la forme de la pièce et le motif."
+      }
+    ]
+  },
+  {
+    "slug": "tile-quantity",
+    "faqs": [
+      {
+        "question": "Comment les tuiles sont-elles comptées ?",
+        "answer": "La surface est divisée par la surface de la tuile, les déchets sont ajoutés, puis le résultat est arrondi à l'unité supérieure."
+      },
+      {
+        "question": "Faut-il utiliser la taille réelle de la tuile ?",
+        "answer": "Oui, lorsque celle-ci diffère des dimensions nominales."
+      }
+    ]
+  },
+  {
+    "slug": "drywall-sheets",
+    "faqs": [
+      {
+        "question": "Que comprend ce calculateur de base ?",
+        "answer": "Il estime la surface du mur pour une pièce rectangulaire et la divise par la surface de la feuille."
+      },
+      {
+        "question": "Les portes et les fenêtres sont-elles soustraites ?",
+        "answer": "Non. Les ouvertures et les pratiques d'installation peuvent modifier la quantité."
+      }
+    ]
+  },
+  {
+    "slug": "board-feet",
+    "faqs": [
+      {
+        "question": "Qu'est-ce qu'un pied de planche ?",
+        "answer": "C'est une unité de volume de bois basée sur l'épaisseur, la largeur et la longueur."
+      },
+      {
+        "question": "Devraient-on utiliser les dimensions réelles ?",
+        "answer": "Utilisez les dimensions réelles lorsque vous les connaissez."
+      }
+    ]
+  },
+  {
+    "slug": "material-cost",
+    "faqs": [
+      {
+        "question": "Qu'est-ce que le total inclut ?",
+        "answer": "Il multiplie la quantité par le prix unitaire et applique les déchets."
+      },
+      {
+        "question": "Les taxes et la livraison sont-elles incluses ?",
+        "answer": "Non. Ajoutez-les séparément lorsque cela est nécessaire."
+      }
+    ]
+  },
+  {
+    "slug": "paver-quantity",
+    "faqs": [
+      {
+        "question": "Comment les pavés sont-ils comptés ?",
+        "answer": "La surface est convertie en pouces carrés, divisée par la surface du pavé, augmentée des déchets et arrondie à l'unité supérieure."
+      },
+      {
+        "question": "Les motifs peuvent-ils changer le résultat ?",
+        "answer": "Oui. Les coupes et les motifs peuvent augmenter les déchets."
+      }
+    ]
+  },
+  {
+    "slug": "sand-volume",
+    "faqs": [
+      {
+        "question": "Comment le volume de sable est-il calculé ?",
+        "answer": "La longueur, la largeur et la profondeur sont multipliées."
+      },
+      {
+        "question": "Est-ce qu'il tient compte du tassement ?",
+        "answer": "Non. Vérifiez les conseils du fournisseur."
+      }
+    ]
+  },
+  {
+    "slug": "soil-volume",
+    "faqs": [
+      {
+        "question": "Comment le volume de sol est-il calculé ?",
+        "answer": "La longueur, la largeur et la profondeur sont multipliées."
+      },
+      {
+        "question": "Faut-il tenir compte du tassement ?",
+        "answer": "Oui. Le niveau fini et le tassement peuvent affecter la quantité commandée."
+      }
+    ]
+  },
+  {
+    "slug": "fence-pickets",
+    "faqs": [
+      {
+        "question": "Comment les piquets sont-ils comptés ?",
+        "answer": "La longueur de la clôture est divisée par la largeur du piquet plus l'espace entre les piquets et arrondie à l'unité supérieure."
+      },
+      {
+        "question": "Les portes affectent-elles ce résultat ?",
+        "answer": "Ce calculateur de base modèle une course droite uniquement."
+      }
+    ]
+  },
+  {
+    "slug": "fence-posts",
+    "faqs": [
+      {
+        "question": "Comment les poteaux sont-ils estimés ?",
+        "answer": "La longueur de la clôture est divisée par l'espacement, arrondie à l'unité supérieure, et un poteau de départ est ajouté."
+      },
+      {
+        "question": "Des poteaux supplémentaires sont-ils nécessaires ?",
+        "answer": "Les coins, les extrémités et les portes peuvent nécessiter des poteaux supplémentaires."
+      }
+    ]
+  },
+  {
+    "slug": "decking-boards",
+    "faqs": [
+      {
+        "question": "Comment les planches de pont sont-elles estimées ?",
+        "answer": "Les rangées de planches sont estimées à partir de la largeur du pont et de la planche plus l'espace entre les planches, puis les planches par rangée à partir de la longueur du pont et de la longueur de la planche."
+      },
+      {
+        "question": "Est-ce que cela inclut les déchets ?",
+        "answer": "Oui. Le pourcentage de déchets sélectionné est appliqué."
+      }
+    ]
+  },
+  {
+    "slug": "roofing-squares",
+    "faqs": [
+      {
+        "question": "Qu'est-ce qu'un carré de couverture ?",
+        "answer": "Un carré de couverture représente 100 pieds carrés de surface de toit."
+      },
+      {
+        "question": "Mesure-t-il la pente du toit ?",
+        "answer": "Non. Entrez la superficie réelle de la surface du toit."
+      }
+    ]
+  },
+  {
+    "slug": "roofing-material",
+    "faqs": [
+      {
+        "question": "Que représente le pourcentage de déchets ?",
+        "answer": "Il ajoute une tolérance à la superficie de la surface du toit."
+      },
+      {
+        "question": "Un pourcentage de déchets est-il approprié pour chaque toit ?",
+        "answer": "Non. La géométrie et le système du toit peuvent modifier la tolérance."
+      }
+    ]
+  },
+  {
+    "slug": "gravel-weight",
+    "faqs": [
+      {
+        "question": "Comment est estimé le poids des graviers ?",
+        "answer": "Le volume est multiplié par la densité apparente dans des unités compatibles."
+      },
+      {
+        "question": "Pourquoi le poids du fournisseur peut-il différer ?",
+        "answer": "La densité apparente varie en fonction du matériau et de l'humidité."
+      }
+    ]
+  },
+  {
+    "slug": "concrete-weight",
+    "faqs": [
+      {
+        "question": "Comment est estimé le poids du béton ?",
+        "answer": "Le volume est multiplié par la densité dans des unités compatibles."
+      },
+      {
+        "question": "La densité doit-elle être spécifique au produit ?",
+        "answer": "Utilisez une densité appropriée au mélange et aux unités saisies."
+      }
+    ]
+  },
+  {
+    "slug": "concrete-footing",
+    "faqs": [
+      {
+        "question": "Comment le volume du pied est-il calculé ?",
+        "answer": "La longueur, la largeur et la profondeur sont multipliées."
+      },
+      {
+        "question": "Conçoit-elle un pied ?",
+        "answer": "Non. Elle n'estime que le volume de béton rectangulaire."
+      }
+    ]
+  },
+  {
+    "slug": "rebar-length",
+    "faqs": [
+      {
+        "question": "Comment la longueur totale de l'armature est-elle calculée ?",
+        "answer": "Le nombre de barres est multiplié par la longueur par barre."
+      },
+      {
+        "question": "Inclut-elle les chevauchements et les crochets ?",
+        "answer": "Non. Utilisez le calendrier de barres du projet pour les quantités finales."
+      }
+    ]
+  },
+  {
+    "slug": "gravel-bags",
+    "faqs": [
+      {
+        "question": "Comment les sacs de gravier sont-ils estimés ?",
+        "answer": "Le volume requis est divisé par la couverture du sac et arrondi à l'unité supérieure."
+      },
+      {
+        "question": "D'où doit provenir la couverture du sac ?",
+        "answer": "Utilisez la couverture indiquée pour le produit exact."
+      }
+    ]
+  },
+  {
+    "slug": "baseboard",
+    "faqs": [
+      {
+        "question": "Comment les pièces de plinthe sont-elles estimées ?",
+        "answer": "La longueur totale est divisée par la longueur de la pièce et arrondie à l'unité supérieure."
+      },
+      {
+        "question": "Doit-on soustraire les ouvertures de porte ?",
+        "answer": "Seulement si ces ouvertures ne recevront pas de plinthe."
+      }
+    ]
+  },
+  {
+    "slug": "wallpaper",
+    "faqs": [
+      {
+        "question": "Comment les rouleaux de papier peint sont-ils estimés ?",
+        "answer": "La surface du mur est divisée par la couverture du rouleau et arrondie à l'unité supérieure."
+      },
+      {
+        "question": "Les répétitions de motif peuvent-elles augmenter la quantité ?",
+        "answer": "Oui. L'ajustement du motif et la découpe peuvent augmenter les déchets."
+      }
+    ]
+  },
+  {
+    "slug": "stair-risers",
+    "faqs": [
+      {
+        "question": "Comment le nombre de marches est-il estimé ?",
+        "answer": "La hauteur totale est divisée par la hauteur de marche prévue et arrondie à l'unité supérieure."
+      },
+      {
+        "question": "Ceci fournit-il une conception d'escalier conforme aux codes ?",
+        "answer": "Non. Les dimensions finales de l'escalier doivent suivre les exigences applicables et la conception du projet."
+      }
+    ]
+  },
+  {
+    "slug": "asphalt-volume",
+    "faqs": [
+      {
+        "question": "Comment le volume d'asphalte est-il calculé ?",
+        "answer": "La longueur, la largeur et la profondeur sont multipliées."
+      },
+      {
+        "question": "La commande d'asphalte peut-elle nécessiter le poids à la place ?",
+        "answer": "Oui. Les fournisseurs peuvent coter l'asphalte au poids, un facteur de densité ou une conversion du fournisseur peut donc être nécessaire."
+      }
+    ]
+  },
+  {
+    "slug": "cubic-yards",
+    "faqs": [
+      {
+        "question": "Combien de pieds cubes contient un mètre cube ?",
+        "answer": "Un mètre cube contient 27 pieds cubes."
+      },
+      {
+        "question": "Quelles unités dois-je saisir ?",
+        "answer": "Saisissez toutes les dimensions en pieds pour cette conversion."
+      }
+    ]
+  },
+  {
+    "slug": "area",
+    "faqs": [
+      {
+        "question": "Comment calcule-t-on l'aire d'un rectangle ?",
+        "answer": "La longueur est multipliée par la largeur."
+      },
+      {
+        "question": "Que se passe-t-il si la forme est irrégulière ?",
+        "answer": "Divisez-la en formes simples et additionnez leurs aires."
+      }
+    ]
+  },
+  {
+    "slug": "volume",
+    "faqs": [
+      {
+        "question": "Comment calcule-t-on le volume d'un rectangle ?",
+        "answer": "La longueur, la largeur et la hauteur sont multipliées."
+      },
+      {
+        "question": "Puis-je calculer des formes irrégulières avec cela ?",
+        "answer": "Non. Cela suppose une forme rectangulaire."
+      }
+    ]
+  }
+]
