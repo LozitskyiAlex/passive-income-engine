@@ -1,0 +1,404 @@
+[
+  {
+    "slug": "concrete-volume",
+    "faqs": [
+      {
+        "question": "¿Qué estima este calculadora?",
+        "answer": "Estima el volumen de concreto rectangular desde la longitud, ancho y grosor."
+      },
+      {
+        "question": "¿Qué debería agregar más allá del volumen calculado?",
+        "answer": "Se pueden necesitar permisos para desperdicios, subrasante irregular y condiciones del proyecto."
+      }
+    ]
+  },
+  {
+    "slug": "concrete-bags",
+    "faqs": [
+      {
+        "question": "¿Cómo calculo cuántos sacos de concreto necesito?",
+        "answer": "Calcula el volumen del proyecto, divide por el rendimiento por saco mostrado en el producto exacto, y redondea hacia arriba a un saco entero. El rendimiento difiere por producto y tamaño del saco."
+      },
+      {
+        "question": "¿Cuántos sacos de 80 libras de concreto hay en un yarda cúbica?",
+        "answer": "Una yarda cúbica es 27 pies cúbicos. A un rendimiento aproximado de 0,60 pies cúbicos por saco de 80 libras de QUIKRETE Concrete Mix #1101, 27 ÷ 0,60 = 45 sacos. Verifique el rendimiento en su producto porque los mezclas pueden variar."
+      },
+      {
+        "question": "¿Cuántos sacos de 80 libras necesito para una losa de 10 pies por 10 pies que es 4 pulgadas de grosor?",
+        "answer": "El volumen de la losa es aproximadamente 33,33 pies cúbicos. A un rendimiento aproximado de 0,60 pies cúbicos por saco de 80 libras, la estimación es 56 sacos antes de cualquier permiso para desperdicios o subrasante irregular."
+      },
+      {
+        "question": "¿Por qué puede diferir el conteo de sacos entre calculadoras?",
+        "answer": "Tamanos de sacos y rendimientos de mezcla de concreto varían. Utilice el rendimiento impreso en el producto exacto, mantenga las unidades consistentes y redondee el número requerido de sacos hacia arriba."
+      }
+    ]
+  },
+  {
+    "slug": "gravel-volume",
+    "faqs": [
+      {
+        "question": "¿Cuánto grava necesito para un área de 20 pies por 10 pies a 3 pulgadas de profundidad?",
+        "answer": "El volumen geométrico es 20 × 10 × 0,25 = 50 pies cúbicos. Divide por 27 pies cúbicos por yarda cúbica para aproximadamente 1,85 yardas cúbicas, antes de cualquier permiso del proveedor para compactación, asentamiento o subrasante irregular."
+      },
+      {
+        "question": "¿Cómo convierto pies cúbicos de grava a yardas cúbicas?",
+        "answer": "Divide pies cúbicos por 27. Por ejemplo, 50 pies cúbicos ÷ 27 es aproximadamente 1,85 yardas cúbicas."
+      },
+      {
+        "question": "¿Estima este cálculo la compactación o convierte a toneladas?",
+        "answer": "No. Informa solo el volumen geométrico. Pregunte al proveedor si debe ordenar material suelto o compactado. Para estimar toneladas, utilice la densidad en volumen para el grava exacto y condiciones del proveedor; varía por material y humedad."
+      }
+    ]
+  },
+  {
+    "slug": "mulch-volume",
+    "faqs": [
+      {
+        "question": "¿Cómo se calcula el volumen de mulch?",
+        "answer": "El área se multiplica por la profundidad de mulch planificada."
+      },
+      {
+        "question": "¿Puede el asentamiento cambiar la cantidad de pedido?",
+        "answer": "Sí. Las características del producto y el asentamiento pueden requerir una compensación."
+      }
+    ]
+  },
+  {
+    "slug": "paint-quantity",
+    "faqs": [
+      {
+        "question": "¿Cómo se estima la cantidad de pintura?",
+        "answer": "El área de la pared se divide por la cobertura por unidad y se multiplica por las capas."
+      },
+      {
+        "question": "¿Por qué puede diferir el uso real?",
+        "answer": "La cobertura varía con el producto y las condiciones de la superficie."
+      }
+    ]
+  },
+  {
+    "slug": "flooring-quantity",
+    "faqs": [
+      {
+        "question": "¿Qué hace la porcentaje de desperdicio?",
+        "answer": "Aumenta el área de piso base por la compensación seleccionada."
+      },
+      {
+        "question": "¿Es el porcentaje de desperdicio universal?",
+        "answer": "No. Siga la guía del fabricante y considere la forma y el patrón de la habitación."
+      }
+    ]
+  },
+  {
+    "slug": "tile-quantity",
+    "faqs": [
+      {
+        "question": "¿Cómo se cuentan los azulejos?",
+        "answer": "El área se divide por el área del azulejo, se agrega el desperdicio y luego el resultado se redondea hacia arriba."
+      },
+      {
+        "question": "¿Debería usarse el tamaño real del azulejo?",
+        "answer": "Sí, cuando difiere de las dimensiones nominales."
+      }
+    ]
+  },
+  {
+    "slug": "drywall-sheets",
+    "faqs": [
+      {
+        "question": "¿Qué incluye este calculador básico?",
+        "answer": "Estima el área de la pared para una habitación rectangular y divide por el área de la hoja."
+      },
+      {
+        "question": "¿Se restan las puertas y las ventanas?",
+        "answer": "No. Las prácticas de instalación y las aperturas pueden cambiar la cantidad."
+      }
+    ]
+  },
+  {
+    "slug": "board-feet",
+    "faqs": [
+      {
+        "question": "¿Qué es un pie cúbico de madera?",
+        "answer": "Es una unidad de volumen de madera basada en la espesor, ancho y largo."
+      },
+      {
+        "question": "¿Deben usarse dimensiones reales?",
+        "answer": "Use dimensiones reales cuando se conozcan."
+      }
+    ]
+  },
+  {
+    "slug": "material-cost",
+    "faqs": [
+      {
+        "question": "¿Qué incluye el total?",
+        "answer": "Multiplica la cantidad por el precio unitario y aplica la pérdida."
+      },
+      {
+        "question": "¿Se incluyen impuestos y entrega?",
+        "answer": "No. Añádalos separadamente cuando sea necesario."
+      }
+    ]
+  },
+  {
+    "slug": "paver-quantity",
+    "faqs": [
+      {
+        "question": "¿Cómo se cuentan los pavimentos?",
+        "answer": "Se convierte el área a pulgadas cuadradas, se divide por el área del pavimento, se aumenta la pérdida y se redondea hacia arriba."
+      },
+      {
+        "question": "¿Pueden los patrones cambiar el resultado?",
+        "answer": "Sí. Los cortes y los patrones pueden aumentar la pérdida."
+      }
+    ]
+  },
+  {
+    "slug": "sand-volume",
+    "faqs": [
+      {
+        "question": "¿Cómo se calcula el volumen de arena?",
+        "answer": "Se multiplican la longitud, el ancho y la profundidad."
+      },
+      {
+        "question": "¿Se tiene en cuenta la compactación?",
+        "answer": "No. Consulte la guía del proveedor."
+      }
+    ]
+  },
+  {
+    "slug": "soil-volume",
+    "faqs": [
+      {
+        "question": "¿Cómo se calcula el volumen del suelo?",
+        "answer": "La longitud, el ancho y la profundidad se multiplican."
+      },
+      {
+        "question": "¿Se debe considerar el asentamiento?",
+        "answer": "Sí. El grado final y el asentamiento pueden afectar la cantidad de pedido."
+      }
+    ]
+  },
+  {
+    "slug": "fence-pickets",
+    "faqs": [
+      {
+        "question": "¿Cómo se cuentan las estacas?",
+        "answer": "La longitud de la valla se divide por el ancho de la estaca más el espacio y se redondea hacia arriba."
+      },
+      {
+        "question": "¿Afectan las puertas a este resultado?",
+        "answer": "Este calculadora básica solo modela una carrera recta."
+      }
+    ]
+  },
+  {
+    "slug": "fence-posts",
+    "faqs": [
+      {
+        "question": "¿Cómo se estiman los postes?",
+        "answer": "La longitud de la valla se divide por el espacio, se redondea hacia arriba y se agrega un poste inicial."
+      },
+      {
+        "question": "¿Se necesitan postes adicionales?",
+        "answer": "Las esquinas, los extremos y las puertas pueden requerir postes adicionales."
+      }
+    ]
+  },
+  {
+    "slug": "decking-boards",
+    "faqs": [
+      {
+        "question": "¿Cómo se estiman las tablas de cubierta?",
+        "answer": "Se estiman las filas de tablas desde el ancho de la cubierta y la tabla más el espacio, y luego las tablas por fila desde el largo de la cubierta y el largo de la tabla."
+      },
+      {
+        "question": "¿Incluye residuos?",
+        "answer": "Sí. Se aplica el porcentaje de residuos seleccionado."
+      }
+    ]
+  },
+  {
+    "slug": "roofing-squares",
+    "faqs": [
+      {
+        "question": "¿Qué es un cuadrado de cubierta?",
+        "answer": "Un cuadrado de cubierta representa 100 pies cuadrados de superficie de cubierta."
+      },
+      {
+        "question": "¿Mide la pendiente del techo?",
+        "answer": "No. Introduzca el área real de la superficie del techo."
+      }
+    ]
+  },
+  {
+    "slug": "roofing-material",
+    "faqs": [
+      {
+        "question": "¿Qué representa el porcentaje de desperdicio?",
+        "answer": "Añade un porcentaje de reserva a la superficie del techo."
+      },
+      {
+        "question": "¿Es un porcentaje de desperdicio correcto para cada techo?",
+        "answer": "No. La geometría del techo y el sistema pueden cambiar la reserva."
+      }
+    ]
+  },
+  {
+    "slug": "gravel-weight",
+    "faqs": [
+      {
+        "question": "¿Cómo se estima el peso de la grava?",
+        "answer": "El volumen se multiplica por la densidad en unidades compatibles."
+      },
+      {
+        "question": "¿Por qué puede diferir el peso del proveedor?",
+        "answer": "La densidad varía con el material y la humedad."
+      }
+    ]
+  },
+  {
+    "slug": "concrete-weight",
+    "faqs": [
+      {
+        "question": "¿Cómo se estima el peso del concreto?",
+        "answer": "El volumen se multiplica por la densidad en unidades compatibles."
+      },
+      {
+        "question": "¿Debería ser específico el producto la densidad?",
+        "answer": "Utilice una densidad adecuada para la mezcla y las unidades introducidas."
+      }
+    ]
+  },
+  {
+    "slug": "concrete-footing",
+    "faqs": [
+      {
+        "question": "¿Cómo se calcula el volumen de la base?",
+        "answer": "La longitud, el ancho y la profundidad se multiplican."
+      },
+      {
+        "question": "¿Se diseña esta base?",
+        "answer": "No. Solo estima el volumen de concreto rectangular."
+      }
+    ]
+  },
+  {
+    "slug": "rebar-length",
+    "faqs": [
+      {
+        "question": "¿Cómo se calcula la longitud total de la barrera de acero?",
+        "answer": "El recuento de barras se multiplica por la longitud por barras."
+      },
+      {
+        "question": "¿Incluye giros y ganchos?",
+        "answer": "No. Utilice el horario de barras del proyecto para cantidades finales."
+      }
+    ]
+  },
+  {
+    "slug": "gravel-bags",
+    "faqs": [
+      {
+        "question": "¿Cómo se estima el volumen de bolsas de grava?",
+        "answer": "El volumen requerido se divide por la cobertura de la bolsa y se redondea hacia arriba."
+      },
+      {
+        "question": "¿De dónde debe provenir la cobertura de la bolsa?",
+        "answer": "Utilice la cobertura indicada para el producto exacto."
+      }
+    ]
+  },
+  {
+    "slug": "baseboard",
+    "faqs": [
+      {
+        "question": "¿Cómo se estima el número de piezas de base de tablero?",
+        "answer": "La longitud total se divide por la longitud de la pieza y se redondea hacia arriba."
+      },
+      {
+        "question": "¿Deben eliminarse las aperturas de puertas?",
+        "answer": "Sólo si esas aperturas no recibirán base de tablero."
+      }
+    ]
+  },
+  {
+    "slug": "wallpaper",
+    "faqs": [
+      {
+        "question": "¿Cómo se estima el número de rollos de papel de pared?",
+        "answer": "El área de pared se divide por la cobertura del rollo y se redondea hacia arriba."
+      },
+      {
+        "question": "¿Pueden los repeticiones de patrón aumentar la cantidad?",
+        "answer": "Sí. El ajuste de patrones y la corte pueden aumentar el desperdicio."
+      }
+    ]
+  },
+  {
+    "slug": "stair-risers",
+    "faqs": [
+      {
+        "question": "¿Cómo se estima el recuento de escalones?",
+        "answer": "La altura total se divide por la altura de escalón planificada y se redondea hacia arriba."
+      },
+      {
+        "question": "¿Este diseño de escaleras cumple con los códigos de construcción?",
+        "answer": "No. Las dimensiones finales de las escaleras deben seguir los requisitos aplicables y el diseño del proyecto."
+      }
+    ]
+  },
+  {
+    "slug": "asphalt-volume",
+    "faqs": [
+      {
+        "question": "¿Cómo se calcula el volumen de asfalto?",
+        "answer": "La longitud, el ancho y la profundidad se multiplican."
+      },
+      {
+        "question": "¿Puede el pedido de asfalto requerir peso en lugar de volumen?",
+        "answer": "Sí. Los proveedores pueden citar el asfalto por peso, por lo que puede ser necesario una conversión de densidad o de proveedor."
+      }
+    ]
+  },
+  {
+    "slug": "cubic-yards",
+    "faqs": [
+      {
+        "question": "¿Cuántos pies cúbicos hay en un yarda cúbica?",
+        "answer": "Una yarda cúbica contiene 27 pies cúbicos."
+      },
+      {
+        "question": "¿Qué unidades debo ingresar?",
+        "answer": "Ingrese todas las dimensiones en pies para esta conversión."
+      }
+    ]
+  },
+  {
+    "slug": "area",
+    "faqs": [
+      {
+        "question": "¿Cómo se calcula el área rectangular?",
+        "answer": "La longitud se multiplica por el ancho."
+      },
+      {
+        "question": "¿Qué pasa si la forma es irregular?",
+        "answer": "Divídala en formas simples y suma sus áreas."
+      }
+    ]
+  },
+  {
+    "slug": "volume",
+    "faqs": [
+      {
+        "question": "¿Cómo se calcula el volumen rectangular?",
+        "answer": "La longitud, el ancho y la altura se multiplican."
+      },
+      {
+        "question": "¿Puede calcular formas irregulares?",
+        "answer": "No. Supone una forma rectangular."
+      }
+    ]
+  }
+]
