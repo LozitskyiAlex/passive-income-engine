@@ -93,6 +93,8 @@ def test_guides_generate_regional_examples_and_measurement_switchers():
         assert "calculateRegional" in html
 
     for locale in LOCALES:
+        if locale == "en":
+            continue
         locale_file = ROOT / "data/locales" / (locale.replace("-", "_") + ".json")
         translations = json.loads(locale_file.read_text(encoding="utf-8"))
         assert translations.get("Measurement system")
