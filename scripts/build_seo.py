@@ -111,30 +111,30 @@ def build_guide(guide, modified):
 </article>
 </main>
 <script type="module">
-import { calculateRegional, formatRegionalInput } from "/calculator-runtime.js";
+import {{ calculateRegional, formatRegionalInput }} from "/calculator-runtime.js";
 const selector=document.querySelector("#measurement-system");
 const systemDefault=document.documentElement.dataset.measurement||"us";
 selector.value=systemDefault;
 const example=document.querySelector("#guide-example-expression");
-function renderExample(){
+function renderExample(){{
   if(!example)return;
   const system=selector.value;
   const values=JSON.parse(example.dataset.values);
   const dimensions=JSON.parse(example.dataset.dimensions);
   const suffixes=JSON.parse(example.dataset.suffixes);
-  const factors={length_ft:0.3048,length_in:25.4,area_sqft:0.09290304,volume_cuft:0.028316846592,density_lb_cuft:16.01846337396014};
+  const factors={{length_ft:0.3048,length_in:25.4,area_sqft:0.09290304,volume_cuft:0.028316846592,density_lb_cuft:16.01846337396014}};
   const locale=document.documentElement.lang||"en";
-  const displayed=values.map((value,index)=>{
+  const displayed=values.map((value,index)=>{{
     const dimension=dimensions[index]||"";
     const converted=system==="metric"?value*(factors[dimension]||1):value;
-    const number=new Intl.NumberFormat(locale,{maximumFractionDigits:3}).format(converted);
+    const number=new Intl.NumberFormat(locale,{{maximumFractionDigits:3}}).format(converted);
     const unit=formatRegionalInput(dimension,system);
     return number+(unit?" "+unit:"")+(suffixes[index]?" "+suffixes[index]:"");
-  });
+  }});
   const calculationValues=values.map((value,index)=>system==="metric"?value*(factors[dimensions[index]]||1):value);
   const result=calculateRegional(example.dataset.kind,calculationValues,system);
   example.textContent=displayed.join(" × ")+" = "+result;
-}
+}}
 selector.addEventListener("change",renderExample);
 renderExample();
 </script>
