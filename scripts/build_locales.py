@@ -22,6 +22,9 @@ LOCALES = {
     "zh-hans": {"hreflang": "zh-Hans", "name": "简体中文"},
     "ko": {"hreflang": "ko", "name": "한국어"},
     "ar": {"hreflang": "ar", "name": "العربية"},
+    "uk": {"hreflang": "uk", "name": "Українська"},
+    "ru": {"hreflang": "ru", "name": "Русский"},
+    "tr": {"hreflang": "tr", "name": "Türkçe"},
 }
 STATIC_ROOTS = ("/favicon.svg", "/calculator-runtime.js", "/robots.txt", "/sitemap.xml", "/BingSiteAuth.xml", "/indexnow-key.txt", "/404.html")
 

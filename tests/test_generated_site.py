@@ -63,7 +63,7 @@ def test_generated_urls_match_catalog():
     subprocess.run(["python", "scripts/build_seo.py"], cwd=ROOT, check=True)
     items = json.loads((ROOT / "data/construction_calculators.json").read_text())
     guides = json.loads((ROOT / "data/guides.json").read_text())
-    locales = {"en": "en", "es": "es", "de": "de", "fr": "fr", "pt-br": "pt-BR", "ja": "ja", "it": "it", "nl": "nl", "pl": "pl", "zh-hans": "zh-Hans", "ko": "ko", "ar": "ar"}
+    locales = {"en": "en", "es": "es", "de": "de", "fr": "fr", "pt-br": "pt-BR", "ja": "ja", "it": "it", "nl": "nl", "pl": "pl", "zh-hans": "zh-Hans", "ko": "ko", "ar": "ar", "uk": "uk", "ru": "ru", "tr": "tr"}
     source_paths = {"/", "/construction/"}
     source_paths |= {f"/construction/{x['slug']}/" for x in items}
     source_paths |= {f"/guides/{x['slug']}/" for x in guides}
@@ -94,13 +94,13 @@ def test_generated_urls_match_catalog():
                 assert parsed.html.get("dir") == "rtl"
             assert_canonical(html, BASE + localized)
             alternates = {node.get("hreflang"): node.get("href") for node in parsed.find_all("link", rel="alternate", hreflang=True)}
-            assert set(alternates) == {"en", "es", "de", "fr", "pt-BR", "ja", "it", "nl", "pl", "zh-Hans", "ko", "ar", "x-default"}
+            assert set(alternates) == {"en", "es", "de", "fr", "pt-BR", "ja", "it", "nl", "pl", "zh-Hans", "ko", "ar", "uk", "ru", "tr", "x-default"}
             for alt_locale, alt_lang in locales.items():
                 alt_path = path if alt_locale == "en" else f"/{alt_locale}{'/' if path == '/' else path}"
                 assert alternates[alt_lang] == BASE + alt_path
             assert alternates["x-default"] == BASE + path
             selector = parsed.find("nav", attrs={"aria-label": "Language selector"})
-            assert selector is not None and len(selector.find_all("a")) == 12
+            assert selector is not None and len(selector.find_all("a")) == 15
             for anchor in parsed.find_all("a", href=True):
                 if anchor.find_parent("nav", attrs={"aria-label": "Language selector"}):
                     continue
@@ -112,6 +112,11 @@ def test_generated_urls_match_catalog():
     arabic_soup = BeautifulSoup(arabic, "html.parser")
     assert arabic_soup.html.get("dir") == "rtl" and arabic_soup.html.get("lang") == "ar"
     assert arabic_soup.find("link", attrs={"hreflang": "zh-Hans"}) is not None
+    for locale in ("uk", "ru", "tr"):
+        localized = (SITE / locale / "construction" / "concrete-volume" / "index.html").read_text(encoding="utf-8")
+        localized_soup = BeautifulSoup(localized, "html.parser")
+        assert localized_soup.html.get("lang") == locale
+        assert localized_soup.html.get("dir") != "rtl"
     for locale in locales:
         if locale == "en":
             continue
