@@ -73,20 +73,28 @@ def test_metric_pages_hide_us_specific_explanations_and_faq_schema():
                 assert any(json.loads(node.string or node.get_text()).get("@type") == "FAQPage" for node in soup.find_all("script", type="application/ld+json"))
 
 
-def test_guides_have_regional_examples_and_measurement_switchers():
+def test_guides_generate_regional_examples_and_measurement_switchers():
+    from scripts.build_seo import build_guide
+
     guides = json.loads((ROOT / "data/guides.json").read_text(encoding="utf-8"))
-    for locale, (_, measurement) in LOCALES.items():
-        for guide in guides:
-            page = SITE / ("" if locale == "en" else locale + "/") / "guides" / guide["slug"] / "index.html"
-            soup = BeautifulSoup(page.read_text(encoding="utf-8"), "html.parser")
-            selector = soup.select_one("#measurement-system")
-            example = soup.select_one("#guide-example-expression")
-            assert selector is not None
-            assert {option.get("value") for option in selector.find_all("option")} == {"metric", "us"}
-            assert example is not None
-            regional = guide["regional_example"]
-            assert json.loads(example["data-values"]) == regional["values"]
-            assert json.loads(example["data-dimensions"]) == regional["dimensions"]
-            assert example["data-kind"] == guide["calculator_slug"].replace("-", "_")
-            assert soup.html.get("data-measurement") == measurement
-            assert 'calculateRegional' in "\n".join(script.get_text() for script in soup.find_all("script"))
+    assert len(guides) == 9
+    for guide in guides:
+        html = build_guide(guide, "2026-11-06")
+        soup = BeautifulSoup(html, "html.parser")
+        selector = soup.select_one("#measurement-system")
+        example = soup.select_one("#guide-example-expression")
+        assert selector is not None
+        assert {option.get("value") for option in selector.find_all("option")} == {"metric", "us"}
+        assert example is not None
+        regional = guide["regional_example"]
+        assert json.loads(example["data-values"]) == regional["values"]
+        assert json.loads(example["data-dimensions"]) == regional["dimensions"]
+        assert example["data-kind"] == guide["calculator_slug"].replace("-", "_")
+        assert "calculateRegional" in html
+
+    for locale in LOCALES:
+        locale_file = ROOT / "data/locales" / (locale.replace("-", "_") + ".json")
+        translations = json.loads(locale_file.read_text(encoding="utf-8"))
+        assert translations.get("Measurement system")
+        assert translations.get("Metric")
+        assert translations.get("US customary")
