@@ -40,7 +40,7 @@ def build_guide(guide, modified):
         f'<p class="example"><span id="guide-example-expression" data-kind="{example_kind}" '
         f'data-values="{escape(example_values)}" data-dimensions="{escape(example_dimensions)}" '
         f'data-suffixes="{escape(example_suffixes)}"></span></p>'
-        if regional_example else f'{example_html}'
+        if regional_example else f'<p class="example">{escape(guide["example"])}</p>'
     )
     schema = {
         "@context": "https://schema.org",
@@ -100,7 +100,7 @@ def build_guide(guide, modified):
 <h2>Formula</h2>
 <p class="formula">{escape(guide["formula"])}</p>
 <h2>Example</h2>
-<p class="example">{escape(guide["example"])}</p>
+{example_html}
 <h2>Important notes</h2>
 <ul>{notes}</ul>
 <h2>Before ordering materials</h2>
