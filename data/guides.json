@@ -17,7 +17,24 @@
       "The calculator gives a geometric estimate. Actual orders can depend on site conditions, forms, slopes and supplier requirements.",
       "For bagged concrete, use the concrete bag calculator after determining the required volume."
     ],
-    "calculator_slug": "concrete-volume"
+    "calculator_slug": "concrete-volume",
+    "regional_example": {
+      "values": [
+        20,
+        10,
+        0.5
+      ],
+      "dimensions": [
+        "length_ft",
+        "length_ft",
+        "length_ft"
+      ],
+      "suffixes": [
+        "",
+        "",
+        ""
+      ]
+    }
   },
   {
     "slug": "how-to-calculate-gravel-volume",
@@ -38,7 +55,24 @@
       "Compaction and settling can change the amount you need to order.",
       "If buying by weight, use the supplier's bulk density rather than assuming a universal value."
     ],
-    "calculator_slug": "gravel-volume"
+    "calculator_slug": "gravel-volume",
+    "regional_example": {
+      "values": [
+        20,
+        10,
+        0.25
+      ],
+      "dimensions": [
+        "length_ft",
+        "length_ft",
+        "length_ft"
+      ],
+      "suffixes": [
+        "",
+        "",
+        ""
+      ]
+    }
   },
   {
     "slug": "how-to-calculate-mulch",
@@ -59,7 +93,24 @@
       "Freshly spread material can settle, so the purchased quantity may need a practical allowance.",
       "Do not use a bag coverage number from one product for another product without checking its label."
     ],
-    "calculator_slug": "mulch-volume"
+    "calculator_slug": "mulch-volume",
+    "regional_example": {
+      "values": [
+        20,
+        10,
+        0.25
+      ],
+      "dimensions": [
+        "length_ft",
+        "length_ft",
+        "length_ft"
+      ],
+      "suffixes": [
+        "",
+        "",
+        ""
+      ]
+    }
   },
   {
     "slug": "how-to-calculate-flooring-quantity",
@@ -80,7 +131,24 @@
       "Follow the flooring manufacturer's installation guidance for expansion gaps and layout.",
       "Package sizes differ, so the final purchase quantity may need to be rounded to full boxes."
     ],
-    "calculator_slug": "flooring-quantity"
+    "calculator_slug": "flooring-quantity",
+    "regional_example": {
+      "values": [
+        20,
+        15,
+        10
+      ],
+      "dimensions": [
+        "length_ft",
+        "length_ft",
+        ""
+      ],
+      "suffixes": [
+        "",
+        "",
+        "% waste"
+      ]
+    }
   },
   {
     "slug": "how-to-calculate-pavers",
@@ -101,7 +169,30 @@
       "Include the joint pattern and manufacturer's installation requirements when planning the layout.",
       "For complex shapes, calculate separate sections rather than relying on one rectangle."
     ],
-    "calculator_slug": "paver-quantity"
+    "calculator_slug": "paver-quantity",
+    "regional_example": {
+      "values": [
+        20,
+        12,
+        12,
+        6,
+        5
+      ],
+      "dimensions": [
+        "length_ft",
+        "length_ft",
+        "length_in",
+        "length_in",
+        ""
+      ],
+      "suffixes": [
+        "",
+        "",
+        "",
+        "",
+        "% waste"
+      ]
+    }
   },
   {
     "slug": "how-to-calculate-roofing-squares",
@@ -121,7 +212,18 @@
       "Different roofing products have different coverage and waste requirements.",
       "Use manufacturer installation instructions and local requirements when converting squares into purchased materials."
     ],
-    "calculator_slug": "roofing-squares"
+    "calculator_slug": "roofing-squares",
+    "regional_example": {
+      "values": [
+        2400
+      ],
+      "dimensions": [
+        "area_sqft"
+      ],
+      "suffixes": [
+        ""
+      ]
+    }
   },
   {
     "slug": "how-to-calculate-fence-posts",
@@ -142,7 +244,21 @@
       "Post spacing depends on fence design, materials, wind exposure and local requirements.",
       "Treat the calculator as an estimating tool rather than a structural design."
     ],
-    "calculator_slug": "fence-posts"
+    "calculator_slug": "fence-posts",
+    "regional_example": {
+      "values": [
+        100,
+        8
+      ],
+      "dimensions": [
+        "length_ft",
+        "length_ft"
+      ],
+      "suffixes": [
+        "",
+        ""
+      ]
+    }
   },
   {
     "slug": "cubic-yards-vs-cubic-feet",
@@ -161,7 +277,24 @@
       "Keep the unit system consistent before calculating volume.",
       "Supplier coverage and delivery quantities can differ from the mathematical estimate."
     ],
-    "calculator_slug": "cubic-yards"
+    "calculator_slug": "cubic-yards",
+    "regional_example": {
+      "values": [
+        27,
+        1,
+        1
+      ],
+      "dimensions": [
+        "length_ft",
+        "length_ft",
+        "length_ft"
+      ],
+      "suffixes": [
+        "",
+        "",
+        ""
+      ]
+    }
   },
   {
     "slug": "how-many-bags-of-gravel-do-i-need",
@@ -184,6 +317,20 @@
       "For a bulk order measured by weight, use the supplier's stated density for the specific gravel."
     ],
     "calculator_slug": "gravel-bags",
-    "calculator_link_text": "Estimate bag count with the Gravel Bag Calculator"
+    "calculator_link_text": "Estimate bag count with the Gravel Bag Calculator",
+    "regional_example": {
+      "values": [
+        10,
+        0.5
+      ],
+      "dimensions": [
+        "volume_cuft",
+        "volume_cuft"
+      ],
+      "suffixes": [
+        "",
+        ""
+      ]
+    }
   }
 ]
