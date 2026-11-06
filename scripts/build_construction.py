@@ -184,11 +184,11 @@ def page(item, content, related, titles, units, faq):
 <div class="card"><label>Measurement system <select id="measurement-system"><option value="metric">Metric</option><option value="us">US customary</option></select></label><div class="calculator-fields">{inputs}</div><button id="calculate">Calculate</button><button id="reset" type="button">Reset</button><div id="result" aria-live="polite"></div></div>
 <section><h2>Calculation example</h2><div class="example"><p><strong>Inputs:</strong> <span id="example-inputs" data-values='{escape(example_values_json)}'></span></p><p><strong>Result:</strong> <span id="example-result"></span></p></div>
 <h2>Formula</h2><p>{escape(formula_text)}</p>
-<h2>How to use this calculator</h2><p>{escape(content.get("how",""))}</p>
+<h2>How to use this calculator</h2><p id="how-to-content">{escape(content.get("how",""))}</p>
 <h2>Before you calculate</h2><p>Measure the project dimensions as accurately as practical and keep all measurements in compatible units. For material products, use the coverage, yield, density, or package size stated by the manufacturer or supplier rather than a generic assumption.</p><p>Choose the waste allowance based on the project shape, installation method, cutting requirements, and material characteristics. A simple rectangular estimate may need adjustment for openings, corners, slopes, joints, patterns, compaction, or other site conditions.</p>
 <h2>Understanding the result</h2><p>The calculator provides a planning estimate based on the inputs shown above. It is not a substitute for project drawings, structural design, manufacturer instructions, or local requirements. Before ordering, compare the calculated quantity with the supplier's package sizes and ordering units.</p>
-<h2>Tips</h2><ul>{tips}</ul></section>
-<section><h2>Frequently asked questions</h2>{faq_html}</section><section><h2>Related calculators</h2><ul>{related_html}</ul><p><a href="/construction/">Browse all construction calculators</a></p></section>
+<section data-unit-system="us"><h2>Tips</h2><ul id="calculator-tips">{tips}</ul></section></section>
+<section id="faq-section" data-unit-system="us"><h2>Frequently asked questions</h2>{faq_html}</section><section><h2>Related calculators</h2><ul>{related_html}</ul><p><a href="/construction/">Browse all construction calculators</a></p></section>
 <p>Use compatible units and verify estimates against project specifications, local requirements and manufacturer instructions.</p></main>
 <script type="module">
 import {{ calculateRegional, formatRegionalInput }} from "/calculator-runtime.js";
@@ -196,8 +196,13 @@ const kind="{kind}";
 const systemSelect=document.querySelector("#measurement-system");
 const defaultSystem=document.documentElement.dataset.measurement||"us";
 systemSelect.value=defaultSystem;
+const howTo=document.querySelector("#how-to-content");
+const originalHowTo=howTo?howTo.textContent:"";
+const metricHowTo="Measure the project dimensions as accurately as practical and keep all measurements in compatible units. For material products, use the coverage, yield, density, or package size stated by the manufacturer or supplier rather than a generic assumption.";
 function renderRegionalUnits(){{
  const system=systemSelect.value;
+ if(howTo)howTo.textContent=system==="metric"?metricHowTo:originalHowTo;
+ document.querySelectorAll('[data-unit-system="us"]').forEach(node=>{{node.hidden=system==="metric";}});
  document.querySelectorAll(".unit[data-dimension]").forEach(node=>{{node.textContent=formatRegionalInput(node.dataset.dimension,system);}});
  const exampleValues=JSON.parse(document.querySelector("#example-inputs").dataset.values);
  const labels=[...document.querySelectorAll(".calculator-fields .field-name")].map(node=>node.textContent.trim());

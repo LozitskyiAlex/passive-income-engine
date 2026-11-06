@@ -169,6 +169,20 @@ def localize_page(source_html, path, locale, translations):
             translate_script(script, translations)
     for field_name in soup.select(".field-name"):
         field_name.string = re.sub(r"\s*\([^)]*\)\s*$", "", field_name.get_text("", strip=True))
+    if LOCALES[locale]["measurement"] == "metric":
+        neutral_how = "Measure the project dimensions as accurately as practical and keep all measurements in compatible units. For material products, use the coverage, yield, density, or package size stated by the manufacturer or supplier rather than a generic assumption."
+        how_node = soup.select_one("#how-to-content")
+        if how_node:
+            how_node.string = translations.get(neutral_how, neutral_how)
+        for regional_node in soup.select('[data-unit-system="us"]'):
+            regional_node["hidden"] = True
+        for script in soup.find_all("script", type="application/ld+json"):
+            try:
+                schema = json.loads(script.string or script.get_text())
+                if isinstance(schema, dict) and schema.get("@type") == "FAQPage":
+                    script.decompose()
+            except (ValueError, TypeError):
+                pass
     localize_internal_links(soup, locale)
     canonical = absolute_url(locale_path(path, locale))
     canonical_tag = soup.find("link", rel="canonical")

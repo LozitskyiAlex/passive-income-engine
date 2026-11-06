@@ -51,3 +51,23 @@ def test_metric_conversion_adapter_converts_inputs_and_outputs():
     result = subprocess.run(["node", "--input-type=module", "-e", script], cwd=ROOT, check=True, capture_output=True, text=True)
     actual = json.loads(result.stdout)
     assert actual == {key: value[1] for key, value in cases.items()}
+
+
+def test_metric_pages_hide_us_specific_explanations_and_faq_schema():
+    items = json.loads((ROOT / "data/construction_calculators.json").read_text())
+    for locale, (_, measurement) in LOCALES.items():
+        for item in items:
+            page = SITE / ("" if locale == "en" else locale + "/") / "construction" / item["slug"] / "index.html"
+            soup = BeautifulSoup(page.read_text(encoding="utf-8"), "html.parser")
+            regional_sections = soup.select('[data-unit-system="us"]')
+            if measurement == "metric":
+                assert regional_sections and all(section.has_attr("hidden") for section in regional_sections)
+                assert not any(json.loads(node.string or node.get_text()).get("@type") == "FAQPage" for node in soup.find_all("script", type="application/ld+json"))
+                how = soup.select_one("#how-to-content").get_text(" ", strip=True)
+                locale_file = ROOT / "data/locales" / (locale.replace("-", "_") + ".json")
+                translations = json.loads(locale_file.read_text(encoding="utf-8"))
+                neutral = "Measure the project dimensions as accurately as practical and keep all measurements in compatible units. For material products, use the coverage, yield, density, or package size stated by the manufacturer or supplier rather than a generic assumption."
+                assert how == translations[neutral]
+            else:
+                assert regional_sections and all(not section.has_attr("hidden") for section in regional_sections)
+                assert any(json.loads(node.string or node.get_text()).get("@type") == "FAQPage" for node in soup.find_all("script", type="application/ld+json"))
