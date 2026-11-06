@@ -31,6 +31,17 @@ def build_guide(guide, modified):
         f'<p><a href="/construction/{escape(calc)}/">{link_text}</a></p>'
         if calc else ""
     )
+    regional_example = guide.get("regional_example", {})
+    example_values = json.dumps(regional_example.get("values", []), separators=(",", ":"))
+    example_dimensions = json.dumps(regional_example.get("dimensions", []), separators=(",", ":"))
+    example_suffixes = json.dumps(regional_example.get("suffixes", []), separators=(",", ":"))
+    example_kind = escape((calc or "").replace("-", "_"))
+    example_html = (
+        f'<p class="example"><span id="guide-example-expression" data-kind="{example_kind}" '
+        f'data-values="{escape(example_values)}" data-dimensions="{escape(example_dimensions)}" '
+        f'data-suffixes="{escape(example_suffixes)}"></span></p>'
+        if regional_example else f'{example_html}'
+    )
     schema = {
         "@context": "https://schema.org",
         "@type": "Article",
@@ -77,6 +88,9 @@ def build_guide(guide, modified):
 </head>
 <body>
 <main>
+<label for="measurement-system">Measurement system
+<select id="measurement-system"><option value="metric">Metric</option><option value="us">US customary</option></select>
+</label>
 <nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/construction/">Construction Calculators</a> / {escape(guide["title"])}</nav>
 <article>
 <h1>{escape(guide["title"])}</h1>
@@ -96,6 +110,34 @@ def build_guide(guide, modified):
 <p class="small">This page provides a practical estimating method. Verify project specifications, local requirements and manufacturer instructions before purchasing materials.</p>
 </article>
 </main>
+<script type="module">
+import { calculateRegional, formatRegionalInput } from "/calculator-runtime.js";
+const selector=document.querySelector("#measurement-system");
+const systemDefault=document.documentElement.dataset.measurement||"us";
+selector.value=systemDefault;
+const example=document.querySelector("#guide-example-expression");
+function renderExample(){
+  if(!example)return;
+  const system=selector.value;
+  const values=JSON.parse(example.dataset.values);
+  const dimensions=JSON.parse(example.dataset.dimensions);
+  const suffixes=JSON.parse(example.dataset.suffixes);
+  const factors={length_ft:0.3048,length_in:25.4,area_sqft:0.09290304,volume_cuft:0.028316846592,density_lb_cuft:16.01846337396014};
+  const locale=document.documentElement.lang||"en";
+  const displayed=values.map((value,index)=>{
+    const dimension=dimensions[index]||"";
+    const converted=system==="metric"?value*(factors[dimension]||1):value;
+    const number=new Intl.NumberFormat(locale,{maximumFractionDigits:3}).format(converted);
+    const unit=formatRegionalInput(dimension,system);
+    return number+(unit?" "+unit:"")+(suffixes[index]?" "+suffixes[index]:"");
+  });
+  const calculationValues=values.map((value,index)=>system==="metric"?value*(factors[dimensions[index]]||1):value);
+  const result=calculateRegional(example.dataset.kind,calculationValues,system);
+  example.textContent=displayed.join(" × ")+" = "+result;
+}
+selector.addEventListener("change",renderExample);
+renderExample();
+</script>
 </body>
 </html>'''
 
