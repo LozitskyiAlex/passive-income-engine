@@ -10,21 +10,21 @@ SITE = ROOT / "site"
 LOCALES_DIR = ROOT / "data" / "locales"
 BASE = "https://free-construction-calculators.pages.dev"
 LOCALES = {
-    "en": {"hreflang": "en", "name": "English"},
-    "es": {"hreflang": "es", "name": "Español"},
-    "de": {"hreflang": "de", "name": "Deutsch"},
-    "fr": {"hreflang": "fr", "name": "Français"},
-    "pt-br": {"hreflang": "pt-BR", "name": "Português"},
-    "ja": {"hreflang": "ja", "name": "日本語"},
-    "it": {"hreflang": "it", "name": "Italiano"},
-    "nl": {"hreflang": "nl", "name": "Nederlands"},
-    "pl": {"hreflang": "pl", "name": "Polski"},
-    "zh-hans": {"hreflang": "zh-Hans", "name": "简体中文"},
-    "ko": {"hreflang": "ko", "name": "한국어"},
-    "ar": {"hreflang": "ar", "name": "العربية"},
-    "uk": {"hreflang": "uk", "name": "Українська"},
-    "ru": {"hreflang": "ru", "name": "Русский"},
-    "tr": {"hreflang": "tr", "name": "Türkçe"},
+    "en": {"hreflang": "en", "name": "English", "region": "US", "measurement": "us"},
+    "es": {"hreflang": "es", "name": "Español", "region": "ES", "measurement": "metric"},
+    "de": {"hreflang": "de", "name": "Deutsch", "region": "DE", "measurement": "metric"},
+    "fr": {"hreflang": "fr", "name": "Français", "region": "FR", "measurement": "metric"},
+    "pt-br": {"hreflang": "pt-BR", "name": "Português", "region": "BR", "measurement": "metric"},
+    "ja": {"hreflang": "ja", "name": "日本語", "region": "JP", "measurement": "metric"},
+    "it": {"hreflang": "it", "name": "Italiano", "region": "IT", "measurement": "metric"},
+    "nl": {"hreflang": "nl", "name": "Nederlands", "region": "NL", "measurement": "metric"},
+    "pl": {"hreflang": "pl", "name": "Polski", "region": "PL", "measurement": "metric"},
+    "zh-hans": {"hreflang": "zh-Hans", "name": "简体中文", "region": "CN", "measurement": "metric"},
+    "ko": {"hreflang": "ko", "name": "한국어", "region": "KR", "measurement": "metric"},
+    "ar": {"hreflang": "ar", "name": "العربية", "region": "001", "measurement": "metric"},
+    "uk": {"hreflang": "uk", "name": "Українська", "region": "UA", "measurement": "metric"},
+    "ru": {"hreflang": "ru", "name": "Русский", "region": "RU", "measurement": "metric"},
+    "tr": {"hreflang": "tr", "name": "Türkçe", "region": "TR", "measurement": "metric"},
 }
 STATIC_ROOTS = ("/favicon.svg", "/calculator-runtime.js", "/robots.txt", "/sitemap.xml", "/BingSiteAuth.xml", "/indexnow-key.txt", "/404.html")
 
@@ -120,11 +120,21 @@ def localize_internal_links(soup, locale):
         script.string = source
 
 
+REGIONAL_UNIT_SYMBOLS = {
+    "metric": {"length_ft": "m", "length_in": "mm", "area_sqft": "m²", "volume_cuft": "m³", "density_lb_cuft": "kg/m³"},
+    "us": {"length_ft": "ft", "length_in": "in", "area_sqft": "sq ft", "volume_cuft": "cu ft", "density_lb_cuft": "lb/cu ft"},
+}
+
+
 def localize_page(source_html, path, locale, translations):
     soup = BeautifulSoup(source_html, "html.parser")
     html = soup.find("html")
     if html:
         html["lang"] = LOCALES[locale]["hreflang"]
+        html["data-region"] = LOCALES[locale]["region"]
+        html["data-measurement"] = LOCALES[locale]["measurement"]
+        for unit_node in soup.select(".unit[data-dimension]"):
+            unit_node.string = REGIONAL_UNIT_SYMBOLS[LOCALES[locale]["measurement"]].get(unit_node.get("data-dimension", ""), "")
         if locale == "ar":
             html["dir"] = "rtl"
         else:
@@ -157,6 +167,8 @@ def localize_page(source_html, path, locale, translations):
                 pass
         elif script.get("type") != "module" or script.string:
             translate_script(script, translations)
+    for field_name in soup.select(".field-name"):
+        field_name.string = re.sub(r"\s*\([^)]*\)\s*$", "", field_name.get_text("", strip=True))
     localize_internal_links(soup, locale)
     canonical = absolute_url(locale_path(path, locale))
     canonical_tag = soup.find("link", rel="canonical")
@@ -246,6 +258,8 @@ def required_translation_strings(source_pages):
                 required.add(value)
         for tag in soup.find_all(True):
             for attr in ("title", "content", "aria-label", "placeholder", "alt", "value"):
+                if attr == "value" and tag.name == "option":
+                    continue
                 value = tag.get(attr)
                 if isinstance(value, str) and len(value.strip()) > 1 and not numeric_or_punctuation.fullmatch(value.strip()):
                     required.add(value.strip())

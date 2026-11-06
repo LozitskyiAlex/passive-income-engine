@@ -799,5 +799,14 @@
   " risers": " rıhtlar",
   " cubic yards": " kübik yarda",
   "Enter valid non-negative numbers.": "Geçerli ve sıfırdan büyük sayılar girin.",
-  "Enter values greater than zero for dimensions, quantities, prices, coverage, density or spacing.": "Boyutlar, miktarlar, fiyatlar, kapsam, yoğunluk veya aralıklar için sıfırdan büyük değerler girin."
+  "Enter values greater than zero for dimensions, quantities, prices, coverage, density or spacing.": "Boyutlar, miktarlar, fiyatlar, kapsam, yoğunluk veya aralıklar için sıfırdan büyük değerler girin.",
+  "Measurement system": "Ölçü sistemi",
+  "Metric": "Metrik",
+  "US customary": "ABD ölçü sistemi",
+  "Lumber volume = thickness × width × length × quantity. The result is displayed in the selected measurement system.": "Kereste hacmi = kalınlık × genişlik × uzunluk × adet. Sonuç seçilen sistemde gösterilir.",
+  "Pickets needed = fence length ÷ (picket width + gap), rounded up. Use compatible units for all dimensions.": "Gerekli çit tahtası = çit uzunluğu ÷ (tahta genişliği + boşluk), yukarı yuvarlanır. Uyumlu birimler kullanın.",
+  "Roofing material area is shown in the selected measurement system.": "Çatı kaplama alanı seçilen ölçü sisteminde gösterilir.",
+  "Tiles needed = project area ÷ tile area × (1 + waste percentage ÷ 100), rounded up. Use compatible units for area and tile dimensions.": "Gerekli karo = proje alanı ÷ karo alanı × (1 + fire ÷ 100), yukarı yuvarlanır. Uyumlu birimler kullanın.",
+  "Volume = length × width × depth, converted to the selected output unit.": "Hacim = uzunluk × genişlik × derinlik; seçilen birime dönüştürülür.",
+  "Volume = length × width × depth. The result is displayed in the selected measurement system.": "Hacim = uzunluk × genişlik × derinlik. Sonuç seçilen sistemde gösterilir."
 }

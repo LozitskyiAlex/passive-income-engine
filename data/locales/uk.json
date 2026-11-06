@@ -799,5 +799,14 @@
   " risers": " підсхідники",
   " cubic yards": " кубічних ярдів",
   "Enter valid non-negative numbers.": "Введіть коректні невід’ємні числа.",
-  "Enter values greater than zero for dimensions, quantities, prices, coverage, density or spacing.": "Введіть значення, більші за нуль, для розмірів, кількості, цін, площі покриття, щільності або відстані."
+  "Enter values greater than zero for dimensions, quantities, prices, coverage, density or spacing.": "Введіть значення, більші за нуль, для розмірів, кількості, цін, площі покриття, щільності або відстані.",
+  "Measurement system": "Система вимірювання",
+  "Metric": "Метрична",
+  "US customary": "Американська система",
+  "Lumber volume = thickness × width × length × quantity. The result is displayed in the selected measurement system.": "Об’єм деревини = товщина × ширина × довжина × кількість. Результат показано в обраній системі.",
+  "Pickets needed = fence length ÷ (picket width + gap), rounded up. Use compatible units for all dimensions.": "Кількість планок = довжина огорожі ÷ (ширина планки + проміжок), із заокругленням угору. Використовуйте сумісні одиниці.",
+  "Roofing material area is shown in the selected measurement system.": "Площа покрівельного матеріалу показана в обраній системі.",
+  "Tiles needed = project area ÷ tile area × (1 + waste percentage ÷ 100), rounded up. Use compatible units for area and tile dimensions.": "Кількість плиток = площа проєкту ÷ площа плитки × (1 + запас ÷ 100), із заокругленням угору. Використовуйте сумісні одиниці.",
+  "Volume = length × width × depth, converted to the selected output unit.": "Об’єм = довжина × ширина × глибина з перерахунком в обрану одиницю.",
+  "Volume = length × width × depth. The result is displayed in the selected measurement system.": "Об’єм = довжина × ширина × глибина. Результат показано в обраній системі."
 }

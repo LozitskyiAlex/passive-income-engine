@@ -799,5 +799,14 @@
   " risers": " подступеноки",
   " cubic yards": " кубических ярдов",
   "Enter valid non-negative numbers.": "Введите допустимые неотрицательные числа.",
-  "Enter values greater than zero for dimensions, quantities, prices, coverage, density or spacing.": "Введите значения, большие нуля, для размеров, количества, цен, плотности покрытия, плотности или шага."
+  "Enter values greater than zero for dimensions, quantities, prices, coverage, density or spacing.": "Введите значения, большие нуля, для размеров, количества, цен, плотности покрытия, плотности или шага.",
+  "Measurement system": "Система измерения",
+  "Metric": "Метрическая",
+  "US customary": "Американская система",
+  "Lumber volume = thickness × width × length × quantity. The result is displayed in the selected measurement system.": "Объём древесины = толщина × ширина × длина × количество. Результат показан в выбранной системе.",
+  "Pickets needed = fence length ÷ (picket width + gap), rounded up. Use compatible units for all dimensions.": "Количество планок = длина забора ÷ (ширина планки + зазор), с округлением вверх. Используйте совместимые единицы.",
+  "Roofing material area is shown in the selected measurement system.": "Площадь кровельного материала показана в выбранной системе.",
+  "Tiles needed = project area ÷ tile area × (1 + waste percentage ÷ 100), rounded up. Use compatible units for area and tile dimensions.": "Количество плиток = площадь проекта ÷ площадь плитки × (1 + запас ÷ 100), с округлением вверх. Используйте совместимые единицы.",
+  "Volume = length × width × depth, converted to the selected output unit.": "Объём = длина × ширина × глубина с преобразованием в выбранную единицу.",
+  "Volume = length × width × depth. The result is displayed in the selected measurement system.": "Объём = длина × ширина × глубина. Результат показан в выбранной системе."
 }

@@ -116,3 +116,12 @@ The project intentionally avoids per-visitor AI inference. Visitor calculations 
 6. Introduce monetization only after useful traffic exists.
 
 Potential monetization paths include contextual advertising, relevant affiliate offers and paid digital resources. No monetization is embedded until the underlying product has demonstrated demand.
+
+
+## Regional measurement systems
+
+Construction calculators use locale-specific regional defaults. English defaults to US customary units. Spanish, German, French, Brazilian Portuguese, Japanese, Italian, Dutch, Polish, Simplified Chinese, Korean, Arabic, Ukrainian, Russian and Turkish default to metric units. Locale metadata records the region and default measurement system.
+
+Every construction calculator exposes a selector to switch between Metric and US customary units. Inputs are normalized to the existing calculation units, while metric outputs are converted to m, mm, m², m³, kg and kg/m³ as appropriate. Count outputs remain counts. Board feet and roofing squares are converted to metric volume and area in metric mode.
+
+Input dimensions are declared per calculator in `scripts/build_construction.py`. The localized HTML includes regional defaults and unit labels. Conversion behavior is covered by `tests/test_regional_units.py`.
