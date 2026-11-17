@@ -129,6 +129,14 @@ def test_generated_urls_match_catalog():
         assert "Intl.NumberFormat" in runtime
     assert (SITE / "404.html").exists()
     assert (SITE / "calculator-runtime.js").exists()
+    homepage = (SITE / "index.html").read_text(encoding="utf-8")
+    assert "How to get a useful material estimate" in homepage
+    assert "Metric and US customary measurements" in homepage
+    priority_slugs = {"concrete-volume", "concrete-bags", "gravel-volume", "paint-quantity", "flooring-quantity", "tile-quantity", "drywall-sheets", "paver-quantity", "roofing-material", "material-cost"}
+    for slug in priority_slugs:
+        page_html = (SITE / "construction" / slug / "index.html").read_text(encoding="utf-8")
+        assert "Worked project example" in page_html, slug
+        assert "Frequently asked questions" in page_html, slug
     assert (SITE / "BingSiteAuth.xml").read_bytes() == (ROOT / "BingSiteAuth.xml").read_bytes()
 
     for item in items:
