@@ -198,6 +198,10 @@
       {
         "question": "What if the supplier sells full packs only?",
         "answer": "Convert the required quantity into packs using the supplier's pack size, round up to whole packs and then calculate the cost from the pack price."
+      },
+      {
+        "question": "Why can the final invoice differ from this estimate?",
+        "answer": "Supplier price changes, minimum order quantities, pack rounding, tax, delivery, discounts and site changes can affect the final amount. Compare a current written quote with the same product specification and units."
       }
     ]
   },
