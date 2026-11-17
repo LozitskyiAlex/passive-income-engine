@@ -856,5 +856,21 @@
   "Cuts, borders, curves, pattern layout, breakage and pack sizes can increase the number required.": "Découpes, bordures, courbes, motifs, casse et conditionnement peuvent augmenter la quantité.",
   "Not directly for a pitched roof. Use the measured surface area of each roof plane or a correctly calculated pitch adjustment, then add the relevant roof details.": "Pour un toit en pente, utilisez la surface mesurée de chaque pan ou un ajustement correct selon la pente, puis ajoutez les détails.",
   "It estimates only the entered roof covering area plus the selected allowance. Underlayment, flashing, ridge products and accessories are separate unless included in the specified coverage.": "Il estime uniquement la surface saisie plus la marge. Écran sous-toiture, solins, faîtage et accessoires sont séparés sauf inclusion explicite.",
-  "How do I convert cubic feet to cubic yards?": "Comment convertir des mètres cubes en litres ?"
+  "How do I convert cubic feet to cubic yards?": "Comment convertir des mètres cubes en litres ?",
+  "Does the estimate include reinforcement or formwork?": "L’estimation inclut-elle les armatures ou le coffrage ?",
+  "How deep should a gravel layer be?": "Quelle profondeur prévoir pour une couche de gravier ?",
+  "Should I subtract windows and doors?": "Dois-je déduire les fenêtres et les portes ?",
+  "Does the calculator round up to whole cans?": "Le calculateur arrondit-il au pot entier supérieur ?",
+  "How much extra flooring should I order?": "Quelle quantité supplémentaire de revêtement dois-je commander ?",
+  "Does the estimate include underlay or transitions?": "L’estimation inclut-elle la sous-couche ou les profils de transition ?",
+  "How do I calculate the number of boxes?": "Comment calculer le nombre de boîtes ?",
+  "Does tile size include grout joints?": "La dimension du carreau inclut-elle les joints ?",
+  "Does this calculator subtract windows and doors?": "Ce calculateur déduit-il les fenêtres et les portes ?",
+  "Does it include the ceiling?": "Le plafond est-il inclus ?",
+  "What if the supplier sells full packs only?": "Que faire si le fournisseur ne vend que des paquets complets ?",
+  "Why can the final invoice differ from this estimate?": "Pourquoi la facture finale peut-elle différer de cette estimation ?",
+  "Does this estimate include the gravel base and bedding sand?": "Cette estimation inclut-elle la fondation en gravier et le sable de pose ?",
+  "Why can the installed count be higher than the area calculation?": "Pourquoi la quantité posée peut-elle dépasser le calcul de surface ?",
+  "Can I use the building footprint as roof area?": "Puis-je utiliser l’emprise du bâtiment comme surface de toiture ?",
+  "Does the result include shingles, underlayment and flashing?": "Le résultat inclut-il les bardeaux, l’écran sous-toiture et les solins ?"
 }
