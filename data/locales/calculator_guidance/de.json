@@ -38,5 +38,6 @@
   "material-cost": [
     "Benötigte Menge mit dem Preis derselben Einheit multiplizieren. Verschnitt auf die Materialsumme aufschlagen. Steuern, Lieferung, Arbeitskosten und weitere Gebühren separat ergänzen.",
     "120 Einheiten × 8 Geldeinheiten = 960. Mit 8 % Zuschlag: 1.036,80 vor Steuern und weiteren Kosten."
-  ]
+  ],
+  "example_heading": "Metrisches Beispiel"
 }
