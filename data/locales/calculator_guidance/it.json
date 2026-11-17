@@ -1,0 +1,42 @@
+{
+  "concrete-volume": [
+    "Converti lunghezza, larghezza e spessore nella stessa unità e moltiplicali. Dividi i piedi cubi per 27 per ottenere iarde cubiche. Somma i getti separati senza sovrapporli.",
+    "3,6 m × 3,0 m × 0,10 m = 1,08 m³."
+  ],
+  "concrete-bags": [
+    "Calcola il volume del calcestruzzo, dividilo per la resa indicata sul sacco specifico e arrotonda per eccesso. Mantieni le stesse unità; la resa varia in base alla miscela e al formato.",
+    "3 m × 3 m × 0,10 m = 0,90 m³. Con 0,014 m³ per sacco: 64,3, quindi 65 sacchi."
+  ],
+  "gravel-volume": [
+    "Moltiplica lunghezza, larghezza e profondità dello strato dopo averle convertite nella stessa unità. Dividi i piedi cubi per 27 per ottenere iarde cubiche. Calcola separatamente le zone con profondità diverse.",
+    "6 m × 3 m × 75 mm = 1,35 m³."
+  ],
+  "paint-quantity": [
+    "Somma le superfici da tinteggiare, sottrai le aperture misurate, dividi per la copertura dichiarata del prodotto e moltiplica per le mani. Il consumo effettivo dipende dal supporto e dall'applicazione.",
+    "56 m² ÷ 10 m²/L × 2 mani = 11,2 L; arrotonda in base ai contenitori disponibili."
+  ],
+  "flooring-quantity": [
+    "Moltiplica lunghezza e larghezza della stanza, poi aggiungi la percentuale di sfrido scelta. Dividi gli ambienti irregolari in forme semplici. Arrotonda a confezioni intere.",
+    "5,5 m × 4,3 m = 23,65 m². Con un 10% aggiuntivo: 26,02 m²."
+  ],
+  "tile-quantity": [
+    "Dividi la superficie per l'area frontale di una piastrella, aggiungi lo sfrido scelto e arrotonda per eccesso. Usa le dimensioni effettive e converti il risultato in scatole intere.",
+    "Area 22 m²; piastrella 600 × 300 mm = 0,18 m². Con il 10%: 134,45, quindi 135 piastrelle."
+  ],
+  "drywall-sheets": [
+    "In una stanza rettangolare, moltiplica il perimetro per l'altezza delle pareti, dividi per l'area di un pannello e arrotonda per eccesso. Aggiungi il soffitto separatamente. Non definisce il layout né la conformità.",
+    "Stanza 6 × 4 m, pareti alte 2,4 m: 48 m². Pannello 1,2 × 2,4 m: 2,88 m²; servono 17 pannelli."
+  ],
+  "paver-quantity": [
+    "Dividi l'area da pavimentare per la superficie di un massello, aggiungi il margine per i tagli e arrotonda per eccesso. La stima riguarda solo i masselli, non scavo, fondazione o letto di posa.",
+    "Patio 5 × 4 m = 20 m²; massello 200 × 100 mm = 0,02 m². Con il 5%: 1.050 pezzi."
+  ],
+  "roofing-material": [
+    "Usa la superficie misurata di ogni falda, non l'impronta a terra dell'edificio. Aggiungi il margine scelto e converti in confezioni secondo la copertura dichiarata del prodotto.",
+    "Superficie misurata del tetto: 167 m². Con il 12% aggiuntivo: 187,04 m²."
+  ],
+  "material-cost": [
+    "Moltiplica la quantità necessaria per il prezzo della stessa unità. Applica lo sfrido al subtotale dei materiali. Aggiungi separatamente imposte, consegna, manodopera e altri costi.",
+    "120 unità × 8 unità monetarie = 960. Con l'8% aggiuntivo: 1.036,80, prima di imposte e altri costi."
+  ]
+}
