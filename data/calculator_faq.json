@@ -9,6 +9,14 @@
       {
         "question": "What should I add beyond the calculated volume?",
         "answer": "Allowances for waste, uneven subgrade and project conditions may be needed."
+      },
+      {
+        "question": "How do I convert cubic feet to cubic yards?",
+        "answer": "Divide the cubic feet by 27 because one cubic yard contains 27 cubic feet. For example, 40 cu ft ÷ 27 is about 1.48 cu yd."
+      },
+      {
+        "question": "Does the estimate include reinforcement or formwork?",
+        "answer": "No. It calculates the geometric concrete volume only. Reinforcement, formwork, sub-base, pumping and labor must be estimated separately."
       }
     ]
   },
@@ -30,6 +38,14 @@
       {
         "question": "Why can the bag count differ between calculators?",
         "answer": "Bag sizes and concrete mix yields vary. Use the yield printed on the exact product, keep units consistent, and round the required number of bags up."
+      },
+      {
+        "question": "Should I add extra bags for waste?",
+        "answer": "The displayed base count is rounded up to whole bags. Add a separate allowance only after checking the product yield, subgrade and project conditions. Keep any allowance visible in your order calculation."
+      },
+      {
+        "question": "Can I use the same yield for every concrete mix?",
+        "answer": "No. Yield depends on the exact mix and bag size. Read the yield on the product label or current manufacturer documentation."
       }
     ]
   },
@@ -47,6 +63,14 @@
       {
         "question": "Does this estimate include compaction or convert to tons?",
         "answer": "No. It reports geometric volume only. Ask the supplier whether to order loose or compacted material. To estimate tons, use the bulk density for the exact gravel and conditions from the supplier; it varies by material and moisture."
+      },
+      {
+        "question": "How many cubic yards are in 50 cubic feet?",
+        "answer": "50 ÷ 27 is approximately 1.85 cubic yards. This is a volume conversion and does not account for compaction or moisture."
+      },
+      {
+        "question": "How deep should a gravel layer be?",
+        "answer": "The required depth depends on the use, base preparation, aggregate and site conditions. Follow the project specification or supplier and installer guidance rather than using a universal depth."
       }
     ]
   },
@@ -73,6 +97,14 @@
       {
         "question": "Why can actual use differ?",
         "answer": "Coverage varies with product and surface conditions."
+      },
+      {
+        "question": "Should I subtract windows and doors?",
+        "answer": "Subtract openings when you have measured them and they will not be painted with the same product. Include reveals, trim or other surfaces only when applicable."
+      },
+      {
+        "question": "Does the calculator round up to whole cans?",
+        "answer": "The calculation estimates coverage units. Compare the result with the available container sizes and round up to a purchasable combination."
       }
     ]
   },
@@ -86,6 +118,14 @@
       {
         "question": "Is the waste percentage universal?",
         "answer": "No. Follow manufacturer guidance and consider room shape and pattern."
+      },
+      {
+        "question": "How much extra flooring should I order?",
+        "answer": "There is no single waste percentage for every installation. Room geometry, plank or tile format, layout direction and installer guidance determine the allowance."
+      },
+      {
+        "question": "Does the estimate include underlay or transitions?",
+        "answer": "No. It estimates the flooring surface quantity only. Underlay, trims, transitions, adhesives and subfloor preparation are separate."
       }
     ]
   },
@@ -99,6 +139,14 @@
       {
         "question": "Should actual tile size be used?",
         "answer": "Yes, when it differs from nominal dimensions."
+      },
+      {
+        "question": "How do I calculate the number of boxes?",
+        "answer": "Divide the required tile count by the number of tiles per box and round up. If the package lists coverage per box, divide the required area including waste by that coverage instead."
+      },
+      {
+        "question": "Does tile size include grout joints?",
+        "answer": "Use the manufacturer's stated tile coverage or actual dimensions and account for the planned joint layout. Nominal tile dimensions alone may not equal installed coverage."
       }
     ]
   },
@@ -112,6 +160,14 @@
       {
         "question": "Are doors and windows subtracted?",
         "answer": "No. Openings and installation practices can change the quantity."
+      },
+      {
+        "question": "Does this calculator subtract windows and doors?",
+        "answer": "No. It uses the full rectangular wall area. You can make a separate adjustment for openings, but small openings may not reduce the number of sheets because of cutting and layout."
+      },
+      {
+        "question": "Does it include the ceiling?",
+        "answer": "No. Add the ceiling area separately if it will be covered with the same board. This tool estimates quantity and does not design a compliant wall or ceiling assembly."
       }
     ]
   },
@@ -138,6 +194,10 @@
       {
         "question": "Are taxes and delivery included?",
         "answer": "No. Add them separately when needed."
+      },
+      {
+        "question": "What if the supplier sells full packs only?",
+        "answer": "Convert the required quantity into packs using the supplier's pack size, round up to whole packs and then calculate the cost from the pack price."
       }
     ]
   },
@@ -151,6 +211,14 @@
       {
         "question": "Can patterns change the result?",
         "answer": "Yes. Cuts and patterns can increase waste."
+      },
+      {
+        "question": "Does this estimate include the gravel base and bedding sand?",
+        "answer": "No. It estimates paver surface coverage only. Excavation, base aggregate, bedding material, jointing sand and edge restraints require separate calculations."
+      },
+      {
+        "question": "Why can the installed count be higher than the area calculation?",
+        "answer": "Cuts, borders, curves, pattern layout, breakage and pack sizes can increase the number required."
       }
     ]
   },
@@ -242,6 +310,14 @@
       {
         "question": "Is one waste percentage right for every roof?",
         "answer": "No. Roof geometry and system can change the allowance."
+      },
+      {
+        "question": "Can I use the building footprint as roof area?",
+        "answer": "Not directly for a pitched roof. Use the measured surface area of each roof plane or a correctly calculated pitch adjustment, then add the relevant roof details."
+      },
+      {
+        "question": "Does the result include shingles, underlayment and flashing?",
+        "answer": "It estimates only the entered roof covering area plus the selected allowance. Underlayment, flashing, ridge products and accessories are separate unless included in the specified coverage."
       }
     ]
   },
