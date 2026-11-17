@@ -856,5 +856,21 @@
   "Cuts, borders, curves, pattern layout, breakage and pack sizes can increase the number required.": "Kesimler, kenarlar, eğriler, desenler, kırılma ve paket boyutları gereken miktarı artırabilir.",
   "Not directly for a pitched roof. Use the measured surface area of each roof plane or a correctly calculated pitch adjustment, then add the relevant roof details.": "Eğimli çatıda her çatı düzleminin ölçülen alanını veya doğru eğim düzeltmesini kullanın ve ilgili ayrıntıları ekleyin.",
   "It estimates only the entered roof covering area plus the selected allowance. Underlayment, flashing, ridge products and accessories are separate unless included in the specified coverage.": "Yalnızca girilen çatı kaplama alanı ve seçilen payı tahmin eder. Alt örtü, kaplama sacları, mahya parçaları ve aksesuarlar ürün kapsamına dahil değilse ayrıca hesaplanır.",
-  "How do I convert cubic feet to cubic yards?": "Metreküp litreye nasıl çevrilir?"
+  "How do I convert cubic feet to cubic yards?": "Metreküp litreye nasıl çevrilir?",
+  "Does the estimate include reinforcement or formwork?": "Tahmin donatı veya kalıbı içeriyor mu?",
+  "How deep should a gravel layer be?": "Çakıl tabakası ne kadar derin olmalı?",
+  "Should I subtract windows and doors?": "Pencere ve kapı alanlarını çıkarmalı mıyım?",
+  "Does the calculator round up to whole cans?": "Hesaplayıcı boya miktarını tam kutulara yuvarlıyor mu?",
+  "How much extra flooring should I order?": "Ne kadar fazla döşeme malzemesi sipariş etmeliyim?",
+  "Does the estimate include underlay or transitions?": "Tahmin altlık veya geçiş profillerini içeriyor mu?",
+  "How do I calculate the number of boxes?": "Kutu sayısını nasıl hesaplarım?",
+  "Does tile size include grout joints?": "Fayans ölçüsü derz aralığını içeriyor mu?",
+  "Does this calculator subtract windows and doors?": "Bu hesaplayıcı pencere ve kapıları düşüyor mu?",
+  "Does it include the ceiling?": "Tavan da dahil mi?",
+  "What if the supplier sells full packs only?": "Tedarikçi yalnızca tam paket satıyorsa ne yapmalıyım?",
+  "Why can the final invoice differ from this estimate?": "Nihai fatura neden bu tahminden farklı olabilir?",
+  "Does this estimate include the gravel base and bedding sand?": "Tahmin mıcır temelini ve yatak kumunu içeriyor mu?",
+  "Why can the installed count be higher than the area calculation?": "Döşenen miktar neden alan hesabından fazla olabilir?",
+  "Can I use the building footprint as roof area?": "Bina taban alanını çatı alanı olarak kullanabilir miyim?",
+  "Does the result include shingles, underlayment and flashing?": "Sonuç kiremitleri, alt örtüyü ve kaplama saclarını içeriyor mu?"
 }
