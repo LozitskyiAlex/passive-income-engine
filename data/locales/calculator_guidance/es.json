@@ -1,43 +1,52 @@
 {
-  "concrete-volume": [
-    "Convierte largo, ancho y espesor a la misma unidad y multiplícalos. Para pasar de pies cúbicos a yardas cúbicas, divide entre 27. Suma los vertidos separados sin solaparlos.",
-    "3,6 m × 3,0 m × 0,10 m = 1,08 m³."
-  ],
-  "concrete-bags": [
-    "Calcula el volumen de hormigón, divídelo por el rendimiento indicado en la bolsa exacta y redondea hacia arriba. Mantén las mismas unidades; el rendimiento cambia según la mezcla y el tamaño de la bolsa.",
-    "3 m × 3 m × 0,10 m = 0,90 m³. Con 0,014 m³ por bolsa: 64,3; redondea a 65 bolsas."
-  ],
-  "gravel-volume": [
-    "Multiplica largo, ancho y profundidad de la capa después de convertirlos a una misma unidad. Divide los pies cúbicos entre 27 para obtener yardas cúbicas. Calcula por separado las zonas con distintas profundidades.",
-    "6 m × 3 m × 75 mm = 1,35 m³."
-  ],
-  "paint-quantity": [
-    "Suma las superficies pintables de paredes y techos, resta los huecos medidos, divide por el rendimiento indicado del producto y multiplica por las capas. El rendimiento real depende de la superficie y la aplicación.",
-    "56 m² ÷ 10 m²/L × 2 capas = 11,2 L; redondea según los envases disponibles."
-  ],
-  "flooring-quantity": [
-    "Multiplica largo por ancho de la estancia y añade el porcentaje de desperdicio elegido. Divide las habitaciones irregulares en formas sencillas. Redondea la superficie final a paquetes completos.",
-    "5,5 m × 4,3 m = 23,65 m². Con un 10 % adicional: 26,02 m²."
-  ],
-  "tile-quantity": [
-    "Divide la superficie entre el área de una baldosa, añade el desperdicio elegido y redondea hacia arriba. Usa las dimensiones reales y convierte el resultado a cajas completas.",
-    "Área de 22 m²; baldosa de 600 × 300 mm = 0,18 m². Con un 10 %: 134,45; redondea a 135 baldosas."
-  ],
-  "drywall-sheets": [
-    "En una habitación rectangular, multiplica el perímetro por la altura de pared, divide por el área de una placa y redondea hacia arriba. Añade el techo por separado. No calcula la distribución ni la conformidad constructiva.",
-    "Habitación de 6 × 4 m y paredes de 2,4 m: 48 m². Placa de 1,2 × 2,4 m: 2,88 m²; se necesitan 17 placas."
-  ],
-  "paver-quantity": [
-    "Divide la superficie pavimentada por el área visible de una pieza, añade el margen de corte y redondea hacia arriba. Solo calcula las piezas de superficie, no la excavación, la base ni la capa de asiento.",
-    "Patio de 5 × 4 m = 20 m²; pieza de 200 × 100 mm = 0,02 m². Con un 5 %: 1.050 piezas."
-  ],
-  "roofing-material": [
-    "Usa la superficie medida de cada faldón, no la huella del edificio. Añade el margen elegido y convierte el total a paquetes según la cobertura indicada para el producto exacto.",
-    "Superficie medida del tejado: 167 m². Con un 12 % adicional: 187,04 m²."
-  ],
-  "material-cost": [
-    "Multiplica la cantidad necesaria por el precio de la misma unidad. Aplica el desperdicio al subtotal de materiales. Añade por separado impuestos, entrega, mano de obra y otros costes.",
-    "120 unidades × 8 unidades monetarias = 960. Con un 8 % adicional: 1.036,80 antes de impuestos y otros cargos."
-  ],
-  "example_heading": "Ejemplo métrico"
+  "concrete-volume": {
+    "how": "Convierte largo, ancho y espesor a la misma unidad y multiplícalos. Para pasar de pies cúbicos a yardas cúbicas, divide entre 27. Suma los vertidos separados sin solaparlos.",
+    "example": "3,6 m × 3,0 m × 0,10 m = 1,08 m³.",
+    "example_heading": "Ejemplo métrico"
+  },
+  "concrete-bags": {
+    "how": "Calcula el volumen de hormigón, divídelo por el rendimiento indicado en la bolsa exacta y redondea hacia arriba. Mantén las mismas unidades; el rendimiento cambia según la mezcla y el tamaño de la bolsa.",
+    "example": "3 m × 3 m × 0,10 m = 0,90 m³. Con 0,014 m³ por bolsa: 64,3; redondea a 65 bolsas.",
+    "example_heading": "Ejemplo métrico"
+  },
+  "gravel-volume": {
+    "how": "Multiplica largo, ancho y profundidad de la capa después de convertirlos a una misma unidad. Divide los pies cúbicos entre 27 para obtener yardas cúbicas. Calcula por separado las zonas con distintas profundidades.",
+    "example": "6 m × 3 m × 75 mm = 1,35 m³.",
+    "example_heading": "Ejemplo métrico"
+  },
+  "paint-quantity": {
+    "how": "Suma las superficies pintables de paredes y techos, resta los huecos medidos, divide por el rendimiento indicado del producto y multiplica por las capas. El rendimiento real depende de la superficie y la aplicación.",
+    "example": "56 m² ÷ 10 m²/L × 2 capas = 11,2 L; redondea según los envases disponibles.",
+    "example_heading": "Ejemplo métrico"
+  },
+  "flooring-quantity": {
+    "how": "Multiplica largo por ancho de la estancia y añade el porcentaje de desperdicio elegido. Divide las habitaciones irregulares en formas sencillas. Redondea la superficie final a paquetes completos.",
+    "example": "5,5 m × 4,3 m = 23,65 m². Con un 10 % adicional: 26,02 m².",
+    "example_heading": "Ejemplo métrico"
+  },
+  "tile-quantity": {
+    "how": "Divide la superficie entre el área de una baldosa, añade el desperdicio elegido y redondea hacia arriba. Usa las dimensiones reales y convierte el resultado a cajas completas.",
+    "example": "Área de 22 m²; baldosa de 600 × 300 mm = 0,18 m². Con un 10 %: 134,45; redondea a 135 baldosas.",
+    "example_heading": "Ejemplo métrico"
+  },
+  "drywall-sheets": {
+    "how": "En una habitación rectangular, multiplica el perímetro por la altura de pared, divide por el área de una placa y redondea hacia arriba. Añade el techo por separado. No calcula la distribución ni la conformidad constructiva.",
+    "example": "Habitación de 6 × 4 m y paredes de 2,4 m: 48 m². Placa de 1,2 × 2,4 m: 2,88 m²; se necesitan 17 placas.",
+    "example_heading": "Ejemplo métrico"
+  },
+  "paver-quantity": {
+    "how": "Divide la superficie pavimentada por el área visible de una pieza, añade el margen de corte y redondea hacia arriba. Solo calcula las piezas de superficie, no la excavación, la base ni la capa de asiento.",
+    "example": "Patio de 5 × 4 m = 20 m²; pieza de 200 × 100 mm = 0,02 m². Con un 5 %: 1.050 piezas.",
+    "example_heading": "Ejemplo métrico"
+  },
+  "roofing-material": {
+    "how": "Usa la superficie medida de cada faldón, no la huella del edificio. Añade el margen elegido y convierte el total a paquetes según la cobertura indicada para el producto exacto.",
+    "example": "Superficie medida del tejado: 167 m². Con un 12 % adicional: 187,04 m².",
+    "example_heading": "Ejemplo métrico"
+  },
+  "material-cost": {
+    "how": "Multiplica la cantidad necesaria por el precio de la misma unidad. Aplica el desperdicio al subtotal de materiales. Añade por separado impuestos, entrega, mano de obra y otros costes.",
+    "example": "120 unidades × 8 unidades monetarias = 960. Con un 8 % adicional: 1.036,80 antes de impuestos y otros cargos.",
+    "example_heading": "Ejemplo métrico"
+  }
 }
