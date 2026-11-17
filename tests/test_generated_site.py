@@ -213,18 +213,18 @@ def test_catalog_integrity():
 
 def test_localized_priority_pages_render_metric_guidance():
     from bs4 import BeautifulSoup
-    locales = ["es", "de", "fr", "pt_br", "ja", "it", "nl", "pl", "zh_hans", "ko", "ar", "uk", "ru", "tr"]
+    locales = [("es", "es"), ("de", "de"), ("fr", "fr"), ("pt-br", "pt_br"), ("ja", "ja"), ("it", "it"), ("nl", "nl"), ("pl", "pl"), ("zh-hans", "zh_hans"), ("ko", "ko"), ("ar", "ar"), ("uk", "uk"), ("ru", "ru"), ("tr", "tr")]
     slugs = ["concrete-volume", "concrete-bags", "gravel-volume", "paint-quantity", "flooring-quantity", "tile-quantity", "drywall-sheets", "paver-quantity", "roofing-material", "material-cost"]
-    for locale in locales:
-        guidance = json.loads((ROOT / "data" / "locales" / "calculator_guidance" / f"{locale}.json").read_text(encoding="utf-8"))
+    for page_locale, guidance_locale in locales:
+        guidance = json.loads((ROOT / "data" / "locales" / "calculator_guidance" / f"{guidance_locale}.json").read_text(encoding="utf-8"))
         for slug in slugs:
-            page = SITE / locale / "construction" / slug / "index.html"
+            page = SITE / page_locale / "construction" / slug / "index.html"
             soup = BeautifulSoup(page.read_text(encoding="utf-8"), "html.parser")
-            assert soup.html.get("data-measurement") == "metric", (locale, slug)
-            assert soup.select_one("#how-to-content").get_text(strip=True) == guidance[slug]["how"], (locale, slug, "how")
+            assert soup.html.get("data-measurement") == "metric", (page_locale, slug)
+            assert soup.select_one("#how-to-content").get_text(strip=True) == guidance[slug]["how"], (page_locale, slug, "how")
             metric_example = soup.select_one("#metric-example-content")
-            assert metric_example is not None and metric_example.get_text(strip=True) == guidance[slug]["example"], (locale, slug, "example")
+            assert metric_example is not None and metric_example.get_text(strip=True) == guidance[slug]["example"], (page_locale, slug, "example")
             metric_section = metric_example.find_parent(attrs={"data-unit-system": "metric"})
-            assert metric_section is not None and not metric_section.has_attr("hidden"), (locale, slug, "metric example hidden")
+            assert metric_section is not None and not metric_section.has_attr("hidden"), (page_locale, slug, "metric example hidden")
             us_section = soup.select_one('[data-unit-system="us"]')
-            assert us_section is not None and us_section.has_attr("hidden"), (locale, slug, "US section visible")
+            assert us_section is not None and us_section.has_attr("hidden"), (page_locale, slug, "US section visible")
