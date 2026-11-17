@@ -165,6 +165,8 @@ def test_generated_urls_match_catalog():
 
     construction_index = (SITE / "construction" / "index.html").read_text()
     assert_canonical(construction_index, f"{BASE}/construction/")
+    assert "static.cloudflareinsights.com/beacon.min.js" not in construction_index
+    assert "2b43ef087bbd47b6847bb0613f03ace2" not in construction_index
 
     legacy_items = json.loads((ROOT / "data" / "calculators.json").read_text())
     for item in legacy_items:
