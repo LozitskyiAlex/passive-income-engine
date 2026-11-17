@@ -20,7 +20,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SITE_BASE_URL: https://free-construction-calculators.pages.dev
-      INDEX_NOW_KEY: ${{ secrets.INDEX_NOW_KEY }}
       TARGET_SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
 
     steps:
@@ -33,11 +32,22 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Verify IndexNow key configuration
+      - name: Verify public IndexNow key
         run: |
           set -euo pipefail
-          test -n "$INDEX_NOW_KEY" || { echo "::error::Configure the INDEX_NOW_KEY GitHub Actions secret with the same key configured in Cloudflare Pages."; exit 1; }
-          [[ "$INDEX_NOW_KEY" =~ ^[A-Za-z0-9-]{8,128}$ ]] || { echo "::error::INDEX_NOW_KEY contains unsupported characters or has an invalid length."; exit 1; }
+          key_file=""
+          for file in site/*.txt; do
+            key="${file##*/}"
+            key="${key%.txt}"
+            if [[ "$key" =~ ^[[:xdigit:]]{32}$ ]] && [[ "$(tr -d '\r\n' < "$file")" == "$key" ]]; then
+              key_file="$file"
+              break
+            fi
+          done
+          [[ -n "$key_file" ]] || { echo "::error::No valid public IndexNow key file found in site/."; exit 1; }
+          key="${key_file##*/}"
+          key="${key%.txt}"
+          echo "INDEX_NOW_KEY=$key" >> "$GITHUB_ENV"
 
       - name: Wait for the matching Cloudflare Pages deployment
         run: |
