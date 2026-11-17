@@ -1,0 +1,42 @@
+{
+  "concrete-volume": [
+    "Länge, Breite und Dicke in dieselbe Einheit umrechnen und multiplizieren. Kubikfuß durch 27 teilen, um Kubikyard zu erhalten. Getrennte Betonierabschnitte ohne Überschneidung addieren.",
+    "3,6 m × 3,0 m × 0,10 m = 1,08 m³."
+  ],
+  "concrete-bags": [
+    "Betonvolumen berechnen, durch die auf dem konkreten Sack angegebene Ergiebigkeit teilen und aufrunden. Volumen und Ergiebigkeit müssen dieselbe Einheit verwenden; sie hängen von Mischung und Sackgröße ab.",
+    "3 m × 3 m × 0,10 m = 0,90 m³. Bei 0,014 m³ je Sack: 64,3, also auf 65 Säcke aufrunden."
+  ],
+  "gravel-volume": [
+    "Flächenlänge, -breite und Schichttiefe nach Umrechnung in dieselbe Einheit multiplizieren. Kubikfuß durch 27 teilen, um Kubikyard zu erhalten. Bereiche mit unterschiedlicher Tiefe getrennt berechnen.",
+    "6 m × 3 m × 75 mm = 1,35 m³."
+  ],
+  "paint-quantity": [
+    "Streichflächen von Wänden und Decken addieren, gemessene Öffnungen abziehen, durch die Herstellerangabe zur Reichweite teilen und mit der Anstrichzahl multiplizieren. Der tatsächliche Verbrauch hängt von Untergrund und Auftrag ab.",
+    "56 m² ÷ 10 m²/L × 2 Anstriche = 11,2 L; auf verfügbare Gebindegrößen aufrunden."
+  ],
+  "flooring-quantity": [
+    "Raumlänge mit Raumbreite multiplizieren und den gewählten Verschnitt aufschlagen. Unregelmäßige Räume in einfache Formen aufteilen. Die Fläche auf ganze Packungsinhalte aufrunden.",
+    "5,5 m × 4,3 m = 23,65 m². Mit 10 % Zuschlag: 26,02 m²."
+  ],
+  "tile-quantity": [
+    "Fläche durch die sichtbare Fläche einer Fliese teilen, den gewählten Verschnitt addieren und aufrunden. Tatsächliche Fliesenmaße verwenden und auf ganze Kartons umrechnen.",
+    "22 m² Fläche; Fliese 600 × 300 mm = 0,18 m². Mit 10 %: 134,45, also 135 Fliesen."
+  ],
+  "drywall-sheets": [
+    "Bei einem rechteckigen Raum den Umfang mit der Wandhöhe multiplizieren, durch die Plattenfläche teilen und aufrunden. Decken separat hinzufügen. Plattenlayout und baurechtliche Anforderungen werden nicht geplant.",
+    "Raum 6 × 4 m, Wandhöhe 2,4 m: 48 m². Platte 1,2 × 2,4 m: 2,88 m²; auf 17 Platten aufrunden."
+  ],
+  "paver-quantity": [
+    "Pflasterfläche durch die sichtbare Fläche eines Steins teilen, einen Zuschlag für Zuschnitte hinzufügen und aufrunden. Berechnet werden nur die Oberflächensteine, nicht Aushub, Tragschicht oder Bettung.",
+    "Terrasse 5 × 4 m = 20 m²; Stein 200 × 100 mm = 0,02 m². Mit 5 %: 1.050 Steine."
+  ],
+  "roofing-material": [
+    "Die gemessene Oberfläche jeder Dachfläche verwenden, nicht den Gebäudegrundriss. Den gewählten Zuschlag addieren und anhand der Produktdeckung in Packungen umrechnen.",
+    "Gemessene Dachfläche: 167 m². Mit 12 % Zuschlag: 187,04 m²."
+  ],
+  "material-cost": [
+    "Benötigte Menge mit dem Preis derselben Einheit multiplizieren. Verschnitt auf die Materialsumme aufschlagen. Steuern, Lieferung, Arbeitskosten und weitere Gebühren separat ergänzen.",
+    "120 Einheiten × 8 Geldeinheiten = 960. Mit 8 % Zuschlag: 1.036,80 vor Steuern und weiteren Kosten."
+  ]
+}
