@@ -26,14 +26,17 @@ def load_lastmod():
 
 
 def git_lastmod(paths, fallback):
-    result = subprocess.run(
-        ["git", "log", "-1", "--format=%cs", "--", *paths],
-        cwd=ROOT,
-        capture_output=True,
-        text=True,
-        check=False,
-    )
-    value = result.stdout.strip() if result.returncode == 0 else ""
+    try:
+        result = subprocess.run(
+            ["git", "log", "-1", "--format=%cs", "--", *paths],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+    except OSError:
+        result = None
+    value = result.stdout.strip() if result and result.returncode == 0 else ""
     if value:
         try:
             date.fromisoformat(value)

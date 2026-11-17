@@ -44,8 +44,7 @@ jobs:
           set -euo pipefail
           deployed=false
           for attempt in $(seq 1 40); do
-            deployed_sha="$(curl --silent --show-error --fail "$SITE_BASE_URL/deployment-version.txt" 2>/dev/null | tr -d '
-' || true)"
+            deployed_sha="$(curl --silent --show-error --fail "$SITE_BASE_URL/deployment-version.txt" 2>/dev/null | tr -d '\r\n' || true)"
             if [[ "$deployed_sha" == "$TARGET_SHA" ]]; then
               deployed=true
               break
