@@ -1,6 +1,8 @@
 import json
 import os
 import shutil
+import subprocess
+from datetime import date
 from html import escape
 from pathlib import Path
 from xml.sax.saxutils import escape as xml_escape
@@ -21,6 +23,25 @@ def load_lastmod():
     if missing:
         raise ValueError(f"Missing SEO lastmod values: {sorted(missing)}")
     return dates
+
+
+def git_lastmod(paths, fallback):
+    result = subprocess.run(
+        ["git", "log", "-1", "--format=%cs", "--", *paths],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    value = result.stdout.strip() if result.returncode == 0 else ""
+    if value:
+        try:
+            date.fromisoformat(value)
+            return value
+        except ValueError:
+            pass
+    date.fromisoformat(fallback)
+    return fallback
 
 def build_guide(guide, modified):
     steps = "".join(f"<li>{escape(x)}</li>" for x in guide["steps"])
@@ -79,7 +100,6 @@ def build_guide(guide, modified):
 <meta property="og:url" content="{BASE}/guides/{escape(guide["slug"])}/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{{"token":"2b43ef087bbd47b6847bb0613f03ace2"}}'></script>
 <script type="application/ld+json">{json.dumps(schema,separators=(",",":"))}</script>
 <script type="application/ld+json">{json.dumps(breadcrumb_schema,separators=(",",":"))}</script>
 <style>
@@ -157,18 +177,38 @@ def main():
         (SITE / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
         (SITE / "indexnow-key.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
     dates = load_lastmod()
-    guide_dates = dates.get("guide_lastmod", {})
+    localized_sources = ["scripts/build_locales.py", "data/locales"]
+    guide_fallbacks = dates.get("guide_lastmod", {})
+    home_lastmod = git_lastmod(
+        ["scripts/build.py", "scripts/build_seo.py", *localized_sources,
+         "data/processed/items.json", "data/construction_calculators.json", "data/guides.json"],
+        dates["home"],
+    )
+    construction_lastmod = git_lastmod(
+        ["scripts/build_construction_index.py", "scripts/build_seo.py", *localized_sources,
+         "data/construction_calculators.json"],
+        dates["construction"],
+    )
+    calculators_lastmod = git_lastmod(
+        ["scripts/build_construction.py", "scripts/build_seo.py", *localized_sources,
+         "data/construction_calculators.json", "data/calculator_content.json",
+         "data/related_calculators.json", "data/calculator_units.json", "data/calculator_faq.json"],
+        dates["calculators"],
+    )
+    guide_dates = {
+        guide["slug"]: git_lastmod(
+            ["scripts/build_seo.py", *localized_sources, "data/guides.json"],
+            guide_fallbacks.get(guide["slug"], dates["guides"]),
+        )
+        for guide in guides
+    }
     for guide in guides:
         out = SITE / "guides" / guide["slug"] / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
-        modified = guide_dates.get(guide["slug"], dates["guides"])
-        out.write_text(build_guide(guide, modified), encoding="utf-8")
-    urls = [("/", dates["home"]), ("/construction/", dates["construction"])]
-    urls += [(f'/construction/{i["slug"]}/', dates["calculators"]) for i in items]
-    urls += [
-        (f'/guides/{g["slug"]}/', guide_dates.get(g["slug"], dates["guides"]))
-        for g in guides
-    ]
+        out.write_text(build_guide(guide, guide_dates[guide["slug"]]), encoding="utf-8")
+    urls = [("/", home_lastmod), ("/construction/", construction_lastmod)]
+    urls += [(f'/construction/{i["slug"]}/', calculators_lastmod) for i in items]
+    urls += [(f'/guides/{g["slug"]}/', guide_dates[g["slug"]]) for g in guides]
     body = "\n".join(
         f'  <url><loc>{xml_escape(BASE + u)}</loc><lastmod>{lastmod}</lastmod></url>'
         for u, lastmod in urls
@@ -180,7 +220,7 @@ def main():
         "</urlset>\n"
     )
     (SITE / "sitemap.xml").write_text(sitemap, encoding="utf-8")
-    commit_sha = os.environ.get("WORKERS_CI_COMMIT_SHA") or os.environ.get("GITHUB_SHA")
+    commit_sha = os.environ.get("CF_PAGES_COMMIT_SHA") or os.environ.get("WORKERS_CI_COMMIT_SHA") or os.environ.get("GITHUB_SHA")
     if commit_sha:
         (SITE / "deployment-version.txt").write_text(commit_sha + "\n", encoding="utf-8")
 
