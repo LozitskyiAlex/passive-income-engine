@@ -167,6 +167,7 @@ renderExample();
 def main():
     SITE.mkdir(parents=True, exist_ok=True)
     items = json.loads(DATA.read_text(encoding="utf-8"))
+    legacy_items = json.loads((ROOT / "data" / "calculators.json").read_text(encoding="utf-8"))
     guides = json.loads(GUIDES.read_text(encoding="utf-8"))
     (SITE / "robots.txt").write_text(
         "User-agent: *\nAllow: /\nSitemap: " + BASE + "/sitemap.xml\n",
@@ -205,12 +206,17 @@ def main():
         )
         for guide in guides
     }
+    legacy_calculators_lastmod = git_lastmod(
+        ["scripts/build_calculators.py", "scripts/build_seo.py", *localized_sources, "data/calculators.json"],
+        dates["calculators"],
+    )
     for guide in guides:
         out = SITE / "guides" / guide["slug"] / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(build_guide(guide, guide_dates[guide["slug"]]), encoding="utf-8")
     urls = [("/", home_lastmod), ("/construction/", construction_lastmod)]
     urls += [(f'/construction/{i["slug"]}/', calculators_lastmod) for i in items]
+    urls += [(f'/calculators/{i["slug"]}/', legacy_calculators_lastmod) for i in legacy_items]
     urls += [(f'/guides/{g["slug"]}/', guide_dates[g["slug"]]) for g in guides]
     body = "\n".join(
         f'  <url><loc>{xml_escape(BASE + u)}</loc><lastmod>{lastmod}</lastmod></url>'
