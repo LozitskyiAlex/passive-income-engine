@@ -62,7 +62,16 @@ def test_metric_pages_hide_us_specific_explanations_and_faq_schema():
             regional_sections = soup.select('[data-unit-system="us"]')
             if measurement == "metric":
                 assert regional_sections and all(section.has_attr("hidden") for section in regional_sections)
-                assert not any(json.loads(node.string or node.get_text()).get("@type") == "FAQPage" for node in soup.find_all("script", type="application/ld+json"))
+                has_faq_schema = any(json.loads(node.string or node.get_text()).get("@type") == "FAQPage" for node in soup.find_all("script", type="application/ld+json"))
+                priority_guidance_slugs = {"concrete-volume", "concrete-bags", "gravel-volume", "paint-quantity", "flooring-quantity", "tile-quantity", "drywall-sheets", "paver-quantity", "roofing-material", "material-cost"}
+                if item["slug"] in priority_guidance_slugs:
+                    assert has_faq_schema
+                    assert not soup.select_one("#faq-section[hidden]")
+                    assert not soup.select_one("#tips-section[hidden]")
+                else:
+                    assert not has_faq_schema
+                    assert soup.select_one("#faq-section[hidden]")
+                    assert soup.select_one("#tips-section[hidden]")
                 how = soup.select_one("#how-to-content").get_text(" ", strip=True)
                 locale_key = locale.replace("-", "_")
                 guidance_file = ROOT / "data" / "locales" / "calculator_guidance" / f"{locale_key}.json"
