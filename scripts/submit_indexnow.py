@@ -1,25 +1,55 @@
 import json
 import os
+import re
 import urllib.error
-import urllib.parse
 import urllib.request
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
 BASE = os.environ.get("SITE_BASE_URL", "https://free-construction-calculators.pages.dev").rstrip("/")
 HOST = BASE.removeprefix("https://").removeprefix("http://")
-KEY = os.environ.get("INDEX_NOW_KEY")
-if not KEY:
-    raise SystemExit("IndexNow: INDEX_NOW_KEY environment variable is required")
-KEY_LOCATION = f"{BASE}/{KEY}.txt"
-SITE = Path(__file__).resolve().parents[1] / "site" / "sitemap.xml"
+ROOT = Path(__file__).resolve().parents[1]
+KEY_DIR = ROOT / "site"
+MAX_URLS = 10_000
 
 
-def submit_post(urls):
+def load_key():
+    key = os.environ.get("INDEX_NOW_KEY", "").strip()
+    if not key:
+        candidates = [path for path in KEY_DIR.glob("*.txt") if re.fullmatch(r"[0-9a-fA-F]{32}", path.stem)]
+        candidates = [path for path in candidates if path.read_text(encoding="utf-8").strip() == path.stem]
+        if len(candidates) != 1:
+            raise SystemExit("IndexNow: expected exactly one valid public 32-character key file in site/")
+        key = candidates[0].stem
+    if not re.fullmatch(r"[0-9a-fA-F]{32}", key):
+        raise SystemExit("IndexNow: key must be a 32-character hexadecimal value")
+    key_file = KEY_DIR / f"{key}.txt"
+    if not key_file.is_file() or key_file.read_text(encoding="utf-8").strip() != key:
+        raise SystemExit("IndexNow: public key file is missing or its contents do not match the key")
+    return key
+
+
+def fetch_sitemap():
+    req = urllib.request.Request(
+        f"{BASE}/sitemap.xml",
+        headers={"User-Agent": "PassiveIncomeEngine/1.0"},
+    )
+    with urllib.request.urlopen(req, timeout=30) as response:
+        return ET.fromstring(response.read())
+
+
+def submit_post(urls, key):
+    if not urls or len(urls) > MAX_URLS:
+        raise ValueError(f"IndexNow accepts between 1 and {MAX_URLS} URLs per request")
+    if len(urls) != len(set(urls)):
+        raise ValueError("IndexNow sitemap contains duplicate URLs")
+    if any(not url.startswith(BASE + "/") and url != BASE for url in urls):
+        raise ValueError("IndexNow sitemap contains a URL outside SITE_BASE_URL")
+
     payload = {
         "host": HOST,
-        "key": KEY,
-        "keyLocation": KEY_LOCATION,
+        "key": key,
+        "keyLocation": f"{BASE}/{key}.txt",
         "urlList": urls,
     }
     req = urllib.request.Request(
@@ -28,65 +58,24 @@ def submit_post(urls):
         headers={"Content-Type": "application/json; charset=utf-8"},
         method="POST",
     )
-    with urllib.request.urlopen(req, timeout=20) as response:
-        return response.status
-
-
-def submit_get(url):
-    params = urllib.parse.urlencode(
-        {
-            "url": url,
-            "key": KEY,
-            "keyLocation": KEY_LOCATION,
-        }
-    )
-    endpoint = f"https://www.bing.com/indexnow?{params}"
-    req = urllib.request.Request(endpoint, headers={"User-Agent": "PassiveIncomeEngine/1.0"})
-    with urllib.request.urlopen(req, timeout=20) as response:
+    with urllib.request.urlopen(req, timeout=30) as response:
+        if response.status not in (200, 202):
+            raise RuntimeError(f"IndexNow returned unexpected HTTP status {response.status}")
         return response.status
 
 
 def main():
-    if not SITE.exists():
-        raise SystemExit("IndexNow: sitemap not found")
-
-    root = ET.parse(SITE).getroot()
-    urls = [node.text for node in root.iter() if node.tag.endswith("loc") and node.text]
-    if not urls:
-        raise SystemExit("IndexNow: no URLs found")
-
+    key = load_key()
     try:
-        status = submit_post(urls)
-        print(f"IndexNow: submitted {len(urls)} URLs via global endpoint, HTTP {status}")
-        return
-    except urllib.error.HTTPError as exc:
-        body = exc.read().decode("utf-8", errors="replace")
-        print(f"IndexNow global endpoint failed: HTTP {exc.code}: {body}")
-        if exc.code != 403:
-            raise SystemExit(f"IndexNow: HTTP {exc.code}: {body}") from exc
-    except urllib.error.URLError as exc:
-        print(f"IndexNow global endpoint connection failed: {exc}")
-
-    # Bing documents the direct /indexnow GET endpoint as an alternative.
-    # Use it as a fallback if the global endpoint rejects a batch submission.
-    fallback_urls = [urls[0]]
-    if len(urls) > 1:
-        fallback_urls.append(urls[1])
-
-    successful = 0
-    for url in fallback_urls:
-        try:
-            status = submit_get(url)
-            print(f"IndexNow: fallback submitted {url}, HTTP {status}")
-            successful += 1
-        except urllib.error.HTTPError as exc:
-            body = exc.read().decode("utf-8", errors="replace")
-            print(f"IndexNow fallback failed for {url}: HTTP {exc.code}: {body}")
-        except urllib.error.URLError as exc:
-            print(f"IndexNow fallback connection failed for {url}: {exc}")
-
-    if successful == 0:
-        raise SystemExit("IndexNow: both global POST and Bing GET fallback failed")
+        root = fetch_sitemap()
+        urls = [node.text.strip() for node in root.iter() if node.tag.endswith("loc") and node.text and node.text.strip()]
+        if not urls:
+            raise ValueError("Live sitemap contains no URLs")
+        status = submit_post(urls, key)
+    except (urllib.error.HTTPError, urllib.error.URLError, ValueError, RuntimeError) as exc:
+        detail = getattr(exc, "reason", None) or str(exc)
+        raise SystemExit(f"IndexNow submission failed: {detail}") from exc
+    print(f"IndexNow: submitted {len(urls)} live sitemap URLs, HTTP {status}")
 
 
 if __name__ == "__main__":

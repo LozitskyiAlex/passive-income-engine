@@ -57,7 +57,6 @@ def main() -> None:
 <meta property="og:url" content="https://free-construction-calculators.pages.dev/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{{"token":"2b43ef087bbd47b6847bb0613f03ace2"}}'></script>
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"WebSite","name":"Free Construction Calculators","url":"https://free-construction-calculators.pages.dev/"}}</script>
 <style>
 :root{{color-scheme:light}}*{{box-sizing:border-box}}body{{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:1100px;margin:0 auto;padding:44px 20px;line-height:1.6;color:#17202a;background:#fff}}

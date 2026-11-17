@@ -1,4 +1,5 @@
 import json
+from datetime import date
 import subprocess
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -76,6 +77,10 @@ def test_generated_urls_match_catalog():
     root = ET.fromstring((SITE / "sitemap.xml").read_text())
     ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
     actual = {node.text for node in root.findall("sm:url/sm:loc", ns)}
+    for node in root.findall("sm:url", ns):
+        lastmod = node.find("sm:lastmod", ns)
+        assert lastmod is not None and lastmod.text
+        assert date.fromisoformat(lastmod.text) <= date.today()
     assert actual == expected
     assert len(actual) == len(source_paths) * len(locales)
     for locale, lang in locales.items():
@@ -132,7 +137,8 @@ def test_generated_urls_match_catalog():
         html = page.read_text()
         assert_canonical(html, f"{BASE}/construction/{item['slug']}/")
         assert BeautifulSoup(html, "html.parser").find("link", rel="icon").get("href") == "/favicon.svg"
-        assert "static.cloudflareinsights.com/beacon.min.js" in html
+        assert "static.cloudflareinsights.com/beacon.min.js" not in html
+        assert "2b43ef087bbd47b6847bb0613f03ace2" not in html
         assert "aria-label=\"Breadcrumb\"" in html
         assert '"@type":"FAQPage"' in html
         assert 'Frequently asked questions' in html

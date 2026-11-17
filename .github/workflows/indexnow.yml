@@ -1,0 +1,69 @@
+name: Submit URLs to IndexNow
+
+on:
+  workflow_run:
+    workflows: ["Build and validate"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow-production
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
+    runs-on: ubuntu-latest
+    env:
+      SITE_BASE_URL: https://free-construction-calculators.pages.dev
+      TARGET_SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify public IndexNow key
+        run: |
+          set -euo pipefail
+          key_file=""
+          for file in site/*.txt; do
+            key="${file##*/}"
+            key="${key%.txt}"
+            if [[ "$key" =~ ^[[:xdigit:]]{32}$ ]] && [[ "$(tr -d '\r\n' < "$file")" == "$key" ]]; then
+              key_file="$file"
+              break
+            fi
+          done
+          [[ -n "$key_file" ]] || { echo "::error::No valid public IndexNow key file found in site/."; exit 1; }
+          key="${key_file##*/}"
+          key="${key%.txt}"
+          echo "INDEX_NOW_KEY=$key" >> "$GITHUB_ENV"
+
+      - name: Wait for the matching Cloudflare Pages deployment
+        run: |
+          set -euo pipefail
+          deployed=false
+          for attempt in $(seq 1 40); do
+            deployed_sha="$(curl --silent --show-error --fail "$SITE_BASE_URL/deployment-version.txt" 2>/dev/null | tr -d '\r\n' || true)"
+            if [[ "$deployed_sha" == "$TARGET_SHA" ]]; then
+              deployed=true
+              break
+            fi
+            echo "Waiting for Pages deployment $TARGET_SHA (attempt $attempt/40)"
+            sleep 30
+          done
+          [[ "$deployed" == true ]] || { echo "::error::Cloudflare Pages did not publish the expected commit within 20 minutes."; exit 1; }
+          curl --silent --show-error --fail "$SITE_BASE_URL/${INDEX_NOW_KEY}.txt" | grep --fixed-strings --line-regexp --quiet "$INDEX_NOW_KEY"
+
+      - name: Submit sitemap URLs to IndexNow
+        run: python scripts/submit_indexnow.py
