@@ -38,5 +38,6 @@
   "material-cost": [
     "Vermenigvuldig de benodigde hoeveelheid met de prijs per dezelfde eenheid. Pas het verliespercentage toe op het materiaal subtotaal. Tel belasting, levering, arbeid en overige kosten apart op.",
     "120 eenheden × 8 munteenheden = 960. Met 8% extra: 1.036,80 vóór belasting en overige kosten."
-  ]
+  ],
+  "example_heading": "Metrisch voorbeeld"
 }
