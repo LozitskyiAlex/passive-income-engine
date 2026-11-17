@@ -1,0 +1,42 @@
+{
+  "concrete-volume": [
+    "Uzunluk, genişlik ve kalınlığı aynı birime dönüştürüp çarpın. Fit küpü yarda küpe çevirmek için 27'ye bölün. Ayrı döküm bölümlerini çakışma olmadan hesaplayıp toplayın.",
+    "3,6 m × 3,0 m × 0,10 m = 1,08 m³."
+  ],
+  "concrete-bags": [
+    "Beton hacmini hesaplayın, tam olarak alacağınız torbanın üzerinde belirtilen verime bölün ve yukarı yuvarlayın. Hacim ve verim birimleri aynı olmalıdır; verim karışıma ve torba boyutuna göre değişir.",
+    "3 m × 3 m × 0,10 m = 0,90 m³. Torba başına 0,014 m³ verimde 64,3 çıkar; 65 torbaya yuvarlayın."
+  ],
+  "gravel-volume": [
+    "Uzunluk, genişlik ve katman derinliğini aynı birime çevirdikten sonra çarpın. Fit küpü yarda küpe çevirmek için 27'ye bölün. Farklı derinlikteki alanları ayrı hesaplayın.",
+    "6 m × 3 m × 75 mm = 1,35 m³."
+  ],
+  "paint-quantity": [
+    "Boyanacak duvar ve tavan alanlarını toplayın, ölçülen açıklıkları çıkarın, ürünün belirttiği kaplama değerine bölün ve kat sayısıyla çarpın. Gerçek tüketim yüzeye ve uygulamaya bağlıdır.",
+    "56 m² ÷ 10 m²/L × 2 kat = 11,2 L; mevcut ambalaj boyutlarına göre yukarı yuvarlayın."
+  ],
+  "flooring-quantity": [
+    "Oda uzunluğunu genişliğiyle çarpın ve seçilen fire oranını ekleyin. Düzensiz odaları basit şekillere ayırın. Son alanı tam paket miktarına yuvarlayın.",
+    "5,5 m × 4,3 m = 23,65 m². %10 ilaveyle: 26,02 m²."
+  ],
+  "tile-quantity": [
+    "Kaplanacak alanı bir karonun ön yüz alanına bölün, seçilen fire oranını ekleyin ve yukarı yuvarlayın. Gerçek ölçüleri kullanın ve sonucu tam kutu sayısına dönüştürün.",
+    "22 m² alan; 600 × 300 mm karo 0,18 m² kaplar. %10 ilaveyle yaklaşık 134,45, yani 135 karo."
+  ],
+  "drywall-sheets": [
+    "Dikdörtgen odada çevreyi duvar yüksekliğiyle çarpın, levha alanına bölün ve yukarı yuvarlayın. Tavanı ayrıca ekleyin. Bu tahmin levha yerleşimini veya mevzuata uygunluğu tasarlamaz.",
+    "6 × 4 m oda, 2,4 m duvar yüksekliği: 48 m² duvar alanı. 1,2 × 2,4 m levha 2,88 m² kaplar; 17 levha gerekir."
+  ],
+  "paver-quantity": [
+    "Kaplanacak alanı bir parke taşının ön yüz alanına bölün, kesim payı ekleyin ve yukarı yuvarlayın. Hesap yalnızca yüzey taşlarını kapsar; kazı, temel ve yatak tabakası dahil değildir.",
+    "5 × 4 m teras = 20 m²; 200 × 100 mm taş = 0,02 m². %5 ilaveyle 1.050 taş."
+  ],
+  "roofing-material": [
+    "Binanın taban alanını değil, her çatı düzleminin ölçülen yüzey alanını kullanın. Seçilen payı ekleyin ve tam ürünün belirttiği kaplama miktarına göre paketlere dönüştürün.",
+    "Ölçülen çatı alanı 167 m². %12 ilaveyle 187,04 m²."
+  ],
+  "material-cost": [
+    "Gerekli miktarı aynı birim için verilen fiyatla çarpın. Fire oranını malzeme ara toplamına uygulayın. Vergi, teslimat, işçilik ve diğer giderleri ayrıca ekleyin.",
+    "120 birim × 8 para birimi = 960. %8 ilaveyle vergi ve diğer giderler hariç 1.036,80."
+  ]
+}
