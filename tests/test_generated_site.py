@@ -245,7 +245,17 @@ def test_localized_priority_tips_and_faq_are_visible_and_translated():
                 assert tip.get_text(strip=True) not in source_content[slug]["tips"], (locale, slug, "English tip")
                 assert tip.get_text(strip=True) in translations.values(), (locale, slug, "tip not translated")
             faq = soup.select("#faq-section details")
-            assert len(faq) >= 4, (locale, slug, "FAQ missing")
+            source_faq = {x["slug"]: x["faqs"] for x in json.loads((ROOT / "data" / "calculator_faq.json").read_text(encoding="utf-8"))}[slug]
+            assert len(faq) == len(source_faq), (locale, slug, "FAQ count")
+            for rendered, original in zip(faq, source_faq):
+                question = rendered.select_one("summary").get_text(strip=True)
+                answer = rendered.select_one("p").get_text(strip=True)
+                assert question != original["question"], (locale, slug, "English FAQ question")
+                assert answer != original["answer"], (locale, slug, "English FAQ answer")
+                assert question in translations.values(), (locale, slug, "question not translated")
+                assert answer in translations.values(), (locale, slug, "answer not translated")
             faq_schema = [json.loads(node.string or node.get_text()) for node in soup.select('script[type="application/ld+json"]')]
-            assert any(x.get("@type") == "FAQPage" for x in faq_schema), (locale, slug, "FAQ schema missing")
+            faq_data = next((x for x in faq_schema if x.get("@type") == "FAQPage"), None)
+            assert faq_data is not None, (locale, slug, "FAQ schema missing")
+            assert len(faq_data.get("mainEntity", [])) == len(source_faq), (locale, slug, "FAQ schema count")
             assert not soup.select_one('#faq-section[hidden]')
