@@ -48,7 +48,7 @@ def main() -> None:
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Free Construction Calculators</title>
-<meta name="description" content="Free construction calculators for estimating material quantities, project costs, areas and volumes.">
+<meta name="description" content="Free concrete, gravel, paint, flooring, tile and roofing calculators with formulas, worked examples and metric or US customary units.">
 <meta name="google-site-verification" content="i1hT9Vac2DfM1lZl4p70A1feeiP6Vmq-tGaFSfHTfqQ">\n<meta name="msvalidate.01" content="525510C1BE000729AE171411BBC091D8">
 <link rel="canonical" href="https://free-construction-calculators.pages.dev/">
 <meta property="og:type" content="website">
