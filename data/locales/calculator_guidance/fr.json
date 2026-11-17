@@ -1,0 +1,42 @@
+{
+  "concrete-volume": [
+    "Convertissez longueur, largeur et épaisseur dans la même unité, puis multipliez-les. Divisez les pieds cubes par 27 pour obtenir des yards cubes. Additionnez les coulées distinctes sans les chevaucher.",
+    "3,6 m × 3,0 m × 0,10 m = 1,08 m³."
+  ],
+  "concrete-bags": [
+    "Calculez le volume de béton, divisez-le par le rendement indiqué sur le sac exact, puis arrondissez au nombre entier supérieur. Gardez les mêmes unités : le rendement varie selon le mélange et le sac.",
+    "3 m × 3 m × 0,10 m = 0,90 m³. À 0,014 m³ par sac : 64,3, soit 65 sacs."
+  ],
+  "gravel-volume": [
+    "Multipliez longueur, largeur et profondeur de couche après conversion dans une même unité. Divisez les pieds cubes par 27 pour obtenir des yards cubes. Calculez séparément les zones de profondeurs différentes.",
+    "6 m × 3 m × 75 mm = 1,35 m³."
+  ],
+  "paint-quantity": [
+    "Additionnez les surfaces à peindre, retirez les ouvertures mesurées, divisez par le rendement indiqué du produit, puis multipliez par le nombre de couches. Le rendement réel dépend du support et de l’application.",
+    "56 m² ÷ 10 m²/L × 2 couches = 11,2 L ; arrondissez selon les conditionnements disponibles."
+  ],
+  "flooring-quantity": [
+    "Multipliez la longueur de la pièce par sa largeur, puis ajoutez le pourcentage de perte choisi. Divisez les pièces irrégulières en formes simples. Arrondissez à des paquets entiers.",
+    "5,5 m × 4,3 m = 23,65 m². Avec 10 % de marge : 26,02 m²."
+  ],
+  "tile-quantity": [
+    "Divisez la surface par la surface visible d’un carreau, ajoutez la marge choisie et arrondissez au supérieur. Utilisez les dimensions réelles et convertissez le résultat en boîtes complètes.",
+    "Surface de 22 m² ; carreau de 600 × 300 mm = 0,18 m². Avec 10 % : 134,45, soit 135 carreaux."
+  ],
+  "drywall-sheets": [
+    "Dans une pièce rectangulaire, multipliez le périmètre par la hauteur des murs, divisez par la surface d’une plaque et arrondissez au supérieur. Ajoutez le plafond séparément. La pose et la conformité ne sont pas calculées.",
+    "Pièce de 6 × 4 m, murs de 2,4 m : 48 m². Plaque de 1,2 × 2,4 m : 2,88 m² ; prévoyez 17 plaques."
+  ],
+  "paver-quantity": [
+    "Divisez la surface à paver par la surface visible d’un pavé, ajoutez une marge de coupe et arrondissez au supérieur. Ce calcul concerne les pavés de surface, pas l’excavation, la fondation ni le lit de pose.",
+    "Terrasse de 5 × 4 m = 20 m² ; pavé de 200 × 100 mm = 0,02 m². Avec 5 % : 1 050 pavés."
+  ],
+  "roofing-material": [
+    "Utilisez la surface mesurée de chaque pan de toiture, et non l’emprise au sol du bâtiment. Ajoutez la marge choisie, puis convertissez en paquets selon la couverture du produit exact.",
+    "Surface mesurée du toit : 167 m². Avec une marge de 12 % : 187,04 m²."
+  ],
+  "material-cost": [
+    "Multipliez la quantité nécessaire par le prix correspondant à la même unité. Appliquez la marge au sous-total des matériaux. Ajoutez séparément taxes, livraison, main-d’œuvre et autres frais.",
+    "120 unités × 8 unités monétaires = 960. Avec 8 % de marge : 1 036,80 avant taxes et autres frais."
+  ]
+}
