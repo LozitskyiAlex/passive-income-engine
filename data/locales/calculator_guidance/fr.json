@@ -38,5 +38,6 @@
   "material-cost": [
     "Multipliez la quantité nécessaire par le prix correspondant à la même unité. Appliquez la marge au sous-total des matériaux. Ajoutez séparément taxes, livraison, main-d’œuvre et autres frais.",
     "120 unités × 8 unités monétaires = 960. Avec 8 % de marge : 1 036,80 avant taxes et autres frais."
-  ]
+  ],
+  "example_heading": "Exemple métrique"
 }
