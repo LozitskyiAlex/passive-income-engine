@@ -38,5 +38,6 @@
   "material-cost": [
     "Pomnóż wymaganą ilość przez cenę za tę samą jednostkę. Zapas dolicz do sumy materiałów. Podatki, dostawę, robociznę i inne opłaty dodaj osobno.",
     "120 jednostek × 8 jednostek waluty = 960. Z zapasem 8%: 1 036,80 przed podatkami i innymi kosztami."
-  ]
+  ],
+  "example_heading": "Przykład metryczny"
 }
