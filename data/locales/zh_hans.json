@@ -856,5 +856,21 @@
   "Cuts, borders, curves, pattern layout, breakage and pack sizes can increase the number required.": "切割、边缘、曲线、图案、破损和包装规格都可能增加所需数量。",
   "Not directly for a pitched roof. Use the measured surface area of each roof plane or a correctly calculated pitch adjustment, then add the relevant roof details.": "对于斜屋顶，使用每个屋面坡面的实测面积或正确的坡度修正值，并加入相关细节。",
   "It estimates only the entered roof covering area plus the selected allowance. Underlayment, flashing, ridge products and accessories are separate unless included in the specified coverage.": "这里只估算输入的屋面覆盖面积及所选余量。防水层、泛水板、屋脊配件和附件除非明确包含在产品覆盖范围内，否则需单独计算。",
-  "How do I convert cubic feet to cubic yards?": "如何将立方米换算为升？"
+  "How do I convert cubic feet to cubic yards?": "如何将立方米换算为升？",
+  "Does the estimate include reinforcement or formwork?": "估算是否包含钢筋或模板？",
+  "How deep should a gravel layer be?": "碎石层应铺多厚？",
+  "Should I subtract windows and doors?": "是否应扣除门窗面积？",
+  "Does the calculator round up to whole cans?": "计算器会向上取整到整桶吗？",
+  "How much extra flooring should I order?": "我应该额外订购多少地板材料？",
+  "Does the estimate include underlay or transitions?": "估算是否包含衬垫或过渡条？",
+  "How do I calculate the number of boxes?": "如何计算箱数？",
+  "Does tile size include grout joints?": "瓷砖尺寸是否包含填缝宽度？",
+  "Does this calculator subtract windows and doors?": "此计算器会扣除门窗面积吗？",
+  "Does it include the ceiling?": "是否包含天花板？",
+  "What if the supplier sells full packs only?": "如果供应商只销售整包怎么办？",
+  "Why can the final invoice differ from this estimate?": "为什么最终账单可能与估算不同？",
+  "Does this estimate include the gravel base and bedding sand?": "估算是否包含碎石基层和垫层砂？",
+  "Why can the installed count be higher than the area calculation?": "为什么实际铺设数量可能高于面积计算结果？",
+  "Can I use the building footprint as roof area?": "可以用建筑占地面积作为屋面面积吗？",
+  "Does the result include shingles, underlayment and flashing?": "结果是否包含屋面瓦、防水层和泛水板？"
 }
