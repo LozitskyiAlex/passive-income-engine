@@ -38,14 +38,6 @@
       {
         "question": "Why can the bag count differ between calculators?",
         "answer": "Bag sizes and concrete mix yields vary. Use the yield printed on the exact product, keep units consistent, and round the required number of bags up."
-      },
-      {
-        "question": "Should I add extra bags for waste?",
-        "answer": "The displayed base count is rounded up to whole bags. Add a separate allowance only after checking the product yield, subgrade and project conditions. Keep any allowance visible in your order calculation."
-      },
-      {
-        "question": "Can I use the same yield for every concrete mix?",
-        "answer": "No. Yield depends on the exact mix and bag size. Read the yield on the product label or current manufacturer documentation."
       }
     ]
   },
@@ -63,10 +55,6 @@
       {
         "question": "Does this estimate include compaction or convert to tons?",
         "answer": "No. It reports geometric volume only. Ask the supplier whether to order loose or compacted material. To estimate tons, use the bulk density for the exact gravel and conditions from the supplier; it varies by material and moisture."
-      },
-      {
-        "question": "How many cubic yards are in 50 cubic feet?",
-        "answer": "50 ÷ 27 is approximately 1.85 cubic yards. This is a volume conversion and does not account for compaction or moisture."
       },
       {
         "question": "How deep should a gravel layer be?",
