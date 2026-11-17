@@ -228,3 +228,24 @@ def test_localized_priority_pages_render_metric_guidance():
             assert metric_section is not None and not metric_section.has_attr("hidden"), (page_locale, slug, "metric example hidden")
             us_section = soup.select_one('[data-unit-system="us"]')
             assert us_section is not None and us_section.has_attr("hidden"), (page_locale, slug, "US section visible")
+
+def test_localized_priority_tips_and_faq_are_visible_and_translated():
+    from bs4 import BeautifulSoup
+    locales = ["es", "de", "fr", "pt-br", "ja", "it", "nl", "pl", "zh-hans", "ko", "ar", "uk", "ru", "tr"]
+    slugs = ["concrete-volume", "concrete-bags", "gravel-volume", "paint-quantity", "flooring-quantity", "tile-quantity", "drywall-sheets", "paver-quantity", "roofing-material", "material-cost"]
+    source_content = {x["slug"]: x for x in json.loads((ROOT / "data" / "calculator_content.json").read_text(encoding="utf-8"))}
+    for locale in locales:
+        translations = json.loads((ROOT / "data" / "locales" / (locale.replace("-", "_") + ".json")).read_text(encoding="utf-8"))
+        for slug in slugs:
+            page = SITE / locale / "construction" / slug / "index.html"
+            soup = BeautifulSoup(page.read_text(encoding="utf-8"), "html.parser")
+            tips = soup.select("#calculator-tips li")
+            assert len(tips) == len(source_content[slug]["tips"]), (locale, slug, "tip count")
+            for tip in tips:
+                assert tip.get_text(strip=True) not in source_content[slug]["tips"], (locale, slug, "English tip")
+                assert tip.get_text(strip=True) in translations.values(), (locale, slug, "tip not translated")
+            faq = soup.select("#faq-section details")
+            assert len(faq) >= 4, (locale, slug, "FAQ missing")
+            faq_schema = [json.loads(node.string or node.get_text()) for node in soup.select('script[type="application/ld+json"]')]
+            assert any(x.get("@type") == "FAQPage" for x in faq_schema), (locale, slug, "FAQ schema missing")
+            assert not soup.select_one('#faq-section[hidden]')
