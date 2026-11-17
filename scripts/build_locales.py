@@ -126,7 +126,7 @@ REGIONAL_UNIT_SYMBOLS = {
 }
 
 
-def localize_page(source_html, path, locale, translations):
+def localize_page(source_html, path, locale, translations, calculator_guidance=None):
     soup = BeautifulSoup(source_html, "html.parser")
     html = soup.find("html")
     if html:
@@ -171,9 +171,20 @@ def localize_page(source_html, path, locale, translations):
         field_name.string = re.sub(r"\s*\([^)]*\)\s*$", "", field_name.get_text("", strip=True))
     if LOCALES[locale]["measurement"] == "metric":
         neutral_how = "Measure the project dimensions as accurately as practical and keep all measurements in compatible units. For material products, use the coverage, yield, density, or package size stated by the manufacturer or supplier rather than a generic assumption."
+        slug = path.strip("/").split("/")[-1] if path.startswith("/construction/") else ""
+        localized_guidance = (calculator_guidance or {}).get(slug, {})
         how_node = soup.select_one("#how-to-content")
         if how_node:
-            how_node.string = translations.get(neutral_how, neutral_how)
+            how_node.string = localized_guidance.get("how") or translations.get(neutral_how, neutral_how)
+        metric_example = soup.select_one("#metric-example-content")
+        if metric_example and localized_guidance.get("example"):
+            metric_example.string = localized_guidance["example"]
+            metric_example_heading = soup.select_one("#metric-example-heading")
+            if metric_example_heading:
+                metric_example_heading.string = localized_guidance.get("example_heading", "Example")
+            metric_example_parent = metric_example.find_parent(attrs={"data-unit-system": "metric"})
+            if metric_example_parent:
+                metric_example_parent.attrs.pop("hidden", None)
         for regional_node in soup.select('[data-unit-system="us"]'):
             regional_node["hidden"] = True
         for script in soup.find_all("script", type="application/ld+json"):
@@ -266,7 +277,7 @@ def required_translation_strings(source_pages):
             value = str(node).strip()
             if not value or (node.parent and node.parent.name in ("script", "style")):
                 continue
-            if node.find_parent(attrs={"data-unit-system": "us"}) or (node.parent and node.parent.get("id") == "how-to-content"):
+            if node.find_parent(attrs={"data-unit-system": "us"}) or node.find_parent(attrs={"data-unit-system": "metric"}) or (node.parent and node.parent.get("id") == "how-to-content"):
                 continue
             if value in ("html", "·", "/", "|") or numeric_or_punctuation.fullmatch(value):
                 continue
@@ -295,6 +306,18 @@ def main():
         if not translations_path.is_file():
             raise FileNotFoundError(f"Missing translation file: {translations_path}")
         translations = json.loads(translations_path.read_text(encoding="utf-8"))
+        guidance_path = LOCALES_DIR / "calculator_guidance" / (locale.replace("-", "_") + ".json")
+        if not guidance_path.is_file():
+            raise FileNotFoundError(f"Missing localized calculator guidance: {guidance_path}")
+        calculator_guidance = json.loads(guidance_path.read_text(encoding="utf-8"))
+        required_guidance = {"concrete-volume", "concrete-bags", "gravel-volume", "paint-quantity", "flooring-quantity", "tile-quantity", "drywall-sheets", "paver-quantity", "roofing-material", "material-cost"}
+        missing_guidance = sorted(required_guidance - set(calculator_guidance))
+        if missing_guidance:
+            raise ValueError(f"Incomplete calculator guidance for {locale}: {missing_guidance}")
+        for slug in required_guidance:
+            item = calculator_guidance[slug]
+            if not all(isinstance(item.get(key), str) and item[key].strip() for key in ("how", "example", "example_heading")):
+                raise ValueError(f"Blank localized guidance field for {locale}/{slug}")
         required = required_translation_strings(source_pages)
         missing = sorted(required - set(translations))
         if missing:
@@ -305,7 +328,7 @@ def main():
         for source, path in zip(source_pages, paths):
             dest = SITE / locale / (source.relative_to(SITE))
             dest.parent.mkdir(parents=True, exist_ok=True)
-            dest.write_text(localize_page(source.read_text(encoding="utf-8"), path, locale, translations), encoding="utf-8")
+            dest.write_text(localize_page(source.read_text(encoding="utf-8"), path, locale, translations, calculator_guidance), encoding="utf-8")
         not_found = SITE / "404.html"
         if not_found.exists():
             dest = SITE / locale / "404.html"
