@@ -132,6 +132,7 @@ def test_generated_urls_match_catalog():
     homepage = (SITE / "index.html").read_text(encoding="utf-8")
     assert "How to get a useful material estimate" in homepage
     assert "Metric and US customary measurements" in homepage
+    assert 'data-unit-system="us"' in homepage
     priority_slugs = {"concrete-volume", "concrete-bags", "gravel-volume", "paint-quantity", "flooring-quantity", "tile-quantity", "drywall-sheets", "paver-quantity", "roofing-material", "material-cost"}
     for slug in priority_slugs:
         page_html = (SITE / "construction" / slug / "index.html").read_text(encoding="utf-8")
