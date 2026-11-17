@@ -38,5 +38,6 @@
   "material-cost": [
     "Multiplica la cantidad necesaria por el precio de la misma unidad. Aplica el desperdicio al subtotal de materiales. Añade por separado impuestos, entrega, mano de obra y otros costes.",
     "120 unidades × 8 unidades monetarias = 960. Con un 8 % adicional: 1.036,80 antes de impuestos y otros cargos."
-  ]
+  ],
+  "example_heading": "Ejemplo métrico"
 }
