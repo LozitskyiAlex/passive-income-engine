@@ -38,5 +38,6 @@
   "material-cost": [
     "Gerekli miktarı aynı birim için verilen fiyatla çarpın. Fire oranını malzeme ara toplamına uygulayın. Vergi, teslimat, işçilik ve diğer giderleri ayrıca ekleyin.",
     "120 birim × 8 para birimi = 960. %8 ilaveyle vergi ve diğer giderler hariç 1.036,80."
-  ]
+  ],
+  "example_heading": "Metrik örnek"
 }
