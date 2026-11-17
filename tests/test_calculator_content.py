@@ -34,3 +34,17 @@ def test_priority_calculator_guidance_is_translated_for_all_metric_locales():
             assert item["how"].strip(), (locale, slug, "how")
             assert item["example"].strip(), (locale, slug, "example")
             assert item["example_heading"].strip(), (locale, slug, "example_heading")
+
+def test_priority_tips_and_faq_are_translated_for_all_metric_locales():
+    locales = ["es", "de", "fr", "pt_br", "ja", "it", "nl", "pl", "zh_hans", "ko", "ar", "uk", "ru", "tr"]
+    priority = {"concrete-volume", "concrete-bags", "gravel-volume", "paint-quantity", "flooring-quantity", "tile-quantity", "drywall-sheets", "paver-quantity", "roofing-material", "material-cost"}
+    tips = {x["slug"]: x["tips"] for x in json.loads((ROOT / "data" / "calculator_content.json").read_text(encoding="utf-8")) if x["slug"] in priority}
+    faqs = {x["slug"]: x["faqs"] for x in json.loads((ROOT / "data" / "calculator_faq.json").read_text(encoding="utf-8")) if x["slug"] in priority}
+    for locale in locales:
+        translations = json.loads((ROOT / "data" / "locales" / f"{locale}.json").read_text(encoding="utf-8"))
+        for slug in priority:
+            for tip in tips[slug]:
+                assert translations.get(tip, "").strip(), (locale, slug, "missing tip translation")
+            for faq in faqs[slug]:
+                assert translations.get(faq["question"], "").strip(), (locale, slug, "missing FAQ question translation")
+                assert translations.get(faq["answer"], "").strip(), (locale, slug, "missing FAQ answer translation")
