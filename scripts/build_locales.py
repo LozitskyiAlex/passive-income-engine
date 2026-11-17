@@ -185,6 +185,20 @@ def localize_page(source_html, path, locale, translations, calculator_guidance=N
             metric_example_parent = metric_example.find_parent(attrs={"data-unit-system": "metric"})
             if metric_example_parent:
                 metric_example_parent.attrs.pop("hidden", None)
+        priority_guidance_slugs = {"concrete-volume", "concrete-bags", "gravel-volume", "paint-quantity", "flooring-quantity", "tile-quantity", "drywall-sheets", "paver-quantity", "roofing-material", "material-cost"}
+        if slug in priority_guidance_slugs:
+            for selector in ("#tips-section", "#faq-section"):
+                localized_section = soup.select_one(selector)
+                if localized_section:
+                    localized_section.attrs.pop("data-unit-system", None)
+        else:
+            for script in soup.find_all("script", type="application/ld+json"):
+                try:
+                    schema = json.loads(script.string or script.get_text())
+                    if isinstance(schema, dict) and schema.get("@type") == "FAQPage":
+                        script.decompose()
+                except (ValueError, TypeError):
+                    pass
         for regional_node in soup.select('[data-unit-system="us"]'):
             regional_node["hidden"] = True
     localize_internal_links(soup, locale)
