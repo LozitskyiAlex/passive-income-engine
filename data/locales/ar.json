@@ -856,5 +856,21 @@
   "Cuts, borders, curves, pattern layout, breakage and pack sizes can increase the number required.": "قد تزيد القصّات والحواف والمنحنيات والأنماط والكسر وأحجام العبوات الكمية المطلوبة.",
   "Not directly for a pitched roof. Use the measured surface area of each roof plane or a correctly calculated pitch adjustment, then add the relevant roof details.": "للسقف المائل، استخدم المساحة المقاسة لكل سطح أو تصحيح الميل المحسوب بشكل صحيح، ثم أضف التفاصيل اللازمة.",
   "It estimates only the entered roof covering area plus the selected allowance. Underlayment, flashing, ridge products and accessories are separate unless included in the specified coverage.": "تقدّر فقط مساحة التغطية المدخلة مع الهامش. تُحسب الطبقة السفلية والصفائح المعدنية وقطع القمة والملحقات منفصلة ما لم تكن مشمولة في تغطية المنتج.",
-  "How do I convert cubic feet to cubic yards?": "كيف أحوّل الأمتار المكعبة إلى لترات؟"
+  "How do I convert cubic feet to cubic yards?": "كيف أحوّل الأمتار المكعبة إلى لترات؟",
+  "Does the estimate include reinforcement or formwork?": "هل يشمل التقدير حديد التسليح أو القوالب؟",
+  "How deep should a gravel layer be?": "ما العمق المناسب لطبقة الحصى؟",
+  "Should I subtract windows and doors?": "هل يجب خصم مساحة النوافذ والأبواب؟",
+  "Does the calculator round up to whole cans?": "هل تقرّب الحاسبة إلى عبوات طلاء كاملة؟",
+  "How much extra flooring should I order?": "ما الكمية الإضافية من الأرضيات التي ينبغي طلبها؟",
+  "Does the estimate include underlay or transitions?": "هل يشمل التقدير الطبقة السفلية أو شرائح الانتقال؟",
+  "How do I calculate the number of boxes?": "كيف أحسب عدد الصناديق؟",
+  "Does tile size include grout joints?": "هل يشمل مقاس البلاطة عرض الفواصل؟",
+  "Does this calculator subtract windows and doors?": "هل تخصم هذه الحاسبة النوافذ والأبواب؟",
+  "Does it include the ceiling?": "هل يشمل السقف؟",
+  "What if the supplier sells full packs only?": "ماذا لو كان المورد يبيع العبوات الكاملة فقط؟",
+  "Why can the final invoice differ from this estimate?": "لماذا قد تختلف الفاتورة النهائية عن هذا التقدير؟",
+  "Does this estimate include the gravel base and bedding sand?": "هل يشمل التقدير قاعدة الحصى ورمل الفرش؟",
+  "Why can the installed count be higher than the area calculation?": "لماذا قد تزيد الكمية المركبة عن حساب المساحة؟",
+  "Can I use the building footprint as roof area?": "هل يمكن استخدام مساحة مسقط المبنى كمساحة للسقف؟",
+  "Does the result include shingles, underlayment and flashing?": "هل تشمل النتيجة القرميد وطبقة العزل والصفائح المعدنية؟"
 }
