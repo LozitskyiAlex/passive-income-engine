@@ -856,5 +856,21 @@
   "Cuts, borders, curves, pattern layout, breakage and pack sizes can increase the number required.": "切断、縁取り、曲線、模様、破損、梱包単位によって必要数量が増えることがあります。",
   "Not directly for a pitched roof. Use the measured surface area of each roof plane or a correctly calculated pitch adjustment, then add the relevant roof details.": "傾斜屋根では建物の平面面積をそのまま使わず、各屋根面の実測面積または正しい勾配補正値を使い、関連する細部を追加してください。",
   "It estimates only the entered roof covering area plus the selected allowance. Underlayment, flashing, ridge products and accessories are separate unless included in the specified coverage.": "入力した屋根材面積と選択した余裕分のみを見積もります。下葺き材、板金、棟部材、付属品は製品の施工可能面積に含まれない限り別途です。",
-  "How do I convert cubic feet to cubic yards?": "立方メートルをリットルに換算するには？"
+  "How do I convert cubic feet to cubic yards?": "立方メートルをリットルに換算するには？",
+  "Does the estimate include reinforcement or formwork?": "この計算には鉄筋や型枠が含まれますか？",
+  "How deep should a gravel layer be?": "砂利層の深さはどのくらい必要ですか？",
+  "Should I subtract windows and doors?": "窓やドアの面積を差し引く必要がありますか？",
+  "Does the calculator round up to whole cans?": "計算結果は塗料缶の単位で切り上げられますか？",
+  "How much extra flooring should I order?": "床材はどのくらい余分に注文すべきですか？",
+  "Does the estimate include underlay or transitions?": "下地材や見切り材は含まれますか？",
+  "How do I calculate the number of boxes?": "箱数はどのように計算しますか？",
+  "Does tile size include grout joints?": "タイル寸法に目地幅は含まれますか？",
+  "Does this calculator subtract windows and doors?": "この計算では窓やドアを差し引きますか？",
+  "Does it include the ceiling?": "天井も含まれますか？",
+  "What if the supplier sells full packs only?": "供給業者が未開封の箱単位でしか販売しない場合は？",
+  "Why can the final invoice differ from this estimate?": "最終請求額が見積もりと異なるのはなぜですか？",
+  "Does this estimate include the gravel base and bedding sand?": "砕石の路盤と敷砂は含まれますか？",
+  "Why can the installed count be higher than the area calculation?": "施工後の数量が面積計算より多くなるのはなぜですか？",
+  "Can I use the building footprint as roof area?": "建物の平面面積を屋根面積として使えますか？",
+  "Does the result include shingles, underlayment and flashing?": "屋根材、防水下葺き材、板金役物は含まれますか？"
 }
