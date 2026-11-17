@@ -856,5 +856,21 @@
   "Cuts, borders, curves, pattern layout, breakage and pack sizes can increase the number required.": "Подрезка, края, криволинейные участки, рисунок, повреждения и размер упаковки могут увеличить количество.",
   "Not directly for a pitched roof. Use the measured surface area of each roof plane or a correctly calculated pitch adjustment, then add the relevant roof details.": "Для скатной крыши используйте измеренную площадь каждого ската или корректную поправку на уклон, затем добавьте необходимые детали.",
   "It estimates only the entered roof covering area plus the selected allowance. Underlayment, flashing, ridge products and accessories are separate unless included in the specified coverage.": "Оценивается только введённая площадь покрытия с запасом. Подкровельная мембрана, примыкания, коньковые элементы и аксессуары считаются отдельно, если не включены в покрытие продукта.",
-  "How do I convert cubic feet to cubic yards?": "Как перевести кубические метры в литры?"
+  "How do I convert cubic feet to cubic yards?": "Как перевести кубические метры в литры?",
+  "Does the estimate include reinforcement or formwork?": "Учитывает ли оценка арматуру или опалубку?",
+  "How deep should a gravel layer be?": "Какой должна быть глубина слоя щебня?",
+  "Should I subtract windows and doors?": "Нужно ли вычитать площадь окон и дверей?",
+  "Does the calculator round up to whole cans?": "Округляет ли калькулятор количество до целых банок?",
+  "How much extra flooring should I order?": "Сколько дополнительного напольного покрытия заказать?",
+  "Does the estimate include underlay or transitions?": "Включает ли оценка подложку или переходные профили?",
+  "How do I calculate the number of boxes?": "Как рассчитать количество коробок?",
+  "Does tile size include grout joints?": "Учитывает ли размер плитки ширину швов?",
+  "Does this calculator subtract windows and doors?": "Вычитает ли этот калькулятор окна и двери?",
+  "Does it include the ceiling?": "Включён ли потолок?",
+  "What if the supplier sells full packs only?": "Что делать, если поставщик продаёт только полные упаковки?",
+  "Why can the final invoice differ from this estimate?": "Почему итоговый счёт может отличаться от оценки?",
+  "Does this estimate include the gravel base and bedding sand?": "Включает ли оценка щебёночное основание и подстилающий песок?",
+  "Why can the installed count be higher than the area calculation?": "Почему фактическое количество после укладки может быть больше расчёта площади?",
+  "Can I use the building footprint as roof area?": "Можно ли использовать площадь застройки как площадь крыши?",
+  "Does the result include shingles, underlayment and flashing?": "Включает ли результат черепицу, подкровельную мембрану и планки примыкания?"
 }
