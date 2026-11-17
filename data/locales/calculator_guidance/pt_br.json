@@ -38,5 +38,6 @@
   "material-cost": [
     "Multiplique a quantidade necessária pelo preço da mesma unidade. Aplique a perda ao subtotal dos materiais. Acrescente impostos, entrega, mão de obra e outros custos separadamente.",
     "120 unidades × 8 unidades monetárias = 960. Com 8% adicional: 1.036,80 antes de impostos e outros custos."
-  ]
+  ],
+  "example_heading": "Exemplo métrico"
 }
