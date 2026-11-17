@@ -856,5 +856,21 @@
   "Cuts, borders, curves, pattern layout, breakage and pack sizes can increase the number required.": "Snijwerk, randen, bochten, patronen, breuk en verpakkingsmaten kunnen de benodigde hoeveelheid verhogen.",
   "Not directly for a pitched roof. Use the measured surface area of each roof plane or a correctly calculated pitch adjustment, then add the relevant roof details.": "Gebruik bij een hellend dak het gemeten oppervlak van elk dakvlak of een correcte hellingscorrectie en tel de details erbij op.",
   "It estimates only the entered roof covering area plus the selected allowance. Underlayment, flashing, ridge products and accessories are separate unless included in the specified coverage.": "Alleen het ingevoerde dakoppervlak plus toeslag wordt geschat. Onderdak, loodslabben, nokdelen en accessoires zijn apart tenzij inbegrepen.",
-  "How do I convert cubic feet to cubic yards?": "Hoe reken ik kubieke meters om naar liters?"
+  "How do I convert cubic feet to cubic yards?": "Hoe reken ik kubieke meters om naar liters?",
+  "Does the estimate include reinforcement or formwork?": "Omvat de schatting wapening of bekisting?",
+  "How deep should a gravel layer be?": "Hoe diep moet een grindlaag zijn?",
+  "Should I subtract windows and doors?": "Moet ik ramen en deuren aftrekken?",
+  "Does the calculator round up to whole cans?": "Rondt de calculator af op hele blikken?",
+  "How much extra flooring should I order?": "Hoeveel extra vloerbedekking moet ik bestellen?",
+  "Does the estimate include underlay or transitions?": "Omvat de schatting ondervloer of overgangsprofielen?",
+  "How do I calculate the number of boxes?": "Hoe bereken ik het aantal dozen?",
+  "Does tile size include grout joints?": "Zijn voegen inbegrepen in de tegelmaat?",
+  "Does this calculator subtract windows and doors?": "Trekt deze calculator ramen en deuren af?",
+  "Does it include the ceiling?": "Is het plafond inbegrepen?",
+  "What if the supplier sells full packs only?": "Wat als de leverancier alleen volle verpakkingen verkoopt?",
+  "Why can the final invoice differ from this estimate?": "Waarom kan de eindfactuur afwijken van deze schatting?",
+  "Does this estimate include the gravel base and bedding sand?": "Omvat deze schatting de grindfundering en het straatzand?",
+  "Why can the installed count be higher than the area calculation?": "Waarom kan de gelegde hoeveelheid hoger zijn dan de oppervlakteschatting?",
+  "Can I use the building footprint as roof area?": "Kan ik het grondvlak van het gebouw als dakoppervlak gebruiken?",
+  "Does the result include shingles, underlayment and flashing?": "Omvat het resultaat dakpannen, onderdak en loodslabben?"
 }
