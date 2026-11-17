@@ -1,0 +1,42 @@
+{
+  "concrete-volume": [
+    "Zet lengte, breedte en dikte om naar dezelfde eenheid en vermenigvuldig ze. Deel kubieke voet door 27 om kubieke yards te krijgen. Tel afzonderlijke stortdelen op zonder overlap.",
+    "3,6 m × 3,0 m × 0,10 m = 1,08 m³."
+  ],
+  "concrete-bags": [
+    "Bereken het betonvolume, deel dit door het rendement op de exacte zak en rond naar boven af. Gebruik dezelfde eenheden; het rendement verschilt per mengsel en zakformaat.",
+    "3 m × 3 m × 0,10 m = 0,90 m³. Bij 0,014 m³ per zak: 64,3, dus 65 zakken."
+  ],
+  "gravel-volume": [
+    "Vermenigvuldig lengte, breedte en laagdiepte nadat alles naar dezelfde eenheid is omgerekend. Deel kubieke voet door 27 voor kubieke yards. Bereken zones met verschillende dieptes apart.",
+    "6 m × 3 m × 75 mm = 1,35 m³."
+  ],
+  "paint-quantity": [
+    "Tel de te schilderen wand- en plafondoppervlakken op, trek gemeten openingen af, deel door de opgegeven dekking en vermenigvuldig met het aantal lagen. Het werkelijke verbruik hangt af van ondergrond en verwerking.",
+    "56 m² ÷ 10 m²/L × 2 lagen = 11,2 L; rond af op beschikbare verpakkingen."
+  ],
+  "flooring-quantity": [
+    "Vermenigvuldig de kamerlengte met de breedte en tel het gekozen snijverliespercentage erbij op. Verdeel onregelmatige ruimtes in eenvoudige vormen. Rond af op volledige verpakkingen.",
+    "5,5 m × 4,3 m = 23,65 m². Met 10% extra: 26,02 m²."
+  ],
+  "tile-quantity": [
+    "Deel het oppervlak door het zichtbare oppervlak van één tegel, tel het gekozen snijverlies erbij op en rond naar boven af. Gebruik de werkelijke afmetingen en reken om naar volle dozen.",
+    "Oppervlak 22 m²; tegel 600 × 300 mm = 0,18 m². Met 10%: 134,45, dus 135 tegels."
+  ],
+  "drywall-sheets": [
+    "Vermenigvuldig bij een rechthoekige kamer de omtrek met de wandhoogte, deel door het plaatoppervlak en rond naar boven af. Tel het plafond apart op. Dit bepaalt geen plaatindeling of normconformiteit.",
+    "Kamer 6 × 4 m, wandhoogte 2,4 m: 48 m². Plaat 1,2 × 2,4 m: 2,88 m²; rond af op 17 platen."
+  ],
+  "paver-quantity": [
+    "Deel het te bestraten oppervlak door het zichtbare oppervlak van één steen, tel snijverlies erbij op en rond naar boven af. Dit betreft alleen de bestrating, niet ontgraving, fundering of legbed.",
+    "Terras 5 × 4 m = 20 m²; steen 200 × 100 mm = 0,02 m². Met 5%: 1.050 stenen."
+  ],
+  "roofing-material": [
+    "Gebruik het gemeten oppervlak van elk dakvlak, niet de voetafdruk van het gebouw. Tel de gekozen marge erbij op en reken om naar verpakkingen volgens de dekking van het exacte product.",
+    "Gemeten dakoppervlak: 167 m². Met 12% extra: 187,04 m²."
+  ],
+  "material-cost": [
+    "Vermenigvuldig de benodigde hoeveelheid met de prijs per dezelfde eenheid. Pas het verliespercentage toe op het materiaal subtotaal. Tel belasting, levering, arbeid en overige kosten apart op.",
+    "120 eenheden × 8 munteenheden = 960. Met 8% extra: 1.036,80 vóór belasting en overige kosten."
+  ]
+}
