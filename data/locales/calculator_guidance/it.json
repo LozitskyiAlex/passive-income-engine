@@ -38,5 +38,6 @@
   "material-cost": [
     "Moltiplica la quantità necessaria per il prezzo della stessa unità. Applica lo sfrido al subtotale dei materiali. Aggiungi separatamente imposte, consegna, manodopera e altri costi.",
     "120 unità × 8 unità monetarie = 960. Con l'8% aggiuntivo: 1.036,80, prima di imposte e altri costi."
-  ]
+  ],
+  "example_heading": "Esempio metrico"
 }
