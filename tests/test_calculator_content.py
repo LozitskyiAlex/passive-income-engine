@@ -21,3 +21,16 @@ def test_priority_calculators_have_detailed_guidance_and_faqs():
         assert len(content[slug]["example"]) >= 180, slug
         assert len(content[slug]["tips"]) >= 3, slug
         assert len(faqs[slug]) >= 4, slug
+
+def test_priority_calculator_guidance_is_translated_for_all_metric_locales():
+    locales = ["es", "de", "fr", "pt_br", "ja", "it", "nl", "pl", "zh_hans", "ko", "ar", "uk", "ru", "tr"]
+    priority = {"concrete-volume", "concrete-bags", "gravel-volume", "paint-quantity", "flooring-quantity", "tile-quantity", "drywall-sheets", "paver-quantity", "roofing-material", "material-cost"}
+    for locale in locales:
+        path = ROOT / "data" / "locales" / "calculator_guidance" / f"{locale}.json"
+        guidance = json.loads(path.read_text(encoding="utf-8"))
+        assert priority <= set(guidance), locale
+        for slug in priority:
+            item = guidance[slug]
+            assert item["how"].strip(), (locale, slug, "how")
+            assert item["example"].strip(), (locale, slug, "example")
+            assert item["example_heading"].strip(), (locale, slug, "example_heading")

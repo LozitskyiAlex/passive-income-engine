@@ -1,0 +1,52 @@
+{
+  "concrete-volume": {
+    "how": "Przelicz długość, szerokość i grubość na tę samą jednostkę, a następnie je pomnóż. Stopy sześcienne podziel przez 27, aby uzyskać jardy sześcienne. Dodaj osobne etapy betonowania bez nakładania powierzchni.",
+    "example": "3,6 m × 3,0 m × 0,10 m = 1,08 m³.",
+    "example_heading": "Przykład metryczny"
+  },
+  "concrete-bags": {
+    "how": "Oblicz objętość betonu, podziel ją przez wydajność podaną na konkretnej torbie i zaokrąglij w górę. Zachowaj zgodne jednostki; wydajność zależy od mieszanki i wielkości opakowania.",
+    "example": "3 m × 3 m × 0,10 m = 0,90 m³. Przy 0,014 m³ na worek: 64,3, czyli 65 worków.",
+    "example_heading": "Przykład metryczny"
+  },
+  "gravel-volume": {
+    "how": "Pomnóż długość, szerokość i głębokość warstwy po przeliczeniu ich na tę samą jednostkę. Stopy sześcienne podziel przez 27, aby uzyskać jardy sześcienne. Różne głębokości oblicz oddzielnie.",
+    "example": "6 m × 3 m × 75 mm = 1,35 m³.",
+    "example_heading": "Przykład metryczny"
+  },
+  "paint-quantity": {
+    "how": "Zsumuj powierzchnie ścian i sufitów do malowania, odejmij zmierzone otwory, podziel przez wydajność podaną dla produktu i pomnóż przez liczbę warstw. Zużycie zależy od podłoża i sposobu nakładania.",
+    "example": "56 m² ÷ 10 m²/L × 2 warstwy = 11,2 L; zaokrąglij do dostępnych opakowań.",
+    "example_heading": "Przykład metryczny"
+  },
+  "flooring-quantity": {
+    "how": "Pomnóż długość pomieszczenia przez szerokość i dodaj wybrany procent zapasu. Nieregularne pomieszczenia podziel na proste kształty. Zaokrąglij wynik do pełnych opakowań.",
+    "example": "5,5 m × 4,3 m = 23,65 m². Z zapasem 10%: 26,02 m².",
+    "example_heading": "Przykład metryczny"
+  },
+  "tile-quantity": {
+    "how": "Podziel powierzchnię przez pole jednej płytki, dodaj wybrany zapas i zaokrąglij w górę. Użyj rzeczywistych wymiarów i przelicz wynik na pełne kartony.",
+    "example": "Powierzchnia 22 m²; płytka 600 × 300 mm = 0,18 m². Z zapasem 10%: 134,45, czyli 135 płytek.",
+    "example_heading": "Przykład metryczny"
+  },
+  "drywall-sheets": {
+    "how": "W prostokątnym pomieszczeniu pomnóż obwód przez wysokość ścian, podziel przez powierzchnię płyty i zaokrąglij w górę. Sufit dolicz osobno. Kalkulator nie określa układu płyt ani zgodności z przepisami.",
+    "example": "Pomieszczenie 6 × 4 m, ściany 2,4 m: 48 m². Płyta 1,2 × 2,4 m ma 2,88 m²; potrzeba 17 płyt.",
+    "example_heading": "Przykład metryczny"
+  },
+  "paver-quantity": {
+    "how": "Podziel powierzchnię nawierzchni przez pole jednej kostki, dodaj zapas na docinanie i zaokrąglij w górę. Wynik dotyczy tylko kostki, bez wykopu, podbudowy i podsypki.",
+    "example": "Taras 5 × 4 m = 20 m²; kostka 200 × 100 mm = 0,02 m². Z zapasem 5%: 1 050 sztuk.",
+    "example_heading": "Przykład metryczny"
+  },
+  "roofing-material": {
+    "how": "Użyj zmierzonej powierzchni każdej połaci dachu, a nie rzutu budynku. Dodaj wybrany zapas i przelicz wynik na opakowania według pokrycia podanego dla konkretnego produktu.",
+    "example": "Zmierzona powierzchnia dachu: 167 m². Z zapasem 12%: 187,04 m².",
+    "example_heading": "Przykład metryczny"
+  },
+  "material-cost": {
+    "how": "Pomnóż wymaganą ilość przez cenę za tę samą jednostkę. Zapas dolicz do sumy materiałów. Podatki, dostawę, robociznę i inne opłaty dodaj osobno.",
+    "example": "120 jednostek × 8 jednostek waluty = 960. Z zapasem 8%: 1 036,80 przed podatkami i innymi kosztami.",
+    "example_heading": "Przykład metryczny"
+  }
+}

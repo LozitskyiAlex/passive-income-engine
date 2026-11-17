@@ -1,0 +1,52 @@
+{
+  "concrete-volume": {
+    "how": "Converta comprimento, largura e espessura para a mesma unidade e multiplique. Divida pés cúbicos por 27 para obter jardas cúbicas. Some concretagens separadas sem sobrepor áreas.",
+    "example": "3,6 m × 3,0 m × 0,10 m = 1,08 m³.",
+    "example_heading": "Exemplo métrico"
+  },
+  "concrete-bags": {
+    "how": "Calcule o volume de concreto, divida pelo rendimento indicado na embalagem exata e arredonde para cima. Use unidades iguais; o rendimento varia conforme a mistura e o tamanho do saco.",
+    "example": "3 m × 3 m × 0,10 m = 0,90 m³. Com 0,014 m³ por saco: 64,3; arredonde para 65 sacos.",
+    "example_heading": "Exemplo métrico"
+  },
+  "gravel-volume": {
+    "how": "Multiplique comprimento, largura e profundidade da camada após converter tudo para a mesma unidade. Divida pés cúbicos por 27 para obter jardas cúbicas. Calcule separadamente áreas com profundidades diferentes.",
+    "example": "6 m × 3 m × 75 mm = 1,35 m³.",
+    "example_heading": "Exemplo métrico"
+  },
+  "paint-quantity": {
+    "how": "Some as áreas de paredes e tetos a pintar, subtraia aberturas medidas, divida pela cobertura indicada do produto e multiplique pelo número de demãos. O consumo real depende da superfície e da aplicação.",
+    "example": "56 m² ÷ 10 m²/L × 2 demãos = 11,2 L; arredonde conforme as embalagens disponíveis.",
+    "example_heading": "Exemplo métrico"
+  },
+  "flooring-quantity": {
+    "how": "Multiplique o comprimento do cômodo pela largura e acrescente o percentual de perda escolhido. Divida cômodos irregulares em formas simples. Arredonde para embalagens completas.",
+    "example": "5,5 m × 4,3 m = 23,65 m². Com 10% adicional: 26,02 m².",
+    "example_heading": "Exemplo métrico"
+  },
+  "tile-quantity": {
+    "how": "Divida a área pela face de uma peça, acrescente a perda escolhida e arredonde para cima. Use as dimensões reais e converta o resultado para caixas completas.",
+    "example": "Área de 22 m²; peça de 600 × 300 mm = 0,18 m². Com 10%: 134,45; arredonde para 135 peças.",
+    "example_heading": "Exemplo métrico"
+  },
+  "drywall-sheets": {
+    "how": "Em um cômodo retangular, multiplique o perímetro pela altura das paredes, divida pela área da placa e arredonde para cima. Some o teto separadamente. Não calcula paginação nem conformidade.",
+    "example": "Cômodo de 6 × 4 m, paredes de 2,4 m: 48 m². Placa de 1,2 × 2,4 m: 2,88 m²; arredonde para 17 placas.",
+    "example_heading": "Exemplo métrico"
+  },
+  "paver-quantity": {
+    "how": "Divida a área pavimentada pela face de um paver, acrescente uma margem para cortes e arredonde para cima. A estimativa cobre apenas as peças da superfície, não escavação, base ou camada de assentamento.",
+    "example": "Pátio de 5 × 4 m = 20 m²; paver de 200 × 100 mm = 0,02 m². Com 5%: 1.050 peças.",
+    "example_heading": "Exemplo métrico"
+  },
+  "roofing-material": {
+    "how": "Use a área medida de cada plano do telhado, não a projeção da construção. Acrescente a margem escolhida e converta em pacotes conforme a cobertura informada para o produto exato.",
+    "example": "Área medida do telhado: 167 m². Com 12% adicional: 187,04 m².",
+    "example_heading": "Exemplo métrico"
+  },
+  "material-cost": {
+    "how": "Multiplique a quantidade necessária pelo preço da mesma unidade. Aplique a perda ao subtotal dos materiais. Acrescente impostos, entrega, mão de obra e outros custos separadamente.",
+    "example": "120 unidades × 8 unidades monetárias = 960. Com 8% adicional: 1.036,80 antes de impostos e outros custos.",
+    "example_heading": "Exemplo métrico"
+  }
+}

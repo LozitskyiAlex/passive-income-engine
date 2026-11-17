@@ -64,10 +64,18 @@ def test_metric_pages_hide_us_specific_explanations_and_faq_schema():
                 assert regional_sections and all(section.has_attr("hidden") for section in regional_sections)
                 assert not any(json.loads(node.string or node.get_text()).get("@type") == "FAQPage" for node in soup.find_all("script", type="application/ld+json"))
                 how = soup.select_one("#how-to-content").get_text(" ", strip=True)
-                locale_file = ROOT / "data/locales" / (locale.replace("-", "_") + ".json")
-                translations = json.loads(locale_file.read_text(encoding="utf-8"))
-                neutral = "Measure the project dimensions as accurately as practical and keep all measurements in compatible units. For material products, use the coverage, yield, density, or package size stated by the manufacturer or supplier rather than a generic assumption."
-                assert how == translations[neutral]
+                locale_key = locale.replace("-", "_")
+                guidance_file = ROOT / "data" / "locales" / "calculator_guidance" / f"{locale_key}.json"
+                guidance = json.loads(guidance_file.read_text(encoding="utf-8")) if guidance_file.exists() else {}
+                if item["slug"] in guidance:
+                    assert how == guidance[item["slug"]]["how"]
+                    metric_example = soup.select_one("#metric-example-content")
+                    assert metric_example is not None and metric_example.get_text(strip=True) == guidance[item["slug"]]["example"]
+                else:
+                    locale_file = ROOT / "data/locales" / f"{locale_key}.json"
+                    translations = json.loads(locale_file.read_text(encoding="utf-8"))
+                    neutral = "Measure the project dimensions as accurately as practical and keep all measurements in compatible units. For material products, use the coverage, yield, density, or package size stated by the manufacturer or supplier rather than a generic assumption."
+                    assert how == translations[neutral]
             else:
                 assert regional_sections and all(not section.has_attr("hidden") for section in regional_sections)
                 assert any(json.loads(node.string or node.get_text()).get("@type") == "FAQPage" for node in soup.find_all("script", type="application/ld+json"))
