@@ -187,13 +187,6 @@ def localize_page(source_html, path, locale, translations, calculator_guidance=N
                 metric_example_parent.attrs.pop("hidden", None)
         for regional_node in soup.select('[data-unit-system="us"]'):
             regional_node["hidden"] = True
-        for script in soup.find_all("script", type="application/ld+json"):
-            try:
-                schema = json.loads(script.string or script.get_text())
-                if isinstance(schema, dict) and schema.get("@type") == "FAQPage":
-                    script.decompose()
-            except (ValueError, TypeError):
-                pass
     localize_internal_links(soup, locale)
     canonical = absolute_url(locale_path(path, locale))
     canonical_tag = soup.find("link", rel="canonical")
