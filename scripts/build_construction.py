@@ -186,7 +186,7 @@ def page(item, content, related, titles, units, faq):
 <h2>How to use this calculator</h2><p id="how-to-content">{escape(content.get("how",""))}</p>
 <h2>Before you calculate</h2><p>Measure the project dimensions as accurately as practical and keep all measurements in compatible units. For material products, use the coverage, yield, density, or package size stated by the manufacturer or supplier rather than a generic assumption.</p><p>Choose the waste allowance based on the project shape, installation method, cutting requirements, and material characteristics. A simple rectangular estimate may need adjustment for openings, corners, slopes, joints, patterns, compaction, or other site conditions.</p>
 <h2>Understanding the result</h2><p>The calculator provides a planning estimate based on the inputs shown above. It is not a substitute for project drawings, structural design, manufacturer instructions, or local requirements. Before ordering, compare the calculated quantity with the supplier's package sizes and ordering units.</p>
-<section data-unit-system="us"><h2>Tips</h2><ul id="calculator-tips">{tips}</ul></section></section>
+<section id="tips-section" data-unit-system="us"><h2>Tips</h2><ul id="calculator-tips">{tips}</ul></section></section>
 <section id="faq-section" data-unit-system="us"><h2>Frequently asked questions</h2>{faq_html}</section><section><h2>Related calculators</h2><ul>{related_html}</ul><p><a href="/construction/">Browse all construction calculators</a></p></section>
 <p>Use compatible units and verify estimates against project specifications, local requirements and manufacturer instructions.</p></main>
 <script type="module">
