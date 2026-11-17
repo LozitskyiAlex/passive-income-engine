@@ -266,6 +266,8 @@ def required_translation_strings(source_pages):
             value = str(node).strip()
             if not value or (node.parent and node.parent.name in ("script", "style")):
                 continue
+            if node.find_parent(attrs={"data-unit-system": "us"}):
+                continue
             if value in ("html", "·", "/", "|") or numeric_or_punctuation.fullmatch(value):
                 continue
             if len(value) > 1:
