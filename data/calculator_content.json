@@ -1,31 +1,32 @@
 [
   {
     "slug": "concrete-volume",
-    "how": "Multiply length by width by thickness. Keep all dimensions in the same unit.",
-    "example": "A 20 ft by 10 ft slab that is 0.5 ft thick needs 100 cubic feet of concrete.",
+    "how": "For a rectangular slab, pad or footing, convert length, width and thickness to the same unit, then multiply them. If dimensions are in feet, the result is cubic feet. Divide cubic feet by 27 to convert to cubic yards. For a project with several separate pours, calculate each section and add the volumes.",
+    "example": "A slab 12 ft long, 10 ft wide and 4 in thick has a thickness of 4 ÷ 12 = 0.333 ft. Its volume is 12 × 10 × 0.333 = about 40 cu ft, or 40 ÷ 27 = about 1.48 cu yd before any ordering allowance.",
     "tips": [
-      "Measure the actual thickness at several points.",
-      "Add a project-specific allowance for waste or uneven ground."
+      "Measure the finished pour dimensions, not just the excavation. Check slab thickness at several locations because small depth changes affect the total volume.",
+      "Split L-shaped or irregular pours into rectangles, calculate each section, then add the results. Avoid counting overlapping sections twice.",
+      "The result is geometric volume. Discuss an allowance for uneven subgrade, form movement, spillage and delivery minimums with the concrete supplier or contractor."
     ]
   },
   {
     "slug": "concrete-bags",
-    "how": "First calculate the concrete volume in cubic feet. For a rectangular slab measured in feet and inches, use length × width × thickness in feet (inches ÷ 12). Then divide the volume by the yield printed for your exact concrete mix bag and round up to a whole bag.",
-    "example": "A 10 ft × 10 ft slab at 4 in thick has an estimated volume of 10 × 10 × (4 ÷ 12) = 33.33 cu ft. Using QUIKRETE Concrete Mix #1101 as an example, an 80 lb bag yields approximately 0.60 cu ft, so 33.33 ÷ 0.60 rounds up to 56 bags.",
+    "how": "First calculate the required concrete volume. Divide that volume by the yield per bag stated on the exact mix and bag size you plan to buy, then round up to a whole bag. Keep the volume and yield units identical. The calculator's bag yield is an input, not a universal property of all concrete mixes.",
+    "example": "A 10 ft × 10 ft slab at 4 in thick contains 10 × 10 × (4 ÷ 12) = 33.33 cu ft. If the selected product label states a yield of 0.60 cu ft per bag, 33.33 ÷ 0.60 = 55.55, so the base estimate rounds up to 56 bags before any project allowance.",
     "tips": [
-      "Approximate QUIKRETE Concrete Mix #1101 yields: 40 lb = 0.30 cu ft; 50 lb = 0.375 cu ft; 60 lb = 0.45 cu ft; 80 lb = 0.60 cu ft; 90 lb = 0.675 cu ft (regional availability).",
-      "Yields vary by product and may be rounded. Use the yield printed on the exact bag or its current manufacturer data sheet.",
-      "Slab thickness, uneven subgrade, spillage and waste can increase the quantity to order. Add any allowance deliberately after calculating the base volume."
+      "Use the yield printed on the current bag or manufacturer's product sheet. Bag weight alone does not establish yield because mix formulations and product types differ.",
+      "For larger pours, compare the delivered ready-mix quote with the cost and labor of mixing many bags. Check access, minimum delivery quantities and placement time.",
+      "Keep unopened spare bags dry and follow the product instructions for water quantity, mixing, placement and curing."
     ]
   },
   {
     "slug": "gravel-volume",
-    "how": "Enter length, width and installed depth in feet. The calculator multiplies them to estimate cubic feet, then divides by 27 to show the equivalent cubic yards.",
-    "example": "For a 20 ft × 10 ft area with a 3 in (0.25 ft) layer: 20 × 10 × 0.25 = 50 cu ft; 50 ÷ 27 = 1.85 cu yd before any supplier-specific allowance.",
+    "how": "Multiply the measured area length by width by the planned finished layer depth. Convert all three measurements to the same length unit before multiplying. To convert cubic feet to cubic yards, divide by 27. For multiple areas or different layer depths, calculate each separately and add the volumes.",
+    "example": "A 20 ft × 10 ft driveway section with a 3 in layer uses 3 ÷ 12 = 0.25 ft depth. The geometric volume is 20 × 10 × 0.25 = 50 cu ft, equal to about 1.85 cu yd before supplier or compaction adjustments.",
     "tips": [
-      "The estimate is geometric volume and does not add extra material for settling, compaction, uneven ground or waste.",
-      "Confirm with the supplier whether the quoted volume is loose or compacted and how the material is measured.",
-      "If ordering by weight, use the supplier's bulk density for the exact gravel; density varies by material and moisture."
+      "Decide whether the specified depth is the loose delivered depth or the compacted finished depth. They are not interchangeable.",
+      "Gravel type, particle size, moisture and compaction change bulk density. If ordering by weight, ask the supplier for the density or conversion used for that exact product.",
+      "For a sloped or irregular area, divide the site into smaller sections and measure representative depths rather than assuming one uniform layer."
     ]
   },
   {
@@ -39,38 +40,42 @@
   },
   {
     "slug": "paint-quantity",
-    "how": "Divide wall area by product coverage and multiply by the number of coats.",
-    "example": "For 800 square feet, 350 square feet of coverage per unit and two coats, the estimate is 4.57 units.",
+    "how": "Add the wall or ceiling areas to be painted, subtract large openings if you have measured them, then divide the paintable area by the coverage rate on the product label. Multiply by the number of coats. The result is the estimated volume or number of coverage units, depending on the units entered.",
+    "example": "For 600 sq ft of paintable wall area, product coverage of 350 sq ft per gallon and two coats: 600 ÷ 350 × 2 = 3.43 gallons. If the product is sold in one-gallon containers, plan on at least 4 gallons, subject to the surface and application method.",
     "tips": [
-      "Use the manufacturer's stated coverage for your specific product.",
-      "Porous or rough surfaces can require more material."
+      "Use the coverage rate for the exact paint, primer and surface condition. Label coverage is usually a guide, not a guarantee.",
+      "New drywall, bare plaster, porous masonry, dark color changes and textured surfaces may need primer or additional coats. Follow the coating manufacturer's system recommendations.",
+      "Measure each wall separately where heights differ. Include ceilings, trim or doors only if you intend to use the same product on them."
     ]
   },
   {
     "slug": "flooring-quantity",
-    "how": "Multiply length by width to get area, then add the selected waste percentage.",
-    "example": "A 20 ft by 15 ft room is 300 square feet. With 10% waste, plan for 330 square feet.",
+    "how": "Calculate the floor area by multiplying room length by width, then multiply by 1 plus the waste percentage divided by 100. For rooms that are not rectangular, split the floor plan into simple shapes and add their areas. The waste allowance covers cutting and layout losses, not a measurement error.",
+    "example": "A rectangular room 18 ft × 14 ft has an area of 252 sq ft. With a selected 10% cutting allowance, 252 × 1.10 = 277.2 sq ft of flooring to plan for. Compare this with the package coverage and round up to whole packs.",
     "tips": [
-      "Follow the flooring manufacturer's installation guidance for waste.",
-      "Irregular rooms and complex patterns may need a higher allowance."
+      "Use the waste guidance from the flooring manufacturer or installer. Plank direction, diagonal layouts, room shape, product length and the number of doorways affect offcuts.",
+      "Check whether the package coverage is stated in square feet or square metres and whether it represents net installed coverage.",
+      "Keep spare material from the same production batch when practical. Dye lots, finish and product dimensions can vary between batches."
     ]
   },
   {
     "slug": "tile-quantity",
-    "how": "Divide the total area by the area of one tile, add the waste percentage, then round up.",
-    "example": "For 1,000 square feet using 12 by 12 inch tiles with 10% waste, the estimate is 1,100 tiles.",
+    "how": "Calculate the total floor or wall area, then divide by the area covered by one tile. Multiply by 1 plus the selected waste percentage divided by 100 and round up to a whole tile. Make sure project area and tile area use compatible units. For several tile sizes or patterns, calculate each area separately.",
+    "example": "A 240 sq ft area using 12 × 24 in tiles has tiles covering 2 sq ft each. With 10% waste: 240 ÷ 2 × 1.10 = 132 tiles. If tiles are sold by the box, divide by the stated tiles per box and round up again.",
     "tips": [
-      "Use actual tile dimensions when they differ from nominal dimensions.",
-      "Keep spare tiles for future repairs when practical."
+      "Use the actual tile dimensions and package coverage. Nominal dimensions, grout joints and actual coverage can differ.",
+      "Choose a waste allowance based on room shape, diagonal or patterned layouts, tile size, cuts and installer guidance rather than assuming one percentage fits every job.",
+      "Order enough from one batch for the full project and retain spare tiles for future repairs."
     ]
   },
   {
     "slug": "drywall-sheets",
-    "how": "Estimate wall surface area from room dimensions and divide by the area of one sheet, then round up.",
-    "example": "A rectangular room with 20 ft length, 15 ft width and 8 ft walls has 560 square feet of wall area before deductions.",
+    "how": "For a rectangular room, estimate wall area as 2 × (room length + room width) × wall height. Divide by the area of one sheet and round up. This basic estimate does not deduct doors or windows and does not include a ceiling unless you add that area separately.",
+    "example": "A 20 ft × 15 ft room with 8 ft walls has a wall perimeter of 2 × (20 + 15) = 70 ft. Wall area is 70 × 8 = 560 sq ft. A 4 ft × 8 ft sheet covers 32 sq ft, so 560 ÷ 32 = 17.5 and the base estimate is 18 sheets before layout and cutting allowance.",
     "tips": [
-      "This basic calculator does not subtract doors or windows.",
-      "Ceilings, openings, layout, and local installation practices can change the final quantity."
+      "Measure wall height in each area and account for partitions, closets, soffits and other surfaces that need board.",
+      "Sheet orientation, framing layout, openings, ceiling work, damaged edges and local board sizes change the final count. A sheet layout plan is more accurate than area alone.",
+      "Choose board type and thickness for the room and applicable fire, moisture, acoustic and installation requirements. This quantity estimate does not specify a compliant assembly."
     ]
   },
   {
@@ -84,20 +89,22 @@
   },
   {
     "slug": "material-cost",
-    "how": "Multiply quantity by unit price and then add the selected waste percentage.",
-    "example": "100 units at $4 each with 10% waste gives an estimated total of $440.",
+    "how": "Multiply the required quantity by the price per matching unit. If you select a waste percentage, multiply the material subtotal by 1 plus that percentage divided by 100. Confirm that the quantity unit and quoted price unit match, such as square metres with price per square metre.",
+    "example": "A project needs 120 units of material at $8 per unit. The material subtotal is 120 × $8 = $960. With an 8% quantity allowance, the estimate is $960 × 1.08 = $1,036.80 before tax, delivery, labor or other charges.",
     "tips": [
-      "Use the current price for the exact product and unit.",
-      "Taxes, delivery, labor and other project costs are not included unless added separately."
+      "Use a current quote for the exact product, grade, size, finish and purchase unit. Compare like-for-like prices rather than package prices alone.",
+      "This estimate applies the waste percentage to material quantity and cost. It does not automatically include tax, delivery, labor, tools, disposal, discounts or minimum order fees.",
+      "For a budget, list uncertain items separately and compare supplier quotes with the same units, specification and delivery terms."
     ]
   },
   {
     "slug": "paver-quantity",
-    "how": "Multiply the paved area by 144 to convert square feet to square inches, divide by the paver area, add waste, then round up.",
-    "example": "A 20 ft by 12 ft patio using 12 by 6 inch pavers with 5% waste needs about 504 pavers.",
+    "how": "Calculate the paved area and divide it by the face area of one paver. Multiply by 1 plus the selected waste percentage divided by 100, then round up to a whole paver. Use the actual face dimensions and compatible area units. This is a surface coverage estimate and does not calculate the excavation, base, bedding sand or edge restraints.",
+    "example": "A 16 ft × 12 ft patio is 192 sq ft. A 12 × 6 in paver covers 0.5 sq ft. With 5% cutting allowance: 192 ÷ 0.5 × 1.05 = 403.2, so the base order estimate is 404 pavers before rounding to full packs.",
     "tips": [
-      "Use the actual paver dimensions.",
-      "Patterns and cutting can change the waste requirement."
+      "Paver dimensions can be nominal. Confirm the manufacturer's actual dimensions and coverage per pack, including joint spacing if specified.",
+      "Herringbone, curves, borders, soldier courses and edge cuts can use more material than a simple rectangular running layout.",
+      "A paver surface needs a suitable base, bedding layer, drainage and edge restraint. Those quantities and design requirements are outside this calculator."
     ]
   },
   {
@@ -150,10 +157,12 @@
   },
   {
     "slug": "roofing-material",
-    "how": "Multiply roof area by one plus the selected waste percentage.",
-    "example": "A 2,400 square foot roof with 10% waste gives 2,640 square feet of estimated material.",
+    "how": "Start with the measured roof surface area, not the building footprint. Multiply the roof area by 1 plus the selected waste percentage divided by 100. If you only know the plan footprint, each roof plane must be measured or adjusted for its pitch before using this calculator.",
+    "example": "If the combined measured roof planes total 1,800 sq ft and the chosen project allowance is 12%, the estimated material area is 1,800 × 1.12 = 2,016 sq ft. Convert that area to bundles or packages using the coverage stated for the exact roofing product.",
     "tips": [
-      "Product coverage and installation details vary by roofing system."
+      "Measure each roof plane and include dormers, valleys, hips and other details. A footprint area alone understates a pitched roof's surface area.",
+      "Waste depends on roof shape, pitch, shingle or panel dimensions, pattern, starter and ridge products, and installer practice. Follow the roofing system manufacturer's estimating guidance.",
+      "Underlayment, flashing, drip edge, fasteners, ventilation and accessories are separate items unless explicitly included in the product coverage."
     ]
   },
   {
