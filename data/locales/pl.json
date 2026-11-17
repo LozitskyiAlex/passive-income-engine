@@ -856,5 +856,21 @@
   "Cuts, borders, curves, pattern layout, breakage and pack sizes can increase the number required.": "Docinki, obrzeża, łuki, wzór układania, uszkodzenia i opakowania mogą zwiększyć potrzebną ilość.",
   "Not directly for a pitched roof. Use the measured surface area of each roof plane or a correctly calculated pitch adjustment, then add the relevant roof details.": "Dla dachu skośnego użyj zmierzonej powierzchni każdej połaci lub prawidłowej korekty nachylenia, a następnie dodaj detale.",
   "It estimates only the entered roof covering area plus the selected allowance. Underlayment, flashing, ridge products and accessories are separate unless included in the specified coverage.": "Szacuje tylko podaną powierzchnię pokrycia wraz z zapasem. Membranę, obróbki, elementy kalenicowe i akcesoria oblicza się osobno, chyba że uwzględnia je wydajność produktu.",
-  "How do I convert cubic feet to cubic yards?": "Jak przeliczyć metry sześcienne na litry?"
+  "How do I convert cubic feet to cubic yards?": "Jak przeliczyć metry sześcienne na litry?",
+  "Does the estimate include reinforcement or formwork?": "Czy oszacowanie obejmuje zbrojenie lub szalunki?",
+  "How deep should a gravel layer be?": "Jak głęboka powinna być warstwa kruszywa?",
+  "Should I subtract windows and doors?": "Czy należy odjąć okna i drzwi?",
+  "Does the calculator round up to whole cans?": "Czy kalkulator zaokrągla do pełnych puszek?",
+  "How much extra flooring should I order?": "Ile dodatkowej podłogi należy zamówić?",
+  "Does the estimate include underlay or transitions?": "Czy oszacowanie obejmuje podkład lub profile przejściowe?",
+  "How do I calculate the number of boxes?": "Jak obliczyć liczbę opakowań?",
+  "Does tile size include grout joints?": "Czy wymiar płytki obejmuje fugi?",
+  "Does this calculator subtract windows and doors?": "Czy kalkulator odejmuje okna i drzwi?",
+  "Does it include the ceiling?": "Czy uwzględnia sufit?",
+  "What if the supplier sells full packs only?": "Co jeśli dostawca sprzedaje tylko pełne opakowania?",
+  "Why can the final invoice differ from this estimate?": "Dlaczego końcowa faktura może różnić się od wyceny?",
+  "Does this estimate include the gravel base and bedding sand?": "Czy oszacowanie obejmuje podbudowę z kruszywa i podsypkę?",
+  "Why can the installed count be higher than the area calculation?": "Dlaczego ilość po ułożeniu może być większa niż wynik obliczenia powierzchni?",
+  "Can I use the building footprint as roof area?": "Czy mogę użyć rzutu budynku jako powierzchni dachu?",
+  "Does the result include shingles, underlayment and flashing?": "Czy wynik obejmuje pokrycie, membranę i obróbki blacharskie?"
 }
