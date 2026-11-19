@@ -261,3 +261,33 @@ def test_localized_priority_tips_and_faq_are_visible_and_translated():
             assert faq_data is not None, (locale, slug, "FAQ schema missing")
             assert len(faq_data.get("mainEntity", [])) == len(source_faq), (locale, slug, "FAQ schema count")
             assert not soup.select_one('#faq-section[hidden]')
+
+
+def test_blog_has_six_localized_articles_and_accessible_navigation():
+    from bs4 import BeautifulSoup
+    locales = ["en", "es", "de", "fr", "pt-br", "ja", "it", "nl", "pl", "zh-hans", "ko", "ar", "uk", "ru", "tr"]
+    for locale in locales:
+        prefix = Path(locale) if locale != "en" else Path()
+        listing = SITE / prefix / "blog" / "index.html"
+        assert listing.exists(), (locale, "blog listing missing")
+        soup = BeautifulSoup(listing.read_text(encoding="utf-8"), "html.parser")
+        assert len(soup.select(".article-card")) == 6, (locale, "article count")
+        assert soup.html.get("dir") == ("rtl" if locale == "ar" else None), (locale, "direction")
+        assert soup.find("nav", attrs={"aria-label": "Language selector"}) is not None
+        assert len(soup.select("footer .language-list a")) == 15
+        assert soup.find("nav", attrs={"aria-label": "Main navigation"}) is not None
+        assert soup.find("style") is not None
+        for slug in (
+            "how-to-estimate-concrete-volume",
+            "gravel-sand-and-soil-quantity-guide",
+            "flooring-and-tile-waste-calculation",
+            "paint-coverage-and-quantity",
+            "fence-and-deck-material-estimates",
+            "construction-material-budget-planning",
+        ):
+            article = SITE / prefix / "blog" / slug / "index.html"
+            assert article.exists(), (locale, slug)
+            article_soup = BeautifulSoup(article.read_text(encoding="utf-8"), "html.parser")
+            assert article_soup.find("link", rel="canonical") is not None
+            assert article_soup.find("script", type="application/ld+json") is not None
+            assert article_soup.find("article") is not None
