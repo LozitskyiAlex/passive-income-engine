@@ -307,6 +307,9 @@ def test_blog_has_six_localized_articles_and_accessible_navigation():
         rendered_titles = [node.get_text(strip=True) for node in soup.select(".article-card h2 a")]
         expected_titles = [post[locale][0] for post in POSTS]
         assert rendered_titles == expected_titles, (locale, "listing titles not localized")
+        listing_schema = json.loads(soup.find("script", type="application/ld+json").string)
+        schema_titles = [item["name"] for item in listing_schema["mainEntity"]["itemListElement"]]
+        assert schema_titles == expected_titles, (locale, "listing schema titles not localized")
         assert soup.html.get("dir") == ("rtl" if locale == "ar" else "ltr"), (locale, "direction")
         assert soup.find("nav", attrs={"aria-label": "Language selector"}) is not None
         assert len(soup.select("footer .language-list a")) == 15
