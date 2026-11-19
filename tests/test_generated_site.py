@@ -175,6 +175,18 @@ def test_generated_urls_match_catalog():
             assert guide["calculator_link_text"] in BeautifulSoup(html, "html.parser").get_text(" ")
 
     construction_index = (SITE / "construction" / "index.html").read_text()
+    from bs4 import BeautifulSoup
+    calculator_cards = BeautifulSoup(construction_index, "html.parser").select(".calculator-card")
+    assert len(calculator_cards) == len(items)
+    for card in calculator_cards:
+        link = card.find("a", class_="calculator-card-link")
+        assert link is not None and link.get("href", "").startswith("/construction/")
+        assert card.find(class_="card-action") is not None
+    assert "box-shadow:0 4px 16px" in construction_index
+    assert 'href="/blog/"' in construction_index
+    homepage_cards = BeautifulSoup((SITE / "index.html").read_text(), "html.parser").select(".calculator-card")
+    assert homepage_cards
+    assert all(card.find("a", class_="calculator-card-link") for card in homepage_cards)
     assert_canonical(construction_index, f"{BASE}/construction/")
     assert "static.cloudflareinsights.com/beacon.min.js" not in construction_index
     assert "2b43ef087bbd47b6847bb0613f03ace2" not in construction_index
