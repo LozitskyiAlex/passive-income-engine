@@ -333,6 +333,6 @@ def test_blog_has_six_localized_articles_and_accessible_navigation():
             assert article_soup.select_one("h1").get_text(strip=True) == expected_title, (locale, slug, "title")
             assert article_soup.select_one(".article-body > .lead").get_text(strip=True) == expected_description, (locale, slug, "description")
             rendered_paragraphs = [node.get_text(strip=True) for node in article_soup.select(".article-body > p:not(.lead)")]
-            assert rendered_paragraphs == expected_body.split("\\n"), (locale, slug, "body")
+            assert rendered_paragraphs == expected_body.split("\n"), (locale, slug, "body")
             schema = json.loads(article_soup.find("script", type="application/ld+json").string)
             assert schema["inLanguage"] == LOCALES[locale][1], (locale, slug, "schema language")
