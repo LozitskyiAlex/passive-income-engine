@@ -318,7 +318,7 @@ def build_blog(locale):
 <div class="eyebrow">Construction Calculators · {escape(ui['blog'])}</div>
 <h1>{escape(ui['blog_title'])}</h1><p class="lead">{escape(ui['blog_desc'])}</p>
 <p>{escape(ui['intro'])}</p></section><section class="article-grid" aria-label="{escape(ui['blog'])} articles">{''.join(cards)}</section></main>"""
-    listing_schema = {"@context":"https://schema.org","@type":"CollectionPage","name":ui["blog_title"],"description":ui["blog_desc"],"url":BASE+path_for(locale,blog_path),"mainEntity":{"@type":"ItemList","numberOfItems":len(POSTS),"itemListElement":[{"@type":"ListItem","position":i+1,"url":BASE+path_for(locale,f"/blog/{p['slug']}/"),"name":p.get(locale,p["en"])[0]} for i,p in enumerate(POSTS)]}}
+    listing_schema = {"@context":"https://schema.org","@type":"CollectionPage","name":ui["blog_title"],"description":ui["blog_desc"],"url":BASE+path_for(locale,blog_path),"mainEntity":{"@type":"ItemList","numberOfItems":len(POSTS),"itemListElement":[{"@type":"ListItem","position":i+1,"url":BASE+path_for(locale,f"/blog/{p['slug']}/"),"name":p[locale][0]} for i,p in enumerate(POSTS)]}}
     (SITE / locale / "blog" / "index.html" if locale != "en" else SITE / "blog" / "index.html").parent.mkdir(parents=True,exist_ok=True)
     out = SITE / (locale + "/" if locale != "en" else "") / "blog" / "index.html"
     out.write_text(page_shell(locale,ui["blog_title"],ui["blog_desc"],blog_path,listing_body,listing_schema),encoding="utf-8")
