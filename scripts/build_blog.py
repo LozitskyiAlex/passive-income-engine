@@ -308,7 +308,7 @@ def build_blog(locale):
     blog_path = "/blog/"
     cards = []
     for post in POSTS:
-        title, desc, body = post.get(locale, post["en"])
+        title, desc, body = post[locale]
         url = path_for(locale, f"/blog/{post['slug']}/")
         cards.append(f"""<article class="article-card">
 <div class="card-meta">Construction guide · {2} {escape(ui['min'])}</div>
@@ -323,7 +323,7 @@ def build_blog(locale):
     out = SITE / (locale + "/" if locale != "en" else "") / "blog" / "index.html"
     out.write_text(page_shell(locale,ui["blog_title"],ui["blog_desc"],blog_path,listing_body,listing_schema),encoding="utf-8")
     for post in POSTS:
-        title, desc, content = post.get(locale,post["en"])
+        title, desc, content = post[locale]
         slug=post["slug"]
         article_path=f"/blog/{slug}/"
         url=path_for(locale,article_path)
@@ -398,6 +398,10 @@ def update_sitemap():
     ET.ElementTree(root).write(sitemap,encoding="utf-8",xml_declaration=True)
 
 def main():
+    for post in POSTS:
+        for locale in LOCALES:
+            if locale not in post or len(post[locale]) != 3 or not all(isinstance(value, str) and value.strip() for value in post[locale]):
+                raise ValueError(f"Missing or incomplete blog translation: {post.get('slug', 'unknown')} [{locale}]")
     for locale in LOCALES:
         build_blog(locale)
     inject_site_nav_and_styles()
