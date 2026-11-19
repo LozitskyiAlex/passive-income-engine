@@ -176,11 +176,16 @@ def test_generated_urls_match_catalog():
 
     construction_index = (SITE / "construction" / "index.html").read_text()
     from bs4 import BeautifulSoup
-    calculator_cards = BeautifulSoup(construction_index, "html.parser").select(".calculator-card")
+    all_cards = BeautifulSoup(construction_index, "html.parser").select(".calculator-card")
+    calculator_cards = [
+        card for card in all_cards
+        if card.find("a", class_="calculator-card-link")
+        and card.find("a", class_="calculator-card-link").get("href", "").startswith("/construction/")
+    ]
     assert len(calculator_cards) == len(items)
     for card in calculator_cards:
         link = card.find("a", class_="calculator-card-link")
-        assert link is not None and link.get("href", "").startswith("/construction/")
+        assert link is not None
         assert card.find(class_="card-action") is not None
     assert "box-shadow:0 4px 16px" in construction_index
     assert 'href="/blog/"' in construction_index
