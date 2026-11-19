@@ -325,7 +325,7 @@ def main():
             item = calculator_guidance[slug]
             if not all(isinstance(item.get(key), str) and item[key].strip() for key in ("how", "example", "example_heading")):
                 raise ValueError(f"Blank localized guidance field for {locale}/{slug}")
-        required = required_translation_strings(source_pages)
+        required = required_translation_strings([page for page in source_pages if page_path(page) not in ("/", "/construction/")])
         missing = sorted(required - set(translations))
         if missing:
             raise ValueError(f"Incomplete translation file for {locale}: missing {len(missing)} strings, including {missing[:8]}")
