@@ -284,8 +284,8 @@ a{{color:var(--accent);text-decoration:none}}a:hover{{text-decoration:underline}
 .eyebrow{{font-size:13px;font-weight:650;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}}
 .hero{{max-width:760px;margin-bottom:42px}}h1{{font-size:clamp(38px,6vw,64px);line-height:1.05;letter-spacing:-.055em;font-weight:700;margin:12px 0 20px}}.lead{{font-size:clamp(18px,2.3vw,22px);line-height:1.5;color:#515154;max-width:720px}}
 .article-grid{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}}
-.article-card{{border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:#fff;display:flex;flex-direction:column;min-height:260px;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}}
-.article-card:hover{{transform:translateY(-3px);border-color:#c7c7cc;box-shadow:0 12px 32px rgba(0,0,0,.06)}}
+.article-card{{border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:#fff;display:flex;flex-direction:column;min-height:260px;box-shadow:0 4px 16px rgba(0,0,0,.045);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}}
+.article-card:hover{{transform:translateY(-3px);border-color:#c7c7cc;box-shadow:0 12px 32px rgba(0,0,0,.09)}}
 .article-card h2{{font-size:23px;line-height:1.2;letter-spacing:-.03em;margin:14px 0 10px}}.article-card p{{color:var(--muted);margin:0 0 22px}}
 .card-meta{{font-size:12px;color:var(--muted);font-weight:550}}.card-link{{margin-top:auto;font-weight:600;font-size:14px}}
 .article-body{{max-width:720px}}.article-body h2{{font-size:28px;letter-spacing:-.03em;line-height:1.2;margin:38px 0 14px}}.article-body p{{font-size:18px;line-height:1.75;color:#424245;margin:0 0 20px;white-space:pre-line}}
