@@ -280,7 +280,7 @@ a{{color:var(--accent);text-decoration:none}}a:hover{{text-decoration:underline}
 .site-header{{max-width:1120px;margin:0 auto;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line)}}
 .brand{{font-size:17px;font-weight:650;letter-spacing:-.02em;color:var(--ink);white-space:nowrap}}
 .site-nav{{display:flex;align-items:center;gap:24px;flex-wrap:wrap}}.site-nav a{{color:#424245;font-size:14px;font-weight:550}}.site-nav a[aria-current=page]{{color:var(--accent)}}
-.container{{width:min(100% - 48px,900px);margin:0 auto;padding:64px 0 88px}}
+.container{{width:min(100% - 48px,1120px);max-width:1120px;margin:0 auto;padding:48px 0 72px}}
 .eyebrow{{font-size:13px;font-weight:650;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}}
 .hero{{max-width:760px;margin-bottom:42px}}h1{{font-size:clamp(38px,6vw,64px);line-height:1.05;letter-spacing:-.055em;font-weight:700;margin:12px 0 20px}}.lead{{font-size:clamp(18px,2.3vw,22px);line-height:1.5;color:#515154;max-width:720px}}
 .article-grid{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}}
@@ -292,7 +292,7 @@ a{{color:var(--accent);text-decoration:none}}a:hover{{text-decoration:underline}
 .article-back{{display:inline-flex;margin-bottom:30px;font-size:14px;font-weight:600}}.article-footer{{border-top:1px solid var(--line);margin-top:46px;padding-top:24px;color:var(--muted);font-size:14px}}
 .site-footer{{border-top:1px solid var(--line);max-width:1120px;margin:0 auto;padding:24px 28px 40px;color:var(--muted);font-size:13px}}
 .language-list{{display:flex;gap:8px 14px;flex-wrap:wrap;margin-top:14px}}.language-list a{{font-size:12px;color:var(--muted)}}
-@media(max-width:680px){{.site-header{{padding:18px 20px;align-items:flex-start;flex-direction:column;gap:12px}}.site-nav{{gap:16px}}.container{{width:min(100% - 36px,900px);padding:44px 0 64px}}.article-grid{{grid-template-columns:1fr}}.article-card{{min-height:220px;padding:22px}}.article-body p{{font-size:17px}}.site-footer{{padding:22px 20px 32px}}}}
+@media(max-width:680px){{.site-header{{padding:18px 20px;align-items:flex-start;flex-direction:column;gap:12px}}.site-nav{{gap:16px}}.container{{width:min(100% - 28px,1120px);padding:32px 0 56px}}.article-grid{{grid-template-columns:1fr}}.article-card{{min-height:220px;padding:22px}}.article-body p{{font-size:17px}}.site-footer{{padding:22px 20px 32px}}}}
 @media(prefers-reduced-motion:reduce){{html{{scroll-behavior:auto}}*,*::before,*::after{{transition:none!important;animation:none!important}}}}
 html[dir=rtl] body{{text-align:right}}html[dir=rtl] .site-header{{direction:rtl}}html[dir=rtl] .site-nav{{direction:rtl}}
 </style></head><body>
@@ -341,7 +341,7 @@ def inject_site_nav_and_styles():
     # Apply a restrained Apple-inspired visual system to existing generated pages.
     style = """<style id="site-experience-system">
 :root{--site-ink:#1d1d1f;--site-muted:#6e6e73;--site-line:#e5e5ea;--site-accent:#06c;--site-radius:18px}
-html{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;color:var(--site-ink);line-height:1.65}
+html{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;width:100%;max-width:1120px!important;margin:0 auto!important;padding:32px 24px!important;-webkit-font-smoothing:antialiased;color:var(--site-ink);line-height:1.65}
 a{color:var(--site-accent);text-underline-offset:3px}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #0071e3;outline-offset:3px}
 button,input,select{font:inherit}button{border-radius:10px;min-height:44px;padding:10px 16px;border:1px solid #d2d2d7;background:#f5f5f7;color:#1d1d1f;cursor:pointer;transition:background .15s ease,border-color .15s ease}
 button:hover{background:#e8e8ed;border-color:#b8b8bf}input,select{border:1px solid #c7c7cc;border-radius:9px;min-height:44px;padding:9px 12px;background:#fff;color:inherit;max-width:100%}
@@ -370,7 +370,7 @@ h1,h2,h3{letter-spacing:-.025em;line-height:1.2}h1{font-size:clamp(2rem,5vw,3.25
         if "<body" in html and "site-global-header" not in html:
             match=re.search(r"<body[^>]*>",html,re.I)
             if match:
-                nav=f"""<header class="site-global-header"><a class="site-global-brand" href="{path_for(locale,'/')}">Construction Calculators</a><nav aria-label="Main navigation"><a href="{path_for(locale,'/')}">{escape(UI[locale]['home'])}</a> <a href="{path_for(locale,'/construction/')}">{escape(UI[locale]['calculators'])}</a> <a href="{path_for(locale,'/blog/')}">{escape(UI[locale]['blog'])}</a></nav></header>"""
+                nav=f"""<header class="site-global-header"><a class="site-global-brand" href="{path_for(locale,'/')}">Construction Calculators</a><nav aria-label="Main navigation"><a href="{path_for(locale,'/')}">{escape(UI[locale]['home'])}</a> <a href="{path_for(locale,'/construction/')}">{escape(UI[locale]['calculators'])}</a></nav></header>"""
                 html=html[:match.end()]+nav+html[match.end():]
         file.write_text(html,encoding="utf-8")
 
