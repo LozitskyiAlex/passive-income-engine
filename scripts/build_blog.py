@@ -10,21 +10,21 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "site"
 BASE = os.environ.get("SITE_BASE_URL", "https://free-construction-calculators.pages.dev").rstrip("/")
 LOCALES = {
-    "en": ("English", "en-US", "US", "ltr"),
-    "es": ("Español", "es-ES", "ES", "ltr"),
-    "de": ("Deutsch", "de-DE", "DE", "ltr"),
-    "fr": ("Français", "fr-FR", "FR", "ltr"),
+    "en": ("English", "en", "US", "ltr"),
+    "es": ("Español", "es", "ES", "ltr"),
+    "de": ("Deutsch", "de", "DE", "ltr"),
+    "fr": ("Français", "fr", "FR", "ltr"),
     "pt-br": ("Português (Brasil)", "pt-BR", "BR", "ltr"),
-    "ja": ("日本語", "ja-JP", "JP", "ltr"),
-    "it": ("Italiano", "it-IT", "IT", "ltr"),
-    "nl": ("Nederlands", "nl-NL", "NL", "ltr"),
-    "pl": ("Polski", "pl-PL", "PL", "ltr"),
+    "ja": ("日本語", "ja", "JP", "ltr"),
+    "it": ("Italiano", "it", "IT", "ltr"),
+    "nl": ("Nederlands", "nl", "NL", "ltr"),
+    "pl": ("Polski", "pl", "PL", "ltr"),
     "zh-hans": ("简体中文", "zh-Hans", "CN", "ltr"),
-    "ko": ("한국어", "ko-KR", "KR", "ltr"),
+    "ko": ("한국어", "ko", "KR", "ltr"),
     "ar": ("العربية", "ar", "001", "rtl"),
-    "uk": ("Українська", "uk-UA", "UA", "ltr"),
-    "ru": ("Русский", "ru-RU", "RU", "ltr"),
-    "tr": ("Türkçe", "tr-TR", "TR", "ltr"),
+    "uk": ("Українська", "uk", "UA", "ltr"),
+    "ru": ("Русский", "ru", "RU", "ltr"),
+    "tr": ("Türkçe", "tr", "TR", "ltr"),
 }
 # Each entry is title, short description, and practical article body. Content is
 # authored for the locale rather than machine-translated at request time.
