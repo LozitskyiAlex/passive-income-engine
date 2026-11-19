@@ -291,6 +291,11 @@ def page_shell(locale, title, description, canonical_path, body, schema):
         for code, meta in LOCALES.items()
     )
     alternates += f'<link rel="alternate" hreflang="x-default" href="{BASE + canonical_path}">'
+    language_links = "".join(
+        f'<a lang="{escape(LOCALES[code][1])}" href="{path_for(code, canonical_path)}"'
+        + (' aria-current="page"' if code == locale else '') + f'>{escape(LOCALES[code][0])}</a>'
+        for code in LOCALES
+    )
     return f"""<!doctype html>
 <html lang="{escape(html_lang)}" dir="{direction}" data-region="{region}" data-measurement="{'us' if locale == 'en' else 'metric'}">
 <head>
@@ -328,7 +333,7 @@ html[dir=rtl] body{{text-align:right}}html[dir=rtl] .site-header{{direction:rtl}
 <nav class="site-nav" aria-label="Main navigation"><a href="{path_for(locale,'/')}">{escape(UI[locale]['home'])}</a><a href="{path_for(locale,'/construction/')}">{escape(UI[locale]['calculators'])}</a><a href="{path_for(locale,'/guides/')}">{escape(UI[locale]['guides'])}</a><a href="{path_for(locale,'/blog/')}">{escape(UI[locale]['blog'])}</a></nav></header>
 {body}
 <footer class="site-footer"><div>Construction Calculators · {escape(UI[locale]['blog'])}</div><nav class="language-list" aria-label="Language selector">
-{''.join(f'<a lang="{escape(LOCALES[c][1])}" href="{path_for(c,canonical_path)}"{' aria-current="page"' if c == locale else ''}>{escape(LOCALES[c][0])}</a>' for c in LOCALES)}
+{language_links}
 </nav></footer></body></html>"""
 
 def build_blog(locale):
