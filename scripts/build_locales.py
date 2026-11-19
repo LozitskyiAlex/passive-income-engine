@@ -301,7 +301,7 @@ def required_translation_strings(source_pages):
 
 
 def main():
-    source_pages = sorted(p for p in SITE.rglob("*.html") if not any(part in LOCALES for part in p.relative_to(SITE).parts))
+    source_pages = sorted(p for p in SITE.rglob("*.html") if "blog" not in p.relative_to(SITE).parts and not any(part in LOCALES for part in p.relative_to(SITE).parts))
     source_pages = [p for p in source_pages if p.name != "404.html"]
     if not source_pages:
         raise RuntimeError("No source HTML pages found for localization")
