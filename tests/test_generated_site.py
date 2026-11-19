@@ -284,13 +284,29 @@ def test_localized_priority_tips_and_faq_are_visible_and_translated():
 
 def test_blog_has_six_localized_articles_and_accessible_navigation():
     from bs4 import BeautifulSoup
+    from scripts.build_blog import LOCALES, POSTS
     locales = ["en", "es", "de", "fr", "pt-br", "ja", "it", "nl", "pl", "zh-hans", "ko", "ar", "uk", "ru", "tr"]
+    assert set(locales) == set(LOCALES)
+    assert len(POSTS) == 6
+    posts_by_slug = {post["slug"]: post for post in POSTS}
+    for post in POSTS:
+        assert all(locale in post for locale in locales), (post["slug"], "missing locale")
+        for locale in locales:
+            title, description, content = post[locale]
+            assert title.strip() and description.strip() and content.strip(), (post["slug"], locale, "empty translation")
+            if locale != "en":
+                assert title != post["en"][0], (post["slug"], locale, "English title fallback")
+                assert description != post["en"][1], (post["slug"], locale, "English description fallback")
+                assert content != post["en"][2], (post["slug"], locale, "English body fallback")
     for locale in locales:
         prefix = Path(locale) if locale != "en" else Path()
         listing = SITE / prefix / "blog" / "index.html"
         assert listing.exists(), (locale, "blog listing missing")
         soup = BeautifulSoup(listing.read_text(encoding="utf-8"), "html.parser")
         assert len(soup.select(".article-card")) == 6, (locale, "article count")
+        rendered_titles = [node.get_text(strip=True) for node in soup.select(".article-card h2 a")]
+        expected_titles = [post[locale][0] for post in POSTS]
+        assert rendered_titles == expected_titles, (locale, "listing titles not localized")
         assert soup.html.get("dir") == ("rtl" if locale == "ar" else "ltr"), (locale, "direction")
         assert soup.find("nav", attrs={"aria-label": "Language selector"}) is not None
         assert len(soup.select("footer .language-list a")) == 15
@@ -310,3 +326,10 @@ def test_blog_has_six_localized_articles_and_accessible_navigation():
             assert article_soup.find("link", rel="canonical") is not None
             assert article_soup.find("script", type="application/ld+json") is not None
             assert article_soup.find("article") is not None
+            expected_title, expected_description, expected_body = posts_by_slug[slug][locale]
+            assert article_soup.select_one("h1").get_text(strip=True) == expected_title, (locale, slug, "title")
+            assert article_soup.select_one(".article-body > .lead").get_text(strip=True) == expected_description, (locale, slug, "description")
+            rendered_paragraphs = [node.get_text(strip=True) for node in article_soup.select(".article-body > p:not(.lead)")]
+            assert rendered_paragraphs == expected_body.split("\\n"), (locale, slug, "body")
+            schema = json.loads(article_soup.find("script", type="application/ld+json").string)
+            assert schema["inLanguage"] == LOCALES[locale][1], (locale, slug, "schema language")
