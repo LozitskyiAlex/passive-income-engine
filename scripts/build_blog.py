@@ -330,7 +330,7 @@ a{{color:var(--accent);text-decoration:none}}a:hover{{text-decoration:underline}
 html[dir=rtl] body{{text-align:right}}html[dir=rtl] .site-header{{direction:rtl}}html[dir=rtl] .site-nav{{direction:rtl}}
 </style></head><body>
 <header class="site-header"><a class="brand" href="{path_for(locale,'/')}">Construction Calculators</a>
-<nav class="site-nav" aria-label="Main navigation"><a href="{path_for(locale,'/')}">{escape(UI[locale]['home'])}</a><a href="{path_for(locale,'/construction/')}">{escape(UI[locale]['calculators'])}</a><a href="{path_for(locale,'/guides/')}">{escape(UI[locale]['guides'])}</a><a href="{path_for(locale,'/blog/')}">{escape(UI[locale]['blog'])}</a></nav></header>
+<nav class="site-nav" aria-label="Main navigation"><a href="{path_for(locale,'/')}">{escape(UI[locale]['home'])}</a><a href="{path_for(locale,'/construction/')}">{escape(UI[locale]['calculators'])}</a><a href="{path_for(locale,'/construction/')}">{escape(UI[locale]['guides'])}</a><a href="{path_for(locale,'/blog/')}">{escape(UI[locale]['blog'])}</a></nav></header>
 {body}
 <footer class="site-footer"><div>Construction Calculators · {escape(UI[locale]['blog'])}</div><nav class="language-list" aria-label="Language selector">
 {language_links}
@@ -344,7 +344,7 @@ def build_blog(locale):
         title, desc, body = post.get(locale, post["en"])
         url = path_for(locale, f"/blog/{post['slug']}/")
         cards.append(f"""<article class="article-card">
-<div class="card-meta">Construction guide · {5} {escape(ui['min'])}</div>
+<div class="card-meta">Construction guide · {2} {escape(ui['min'])}</div>
 <h2><a href="{url}">{escape(title)}</a></h2><p>{escape(desc)}</p>
 <a class="card-link" href="{url}">{escape(ui['read'])} →</a></article>""")
     listing_body = f"""<main class="container"><section class="hero">
@@ -364,7 +364,7 @@ def build_blog(locale):
         body_html="".join(f"<p>{escape(p)}</p>" for p in paragraphs)
         article_body=f"""<main class="container"><a class="article-back" href="{path_for(locale,blog_path)}">← {escape(ui['back'])}</a>
 <article class="article-body"><div class="eyebrow">Construction Calculators · {escape(ui['blog'])}</div><h1>{escape(title)}</h1><p class="lead">{escape(desc)}</p>{body_html}
-<footer class="article-footer">{escape(ui['updated'])}: 2026-11-19 · {5} {escape(ui['min'])}<p><a href="{path_for(locale,'/construction/')}">{escape(ui['calculators'])}</a> · <a href="{path_for(locale,blog_path)}">{escape(ui['back'])}</a></p></footer></article></main>"""
+<footer class="article-footer">{escape(ui['updated'])}: 2026-11-19 · {2} {escape(ui['min'])}<p><a href="{path_for(locale,'/construction/')}">{escape(ui['calculators'])}</a> · <a href="{path_for(locale,blog_path)}">{escape(ui['back'])}</a></p></footer></article></main>"""
         schema={"@context":"https://schema.org","@type":"Article","headline":title,"description":desc,"inLanguage":LOCALES[locale][1],"datePublished":"2026-11-19","dateModified":"2026-11-19","mainEntityOfPage":BASE+url,"author":{"@type":"Organization","name":"Construction Calculators"},"publisher":{"@type":"Organization","name":"Construction Calculators"}}
         out=SITE/(locale+"/" if locale!="en" else "")/"blog"/slug/"index.html"
         out.parent.mkdir(parents=True,exist_ok=True)
@@ -403,7 +403,7 @@ h1,h2,h3{letter-spacing:-.025em;line-height:1.2}h1{font-size:clamp(2rem,5vw,3.25
         if "<body" in html and "site-global-header" not in html:
             match=re.search(r"<body[^>]*>",html,re.I)
             if match:
-                nav=f"""<header class="site-global-header"><a class="site-global-brand" href="{path_for(locale,'/')}">Construction Calculators</a><nav aria-label="Main navigation"><a href="{path_for(locale,'/')}">{escape(UI[locale]['home'])}</a> <a href="{path_for(locale,'/construction/')}">{escape(UI[locale]['calculators'])}</a> <a href="{path_for(locale,'/guides/')}">{escape(UI[locale]['guides'])}</a> <a href="{path_for(locale,'/blog/')}">{escape(UI[locale]['blog'])}</a></nav></header>"""
+                nav=f"""<header class="site-global-header"><a class="site-global-brand" href="{path_for(locale,'/')}">Construction Calculators</a><nav aria-label="Main navigation"><a href="{path_for(locale,'/')}">{escape(UI[locale]['home'])}</a> <a href="{path_for(locale,'/construction/')}">{escape(UI[locale]['calculators'])}</a> <a href="{path_for(locale,'/construction/')}">{escape(UI[locale]['guides'])}</a> <a href="{path_for(locale,'/blog/')}">{escape(UI[locale]['blog'])}</a></nav></header>"""
                 html=html[:match.end()]+nav+html[match.end():]
         file.write_text(html,encoding="utf-8")
 
