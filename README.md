@@ -32,6 +32,9 @@ Every calculator page includes:
 
 The generated site also includes:
 
+* A multilingual blog with six fully localized practical articles in all fifteen supported languages.
+* A responsive, accessible interface using Apple-inspired typography, spacing, restrained surfaces, clear navigation, visible focus states and reduced-motion support.
+
 * Category-based homepage.
 * Construction calculator index.
 * robots.txt.
@@ -89,7 +92,7 @@ IndexNow notification is intentionally separate from the production deployment p
 The Cloudflare Pages Git integration uses:
 
 ```text
-pip install -e ".[dev]" && python -m pytest && python scripts/build.py && python scripts/build_calculators.py && python scripts/build_construction.py && python scripts/build_construction_index.py && python scripts/build_seo.py
+pip install -e ".[dev]" && python -m pytest && python scripts/build.py && python scripts/build_calculators.py && python scripts/build_construction.py && python scripts/build_construction_index.py && python scripts/build_seo.py && python scripts/build_blog.py
 ```
 
 Build output directory:
