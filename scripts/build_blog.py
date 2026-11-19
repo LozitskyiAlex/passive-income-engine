@@ -403,7 +403,7 @@ h1,h2,h3{letter-spacing:-.025em;line-height:1.2}h1{font-size:clamp(2rem,5vw,3.25
         if "<body" in html and "site-global-header" not in html:
             match=re.search(r"<body[^>]*>",html,re.I)
             if match:
-                nav=f"""<header class="site-global-header"><a class="site-global-brand" href="{path_for(locale,'/')}">Construction Calculators</a><nav aria-label="Main navigation"><a href="{path_for(locale,'/')}">{escape(UI[locale]['home'])}</a> <a href="{path_for(locale,'/construction/')}">{escape(UI[locale]['calculators'])}</a> <a href="{path_for(locale,'/construction/')}">{escape(UI[locale]['guides'])}</a> <a href="{path_for(locale,'/blog/')}">{escape(UI[locale]['blog'])}</a></nav></header>"""
+                nav=f"""<header class="site-global-header"><a class="site-global-brand" href="{path_for(locale,'/')}">Construction Calculators</a><nav aria-label="Main navigation"><a href="{path_for(locale,'/')}">{escape(UI[locale]['home'])}</a> <a href="{path_for(locale,'/construction/')}">{escape(UI[locale]['calculators'])}</a> <a href="{path_for(locale,'/blog/')}">{escape(UI[locale]['blog'])}</a></nav></header>"""
                 html=html[:match.end()]+nav+html[match.end():]
         file.write_text(html,encoding="utf-8")
 
