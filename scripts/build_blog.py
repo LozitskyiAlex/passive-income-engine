@@ -341,7 +341,7 @@ def inject_site_nav_and_styles():
     # Apply a restrained Apple-inspired visual system to existing generated pages.
     style = """<style id="site-experience-system">
 :root{--site-ink:#1d1d1f;--site-muted:#6e6e73;--site-line:#e5e5ea;--site-accent:#06c;--site-radius:18px}
-html{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;width:100%;max-width:1120px!important;margin:0 auto!important;padding:32px 24px!important;-webkit-font-smoothing:antialiased;color:var(--site-ink);line-height:1.65}
+html{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;width:100%;max-width:1168px!important;margin:0 auto!important;padding:32px 24px!important;-webkit-font-smoothing:antialiased;color:var(--site-ink);line-height:1.65}
 a{color:var(--site-accent);text-underline-offset:3px}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #0071e3;outline-offset:3px}
 button,input,select{font:inherit}button{border-radius:10px;min-height:44px;padding:10px 16px;border:1px solid #d2d2d7;background:#f5f5f7;color:#1d1d1f;cursor:pointer;transition:background .15s ease,border-color .15s ease}
 button:hover{background:#e8e8ed;border-color:#b8b8bf}input,select{border:1px solid #c7c7cc;border-radius:9px;min-height:44px;padding:9px 12px;background:#fff;color:inherit;max-width:100%}
