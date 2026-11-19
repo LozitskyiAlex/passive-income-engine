@@ -272,7 +272,7 @@ def test_blog_has_six_localized_articles_and_accessible_navigation():
         assert listing.exists(), (locale, "blog listing missing")
         soup = BeautifulSoup(listing.read_text(encoding="utf-8"), "html.parser")
         assert len(soup.select(".article-card")) == 6, (locale, "article count")
-        assert soup.html.get("dir") == ("rtl" if locale == "ar" else None), (locale, "direction")
+        assert soup.html.get("dir") == ("rtl" if locale == "ar" else "ltr"), (locale, "direction")
         assert soup.find("nav", attrs={"aria-label": "Language selector"}) is not None
         assert len(soup.select("footer .language-list a")) == 15
         assert soup.find("nav", attrs={"aria-label": "Main navigation"}) is not None
