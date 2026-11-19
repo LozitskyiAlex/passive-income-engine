@@ -62,10 +62,12 @@ def test_generated_urls_match_catalog():
     subprocess.run(["python", "scripts/build_construction.py"], cwd=ROOT, check=True)
     subprocess.run(["python", "scripts/build_construction_index.py"], cwd=ROOT, check=True)
     subprocess.run(["python", "scripts/build_seo.py"], cwd=ROOT, check=True)
+    subprocess.run(["python", "scripts/build_blog.py"], cwd=ROOT, check=True)
     items = json.loads((ROOT / "data/construction_calculators.json").read_text())
     guides = json.loads((ROOT / "data/guides.json").read_text())
     locales = {"en": "en", "es": "es", "de": "de", "fr": "fr", "pt-br": "pt-BR", "ja": "ja", "it": "it", "nl": "nl", "pl": "pl", "zh-hans": "zh-Hans", "ko": "ko", "ar": "ar", "uk": "uk", "ru": "ru", "tr": "tr"}
-    source_paths = {"/", "/construction/"}
+    source_paths = {"/", "/construction/", "/blog/"}
+    source_paths |= {f"/blog/{x['slug']}/" for x in __import__("scripts.build_blog", fromlist=["POSTS"]).POSTS}
     source_paths |= {f"/construction/{x['slug']}/" for x in items}
     source_paths |= {f"/guides/{x['slug']}/" for x in guides}
     source_paths |= {f"/calculators/{x['slug']}/" for x in json.loads((ROOT / "data/calculators.json").read_text())}
