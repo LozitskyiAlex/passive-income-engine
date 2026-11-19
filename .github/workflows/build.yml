@@ -50,6 +50,7 @@ jobs:
           python scripts/build_construction.py
           python scripts/build_construction_index.py
           python scripts/build_seo.py
+          python scripts/build_blog.py
 
       - name: Validate generated site
         run: pytest tests/test_generated_site.py -q
