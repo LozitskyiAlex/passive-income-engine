@@ -286,12 +286,12 @@ def test_localized_priority_tips_and_faq_are_visible_and_translated():
             assert not soup.select_one('#faq-section[hidden]')
 
 
-def test_blog_has_six_localized_articles_and_accessible_navigation():
+def test_blog_has_twelve_localized_articles_and_accessible_navigation():
     from bs4 import BeautifulSoup
     from scripts.build_blog import LOCALES, POSTS
     locales = ["en", "es", "de", "fr", "pt-br", "ja", "it", "nl", "pl", "zh-hans", "ko", "ar", "uk", "ru", "tr"]
     assert set(locales) == set(LOCALES)
-    assert len(POSTS) == 6
+    assert len(POSTS) == 12
     posts_by_slug = {post["slug"]: post for post in POSTS}
     for post in POSTS:
         assert all(locale in post for locale in locales), (post["slug"], "missing locale")
@@ -307,7 +307,7 @@ def test_blog_has_six_localized_articles_and_accessible_navigation():
         listing = SITE / prefix / "blog" / "index.html"
         assert listing.exists(), (locale, "blog listing missing")
         soup = BeautifulSoup(listing.read_text(encoding="utf-8"), "html.parser")
-        assert len(soup.select(".article-card")) == 6, (locale, "article count")
+        assert len(soup.select(".article-card")) == 12, (locale, "article count")
         rendered_titles = [node.get_text(strip=True) for node in soup.select(".article-card h2 a")]
         expected_titles = [post[locale][0] for post in POSTS]
         assert rendered_titles == expected_titles, (locale, "listing titles not localized")
@@ -326,6 +326,12 @@ def test_blog_has_six_localized_articles_and_accessible_navigation():
             "paint-coverage-and-quantity",
             "fence-and-deck-material-estimates",
             "construction-material-budget-planning",
+            "how-many-bags-of-concrete-do-you-need",
+            "gravel-driveway-depth-and-base",
+            "mulch-depth-and-refresh-guide",
+            "paver-layout-and-cutting-waste",
+            "roof-area-pitch-and-waste",
+            "fence-layout-post-spacing-and-count",
         ):
             article = SITE / prefix / "blog" / slug / "index.html"
             assert article.exists(), (locale, slug)
