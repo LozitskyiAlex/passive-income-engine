@@ -12,10 +12,10 @@ ADSENSE_SCRIPT = (
     'crossorigin="anonymous"></script>'
 )
 ADSENSE_RE = re.compile(
-    r'<script\\b[^>]*src=["\\']https://pagead2\\.googlesyndication\\.com/pagead/js/adsbygoogle\\.js\\?client=ca-pub-([^"\\']+)["\\'][^>]*>\\s*</script>',
+    r"""<script\b[^>]*src=["']https://pagead2\.googlesyndication\.com/pagead/js/adsbygoogle\.js\?client=ca-pub-([^"']+)["'][^>]*>\s*</script>""",
     re.IGNORECASE,
 )
-HEAD_RE = re.compile(r"<head(?:\\s[^>]*)?>", re.IGNORECASE)
+HEAD_RE = re.compile(r"<head(?:\s[^>]*)?>", re.IGNORECASE)
 
 
 def main() -> None:
@@ -37,11 +37,11 @@ def main() -> None:
         head = HEAD_RE.search(html)
         if not head:
             raise RuntimeError(f"HTML page has no head element: {page}")
-        html = html[:head.end()] + "\\n" + ADSENSE_SCRIPT + html[head.end():]
+        html = html[:head.end()] + "\n" + ADSENSE_SCRIPT + html[head.end():]
         page.write_text(html, encoding="utf-8")
 
     (SITE / "ads.txt").write_text(
-        f"google.com, {PUBLISHER_ID}, DIRECT, f08c47fec0942fa0\\n",
+        f"google.com, {PUBLISHER_ID}, DIRECT, f08c47fec0942fa0\n",
         encoding="utf-8",
     )
     print(f"Added AdSense publisher code to {len(pages)} HTML pages and generated ads.txt")
