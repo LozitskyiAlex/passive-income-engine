@@ -8,7 +8,7 @@ SITE = ROOT / "site"
 PUBLISHER_ID = "pub-7560850346426622"
 ADSENSE_SCRIPT = (
     '<script async '
-    'src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-7560850346426622" '
+    'src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7560850346426622" '
     'crossorigin="anonymous"></script>'
 )
 HEAD_RE = re.compile(r"<head(?:\s[^>]*)?>", re.IGNORECASE)
