@@ -35,4 +35,4 @@ jobs:
           python scripts/build_construction_index.py
           python scripts/build_seo.py
       - name: Validate generated site
-        run: pytest tests/test_generated_site.py -q
+        run: python -m pytest tests/test_generated_site.py -q
