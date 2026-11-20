@@ -8,12 +8,8 @@ SITE = ROOT / "site"
 PUBLISHER_ID = "pub-7560850346426622"
 ADSENSE_SCRIPT = (
     '<script async '
-    'src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7560850346426622" '
+    'src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-7560850346426622" '
     'crossorigin="anonymous"></script>'
-)
-ADSENSE_RE = re.compile(
-    r"""<script\b[^>]*src=["']https://pagead2\.googlesyndication\.com/pagead/js/adsbygoogle\.js\?client=ca-pub-([^"']+)["'][^>]*>\s*</script>""",
-    re.IGNORECASE,
 )
 HEAD_RE = re.compile(r"<head(?:\s[^>]*)?>", re.IGNORECASE)
 
@@ -26,11 +22,11 @@ def main() -> None:
     if not pages:
         raise RuntimeError("No generated HTML pages found for AdSense integration")
 
+    expected_client = f"?client=ca-{PUBLISHER_ID}"
     for page in pages:
         html = page.read_text(encoding="utf-8")
-        existing = ADSENSE_RE.search(html)
-        if existing:
-            if existing.group(1) != PUBLISHER_ID.removeprefix("pub-"):
+        if "pagead/js/adsbygoogle.js?client=" in html:
+            if expected_client not in html:
                 raise RuntimeError(f"Conflicting AdSense publisher ID in {page}")
             continue
 
