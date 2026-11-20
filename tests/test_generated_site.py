@@ -132,7 +132,7 @@ def test_generated_urls_match_catalog():
         runtime = (SITE / locale / "calculator-runtime.js").read_text(encoding="utf-8")
         assert "Intl.NumberFormat" in runtime
     assert (SITE / "404.html").exists()
-    assert (SITE / "ads.txt").read_text(encoding="utf-8") == "google.com, pub-7560850346426622, DIRECT, f08c47fec0942fa0\\n"
+    assert (SITE / "ads.txt").read_text(encoding="utf-8") == "google.com, pub-7560850346426622, DIRECT, f08c47fec0942fa0\n"
     assert "adsbygoogle.js" not in (SITE / "404.html").read_text(encoding="utf-8")
     assert (SITE / "calculator-runtime.js").exists()
     homepage = (SITE / "index.html").read_text(encoding="utf-8")
