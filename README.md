@@ -32,6 +32,8 @@ Every calculator page includes:
 
 The generated site also includes:
 
+* Google AdSense publisher verification code on all content pages and a root `ads.txt` entry. Ad serving remains subject to AdSense site approval and consent configuration.
+
 * A multilingual blog with six fully localized practical articles in all fifteen supported languages.
 * A responsive, accessible interface using Apple-inspired typography, spacing, restrained surfaces, clear navigation, visible focus states and reduced-motion support.
 
@@ -92,7 +94,7 @@ IndexNow notification is intentionally separate from the production deployment p
 The Cloudflare Pages Git integration uses:
 
 ```text
-pip install -e ".[dev]" && python -m pytest && python scripts/build.py && python scripts/build_calculators.py && python scripts/build_construction.py && python scripts/build_construction_index.py && python scripts/build_seo.py && python scripts/build_blog.py
+pip install -e ".[dev]" && python -m pytest && python scripts/build.py && python scripts/build_calculators.py && python scripts/build_construction.py && python scripts/build_construction_index.py && python scripts/build_seo.py && python scripts/build_blog.py && python scripts/build_adsense.py
 ```
 
 Build output directory:

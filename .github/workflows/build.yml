@@ -51,9 +51,10 @@ jobs:
           python scripts/build_construction_index.py
           python scripts/build_seo.py
           python scripts/build_blog.py
+          python scripts/build_adsense.py
 
       - name: Validate generated site
-        run: pytest tests/test_generated_site.py -q
+        run: python -m pytest tests/test_generated_site.py -q
 
       - name: Validate production packaging
         run: |
@@ -62,6 +63,7 @@ jobs:
           test -f site/404.html
           test -f site/robots.txt
           test -f site/sitemap.xml
+          test -f site/ads.txt
           test -f site/deployment-version.txt
 
       # Production deployment is intentionally not performed here.

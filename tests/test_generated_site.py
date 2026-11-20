@@ -63,6 +63,7 @@ def test_generated_urls_match_catalog():
     subprocess.run(["python", "scripts/build_construction_index.py"], cwd=ROOT, check=True)
     subprocess.run(["python", "scripts/build_seo.py"], cwd=ROOT, check=True)
     subprocess.run(["python", "scripts/build_blog.py"], cwd=ROOT, check=True)
+    subprocess.run(["python", "scripts/build_adsense.py"], cwd=ROOT, check=True)
     items = json.loads((ROOT / "data/construction_calculators.json").read_text())
     guides = json.loads((ROOT / "data/guides.json").read_text())
     locales = {"en": "en", "es": "es", "de": "de", "fr": "fr", "pt-br": "pt-BR", "ja": "ja", "it": "it", "nl": "nl", "pl": "pl", "zh-hans": "zh-Hans", "ko": "ko", "ar": "ar", "uk": "uk", "ru": "ru", "tr": "tr"}
@@ -94,6 +95,7 @@ def test_generated_urls_match_catalog():
             page = SITE / rel
             assert page.exists(), (locale, path, page)
             html = page.read_text(encoding="utf-8")
+            assert 'adsbygoogle.js?client=ca-pub-7560850346426622' in html, (locale, path, "AdSense code missing")
             from bs4 import BeautifulSoup
             parsed = BeautifulSoup(html, "html.parser")
             assert parsed.html.get("lang") == lang
@@ -130,6 +132,8 @@ def test_generated_urls_match_catalog():
         runtime = (SITE / locale / "calculator-runtime.js").read_text(encoding="utf-8")
         assert "Intl.NumberFormat" in runtime
     assert (SITE / "404.html").exists()
+    assert (SITE / "ads.txt").read_text(encoding="utf-8") == "google.com, pub-7560850346426622, DIRECT, f08c47fec0942fa0\n"
+    assert "adsbygoogle.js" not in (SITE / "404.html").read_text(encoding="utf-8")
     assert (SITE / "calculator-runtime.js").exists()
     homepage = (SITE / "index.html").read_text(encoding="utf-8")
     assert "<h1>Free Construction Calculators</h1>" in homepage
